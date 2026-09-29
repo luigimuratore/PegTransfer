@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Isaac / Omniverse cache
+.cache/
+.nv/
+.local/
+kit/logs/
+*.log
+
+# Training logs / tensorboard / checkpoints
+workflows/robotic_surgery/scripts/simulation/scripts/reinforcement_learning/rsl_rl/logs/
+*.pt
+*.pth
+*.onnx
+
+# Large data/assets
+data/
+*.usd
+*.usda
+*.usdc
+
+# System
+.DS_Store
+.vscode/
+.idea/
+
+third_party/
+.nvidia-omniverse/
+.config/
+logs/
+*.egg-info/
+outputs/
+checkpoints/
