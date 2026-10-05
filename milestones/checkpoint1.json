@@ -1,0 +1,18 @@
+{
+  "name": "checkpoint1",
+  "description": "task success but grasping not optimal",
+  "commit": "7a53c10dea9d3af020689532736843ff93dcc62e",
+  "checkpoint": "logs/sac_sequence/2026-10-02_15-11-19_sequence_bc/final.zip",
+  "checkpoint_sha256": "f9db03065072a509e024129669f912b69c4fe7879c9bd6eb61acdabb25fa9fed",
+  "fingerprint": "b827e9291195ffc991d8bb8136edf98c2ccfc30699ca4d2244c59f9437d6313a",
+  "versions": {
+    "isaacsim": "5.1.0.0",
+    "isaaclab": "0.48.0",
+    "torch": "2.7.0+cu128",
+    "stable-baselines3": "2.9.0",
+    "gymnasium": "1.2.0"
+  },
+  "isaaclab_commit": "5c2ec81cb17532d32f7922dd7fcaae40d123b71a",
+  "evaluation": "logs/sac_sequence/eval_full_unguided_2026-10-02_15-11-38.json",
+  "full_success": "100/100, fixed L5 to R2, assisted grasp, imitation-trained actor"
+}

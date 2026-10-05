@@ -53,3 +53,5 @@ Report della valutazione:
 `logs/sac_sequence/eval_full_unguided_2026-10-02_15-11-38.json`
 
 **Prossima modifica: da decidere insieme.** Aggiungeremo qui il cambiamento e i nuovi risultati per confrontarli con questo checkpoint. I dettagli tecnici restano in [PEG_TRANSFER.md](PEG_TRANSFER.md) e nel manifest del checkpoint.
+
+5 ottobre 2026: questa versione è conservata come **checkpoint1**, con codice e modello originali. `bash peg_checkpoint1.sh play` riproduce il task salvato anche dopo modifiche al progetto; `bash peg_checkpoint1.sh video` registra il video via SSH. Rimane necessario l'ambiente Isaac originale. Questo salvataggio non è un nuovo training o una nuova valutazione.
