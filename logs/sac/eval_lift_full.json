@@ -1,0 +1,81 @@
+{
+  "checkpoint": "/home/francesco/Documents/GIGI/i4h-workflows/logs/sac/peg_transfer_dual_psm/2026-10-01_14-23-37_peg_sac_lift/final.zip",
+  "trained_phase": "lift",
+  "evaluated_phase": "full",
+  "seed": 123,
+  "versions": {
+    "isaacsim": "5.1.0.0",
+    "isaaclab": "0.48.0",
+    "isaaclab_rl": "0.4.4",
+    "torch": "2.7.0+cu128",
+    "stable-baselines3": "2.9.0",
+    "gymnasium": "1.2.0"
+  },
+  "fingerprint": "0d06ef06f6055e602e16ba3bc4aa5793ac05800064804567af3f039544738c4e",
+  "episodes": 100,
+  "requested_episodes": 100,
+  "interrupted": false,
+  "complete": true,
+  "source": "random",
+  "num_envs": 16,
+  "assisted_grasp": true,
+  "grasp_psm1": 0,
+  "grasp_psm1_rate": 0.0,
+  "grasp_psm1_ci95": [
+    0,
+    0.03699480747600191
+  ],
+  "lift_stable": 0,
+  "lift_stable_rate": 0.0,
+  "lift_stable_ci95": [
+    0,
+    0.03699480747600191
+  ],
+  "grasp_psm2": 0,
+  "grasp_psm2_rate": 0.0,
+  "grasp_psm2_ci95": [
+    0,
+    0.03699480747600191
+  ],
+  "handover": 0,
+  "handover_rate": 0.0,
+  "handover_ci95": [
+    0,
+    0.03699480747600191
+  ],
+  "placement": 0,
+  "placement_rate": 0.0,
+  "placement_ci95": [
+    0,
+    0.03699480747600191
+  ],
+  "full_success": 0,
+  "full_success_rate": 0.0,
+  "full_success_ci95": [
+    0,
+    0.03699480747600191
+  ],
+  "timeouts": 100,
+  "failures": 0,
+  "blocked_moves": 0,
+  "by_source": {
+    "L5": {
+      "episodes": 52,
+      "grasp_psm1_rate": 0.0,
+      "lift_stable_rate": 0.0,
+      "grasp_psm2_rate": 0.0,
+      "handover_rate": 0.0,
+      "placement_rate": 0.0,
+      "full_success_rate": 0.0
+    },
+    "L6": {
+      "episodes": 48,
+      "grasp_psm1_rate": 0.0,
+      "lift_stable_rate": 0.0,
+      "grasp_psm2_rate": 0.0,
+      "handover_rate": 0.0,
+      "placement_rate": 0.0,
+      "full_success_rate": 0.0
+    }
+  }
+}

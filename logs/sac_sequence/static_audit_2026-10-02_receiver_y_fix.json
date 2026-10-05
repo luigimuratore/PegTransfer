@@ -1,0 +1,10 @@
+{
+  "type": "CPU_static_receiver_y_edge_fix",
+  "tests_passed": 22,
+  "isaac_started": false,
+  "fingerprint": "b827e9291195ffc991d8bb8136edf98c2ccfc30699ca4d2244c59f9437d6313a",
+  "real_validation": "pending",
+  "legacy_fingerprint": "8185393283bf784e324892c34514545dbe423a2343ad6da541aa1995edef90ae",
+  "previous_probe": "baseline_full_2026-10-02_14-44-51.json",
+  "previous_full_success": "0/3"
+}

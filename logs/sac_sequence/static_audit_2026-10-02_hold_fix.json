@@ -1,0 +1,10 @@
+{
+  "kind": "static_and_CPU_hold_fix",
+  "tests_passed": 21,
+  "isaac_started": false,
+  "full_task_real_validation": "pending",
+  "fingerprint": "1629df3a05614492c0858938fc68dfc1719ce5bd71695e32bf772535e0873af8",
+  "baseline_before_fix": "/home/francesco/Documents/GIGI/i4h-workflows/logs/sac_sequence/baseline_full_2026-10-02_14-25-13.json",
+  "baseline_before_fix_full_success": "0/3",
+  "baseline_before_fix_grasp_lift_transfer": "3/3"
+}

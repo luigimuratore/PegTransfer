@@ -1,0 +1,320 @@
+{
+  "task": "Isaac-Peg-Transfer-Dual-PSM-Sequence-v1",
+  "schema": "peg-sequence-sac-1",
+  "fingerprint": "1629df3a05614492c0858938fc68dfc1719ce5bd71695e32bf772535e0873af8",
+  "assets": {
+    "data/Isaac/Healthcare/0.5.0/132c82d/Props/PegBlock/block.usd": "d6e3695d6b663702c1cbb5acfc44caace0cc37df95a97fea3e3d5ef86f0aa54d",
+    "data/Isaac/Healthcare/0.5.0/132c82d/Props/Table/table.usd": "d2bb50ca8d5001ba46cb273a779f45a99cfeafd5a3c0ab88ce5e5e7d26cc4e56"
+  },
+  "versions": {
+    "isaacsim": "5.1.0.0",
+    "isaaclab": "0.48.0",
+    "torch": "2.7.0+cu128",
+    "stable-baselines3": "2.9.0",
+    "gymnasium": "1.2.0"
+  },
+  "checkpoint": null,
+  "source": "L5",
+  "target": "R2",
+  "skill": "full",
+  "guidance": [
+    1.0
+  ],
+  "baseline_controller": true,
+  "learned_active_motor_without_guidance": false,
+  "sequencer_and_inactive_arm_control": true,
+  "assisted_grasp": true,
+  "physical_grasp_verified": false,
+  "episodes": 3,
+  "requested_episodes": 3,
+  "complete": true,
+  "interrupted": false,
+  "seed": 42,
+  "num_envs": 1,
+  "episode_seconds": 60.0,
+  "skill_success": 0,
+  "timeouts": 0,
+  "failures": 3,
+  "blocked_moves": 0,
+  "terminal_stages": {
+    "settle": 0,
+    "donor_above": 0,
+    "donor_outside": 0,
+    "donor_reach": 0,
+    "donor_close": 0,
+    "donor_lift": 0,
+    "donor_hold": 0,
+    "donor_transfer": 0,
+    "receiver_above": 0,
+    "receiver_outside": 0,
+    "receiver_reach": 3,
+    "receiver_close": 0,
+    "donor_release": 0,
+    "donor_retreat": 0,
+    "receiver_transport": 0,
+    "receiver_align": 0,
+    "receiver_insert": 0,
+    "receiver_release": 0,
+    "receiver_retreat": 0,
+    "placement_settle": 0,
+    "complete": 0
+  },
+  "terminal_examples": [
+    {
+      "stage": 10,
+      "stage_name": "receiver_reach",
+      "completed_stages": [
+        "settle",
+        "donor_above",
+        "donor_outside",
+        "donor_reach",
+        "donor_close",
+        "donor_lift",
+        "donor_hold",
+        "donor_transfer",
+        "receiver_above",
+        "receiver_outside"
+      ],
+      "transfer_zone_reached": true,
+      "reach_psm2": false,
+      "donor_released": false,
+      "insertion_reached": false,
+      "stage_age": 82,
+      "stage_budget_exhausted": false,
+      "failure_causes": [
+        "attachment_lost"
+      ],
+      "assistance": {
+        "holder": 0,
+        "receiver_latched": false,
+        "blocked_moves": 0,
+        "contact_corrections": 37,
+        "break_reason": "large_rotation",
+        "raw_rotation_peak": 0.09452945739030838,
+        "raw_displacement_peak_mm": 1.5367813110351562
+      },
+      "skill": "full",
+      "guidance": 1.0,
+      "tool_target_error_mm": [
+        0.009086350910365582,
+        4.66876745223999
+      ],
+      "peg_root_m": [
+        0.018473971635103226,
+        -0.008070110343396664,
+        0.06401249766349792
+      ],
+      "holder": 0,
+      "receiver_latched": false,
+      "source_cleared": true,
+      "grasp_distance_mm": [
+        3.4738192558288574,
+        8.103922843933105
+      ],
+      "peg_quaternion_vector_norm": 0.09452945739030838,
+      "tool_tip_m": [
+        [
+          0.022656377404928207,
+          -0.020216811448335648,
+          0.05888862907886505
+        ],
+        [
+          0.040491994470357895,
+          -0.0073225535452365875,
+          0.058921363204717636
+        ]
+      ],
+      "jaw_rad": [
+        0.06999998539686203,
+        0.4999820590019226
+      ]
+    },
+    {
+      "stage": 10,
+      "stage_name": "receiver_reach",
+      "completed_stages": [
+        "settle",
+        "donor_above",
+        "donor_outside",
+        "donor_reach",
+        "donor_close",
+        "donor_lift",
+        "donor_hold",
+        "donor_transfer",
+        "receiver_above",
+        "receiver_outside"
+      ],
+      "transfer_zone_reached": true,
+      "reach_psm2": false,
+      "donor_released": false,
+      "insertion_reached": false,
+      "stage_age": 83,
+      "stage_budget_exhausted": false,
+      "failure_causes": [
+        "attachment_lost"
+      ],
+      "assistance": {
+        "holder": 0,
+        "receiver_latched": false,
+        "blocked_moves": 0,
+        "contact_corrections": 39,
+        "break_reason": "large_rotation",
+        "raw_rotation_peak": 0.09668377041816711,
+        "raw_displacement_peak_mm": 1.5441598892211914
+      },
+      "skill": "full",
+      "guidance": 1.0,
+      "tool_target_error_mm": [
+        0.04216507077217102,
+        5.856921672821045
+      ],
+      "peg_root_m": [
+        0.01813354901969433,
+        -0.008530850522220135,
+        0.06167858466506004
+      ],
+      "holder": 0,
+      "receiver_latched": false,
+      "source_cleared": true,
+      "grasp_distance_mm": [
+        4.459840297698975,
+        8.933241844177246
+      ],
+      "peg_quaternion_vector_norm": 0.148104727268219,
+      "tool_tip_m": [
+        [
+          0.022632112726569176,
+          -0.020213067531585693,
+          0.05891126021742821
+        ],
+        [
+          0.04038344696164131,
+          -0.007324303034693003,
+          0.05888580158352852
+        ]
+      ],
+      "jaw_rad": [
+        0.07000000774860382,
+        0.5000000596046448
+      ]
+    },
+    {
+      "stage": 10,
+      "stage_name": "receiver_reach",
+      "completed_stages": [
+        "settle",
+        "donor_above",
+        "donor_outside",
+        "donor_reach",
+        "donor_close",
+        "donor_lift",
+        "donor_hold",
+        "donor_transfer",
+        "receiver_above",
+        "receiver_outside"
+      ],
+      "transfer_zone_reached": true,
+      "reach_psm2": false,
+      "donor_released": false,
+      "insertion_reached": false,
+      "stage_age": 83,
+      "stage_budget_exhausted": false,
+      "failure_causes": [
+        "attachment_lost"
+      ],
+      "assistance": {
+        "holder": 0,
+        "receiver_latched": false,
+        "blocked_moves": 0,
+        "contact_corrections": 40,
+        "break_reason": "large_rotation",
+        "raw_rotation_peak": 0.080532968044281,
+        "raw_displacement_peak_mm": 1.526601791381836
+      },
+      "skill": "full",
+      "guidance": 1.0,
+      "tool_target_error_mm": [
+        0.050061482936143875,
+        5.027010917663574
+      ],
+      "peg_root_m": [
+        0.018908806145191193,
+        -0.004269795957952738,
+        0.06453943997621536
+      ],
+      "holder": 0,
+      "receiver_latched": false,
+      "source_cleared": true,
+      "grasp_distance_mm": [
+        6.988916873931885,
+        8.08449935913086
+      ],
+      "peg_quaternion_vector_norm": 0.12028307467699051,
+      "tool_tip_m": [
+        [
+          0.022626105695962906,
+          -0.020211590453982353,
+          0.058916158974170685
+        ],
+        [
+          0.04038570821285248,
+          -0.007324515376240015,
+          0.058891236782073975
+        ]
+      ],
+      "jaw_rad": [
+        0.07000000774860382,
+        0.49999865889549255
+      ]
+    }
+  ],
+  "skill_success_rate": 0.0,
+  "skill_success_ci95": [
+    5.551115123125783e-17,
+    0.5614970317550454
+  ],
+  "transfer_zone_reached": 3,
+  "transfer_zone_reached_rate": 1.0,
+  "reach_psm2": 0,
+  "reach_psm2_rate": 0.0,
+  "donor_released": 0,
+  "donor_released_rate": 0.0,
+  "insertion_reached": 0,
+  "insertion_reached_rate": 0.0,
+  "grasp_psm1": 3,
+  "grasp_psm1_rate": 1.0,
+  "grasp_psm1_ci95": [
+    0.4385029682449546,
+    1.0
+  ],
+  "lift_stable": 3,
+  "lift_stable_rate": 1.0,
+  "lift_stable_ci95": [
+    0.4385029682449546,
+    1.0
+  ],
+  "grasp_psm2": 0,
+  "grasp_psm2_rate": 0.0,
+  "grasp_psm2_ci95": [
+    5.551115123125783e-17,
+    0.5614970317550454
+  ],
+  "handover": 0,
+  "handover_rate": 0.0,
+  "handover_ci95": [
+    5.551115123125783e-17,
+    0.5614970317550454
+  ],
+  "placement": 0,
+  "placement_rate": 0.0,
+  "placement_ci95": [
+    5.551115123125783e-17,
+    0.5614970317550454
+  ],
+  "full_success": 0,
+  "full_success_rate": 0.0,
+  "full_success_ci95": [
+    5.551115123125783e-17,
+    0.5614970317550454
+  ]
+}

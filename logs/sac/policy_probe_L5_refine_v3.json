@@ -1,0 +1,61 @@
+{
+  "checkpoint": "/home/francesco/Documents/GIGI/i4h-workflows/logs/sac/peg_transfer_dual_psm/2026-10-01_17-12-19_peg_sac_L5_lift_v3_refine/final.zip",
+  "fingerprint": "8185393283bf784e324892c34514545dbe423a2343ad6da541aa1995edef90ae",
+  "trained_phase": "lift",
+  "evaluated_phase": "lift",
+  "source": "L5",
+  "seed": 123,
+  "versions": {
+    "isaacsim": "5.1.0.0",
+    "isaaclab": "0.48.0",
+    "isaaclab_rl": "0.4.4",
+    "torch": "2.7.0+cu128",
+    "stable-baselines3": "2.9.0",
+    "gymnasium": "1.2.0"
+  },
+  "num_envs": 1,
+  "deterministic": true,
+  "samples": 800,
+  "sample_dt_s": 0.02,
+  "interrupted": false,
+  "completed_episode": true,
+  "terminal": {
+    "metrics": {
+      "grasp_psm1": false,
+      "lift_stable": false,
+      "grasp_psm2": false,
+      "handover": false,
+      "placement": false,
+      "full_success": false
+    },
+    "source": "L5",
+    "blocked_moves": 0,
+    "failure": false,
+    "phase_success": false,
+    "r": -16.605482675135136,
+    "l": 800,
+    "timeout": true
+  },
+  "diagnostics": {
+    "psm1": {
+      "min_grasp_distance_mm": 88.66056799888611,
+      "closest_step": 0,
+      "closest_jaw_mean_rad": 0.5,
+      "closest_jaw_action": 0.973261833190918,
+      "capture_samples": 0,
+      "closed_samples": 143,
+      "capture_closed_aligned_samples": 0
+    },
+    "psm2": {
+      "min_grasp_distance_mm": 85.48302203416824,
+      "closest_step": 0,
+      "closest_jaw_mean_rad": 0.5,
+      "closest_jaw_action": 0.96259605884552,
+      "capture_samples": 0,
+      "closed_samples": 0,
+      "capture_closed_aligned_samples": 0
+    }
+  },
+  "trace": "logs/sac/policy_probe_L5_refine_v3.trace.jsonl",
+  "note": "Pre-action samples at control frequency; not all physics substeps."
+}

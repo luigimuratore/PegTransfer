@@ -1,0 +1,110 @@
+{
+  "algorithm": "SAC",
+  "schema": "peg-sac-1",
+  "task": "Isaac-Peg-Transfer-Dual-PSM-SAC-v0",
+  "phase": "lift",
+  "seed": 42,
+  "source": "L5",
+  "num_envs": 16,
+  "versions": {
+    "isaacsim": "5.1.0.0",
+    "isaaclab": "0.48.0",
+    "isaaclab_rl": "0.4.4",
+    "torch": "2.7.0+cu128",
+    "stable-baselines3": "2.9.0",
+    "gymnasium": "1.2.0"
+  },
+  "fingerprint": "8185393283bf784e324892c34514545dbe423a2343ad6da541aa1995edef90ae",
+  "observation_dim": 101,
+  "action_dim": 14,
+  "settings": {
+    "learning_rate": 0.0003,
+    "buffer_size": 500000,
+    "learning_starts": 0,
+    "batch_size": 256,
+    "tau": 0.005,
+    "gamma": 0.999,
+    "train_freq": 1,
+    "gradient_steps": 4,
+    "ent_coef": "auto_0.001",
+    "target_entropy": -14.0,
+    "policy_kwargs": {
+      "net_arch": [
+        256,
+        256
+      ],
+      "n_critics": 2,
+      "use_sde": false
+    },
+    "replay_buffer_kwargs": {
+      "handle_timeout_termination": true,
+      "demo_path": "/home/francesco/Documents/GIGI/i4h-workflows/logs/sac/lift_capture_L5_v3.npz",
+      "demo_fraction": 0.25
+    },
+    "optimize_memory_usage": false,
+    "verbose": 1,
+    "replay_buffer_class": "DemonstrationReplayBuffer"
+  },
+  "parent_checkpoint": null,
+  "assets": {
+    "data/Isaac/Healthcare/0.5.0/132c82d/Props/PegBlock/block.usd": "d6e3695d6b663702c1cbb5acfc44caace0cc37df95a97fea3e3d5ef86f0aa54d",
+    "data/Isaac/Healthcare/0.5.0/132c82d/Props/Table/table.usd": "d2bb50ca8d5001ba46cb273a779f45a99cfeafd5a3c0ab88ce5e5e7d26cc4e56"
+  },
+  "evaluation_required": true,
+  "demonstrations": {
+    "path": "/home/francesco/Documents/GIGI/i4h-workflows/logs/sac/lift_capture_L5_v3.npz",
+    "sha256": "675402be7adf5e0394f2fe92d46ce6b6f549ebf8ac51b47fe896c53f1fa493f2",
+    "transitions": 2575,
+    "bc_steps": 3000,
+    "bc_weight": 1.0,
+    "demo_fraction": 0.25
+  },
+  "source_positions_xy": {
+    "L5": [
+      0.0,
+      0.0
+    ],
+    "L6": [
+      0.0,
+      -0.03
+    ],
+    "P1": [
+      -0.042,
+      0.03
+    ],
+    "P2": [
+      -0.042,
+      0.0
+    ],
+    "P3": [
+      -0.042,
+      -0.03
+    ],
+    "P4": [
+      0.0,
+      0.03
+    ],
+    "P5": [
+      0.042,
+      -0.015
+    ],
+    "P6": [
+      0.084,
+      0.035
+    ],
+    "P7": [
+      0.084,
+      -0.035
+    ],
+    "P8": [
+      0.126,
+      -0.015
+    ],
+    "P9": [
+      0.126,
+      0.015
+    ]
+  },
+  "timesteps": 0,
+  "replay_saved": false
+}

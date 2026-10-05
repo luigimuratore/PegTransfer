@@ -1,0 +1,88 @@
+{
+  "cases": [
+    {
+      "case": "L5",
+      "position": [
+        -0.005786381661891937,
+        6.170012056827545e-08,
+        0.024613013491034508
+      ],
+      "upright": true,
+      "geometry_pass": true,
+      "false_success": false
+    },
+    {
+      "case": "L6",
+      "position": [
+        -0.005786363035440445,
+        -0.02999996580183506,
+        0.024613020941615105
+      ],
+      "upright": true,
+      "geometry_pass": true,
+      "false_success": false
+    },
+    {
+      "case": "R2",
+      "position": [
+        0.036213647574186325,
+        0.015000049956142902,
+        0.024613026529550552
+      ],
+      "upright": true,
+      "geometry_pass": true,
+      "false_success": false
+    },
+    {
+      "case": "R2_wall",
+      "position": [
+        0.05998663976788521,
+        0.014897150918841362,
+        0.02582874335348606
+      ],
+      "upright": false,
+      "geometry_pass": true,
+      "false_success": false
+    }
+  ],
+  "compound_colliders": [
+    "/World/envs/env_0/Object/Collider_00",
+    "/World/envs/env_0/Object/Collider_01",
+    "/World/envs/env_0/Object/Collider_02",
+    "/World/envs/env_0/Object/Collider_03",
+    "/World/envs/env_0/Object/Collider_04",
+    "/World/envs/env_0/Object/Collider_05",
+    "/World/envs/env_0/Object/Collider_06",
+    "/World/envs/env_0/Object/Collider_07",
+    "/World/envs/env_0/Object/Collider_08",
+    "/World/envs/env_0/Object/Collider_09",
+    "/World/envs/env_0/Object/Collider_10",
+    "/World/envs/env_0/Object/Collider_11",
+    "/World/envs/env_0/Object/Collider_12",
+    "/World/envs/env_0/Object/Collider_13",
+    "/World/envs/env_0/Object/Collider_14",
+    "/World/envs/env_0/Object/Collider_15",
+    "/World/envs/env_0/Object/Collider_16",
+    "/World/envs/env_0/Object/Collider_17",
+    "/World/envs/env_0/Object/Collider_18",
+    "/World/envs/env_0/Object/Collider_19",
+    "/World/envs/env_0/Object/Collider_20",
+    "/World/envs/env_0/Object/Collider_21",
+    "/World/envs/env_0/Object/Collider_22",
+    "/World/envs/env_0/Object/Collider_23",
+    "/World/envs/env_0/Object/Collider_24",
+    "/World/envs/env_0/Object/Collider_25",
+    "/World/envs/env_0/Object/Collider_26",
+    "/World/envs/env_0/Object/Collider_27",
+    "/World/envs/env_0/Object/Collider_28",
+    "/World/envs/env_0/Object/Collider_29",
+    "/World/envs/env_0/Object/Collider_30",
+    "/World/envs/env_0/Object/Collider_31",
+    "/World/envs/env_0/Object/Collider_32",
+    "/World/envs/env_0/Object/Collider_33",
+    "/World/envs/env_0/Object/Collider_34",
+    "/World/envs/env_0/Object/Collider_35"
+  ],
+  "passed": true,
+  "requires_visual_review": true
+}

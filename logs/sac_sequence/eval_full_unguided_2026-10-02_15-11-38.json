@@ -1,0 +1,665 @@
+{
+  "task": "Isaac-Peg-Transfer-Dual-PSM-Sequence-v1",
+  "schema": "peg-sequence-sac-1",
+  "fingerprint": "b827e9291195ffc991d8bb8136edf98c2ccfc30699ca4d2244c59f9437d6313a",
+  "assets": {
+    "data/Isaac/Healthcare/0.5.0/132c82d/Props/PegBlock/block.usd": "d6e3695d6b663702c1cbb5acfc44caace0cc37df95a97fea3e3d5ef86f0aa54d",
+    "data/Isaac/Healthcare/0.5.0/132c82d/Props/Table/table.usd": "d2bb50ca8d5001ba46cb273a779f45a99cfeafd5a3c0ab88ce5e5e7d26cc4e56"
+  },
+  "versions": {
+    "isaacsim": "5.1.0.0",
+    "isaaclab": "0.48.0",
+    "torch": "2.7.0+cu128",
+    "stable-baselines3": "2.9.0",
+    "gymnasium": "1.2.0"
+  },
+  "checkpoint": "/home/francesco/Documents/GIGI/i4h-workflows/logs/sac_sequence/2026-10-02_15-11-19_sequence_bc/final.zip",
+  "source": "L5",
+  "target": "R2",
+  "skill": "full",
+  "guidance": [
+    0.0
+  ],
+  "baseline_controller": false,
+  "receiver_grasp_offset_m": [
+    0.014,
+    0.009,
+    -0.006
+  ],
+  "receiver_approach": "positive_y_edge",
+  "learned_active_motor_without_guidance": true,
+  "sequencer_and_inactive_arm_control": true,
+  "assisted_grasp": true,
+  "physical_grasp_verified": false,
+  "episodes": 100,
+  "requested_episodes": 100,
+  "complete": true,
+  "interrupted": false,
+  "seed": 123,
+  "num_envs": 16,
+  "episode_seconds": 60.0,
+  "skill_success": 100,
+  "timeouts": 0,
+  "failures": 0,
+  "blocked_moves": 0,
+  "terminal_stages": {
+    "settle": 0,
+    "donor_above": 0,
+    "donor_outside": 0,
+    "donor_reach": 0,
+    "donor_close": 0,
+    "donor_lift": 0,
+    "donor_hold": 0,
+    "donor_transfer": 0,
+    "receiver_above": 0,
+    "receiver_outside": 0,
+    "receiver_reach": 0,
+    "receiver_close": 0,
+    "donor_release": 0,
+    "donor_retreat": 0,
+    "receiver_transport": 0,
+    "receiver_align": 0,
+    "receiver_insert": 0,
+    "receiver_release": 0,
+    "receiver_retreat": 0,
+    "placement_settle": 0,
+    "complete": 100
+  },
+  "terminal_examples": [
+    {
+      "stage": 20,
+      "stage_name": "complete",
+      "completed_stages": [
+        "settle",
+        "donor_above",
+        "donor_outside",
+        "donor_reach",
+        "donor_close",
+        "donor_lift",
+        "donor_hold",
+        "donor_transfer",
+        "receiver_above",
+        "receiver_outside",
+        "receiver_reach",
+        "receiver_close",
+        "donor_release",
+        "donor_retreat",
+        "receiver_transport",
+        "receiver_align",
+        "receiver_insert",
+        "receiver_release",
+        "receiver_retreat",
+        "placement_settle"
+      ],
+      "transfer_zone_reached": true,
+      "reach_psm2": true,
+      "donor_released": true,
+      "insertion_reached": true,
+      "stage_age": 0,
+      "stage_budget_exhausted": false,
+      "failure_causes": [],
+      "assistance": {
+        "holder": 0,
+        "receiver_latched": false,
+        "blocked_moves": 0,
+        "contact_corrections": 0,
+        "break_reason": "none",
+        "raw_rotation_peak": 0.0,
+        "raw_displacement_peak_mm": 0.0
+      },
+      "skill": "full",
+      "guidance": 0.0,
+      "tool_target_error_mm": [
+        0.0,
+        0.0
+      ],
+      "peg_root_m": [
+        0.03612828254699707,
+        0.01497960090637207,
+        0.024612942710518837
+      ],
+      "holder": 0,
+      "receiver_latched": false,
+      "source_cleared": true,
+      "grasp_distance_mm": [
+        90.80684661865234,
+        45.61952209472656
+      ],
+      "peg_quaternion_vector_norm": 1.7511783880763687e-05,
+      "tool_quaternion_w": [
+        [
+          0.9690572619438171,
+          -0.012628955766558647,
+          -0.24648451805114746,
+          -0.0037053439300507307
+        ],
+        [
+          0.9999446868896484,
+          -0.008538429625332355,
+          0.0027828228194266558,
+          -0.005477044265717268
+        ]
+      ],
+      "tool_tip_m": [
+        [
+          0.0228118896484375,
+          -0.049764156341552734,
+          0.0884147584438324
+        ],
+        [
+          0.07936692237854004,
+          0.027828216552734375,
+          0.053418561816215515
+        ]
+      ],
+      "jaw_rad": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "stage": 20,
+      "stage_name": "complete",
+      "completed_stages": [
+        "settle",
+        "donor_above",
+        "donor_outside",
+        "donor_reach",
+        "donor_close",
+        "donor_lift",
+        "donor_hold",
+        "donor_transfer",
+        "receiver_above",
+        "receiver_outside",
+        "receiver_reach",
+        "receiver_close",
+        "donor_release",
+        "donor_retreat",
+        "receiver_transport",
+        "receiver_align",
+        "receiver_insert",
+        "receiver_release",
+        "receiver_retreat",
+        "placement_settle"
+      ],
+      "transfer_zone_reached": true,
+      "reach_psm2": true,
+      "donor_released": true,
+      "insertion_reached": true,
+      "stage_age": 0,
+      "stage_budget_exhausted": false,
+      "failure_causes": [],
+      "assistance": {
+        "holder": 0,
+        "receiver_latched": false,
+        "blocked_moves": 0,
+        "contact_corrections": 0,
+        "break_reason": "none",
+        "raw_rotation_peak": 0.0,
+        "raw_displacement_peak_mm": 0.0
+      },
+      "skill": "full",
+      "guidance": 0.0,
+      "tool_target_error_mm": [
+        0.0,
+        0.0
+      ],
+      "peg_root_m": [
+        0.03612875938415527,
+        0.014978408813476562,
+        0.024613039568066597
+      ],
+      "holder": 0,
+      "receiver_latched": false,
+      "source_cleared": true,
+      "grasp_distance_mm": [
+        90.80655670166016,
+        45.618770599365234
+      ],
+      "peg_quaternion_vector_norm": 0.0002110617933794856,
+      "tool_quaternion_w": [
+        [
+          0.9690577983856201,
+          -0.012628219090402126,
+          -0.24648265540599823,
+          -0.0037045034114271402
+        ],
+        [
+          0.9999446868896484,
+          -0.008538399823009968,
+          0.0027806994039565325,
+          -0.005477649159729481
+        ]
+      ],
+      "tool_tip_m": [
+        [
+          0.0228118896484375,
+          -0.04976522922515869,
+          0.08841446042060852
+        ],
+        [
+          0.07936668395996094,
+          0.027828693389892578,
+          0.05341808497905731
+        ]
+      ],
+      "jaw_rad": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "stage": 20,
+      "stage_name": "complete",
+      "completed_stages": [
+        "settle",
+        "donor_above",
+        "donor_outside",
+        "donor_reach",
+        "donor_close",
+        "donor_lift",
+        "donor_hold",
+        "donor_transfer",
+        "receiver_above",
+        "receiver_outside",
+        "receiver_reach",
+        "receiver_close",
+        "donor_release",
+        "donor_retreat",
+        "receiver_transport",
+        "receiver_align",
+        "receiver_insert",
+        "receiver_release",
+        "receiver_retreat",
+        "placement_settle"
+      ],
+      "transfer_zone_reached": true,
+      "reach_psm2": true,
+      "donor_released": true,
+      "insertion_reached": true,
+      "stage_age": 0,
+      "stage_budget_exhausted": false,
+      "failure_causes": [],
+      "assistance": {
+        "holder": 0,
+        "receiver_latched": false,
+        "blocked_moves": 0,
+        "contact_corrections": 0,
+        "break_reason": "none",
+        "raw_rotation_peak": 0.0,
+        "raw_displacement_peak_mm": 0.0
+      },
+      "skill": "full",
+      "guidance": 0.0,
+      "tool_target_error_mm": [
+        0.0,
+        0.0
+      ],
+      "peg_root_m": [
+        0.03612232208251953,
+        0.014977455139160156,
+        0.024613022804260254
+      ],
+      "holder": 0,
+      "receiver_latched": false,
+      "source_cleared": true,
+      "grasp_distance_mm": [
+        90.80438232421875,
+        45.62354278564453
+      ],
+      "peg_quaternion_vector_norm": 7.312271918635815e-06,
+      "tool_quaternion_w": [
+        [
+          0.9690572023391724,
+          -0.012629006057977676,
+          -0.24648509919643402,
+          -0.0037046957295387983
+        ],
+        [
+          0.9999446272850037,
+          -0.008535543456673622,
+          0.002782320138067007,
+          -0.005477248691022396
+        ]
+      ],
+      "tool_tip_m": [
+        [
+          0.0228116512298584,
+          -0.04976391792297363,
+          0.08841487020254135
+        ],
+        [
+          0.07936739921569824,
+          0.02782881259918213,
+          0.05341819301247597
+        ]
+      ],
+      "jaw_rad": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "stage": 20,
+      "stage_name": "complete",
+      "completed_stages": [
+        "settle",
+        "donor_above",
+        "donor_outside",
+        "donor_reach",
+        "donor_close",
+        "donor_lift",
+        "donor_hold",
+        "donor_transfer",
+        "receiver_above",
+        "receiver_outside",
+        "receiver_reach",
+        "receiver_close",
+        "donor_release",
+        "donor_retreat",
+        "receiver_transport",
+        "receiver_align",
+        "receiver_insert",
+        "receiver_release",
+        "receiver_retreat",
+        "placement_settle"
+      ],
+      "transfer_zone_reached": true,
+      "reach_psm2": true,
+      "donor_released": true,
+      "insertion_reached": true,
+      "stage_age": 0,
+      "stage_budget_exhausted": false,
+      "failure_causes": [],
+      "assistance": {
+        "holder": 0,
+        "receiver_latched": false,
+        "blocked_moves": 0,
+        "contact_corrections": 0,
+        "break_reason": "none",
+        "raw_rotation_peak": 0.0,
+        "raw_displacement_peak_mm": 0.0
+      },
+      "skill": "full",
+      "guidance": 0.0,
+      "tool_target_error_mm": [
+        0.0,
+        0.0
+      ],
+      "peg_root_m": [
+        0.036124229431152344,
+        0.01497793197631836,
+        0.024613037705421448
+      ],
+      "holder": 0,
+      "receiver_latched": false,
+      "source_cleared": true,
+      "grasp_distance_mm": [
+        90.80567932128906,
+        45.62211608886719
+      ],
+      "peg_quaternion_vector_norm": 1.6911677448661067e-05,
+      "tool_quaternion_w": [
+        [
+          0.9690565466880798,
+          -0.012628269381821156,
+          -0.24648776650428772,
+          -0.0037059553433209658
+        ],
+        [
+          0.9999446272850037,
+          -0.008538027293980122,
+          0.0027863401919603348,
+          -0.005477854050695896
+        ]
+      ],
+      "tool_tip_m": [
+        [
+          0.022811174392700195,
+          -0.049764156341552734,
+          0.08841543644666672
+        ],
+        [
+          0.07936739921569824,
+          0.027828693389892578,
+          0.05341801419854164
+        ]
+      ],
+      "jaw_rad": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "stage": 20,
+      "stage_name": "complete",
+      "completed_stages": [
+        "settle",
+        "donor_above",
+        "donor_outside",
+        "donor_reach",
+        "donor_close",
+        "donor_lift",
+        "donor_hold",
+        "donor_transfer",
+        "receiver_above",
+        "receiver_outside",
+        "receiver_reach",
+        "receiver_close",
+        "donor_release",
+        "donor_retreat",
+        "receiver_transport",
+        "receiver_align",
+        "receiver_insert",
+        "receiver_release",
+        "receiver_retreat",
+        "placement_settle"
+      ],
+      "transfer_zone_reached": true,
+      "reach_psm2": true,
+      "donor_released": true,
+      "insertion_reached": true,
+      "stage_age": 0,
+      "stage_budget_exhausted": false,
+      "failure_causes": [],
+      "assistance": {
+        "holder": 0,
+        "receiver_latched": false,
+        "blocked_moves": 0,
+        "contact_corrections": 0,
+        "break_reason": "none",
+        "raw_rotation_peak": 0.0,
+        "raw_displacement_peak_mm": 0.0
+      },
+      "skill": "full",
+      "guidance": 0.0,
+      "tool_target_error_mm": [
+        0.0,
+        0.0
+      ],
+      "peg_root_m": [
+        0.03612411022186279,
+        0.014976024627685547,
+        0.024613045156002045
+      ],
+      "holder": 0,
+      "receiver_latched": false,
+      "source_cleared": true,
+      "grasp_distance_mm": [
+        90.8036117553711,
+        45.62167739868164
+      ],
+      "peg_quaternion_vector_norm": 0.00014192458183970302,
+      "tool_quaternion_w": [
+        [
+          0.9690564274787903,
+          -0.012628407217562199,
+          -0.24648793041706085,
+          -0.0037042584735900164
+        ],
+        [
+          0.9999446272850037,
+          -0.008535753935575485,
+          0.002781615126878023,
+          -0.005476083606481552
+        ]
+      ],
+      "tool_tip_m": [
+        [
+          0.022812247276306152,
+          -0.04976344108581543,
+          0.08841512352228165
+        ],
+        [
+          0.07936608791351318,
+          0.027827739715576172,
+          0.053418342024087906
+        ]
+      ],
+      "jaw_rad": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "stage": 20,
+      "stage_name": "complete",
+      "completed_stages": [
+        "settle",
+        "donor_above",
+        "donor_outside",
+        "donor_reach",
+        "donor_close",
+        "donor_lift",
+        "donor_hold",
+        "donor_transfer",
+        "receiver_above",
+        "receiver_outside",
+        "receiver_reach",
+        "receiver_close",
+        "donor_release",
+        "donor_retreat",
+        "receiver_transport",
+        "receiver_align",
+        "receiver_insert",
+        "receiver_release",
+        "receiver_retreat",
+        "placement_settle"
+      ],
+      "transfer_zone_reached": true,
+      "reach_psm2": true,
+      "donor_released": true,
+      "insertion_reached": true,
+      "stage_age": 0,
+      "stage_budget_exhausted": false,
+      "failure_causes": [],
+      "assistance": {
+        "holder": 0,
+        "receiver_latched": false,
+        "blocked_moves": 0,
+        "contact_corrections": 0,
+        "break_reason": "none",
+        "raw_rotation_peak": 0.0,
+        "raw_displacement_peak_mm": 0.0
+      },
+      "skill": "full",
+      "guidance": 0.0,
+      "tool_target_error_mm": [
+        0.0,
+        0.0
+      ],
+      "peg_root_m": [
+        0.0361253023147583,
+        0.014976263046264648,
+        0.024613015353679657
+      ],
+      "holder": 0,
+      "receiver_latched": false,
+      "source_cleared": true,
+      "grasp_distance_mm": [
+        90.80474090576172,
+        45.62174606323242
+      ],
+      "peg_quaternion_vector_norm": 0.0001560011151013896,
+      "tool_quaternion_w": [
+        [
+          0.9690567851066589,
+          -0.012628420256078243,
+          -0.2464865893125534,
+          -0.0037047062069177628
+        ],
+        [
+          0.9999446868896484,
+          -0.008535814471542835,
+          0.0027814123313874006,
+          -0.005478794686496258
+        ]
+      ],
+      "tool_tip_m": [
+        [
+          0.022811412811279297,
+          -0.049764394760131836,
+          0.08841514587402344
+        ],
+        [
+          0.07936751842498779,
+          0.027828454971313477,
+          0.05341814458370209
+        ]
+      ],
+      "jaw_rad": [
+        0.5,
+        0.5
+      ]
+    }
+  ],
+  "skill_success_rate": 1.0,
+  "skill_success_ci95": [
+    0.9630065017930143,
+    1.0
+  ],
+  "transfer_zone_reached": 100,
+  "transfer_zone_reached_rate": 1.0,
+  "reach_psm2": 100,
+  "reach_psm2_rate": 1.0,
+  "donor_released": 100,
+  "donor_released_rate": 1.0,
+  "insertion_reached": 100,
+  "insertion_reached_rate": 1.0,
+  "grasp_psm1": 100,
+  "grasp_psm1_rate": 1.0,
+  "grasp_psm1_ci95": [
+    0.9630065017930143,
+    1.0
+  ],
+  "lift_stable": 100,
+  "lift_stable_rate": 1.0,
+  "lift_stable_ci95": [
+    0.9630065017930143,
+    1.0
+  ],
+  "grasp_psm2": 100,
+  "grasp_psm2_rate": 1.0,
+  "grasp_psm2_ci95": [
+    0.9630065017930143,
+    1.0
+  ],
+  "handover": 100,
+  "handover_rate": 1.0,
+  "handover_ci95": [
+    0.9630065017930143,
+    1.0
+  ],
+  "placement": 100,
+  "placement_rate": 1.0,
+  "placement_ci95": [
+    0.9630065017930143,
+    1.0
+  ],
+  "full_success": 100,
+  "full_success_rate": 1.0,
+  "full_success_ci95": [
+    0.9630065017930143,
+    1.0
+  ]
+}

@@ -1,0 +1,180 @@
+{
+  "schema": "peg-sac-demonstrations-1",
+  "task": "Isaac-Peg-Transfer-Dual-PSM-SAC-v0",
+  "phase": "lift",
+  "fingerprint": "8185393283bf784e324892c34514545dbe423a2343ad6da541aa1995edef90ae",
+  "assets": {
+    "data/Isaac/Healthcare/0.5.0/132c82d/Props/PegBlock/block.usd": "d6e3695d6b663702c1cbb5acfc44caace0cc37df95a97fea3e3d5ef86f0aa54d",
+    "data/Isaac/Healthcare/0.5.0/132c82d/Props/Table/table.usd": "d2bb50ca8d5001ba46cb273a779f45a99cfeafd5a3c0ab88ce5e5e7d26cc4e56"
+  },
+  "transitions": 3073,
+  "observation_dim": 101,
+  "episode_seconds": 16.0,
+  "step_dt": 0.02,
+  "episodes": [
+    {
+      "source": "L5",
+      "repetition": 0,
+      "start": 0,
+      "stop": 515,
+      "passed": true,
+      "metrics": {
+        "grasp_psm1": true,
+        "lift_stable": true,
+        "grasp_psm2": false,
+        "handover": false,
+        "placement": false,
+        "full_success": false
+      },
+      "closure_started_in_capture_zone": true,
+      "closure_completed_in_capture_zone": true
+    },
+    {
+      "source": "L5",
+      "repetition": 1,
+      "start": 515,
+      "stop": 1030,
+      "passed": true,
+      "metrics": {
+        "grasp_psm1": true,
+        "lift_stable": true,
+        "grasp_psm2": false,
+        "handover": false,
+        "placement": false,
+        "full_success": false
+      },
+      "closure_started_in_capture_zone": true,
+      "closure_completed_in_capture_zone": true
+    },
+    {
+      "source": "L5",
+      "repetition": 2,
+      "start": 1030,
+      "stop": 1545,
+      "passed": true,
+      "metrics": {
+        "grasp_psm1": true,
+        "lift_stable": true,
+        "grasp_psm2": false,
+        "handover": false,
+        "placement": false,
+        "full_success": false
+      },
+      "closure_started_in_capture_zone": true,
+      "closure_completed_in_capture_zone": true
+    },
+    {
+      "source": "L5",
+      "repetition": 3,
+      "start": 1545,
+      "stop": 2060,
+      "passed": true,
+      "metrics": {
+        "grasp_psm1": true,
+        "lift_stable": true,
+        "grasp_psm2": false,
+        "handover": false,
+        "placement": false,
+        "full_success": false
+      },
+      "closure_started_in_capture_zone": true,
+      "closure_completed_in_capture_zone": true
+    },
+    {
+      "source": "L5",
+      "repetition": 4,
+      "start": 2060,
+      "stop": 2575,
+      "passed": true,
+      "metrics": {
+        "grasp_psm1": true,
+        "lift_stable": true,
+        "grasp_psm2": false,
+        "handover": false,
+        "placement": false,
+        "full_success": false
+      },
+      "closure_started_in_capture_zone": true,
+      "closure_completed_in_capture_zone": true
+    },
+    {
+      "source": "L5",
+      "repetition": 0,
+      "start": 2575,
+      "stop": 2754,
+      "passed": true,
+      "metrics": {
+        "grasp_psm1": true,
+        "lift_stable": true,
+        "grasp_psm2": false,
+        "handover": false,
+        "placement": false,
+        "full_success": false
+      },
+      "policy_prefix_steps": 350,
+      "closure_started_in_capture_zone": true,
+      "closure_completed_in_capture_zone": true
+    },
+    {
+      "source": "L5",
+      "repetition": 1,
+      "start": 2754,
+      "stop": 2911,
+      "passed": true,
+      "metrics": {
+        "grasp_psm1": true,
+        "lift_stable": true,
+        "grasp_psm2": false,
+        "handover": false,
+        "placement": false,
+        "full_success": false
+      },
+      "policy_prefix_steps": 395,
+      "closure_started_in_capture_zone": true,
+      "closure_completed_in_capture_zone": true
+    },
+    {
+      "source": "L5",
+      "repetition": 2,
+      "start": 2911,
+      "stop": 3073,
+      "passed": true,
+      "metrics": {
+        "grasp_psm1": true,
+        "lift_stable": true,
+        "grasp_psm2": false,
+        "handover": false,
+        "placement": false,
+        "full_success": false
+      },
+      "policy_prefix_steps": 457,
+      "closure_started_in_capture_zone": true,
+      "closure_completed_in_capture_zone": true
+    }
+  ],
+  "controller": "capture_probe",
+  "assisted_grasp": true,
+  "physical_grasp_verified": false,
+  "versions": {
+    "isaacsim": "5.1.0.0",
+    "isaaclab": "0.48.0",
+    "isaaclab_rl": "0.4.4",
+    "torch": "2.7.0+cu128",
+    "stable-baselines3": "2.9.0",
+    "gymnasium": "1.2.0"
+  },
+  "controller_sha256": "86ee200f398b329fecdc60a070b02000490d0c93f36b061ec7381717a422434f",
+  "sha256": "e73482940970ef48027c5b85b4e2c11ad31ef9ccfc60aee3e4dbd63df0f0f7c8",
+  "recovery_collection": {
+    "checkpoint": "/home/francesco/Documents/GIGI/i4h-workflows/logs/sac/peg_transfer_dual_psm/2026-10-02_12-12-38_peg_sac_L5_guarded_v4/pretrained.zip",
+    "checkpoint_fingerprint": "8185393283bf784e324892c34514545dbe423a2343ad6da541aa1995edef90ae",
+    "prefix_steps": [
+      350,
+      395,
+      457
+    ],
+    "prefix_transitions_included": false,
+    "appended_archive": "/home/francesco/Documents/GIGI/i4h-workflows/logs/sac/lift_capture_L5_v3.npz",
+    "appended_sha256": "675402be7adf5e0394f2fe92d46ce6b6f549ebf8ac51b47fe896c53f1fa493f2"
+  }
+}

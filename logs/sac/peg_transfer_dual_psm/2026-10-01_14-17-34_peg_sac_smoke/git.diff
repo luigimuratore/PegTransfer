@@ -1,0 +1,1324 @@
+diff --git a/PEG_TRANSFER.md b/PEG_TRANSFER.md
+index 44ee5e9..e90429b 100644
+--- a/PEG_TRANSFER.md
++++ b/PEG_TRANSFER.md
+@@ -1,90 +1,201 @@
+-# Peg transfer con due PSM — guida del progetto
++# Peg transfer con due dVRK PSM — pipeline SAC
+ 
+-> File Markdown pronto da importare in Notion. Repository di lavoro: `/home/francesco/Documents/GIGI/i4h-workflows`.
++Repository: `/home/francesco/Documents/GIGI/i4h-workflows`. Task nuova: **`Isaac-Peg-Transfer-Dual-PSM-SAC-v0`**. PSM1 prende il peg da L5/L6, lo solleva verticalmente e lo tiene stabile; PSM2 lo riceve, PSM1 apre, PSM2 trasporta e rilascia su R2.
+ 
+-## 1. Cosa fa la task
++**Stato al 1 ottobre 2026:** implementazione SAC e test leggeri completati. Non è stato avviato Isaac Sim né addestrata una policy sul task nuovo. Non esistono checkpoint SAC del trasferimento in questo repository. Geometria e metriche sono verificate offline; contatti PhysX, raggiungibilità, apprendimento e successo completo richiedono le prove sotto.
+ 
+-`Isaac-Peg-Transfer-Dual-PSM-v0` crea due PSM, una board con post e un peg. A ogni episodio il peg parte da **L5 o L6**; il target è **R2**. Una policy PPO controlla i due bracci con IK relativo e le due pinze: **14 azioni** (6+1 per PSM). L'episodio dura al massimo **10 s**.
++## Ricostruzione del progetto
+ 
+-La scena è indipendente dalle vecchie task `handover`, `lift` e `reach`. I loro file e checkpoint sono conservati in `../archivio_i4h_2026-09-29/`. I vecchi checkpoint hanno osservazioni/azioni diverse e **non vanno caricati** in questa task.
++- Nessun `AGENTS.md` trovato nella catena delle directory o nel repository.
++- La pipeline preesistente usa PPO/RSL-RL e le fasi `lift`, `handover`, `full`. Le modifiche non committate di `scene_cfg.py`, `env_cfg.py`, `mdp.py`, `agents/rsl_rl_cfg.py` e degli script RSL-RL sono state lette e conservate. Anche media, log, checkpoint e gli altri file locali preesistenti sono conservati. La registrazione SAC viene aggiunta in `__init__.py`; questa guida sostituisce la precedente dopo averla esaminata.
++- La valutazione v6 **riferita nel contesto utente** è 100/100 lift stabili, 0/100 handover e successi completi. Non è stato trovato un JSON autonomo di quella valutazione e non è stata ripetuta. I TensorBoard v6 confermano reward di presa/lift, terminazione della fase lift e reward ricevente/handover nulle: la terminazione `success` in quel training significava solo lift.
++- Checkpoint v6 presenti: `logs/rsl_rl/peg_transfer_dual_psm/2026-09-30_14-37-51_peg_lift_stable_v6/model_798.pt` e `2026-09-30_15-04-50_peg_lift_stable_v6/model_1798.pt`.
++- Esistono anche run PPO handover v7, quindi lo stato reale è successivo alla sola v6. Nel run `2026-10-01_10-53-39_peg_handover_colliders_v7`, checkpoint `model_4797.pt`, le ultime reward ricevente/handover/successo sono zero. Nel run `2026-10-01_12-30-07_peg_handover_colliders_v7`, ultimo checkpoint trovato `model_2700.pt`, i log arrivano all'iterazione 2793: rare reward di presa del ricevente, handover/successo ancora zero. Sono statistiche di training, non tassi di valutazione indipendente.
++- `media/V4.webm` dura 10,892 s. Fotogrammi a 1, 4 e 8 s: PSM1 sposta il peg lateralmente fuori dalla board; PSM2 non riceve il peg. La scrittura assistita della posa è nel codice, non dedotta come contatto fisico dal video.
++- I collider e il vincolo verticale aggiunti nella versione PPO non risultano validati da una prova geometrica indipendente. I run v7 non dimostrano l'assenza di attraversamenti.
++- Un checkpoint PPO `.pt` non è un checkpoint SAC. I nuovi script rifiutano `.pt`, task/schema incompatibili e file senza manifest SAC prima di importare il simulatore.
+ 
+-## 2. Dove cambiare il comportamento
++## Versioni e scelta SAC
+ 
+-I percorsi seguenti partono da `workflows/robotic_surgery/scripts/simulation/`:
++Versioni lette dall'ambiente Conda `PegTransfer`: Isaac Sim **5.1.0.0**, Isaac Lab **0.48.0**, `isaaclab_rl` **0.4.4**, PyTorch **2.7.0+cu128**, Stable-Baselines3 **2.9.0**, Gymnasium **1.2.0**. Sono installati anche RSL-RL 3.0.1 e skrl 2.1.0.
+ 
+-| File | Responsabilità |
++Si usa **SAC nativo di Stable-Baselines3**, già installato, con actor gaussiano limitato da tanh, due critici, target Polyak ed entropia adattiva. Riferimenti: [SAC SB3](https://stable-baselines3.readthedocs.io/en/master/modules/sac.html), [API VecEnv e osservazioni terminali](https://stable-baselines3.readthedocs.io/en/master/guide/vec_envs.html). Le firme e il comportamento sono stati verificati nei sorgenti locali della versione installata, inclusi `SAC.load`, replay, timeout e normalizzazione delle azioni.
++
++Il wrapper SB3 locale di Isaac Lab etichetta come terminale l'osservazione già resettata e imposta ±100 quando lo spazio delle azioni è illimitato. La nuova `PegSACVecEnv` espone **Box(-1, 1, 14)** e riceve l'osservazione autentica e le metriche **prima** del reset asincrono. I timeout consentono bootstrap; successo/fallimento sono terminali senza bootstrap. Non viene usata VecNormalize: le grandezze sono scalate esplicitamente nelle osservazioni e il replay mantiene una rappresentazione fissa.
++
++## Geometria e limiti fisici
++
++Tutte le grandezze del task sono in **metri**, quaternioni **wxyz**, giunti delle pinze in **radianti**. Il reset aggiunge l'origine di ogni ambiente anche sull'asse z.
++
++| Grandezza | Valore della task SAC |
+ | --- | --- |
+-| `exts/robotic.surgery.tasks/robotic/surgery/tasks/surgical/peg_transfer/scene_cfg.py` | Board, post, due PSM nella scena e reset del peg su L5/L6. |
+-| `exts/robotic.surgery.tasks/robotic/surgery/tasks/surgical/peg_transfer/env_cfg.py` | Azioni, osservazioni, pesi dei reward, terminazioni e durata. |
+-| `exts/robotic.surgery.tasks/robotic/surgery/tasks/surgical/peg_transfer/mdp.py` | Formule di osservazioni, reward, target R2 e successo. |
+-| `exts/robotic.surgery.tasks/robotic/surgery/tasks/surgical/peg_transfer/agents/rsl_rl_cfg.py` | Parametri PPO, checkpoint e numero predefinito di iterazioni. |
+-| `scripts/environments/preview_peg_transfer.py` | Apre la scena senza policy. |
+-| `scripts/reinforcement_learning/rsl_rl/train.py` / `play.py` | Training / inference. |
++| Board | centro (0,05; 0; 0,005), dimensioni (0,25; 0,10; 0,01), superficie z=0,010 |
++| Post | raggio 0,002, altezza 0,025, centro z=0,023; fondo 0,0105, sommità 0,0355 |
++| L5 / L6 / R2, asse xy | (0; 0) / (0; -0,030) / (0,042; 0,015) |
++| Basi PSM1 / PSM2 | (-0,07; 0; 0,15) / (0,07; 0; 0,15), orientamento identità |
++| USD peg | `Props/PegBlock/block.usd`, metri/unità=1, asse Z, scala uniforme 0,011 |
++| Bound peg dopo tutte le trasformazioni USD | x=[-0,000926772; 0,015828740], y=[-0,009282851; 0,009283128], z=[-0,014613020; 0,002601549] |
++| Centro foro relativo alla radice | (0,00578638; 0), misurato dalla sezione del mesh a z=-0,006 |
++| Radice a riposo / reset | z=0,02461302 / 0,02501302, gap iniziale 0,4 mm sopra board |
++| Radice per liberare il post | z≥0,05111302, margine verticale 1 mm |
++| Radice su R2 | (0,03621362; 0,015; 0,02461302) |
++
++Il mesh originale è chiuso e ha un foro lobato: raggio interno minimo circa 3,764 mm rispetto al centro misurato nella sezione. Il collider originale è `convexDecomposition`; la sola impostazione non garantisce che il foro venga preservato dal cooking PhysX.
++
++La task SAC disabilita la collisione del mesh visivo e crea **36 prismi convessi** separati: esterno rettangolare con i bound originali, foro poligonale di raggio 3,5 mm e raggio inscritto minimo 3,483 mm. Nessun convex hull attraversa l'intero foro. Massa peg esplicita **5 g**, contact offset dei prismi **0,1 mm**, rest offset zero; board/post conservano contact offset **0,5 mm**. Il proxy esterno e il foro sono approssimazioni conservative del mesh visivo, non una replica esatta dei lobi. CCD viene abilitato sulla scena e sul peg. Solver peg: 16 iterazioni posizione, 4 velocità.
++
++La presa rimane **assistita**, con queste semplificazioni precise:
+ 
+-## 3. Reward e successo
++1. Non richiede contatto simultaneo di entrambe le ganasce, attrito sufficiente, forza di presa o corretto orientamento dello strumento. Richiede apertura media misurata <0,18 rad e tool tip entro **4 mm** dal punto di presa per **8 substep PhysX (40 ms)**. I punti sono offset fissi dalla radice: PSM1=(3; -9; -6) mm, PSM2=(14; 0; -6) mm.
++2. Durante il hold si scrivono direttamente posa e velocità del peg dopo ciascun substep a 200 Hz. Si mantiene orientamento identità e si annullano le velocità: gravità, inerzia, coppie e scivolamento non sono riprodotti durante la presa. Aggancio e aggiornamenti richiedono orientamento già entro circa 0,57° dall'identità; non vengono corretti ribaltamenti arbitrari.
++3. Movimento massimo assistito: 4 mm per substep. Un controllo del percorso con 33 campioni e margine 0,2 mm verifica board e **tutti i 12 post**, inclusa la discesa su R2. Il test usa l'esterno rettangolare e il foro inscritto. Recupera solo piccoli errori di contatto della board entro 0,2 mm, finendo sopra la superficie. Una proposta non valida non viene applicata; il contatore `blocked_moves` la registra.
++4. Prima di liberare il post sorgente, xy del peg resta sull'asse originario; allungare l'aggancio oltre 8 mm lo rompe. Un movimento laterale non può portare il peg attraverso la parete del cilindro tramite l'assistenza.
++5. PSM2 può agganciare solo dopo lift stabile e liberazione del post. Durante il doppio grasp comanda ancora PSM1; PSM2 deve restare vicino e chiuso. All'apertura di PSM1 (>0,38 rad) l'offset di PSM2 viene acquisito dalla posa corrente, senza salto al tool ricevente. All'apertura di PSM2 il peg torna alla sola dinamica PhysX, con velocità iniziale azzerata dall'ultimo hold.
++6. La collisione fisica strumenti/peg, board e post resta attiva, ma l'assistenza non è un vincolo meccanico con reazioni di contatto. Non è una misura della robustezza di presa di un dVRK reale. Le collisioni tra strumenti, le articolazioni e la raggiungibilità richiedono ispezione in Isaac Sim; le self-collision dei PSM restano disabilitate dalla configurazione asset preesistente. L'USD dVRK viene caricato dall'URL preesistente o dalla cache Isaac Sim.
+ 
+-| Fase | Reward (peso) |
++La protezione geometrica riguarda gli aggiornamenti assistiti. Il comportamento del peg rilasciato dipende da PhysX, CCD, cooking dei prismi e solver: l'assenza di tunnelling fisico non è stata certificata offline.
++
++## Azioni, osservazioni, reward e curriculum
++
++**14 azioni:** [Δx, Δy, Δz, Δrx, Δry, Δrz, pinza] PSM1, poi lo stesso blocco PSM2. IK relativo DLS: traslazioni fino a **6 mm** e rotazioni fino a **0,015 rad** per step a 50 Hz. Il frame del comando è quello usato dall'azione IK Isaac Lab, relativo alla base robot. Ogni pinza usa una sola azione continua: -1→±0,07 rad (chiusa), +1→±0,50 rad (aperta), 0→±0,285 rad. Velocità massima delle pinze 0,8 rad/s, effort limit 1 dalla configurazione locale; sono parametri simulativi da verificare visivamente.
++
++Le osservazioni includono posizioni/velocità dei giunti, distanze ai due punti di grasp, posa/quaternione/velocità del peg, target R2, holder, latch del ricevente, offset di aggancio, sorgente, storia ordinata delle tappe, contatori dwell, potenziali massimi raggiunti, tempo e azioni precedenti. Con otto giunti per PSM sono **100 componenti**; la dimensione effettiva viene salvata nel manifest. Architettura identica nelle tre fasi SAC, diversa da quella PPO.
++
++La reward assegna un budget finito di progresso per tappa (2/4/4/2/4/4), bonus una sola volta per le sei tappe (2/4/4/6/10/40), costo **0,02 per step**, penalità sulle azioni e **10** per fallimento. I potenziali usano il massimo già raggiunto e gate di sequenza: stare vicini, oscillare, aprire/riprendere o aspettare non genera reward positiva ripetuta. Esistono bonus intermedi deliberati per rendere apprendibile il curriculum; una reward alta non prova il trasferimento.
++
++| Metrica indipendente dalla reward | Evidenza richiesta |
+ | --- | --- |
+-| PSM1 raggiunge e trattiene il peg | `psm1_reach` (2), `psm1_hold` (2) |
+-| Peg sollevato | `lift` (6) |
+-| PSM2 raggiunge e trattiene il peg sollevato | `psm2_reach` (3), `psm2_hold` (5) |
+-| Peg verso R2 e posizionamento | `transport` (8), `placement` (5) |
+-| Peg stabile e rilasciato sul target | `success` (100) |
+-| Movimenti bruschi | `action_rate` (−0,001) |
++| `grasp_psm1` | aggancio assistito di PSM1 |
++| `lift_stable` | post liberato, holder PSM1, z=55–80 mm, velocità finita della posa <15 mm/s per 15 step = 0,3 s |
++| `grasp_psm2` | ricevente agganciato dopo lift stabile, vicino e chiuso |
++| `handover` | PSM1 aperto; PSM2 mantiene da solo il peg sopra i post per 5 step = 0,1 s |
++| `placement` | storia handover completa, nessun holder/latch, pinza PSM2 aperta, entrambi gli estremi dell'asse del foro contengono l'asse R2 con tolleranza 1,283 mm, altezza entro 0,7 mm dal riposo, velocità lineare e finita <10 mm/s e angolare <0,1 rad/s, per 25 step = 0,5 s |
++| `full_success` | posa ancora valida e tool tip di entrambi i PSM oltre 25 mm dalla radice peg |
++
++Fallimento: peg sotto il piano di riposo di oltre 3 mm, sopra z=0,15, oppure fuori dall'area x=±0,18/y=±0,09. Reset: scena e robot al default, oggetto random su L5/L6, velocità zero, tutti i latch/contatori/eventi/potenziali azzerati solo per gli ambienti resettati. Il successo della fase termina subito l'episodio: lift stabile per `lift` (8 s), handover per `handover` (14 s), successo completo per `full` (20 s). La valutazione usa **full come default**, anche per checkpoint delle prime due fasi.
+ 
+-Il successo richiede peg vicino a R2, velocità bassa, pinza PSM2 aperta e punte dei due PSM lontane dal peg. **La condizione non dimostra che PSM2 abbia davvero effettuato il passaggio:** il reward lo incentiva, ma la manovra va verificata visivamente.
++SAC: LR 3e-4, gamma **0,999**, tau 0,005, due critici, reti [256,256], batch 256, replay uniforme **500.000 transizioni totali**, warm-up 10.000 transizioni, 4 aggiornamenti per step vettoriale, temperatura `auto_0.1`, target entropy -14. Il replay è NumPy in RAM e i minibatch vanno alla GPU; 16 ambienti non moltiplicano per 16 la capacità. Con 100 osservazioni il buffer occupa circa **430 MB** più overhead; salvataggio finale include un file replay di dimensioni simili. Le sincronizzazioni CPU/GPU limitano la scalabilità rispetto a un replay GPU.
+ 
+-Per cambiare l'importanza di un comportamento, modifica il suo `weight` in `env_cfg.py`. Per cambiare la misura, modifica la funzione in `mdp.py`. Dopo ogni modifica: prova breve, nuovo `--run_name`, confronto dei reward e del successo in simulazione. Se cambi osservazioni o azioni, addestra una policy nuova.
++Il curriculum è manuale e verificabile: ogni fase riparte dalla sorgente reale, senza reset che fingono lift/handover già avvenuti. `--initialize_from` carica solo actor/critici SAC, crea nuovi optimizer/temperatura e svuota il replay perché cambiano reward e terminali; raccoglie subito con l'actor precedente (`learning_starts=0`). `--resume` conserva optimizer/temperatura e replay della **stessa fase**, con lo stesso numero di ambienti. I file ZIP intermedi non hanno replay; usare `final.zip` per resume. Riprendere dopo interruzione non riproduce lo stato vivo del simulatore né esattamente i generatori casuali.
+ 
+-## 4. Preparare il terminale
++## File della nuova pipeline
+ 
+-Requisiti del progetto: Python 3.11, Isaac Sim 5.1.0, Isaac Lab `release/2.3.0` e RSL-RL. Su questa macchina l'ambiente Conda si chiama `PegTransfer`. L'installazione iniziale è descritta nello script `tools/env_setup_robot_surgery.sh`: eseguirlo **una sola volta** in un ambiente Conda nuovo; non rilanciarlo se `third_party/` esiste senza prima verificare lo stato dell'installazione.
++Prefisso task: `workflows/robotic_surgery/scripts/simulation/exts/robotic.surgery.tasks/robotic/surgery/tasks/surgical/peg_transfer/`.
+ 
+-Per ogni nuova sessione:
++| File | Funzione |
++| --- | --- |
++| `sac_geometry.py`, `sac_assets.py` | geometria in metri, percorso protetto, collider composto |
++| `sac_actions.py` | comando continuo delle due ganasce con una azione |
++| `sac_mdp.py` | presa assistita, osservazioni, reward, tappe e reset |
++| `sac_env.py`, `sac_env_cfg.py` | loop PhysX, snapshot prima del reset, configurazione SAC |
++| `agents/sac_cfg.py`, `__init__.py` | iperparametri e nuova registrazione Gym |
++| `scripts/reinforcement_learning/sac/{train,play,evaluate}.py` | training, inference grafica, metriche quantitative |
++| `scripts/reinforcement_learning/sac/{common,vec_env}.py` | CLI, manifest, checkpoint, adattatore SB3 |
++| `scripts/reinforcement_learning/sac/{audit_geometry,test_lightweight,inspect_scene}.py` | audit offline, test CPU, prova scena da eseguire in Isaac Sim |
++
++I checkpoint nuovi vanno in `logs/sac/peg_transfer_dual_psm/<timestamp>_<run_name>/`. `final.zip` è accompagnato da `final.json` e `final_replay.pkl`. Ci sono manifest, configurazione ambiente, versioni, hash delle sorgenti e degli USD locali, copia delle sorgenti incluse quelle non committate, Git diff/status, TensorBoard e `episodes.jsonl`. Non modificare codice o asset tra training e valutazione: il controllo di provenienza rifiuta hash diversi. Conserva la directory completa. Il manifest dichiara sempre che serve una valutazione indipendente.
++
++## Comandi da eseguire nell'ordine
++
++Questi comandi sono per il tuo terminale Bash; **nessuna simulazione o training sul task è stata eseguita durante questa implementazione**.
++
++### 1. Ambiente e verifiche offline
+ 
+ ```bash
+ cd /home/francesco/Documents/GIGI/i4h-workflows
+ source "$HOME/miniconda3/etc/profile.d/conda.sh"
+ conda activate PegTransfer
+-export PYTHONPATH="$PWD/workflows/robotic_surgery/scripts${PYTHONPATH:+:$PYTHONPATH}"
++export PYTHONPATH="$PWD/workflows/robotic_surgery/scripts:$PWD/workflows/robotic_surgery/scripts/simulation/exts/robotic.surgery.tasks:$PWD/workflows/robotic_surgery/scripts/simulation/exts/robotic.surgery.assets${PYTHONPATH:+:$PYTHONPATH}"
+ export OMNI_KIT_ACCEPT_EULA=Y
+ export ACCEPT_EULA=Y
++PEG_SAC_SCRIPTS=workflows/robotic_surgery/scripts/simulation/scripts/reinforcement_learning/sac
++
++python "$PEG_SAC_SCRIPTS/audit_geometry.py"
++python "$PEG_SAC_SCRIPTS/test_lightweight.py"
+ ```
+ 
+-## 5. Scena, training e inference
++Le verifiche eseguite qui: audit USD offline (bound/unità/sezione/foro), 11 test CPU passando, breve aggiornamento SAC su ambiente fittizio, replay con osservazioni pre-reset e maschere timeout, salvataggio/ricaricamento SAC e replay, rifiuto PPO, authoring API USD/PhysxSchema in stage in memoria, compilazione Python, help delle quattro CLI e controllo whitespace Git. La prova su ambiente fittizio verifica il software, non il robot o il trasferimento. Gli script `--help` non importano Kit.
+ 
+-**Vedere la scena senza checkpoint:**
++### 2. Prima prova Isaac Sim, senza policy
+ 
+ ```bash
+-python workflows/robotic_surgery/scripts/simulation/scripts/environments/preview_peg_transfer.py --num_envs 1
++python "$PEG_SAC_SCRIPTS/inspect_scene.py" --num_envs 1 \
++  --output logs/sac/scene_check.json
+ ```
+ 
+-**Prova breve della task RL:**
++Lo script prova L5/L6/R2 rilasciati e una caduta fuori centro sul bordo del foro R2; nessun caso deve generare successo senza storia. Controlla JSON, collider nel viewport e contatti: il peg deve posarsi con il post dentro il foro e restare sulla board; la prova fuori centro deve mostrare contatto con la sommità, non attraversamento. Un ribaltamento successivo nella prova fuori centro è fisicamente possibile. Verifica anche pose iniziali dei robot, assenza di compenetrazione tra strumenti e board e raggiungibilità dei punti di presa: il probe a pinze aperte non certifica il movimento degli strumenti. Se la prova fallisce, conserva output e video e correggiamo prima del training.
++
++### 3. Smoke test SAC breve, poi training lift
+ 
+ ```bash
+-python workflows/robotic_surgery/scripts/simulation/scripts/reinforcement_learning/rsl_rl/train.py \
+-  --task Isaac-Peg-Transfer-Dual-PSM-v0 --headless --num_envs 4 --max_iterations 1
++python "$PEG_SAC_SCRIPTS/train.py" --phase lift --headless --num_envs 16 \
++  --steps 1024 --learning_starts 256 --buffer_size 4096 \
++  --run_name peg_sac_smoke --seed 42
++
++python "$PEG_SAC_SCRIPTS/train.py" --phase lift --headless --num_envs 16 \
++  --steps 500000 --run_name peg_sac_lift --seed 42
++
++peg_lift_runs=(logs/sac/peg_transfer_dual_psm/*_peg_sac_lift)
++PEG_LIFT_CKPT="${peg_lift_runs[-1]}/final.zip"
++python "$PEG_SAC_SCRIPTS/evaluate.py" --checkpoint "$PEG_LIFT_CKPT" \
++  --phase full --headless --episodes 100 --num_envs 16 --seed 123 \
++  --output logs/sac/eval_lift_full.json
++python "$PEG_SAC_SCRIPTS/play.py" --checkpoint "$PEG_LIFT_CKPT" --num_envs 1
+ ```
+ 
+-**Training:**
++I budget di training sono punti di partenza, non una previsione di convergenza. **Gate prima di handover:** `complete=true`, almeno 100 episodi, `lift_stable_rate≥0,80`, risultati L5/L6 e video coerenti. Gli altri successi possono ancora essere zero. Per riprendere la stessa fase:
+ 
+ ```bash
+-python workflows/robotic_surgery/scripts/simulation/scripts/reinforcement_learning/rsl_rl/train.py \
+-  --task Isaac-Peg-Transfer-Dual-PSM-v0 --headless \
+-  --num_envs 64 --max_iterations 3000 --run_name peg_transfer_v1
++python "$PEG_SAC_SCRIPTS/train.py" --phase lift --resume "$PEG_LIFT_CKPT" \
++  --headless --num_envs 16 --steps 500000 --run_name peg_sac_lift --seed 42
+ ```
+ 
+-I checkpoint vengono salvati in `logs/rsl_rl/peg_transfer_dual_psm/<run>/`. Per vedere i progressi: `python -m tensorboard.main --logdir logs/rsl_rl/peg_transfer_dual_psm`.
++Dopo resume, riesegui le due righe che selezionano il checkpoint e la valutazione. Le opzioni buffer/warm-up/gradient del resume sono quelle del checkpoint salvato.
+ 
+-**Inference:** trova un checkpoint, poi sostituisci `NOME_RUN` e `model_XXXX.pt` con i nomi effettivi.
++### 4. Handover, soltanto dopo il gate lift
+ 
+ ```bash
+-find logs/rsl_rl/peg_transfer_dual_psm -name 'model_*.pt'
+-python workflows/robotic_surgery/scripts/simulation/scripts/reinforcement_learning/rsl_rl/play.py \
+-  --task Isaac-Peg-Transfer-Dual-PSM-Play-v0 --num_envs 1 \
+-  --load_run NOME_RUN --checkpoint model_XXXX.pt
++python "$PEG_SAC_SCRIPTS/train.py" --phase handover --initialize_from "$PEG_LIFT_CKPT" \
++  --headless --num_envs 16 --steps 1000000 --run_name peg_sac_handover --seed 42
++
++peg_handover_runs=(logs/sac/peg_transfer_dual_psm/*_peg_sac_handover)
++PEG_HANDOVER_CKPT="${peg_handover_runs[-1]}/final.zip"
++python "$PEG_SAC_SCRIPTS/evaluate.py" --checkpoint "$PEG_HANDOVER_CKPT" \
++  --phase full --headless --episodes 100 --num_envs 16 --seed 123 \
++  --output logs/sac/eval_handover_full.json
++python "$PEG_SAC_SCRIPTS/play.py" --checkpoint "$PEG_HANDOVER_CKPT" --num_envs 1
+ ```
+ 
+-## 6. Stato della verifica
++**Gate prima di full:** almeno 100 episodi completi, `handover_rate≥0,60`, mantenimento del lift e nessun passaggio ottenuto attraversando i post o con il ricevente lontano. Non usare la sola reward o il `success` della fase per decidere.
++
++### 5. Trasferimento completo, valutazione e video
++
++```bash
++python "$PEG_SAC_SCRIPTS/train.py" --phase full --initialize_from "$PEG_HANDOVER_CKPT" \
++  --headless --num_envs 16 --steps 2000000 --run_name peg_sac_full --seed 42
++
++peg_full_runs=(logs/sac/peg_transfer_dual_psm/*_peg_sac_full)
++PEG_FULL_CKPT="${peg_full_runs[-1]}/final.zip"
++python "$PEG_SAC_SCRIPTS/evaluate.py" --checkpoint "$PEG_FULL_CKPT" \
++  --headless --episodes 100 --num_envs 16 --seed 123 \
++  --output logs/sac/eval_full.json
++python "$PEG_SAC_SCRIPTS/evaluate.py" --checkpoint "$PEG_FULL_CKPT" \
++  --headless --source L5 --episodes 100 --num_envs 16 --seed 456 \
++  --output logs/sac/eval_full_L5.json
++python "$PEG_SAC_SCRIPTS/evaluate.py" --checkpoint "$PEG_FULL_CKPT" \
++  --headless --source L6 --episodes 100 --num_envs 16 --seed 789 \
++  --output logs/sac/eval_full_L6.json
++
++python "$PEG_SAC_SCRIPTS/play.py" --checkpoint "$PEG_FULL_CKPT" --num_envs 1
++python "$PEG_SAC_SCRIPTS/play.py" --checkpoint "$PEG_FULL_CKPT" --num_envs 1 \
++  --headless --video --video_length 1000
++python -m tensorboard.main --logdir logs/sac/peg_transfer_dual_psm
++```
++
++La valutazione produce JSON con conteggi, tassi e intervalli Wilson 95% per tutte le sei tappe, timeout, fallimenti, movimenti bloccati, seed, fase addestrata/valutata e risultati per sorgente; un file `.episodes.jsonl` contiene ogni episodio. Le metriche provengono dallo stato pre-reset e non dai pesi della reward. Un'interruzione o la chiusura della finestra dà `complete=false`. `play.py` usa sempre la sequenza full deterministica. I video vanno nella directory del checkpoint, `videos/sac/`.
++
++## Risultati da inviare per la prima iterazione
++
++Invia `scene_check.json`, eventuali errori del probe, un video con foro/post e strumenti visibili; poi il percorso del checkpoint SAC lift, `final.json`, `manifest.json`, `env.yaml`, `episodes.jsonl`, `eval_lift_full.json` e il suo file episodi, più il video deterministico da L5 e L6. Aggiungi TensorBoard (reward, actor/critic loss, entropia, tassi delle tappe) e il comando effettivamente eseguito. Per un errore includi lo stack trace completo. Non serve trasferire inizialmente l'intero replay da centinaia di MB.
+ 
+-La struttura, la sintassi Python e i percorsi degli asset sono stati controllati. **L'avvio in Isaac Sim e la fisica del peg transfer richiedono ancora una prova reale.** Prima di un training lungo, controlla che presa, target R2, collisioni e condizione di successo corrispondano alla scena visualizzata.
++Nessun tasso SAC reale è disponibile al momento. Un lift riuscito, una reward crescente o un successo del curriculum non autorizzano a dichiarare riuscito il trasferimento completo.
+diff --git a/workflows/robotic_surgery/scripts/simulation/exts/robotic.surgery.tasks/robotic/surgery/tasks/surgical/peg_transfer/__init__.py b/workflows/robotic_surgery/scripts/simulation/exts/robotic.surgery.tasks/robotic/surgery/tasks/surgical/peg_transfer/__init__.py
+index 5ccd45b..65f8cdb 100644
+--- a/workflows/robotic_surgery/scripts/simulation/exts/robotic.surgery.tasks/robotic/surgery/tasks/surgical/peg_transfer/__init__.py
++++ b/workflows/robotic_surgery/scripts/simulation/exts/robotic.surgery.tasks/robotic/surgery/tasks/surgical/peg_transfer/__init__.py
+@@ -16,6 +16,15 @@ gym.register(
+     disable_env_checker=True,
+ )
+ 
++# SAC uses a distinct task, observation schema, continuous jaws and guarded geometry.
++# Import its configuration lazily: existing PPO entry points retain their settings.
++gym.register(
++    id="Isaac-Peg-Transfer-Dual-PSM-SAC-v0",
++    entry_point=__name__ + ".sac_env:PegTransferSACEnv",
++    kwargs={"env_cfg_entry_point": __name__ + ".sac_env_cfg:PegTransferSACEnvCfg"},
++    disable_env_checker=True,
++)
++
+ gym.register(
+     id="Isaac-Peg-Transfer-Dual-PSM-Play-v0",
+     entry_point="isaaclab.envs:ManagerBasedRLEnv",
+diff --git a/workflows/robotic_surgery/scripts/simulation/exts/robotic.surgery.tasks/robotic/surgery/tasks/surgical/peg_transfer/agents/rsl_rl_cfg.py b/workflows/robotic_surgery/scripts/simulation/exts/robotic.surgery.tasks/robotic/surgery/tasks/surgical/peg_transfer/agents/rsl_rl_cfg.py
+index 54e5a9a..d22f11e 100644
+--- a/workflows/robotic_surgery/scripts/simulation/exts/robotic.surgery.tasks/robotic/surgery/tasks/surgical/peg_transfer/agents/rsl_rl_cfg.py
++++ b/workflows/robotic_surgery/scripts/simulation/exts/robotic.surgery.tasks/robotic/surgery/tasks/surgical/peg_transfer/agents/rsl_rl_cfg.py
+@@ -8,30 +8,31 @@ from isaaclab_rl.rsl_rl import RslRlOnPolicyRunnerCfg, RslRlPpoActorCriticCfg, R
+ 
+ @configclass
+ class PegTransferPPORunnerCfg(RslRlOnPolicyRunnerCfg):
+-    num_steps_per_env = 24
++    num_steps_per_env = 48
+     max_iterations = 3000
+-    save_interval = 50
++    save_interval = 100
+     experiment_name = "peg_transfer_dual_psm"
++    clip_actions = 1.0
+ 
+     policy = RslRlPpoActorCriticCfg(
+-        init_noise_std=1.0,
++        init_noise_std=0.6,
+         actor_hidden_dims=[256, 128, 64],
+         critic_hidden_dims=[256, 128, 64],
+         activation="elu",
+-        actor_obs_normalization=False,
+-        critic_obs_normalization=False,
++        actor_obs_normalization=True,
++        critic_obs_normalization=True,
+     )
+ 
+     algorithm = RslRlPpoAlgorithmCfg(
+         value_loss_coef=1.0,
+         use_clipped_value_loss=True,
+         clip_param=0.2,
+-        entropy_coef=0.006,
++        entropy_coef=0.0015,
+         num_learning_epochs=5,
+         num_mini_batches=4,
+         learning_rate=1.0e-4,
+         schedule="adaptive",
+-        gamma=0.98,
++        gamma=0.995,
+         lam=0.95,
+         desired_kl=0.01,
+         max_grad_norm=1.0,
+diff --git a/workflows/robotic_surgery/scripts/simulation/exts/robotic.surgery.tasks/robotic/surgery/tasks/surgical/peg_transfer/env_cfg.py b/workflows/robotic_surgery/scripts/simulation/exts/robotic.surgery.tasks/robotic/surgery/tasks/surgical/peg_transfer/env_cfg.py
+index 3f55410..e1990ef 100644
+--- a/workflows/robotic_surgery/scripts/simulation/exts/robotic.surgery.tasks/robotic/surgery/tasks/surgical/peg_transfer/env_cfg.py
++++ b/workflows/robotic_surgery/scripts/simulation/exts/robotic.surgery.tasks/robotic/surgery/tasks/surgical/peg_transfer/env_cfg.py
+@@ -20,14 +20,14 @@ from isaaclab.managers import SceneEntityCfg
+ from isaaclab.managers import TerminationTermCfg as DoneTerm
+ from isaaclab.markers.config import FRAME_MARKER_CFG
+ from isaaclab.sensors import FrameTransformerCfg
+-from isaaclab.sim.schemas.schemas_cfg import RigidBodyPropertiesCfg
++from isaaclab.sim.schemas.schemas_cfg import CollisionPropertiesCfg, RigidBodyPropertiesCfg
+ from isaaclab.sim.spawners.from_files.from_files_cfg import UsdFileCfg
+ from isaaclab.utils import configclass
+ from robotic.surgery.assets.psm import PSM_HIGH_PD_CFG
+ from simulation.utils.assets import BLOCK_USD
+ 
+ from . import mdp
+-from .scene_cfg import PegTransferSceneCfg, reset_peg_random_l5_l6
++from .scene_cfg import PEG_OFFSET_X, PEG_OFFSET_Y, PEG_Z, PegTransferSceneCfg, reset_peg_random_l5_l6
+ 
+ _OBJECT = SceneEntityCfg("object")
+ _EE_1 = SceneEntityCfg("ee_1_frame")
+@@ -68,9 +68,11 @@ class ObservationsCfg:
+             func=mdp.object_position_in_robot_root_frame,
+             params={"robot_cfg": SceneEntityCfg("robot_2"), "object_cfg": _OBJECT},
+         )
+-        object_to_target = ObsTerm(func=mdp.object_to_target, params={"object_cfg": _OBJECT})
+-        ee_1_to_object = ObsTerm(func=mdp.ee_to_object, params={"ee_frame_cfg": _EE_1, "object_cfg": _OBJECT})
+-        ee_2_to_object = ObsTerm(func=mdp.ee_to_object, params={"ee_frame_cfg": _EE_2, "object_cfg": _OBJECT})
++        object_to_target = ObsTerm(func=mdp.object_to_target)
++        ee_1_to_grasp = ObsTerm(func=mdp.ee_to_psm1_grasp)
++        ee_2_to_object = ObsTerm(func=mdp.ee_to_object, params={"ee_frame_cfg": _EE_2})
++        object_velocity = ObsTerm(func=mdp.object_velocity, params={"object_cfg": _OBJECT})
++        transfer_phase = ObsTerm(func=mdp.phase_observation)
+         actions = ObsTerm(func=base_mdp.last_action)
+ 
+         def __post_init__(self):
+@@ -93,51 +95,36 @@ class EventCfg:
+         mode="reset",
+         params={"object_cfg": _OBJECT},
+     )
++    reset_transfer_state = EventTerm(func=mdp.reset_transfer_state, mode="reset")
++    assisted_grasp = EventTerm(
++        func=mdp.update_assisted_grasp, mode="interval",
++        interval_range_s=(0.02, 0.02), is_global_time=True,
++    )
+ 
+ 
+ @configclass
+ class PegTransferRewardsCfg:
+-    # Reach and lift from the source post with PSM1.
+-    psm1_reach = RewTerm(
+-        func=mdp.reached_peg,
+-        params={"ee_frame_cfg": _EE_1, "object_cfg": _OBJECT},
+-        weight=2.0,
+-    )
+-    psm1_hold = RewTerm(
+-        func=mdp.holding_peg,
+-        params={"ee_frame_cfg": _EE_1, "robot_cfg": _PSM_1_GRIPPER, "object_cfg": _OBJECT},
+-        weight=2.0,
+-    )
+-    lift = RewTerm(func=mdp.peg_lifted, params={"object_cfg": _OBJECT}, weight=6.0)
+-
+-    # Bring PSM2 to the lifted peg and transfer it to the right post.
+-    psm2_reach = RewTerm(
+-        func=mdp.receiver_reach,
+-        params={"ee_frame_cfg": _EE_2, "object_cfg": _OBJECT},
+-        weight=3.0,
+-    )
+-    psm2_hold = RewTerm(
+-        func=mdp.receiver_holds,
+-        params={"ee_frame_cfg": _EE_2, "robot_cfg": _PSM_2_GRIPPER, "object_cfg": _OBJECT},
+-        weight=5.0,
+-    )
+-    transport = RewTerm(
+-        func=mdp.transport_to_target,
+-        params={"ee_frame_cfg": _EE_2, "robot_cfg": _PSM_2_GRIPPER, "object_cfg": _OBJECT},
+-        weight=8.0,
+-    )
+-    placement = RewTerm(func=mdp.place_at_target, params={"object_cfg": _OBJECT}, weight=5.0)
+-    success = RewTerm(
+-        func=mdp.peg_transfer_success,
+-        params={
+-            "object_cfg": _OBJECT,
+-            "ee_1_cfg": _EE_1,
+-            "ee_2_cfg": _EE_2,
+-            "robot_2_cfg": _PSM_2_GRIPPER,
+-        },
+-        weight=100.0,
+-    )
+-    action_rate = RewTerm(func=base_mdp.action_rate_l2, weight=-1e-3)
++    # Progress terms pay only for reducing distance, not for waiting close to the block.
++    psm1_reach = RewTerm(func=mdp.ProgressReward, params={"kind": "psm1_reach"}, weight=3.0)
++    psm1_precision = RewTerm(func=mdp.ProgressReward, params={"kind": "psm1_precision"}, weight=4.0)
++    psm1_open_approach = RewTerm(func=mdp.ProgressReward, params={"kind": "psm1_open_approach"}, weight=1.5)
++    psm1_grasp = RewTerm(func=mdp.psm1_grasp_reward, weight=0.10)
++    first_grasp_event = RewTerm(func=mdp.first_grasp_milestone, weight=125.0)
++    psm1_lift = RewTerm(func=mdp.ProgressReward, params={"kind": "psm1_lift"}, weight=6.0)
++    lift_event = RewTerm(func=mdp.lift_milestone, weight=300.0)
++    psm1_stable_hold = RewTerm(func=mdp.stable_hold_reward, weight=10.0)
++    stable_lift_event = RewTerm(func=mdp.stable_lift_milestone, weight=125.0)
++    handover_position = RewTerm(func=mdp.ProgressReward, params={"kind": "handover_position"}, weight=5.0)
++    psm2_ready = RewTerm(func=mdp.psm2_ready_reward, weight=0.05)
++    psm2_reach = RewTerm(func=mdp.ProgressReward, params={"kind": "psm2_reach"}, weight=4.0)
++    psm2_grasp = RewTerm(func=mdp.psm2_grasp_reward, weight=0.10)
++    receiver_grasp_event = RewTerm(func=mdp.receiver_grasp_milestone, weight=300.0)
++    handover_event = RewTerm(func=mdp.handover_milestone, weight=500.0)
++    transport = RewTerm(func=mdp.ProgressReward, params={"kind": "transport"}, weight=6.0)
++    placement = RewTerm(func=mdp.ProgressReward, params={"kind": "placement"}, weight=8.0)
++    success = RewTerm(func=mdp.peg_transfer_success, weight=1500.0)
++    elapsed_time = RewTerm(func=mdp.elapsed_time, weight=-0.30)
++    action_rate = RewTerm(func=base_mdp.action_rate_l2, weight=-5e-4)
+ 
+ 
+ @configclass
+@@ -147,15 +134,7 @@ class PegTransferTerminationsCfg:
+         func=base_mdp.root_height_below_minimum,
+         params={"minimum_height": -0.02, "asset_cfg": _OBJECT},
+     )
+-    success = DoneTerm(
+-        func=mdp.peg_transfer_success,
+-        params={
+-            "object_cfg": _OBJECT,
+-            "ee_1_cfg": _EE_1,
+-            "ee_2_cfg": _EE_2,
+-            "robot_2_cfg": _PSM_2_GRIPPER,
+-        },
+-    )
++    success = DoneTerm(func=mdp.peg_transfer_success)
+ 
+ 
+ @configclass
+@@ -180,7 +159,7 @@ class PegTransferEnvCfg(ManagerBasedRLEnvCfg):
+         self.decimation = 4
+         self.sim.dt = 1.0 / 200.0
+         self.sim.render_interval = self.decimation
+-        self.episode_length_s = 10.0
++        self.episode_length_s = 15.0
+         self.viewer.eye = (0.15, 0.5, 0.25)
+         self.viewer.lookat = (0.04, 0.0, 0.04)
+ 
+@@ -188,6 +167,12 @@ class PegTransferEnvCfg(ManagerBasedRLEnvCfg):
+             robot = PSM_HIGH_PD_CFG.replace(prim_path=f"{{ENV_REGEX_NS}}/Robot_{index}")
+             robot.init_state.pos = position
+             robot.init_state.rot = (1.0, 0.0, 0.0, 0.0)
++            # Start open: the upstream PSM defaults to ±0.09 rad, almost closed.
++            robot.init_state.joint_pos["psm_tool_gripper1_joint"] = -0.5
++            robot.init_state.joint_pos["psm_tool_gripper2_joint"] = 0.5
++            # Open/close remains a real gripper action; assisted grasp handles attachment.
++            robot.actuators["psm_tool"].effort_limit = None
++            robot.actuators["psm_tool"].effort_limit_sim = 1.0
+             setattr(self.scene, f"robot_{index}", robot)
+             setattr(self.actions, f"body_{index}_joint_pos", _arm_action(f"robot_{index}"))
+             setattr(self.actions, f"finger_{index}_joint_pos", _finger_action(f"robot_{index}"))
+@@ -195,16 +180,19 @@ class PegTransferEnvCfg(ManagerBasedRLEnvCfg):
+         self.scene.object = RigidObjectCfg(
+             prim_path="{ENV_REGEX_NS}/Object",
+             init_state=RigidObjectCfg.InitialStateCfg(
+-                pos=(-0.005, -0.0015, 0.020), rot=(1.0, 0.0, 0.0, 0.0)
++                pos=(PEG_OFFSET_X, PEG_OFFSET_Y, PEG_Z), rot=(1.0, 0.0, 0.0, 0.0)
+             ),
+             spawn=UsdFileCfg(
+                 usd_path=BLOCK_USD,
+                 scale=(0.011, 0.011, 0.011),
++                collision_props=CollisionPropertiesCfg(
++                    collision_enabled=True, contact_offset=0.0005, rest_offset=0.0
++                ),
+                 rigid_props=RigidBodyPropertiesCfg(
+-                    solver_position_iteration_count=16,
+-                    solver_velocity_iteration_count=16,
+-                    max_angular_velocity=0.1,
+-                    max_linear_velocity=0.1,
++                    solver_position_iteration_count=8,
++                    solver_velocity_iteration_count=1,
++                    max_angular_velocity=3.0,
++                    max_linear_velocity=0.5,
+                     max_depenetration_velocity=1.0,
+                     disable_gravity=False,
+                 ),
+@@ -243,7 +231,7 @@ def _arm_action(robot_name: str) -> DifferentialInverseKinematicsActionCfg:
+         joint_names=_ARM_JOINTS,
+         body_name="psm_tool_tip_link",
+         controller=DifferentialIKControllerCfg(command_type="pose", use_relative_mode=True, ik_method="dls"),
+-        scale=0.05,
++        scale=(0.006, 0.006, 0.006, 0.015, 0.015, 0.015),
+     )
+ 
+ 
+diff --git a/workflows/robotic_surgery/scripts/simulation/exts/robotic.surgery.tasks/robotic/surgery/tasks/surgical/peg_transfer/mdp.py b/workflows/robotic_surgery/scripts/simulation/exts/robotic.surgery.tasks/robotic/surgery/tasks/surgical/peg_transfer/mdp.py
+index 0a88608..954632e 100644
+--- a/workflows/robotic_surgery/scripts/simulation/exts/robotic.surgery.tasks/robotic/surgery/tasks/surgical/peg_transfer/mdp.py
++++ b/workflows/robotic_surgery/scripts/simulation/exts/robotic.surgery.tasks/robotic/surgery/tasks/surgical/peg_transfer/mdp.py
+@@ -1,26 +1,35 @@
+ # SPDX-License-Identifier: BSD-3-Clause
+ 
+-"""Observations, rewards and success conditions for dual-PSM peg transfer."""
++"""Assisted-grasp observations, staged rewards and verified peg transfer."""
+ 
+ from __future__ import annotations
+ 
+ import torch
+ from isaaclab.managers import SceneEntityCfg
++from isaaclab.managers.manager_base import ManagerTermBase
+ from isaaclab.utils.math import subtract_frame_transforms
+ 
+-from .scene_cfg import PEG_OFFSET_X, PEG_OFFSET_Y, PEG_Z
++from .scene_cfg import PEG_OFFSET_X, PEG_OFFSET_Y, PEG_Z, POST_CLEARANCE_ROOT_Z
+ 
+-# The existing board uses L5/L6 as starting posts and R2 as the first target.
+-# Coordinates are relative to each environment origin, in metres.
++# Root poses for the source and destination are defined by the same offset from a post.
+ TARGET_POST_LOCAL = (0.042 + PEG_OFFSET_X, 0.015 + PEG_OFFSET_Y, PEG_Z)
++HANDOVER_LOCAL = (0.020, -0.0075, 0.065)
++RECEIVER_READY_LOCAL = (0.040, -0.0075, 0.065)
++ABOVE_TARGET_LOCAL = (TARGET_POST_LOCAL[0], TARGET_POST_LOCAL[1], 0.060)
++REST_HEIGHT = 0.025  # USD block root height when resting on the board.
++LIFT_HEIGHT = 0.055
++# Offset from the USD root to the reachable side of the block.
++PSM1_GRASP_OFFSET = (0.003, -0.009, -0.006)
++GRASP_RADIUS = 0.012
++GRASP_DWELL_STEPS = 2
++STABLE_LIFT_STEPS = 15  # 0.3 s at the 50 Hz policy rate.
+ 
+ 
+-def _target_w(env) -> torch.Tensor:
+-    origins = env.scene.env_origins
+-    return origins + origins.new_tensor(TARGET_POST_LOCAL)
++def _world_point(env, point: tuple[float, float, float]) -> torch.Tensor:
++    return env.scene.env_origins + env.scene.env_origins.new_tensor(point)
+ 
+ 
+-def _object_w(env, object_cfg: SceneEntityCfg) -> torch.Tensor:
++def _object_w(env, object_cfg: SceneEntityCfg = SceneEntityCfg("object")) -> torch.Tensor:
+     return env.scene[object_cfg.name].data.root_pos_w[:, :3]
+ 
+ 
+@@ -28,121 +37,390 @@ def _ee_w(env, ee_frame_cfg: SceneEntityCfg) -> torch.Tensor:
+     return env.scene[ee_frame_cfg.name].data.target_pos_w[:, 0, :]
+ 
+ 
+-def _closed_score(env, robot_cfg: SceneEntityCfg) -> torch.Tensor:
+-    # The PSM gripper commands are approximately +/-0.07 closed, +/-0.5 open.
+-    q = env.scene[robot_cfg.name].data.joint_pos[:, robot_cfg.joint_ids].abs().mean(dim=1)
+-    return ((0.35 - q) / 0.23).clamp(0.0, 1.0)
++def _distance(a: torch.Tensor, b: torch.Tensor) -> torch.Tensor:
++    return torch.linalg.vector_norm(a - b, dim=1)
+ 
+ 
+-def object_to_target(env, object_cfg: SceneEntityCfg = SceneEntityCfg("object")) -> torch.Tensor:
+-    """Target position relative to the moving peg; independent of env origin."""
+-    return _target_w(env) - _object_w(env, object_cfg)
++def _proximity(distance: torch.Tensor, std: float) -> torch.Tensor:
++    return torch.exp(-distance / std)
+ 
+ 
+-def ee_to_object(
+-    env,
+-    ee_frame_cfg: SceneEntityCfg,
+-    object_cfg: SceneEntityCfg = SceneEntityCfg("object"),
+-) -> torch.Tensor:
+-    return _object_w(env, object_cfg) - _ee_w(env, ee_frame_cfg)
++def _gripper_joint_position(env, arm: int) -> torch.Tensor:
++    robot = env.scene[f"robot_{arm}"]
++    if not hasattr(env, "_peg_gripper_joint_ids"):
++        env._peg_gripper_joint_ids = {
++            index: env.scene[f"robot_{index}"].find_joints("psm_tool_gripper.*_joint")[0]
++            for index in (1, 2)
++        }
++    return robot.data.joint_pos[:, env._peg_gripper_joint_ids[arm]].abs().mean(dim=1)
++
++
++def _closed_score(env, arm: int) -> torch.Tensor:
++    return ((0.34 - _gripper_joint_position(env, arm)) / 0.25).clamp(0.0, 1.0)
++
++
++def _open_gripper(env, arm: int) -> torch.Tensor:
++    return _gripper_joint_position(env, arm) > 0.38
++
++
++def _open_fraction(env, arm: int) -> torch.Tensor:
++    return ((_gripper_joint_position(env, arm) - 0.10) / 0.30).clamp(0.0, 1.0)
++
++
++def grip_score(env, arm: int) -> torch.Tensor:
++    """Observed assisted hold, including a receiver already latched during handover."""
++    state = _state(env)
++    held = state.holder == arm
++    if arm == 2:
++        held |= state.receiver_latched
++    return held.float()
++
++
++def _gripping(env, arm: int) -> torch.Tensor:
++    return grip_score(env, arm) > 0.5
++
++
++def _lift_fraction(env) -> torch.Tensor:
++    return ((_object_w(env)[:, 2] - REST_HEIGHT) / (LIFT_HEIGHT - REST_HEIGHT)).clamp(0.0, 1.0)
++
++
++class TransferState:
++    """Per-environment assisted-hold state and evidence of transfer sequence."""
++
++    def __init__(self, env):
++        n = env.num_envs
++        device = env.device
++        self.psm1_hold_steps = torch.zeros(n, dtype=torch.long, device=device)
++        self.holder = torch.zeros(n, dtype=torch.long, device=device)
++        self.receiver_latched = torch.zeros(n, dtype=torch.bool, device=device)
++        self.hold_offset = torch.zeros(n, 3, device=device)
++        self.source_peg_xy = torch.zeros(n, 2, device=device)
++        self.source_cleared = torch.zeros(n, dtype=torch.bool, device=device)
++        self.psm1_candidate_steps = torch.zeros(n, dtype=torch.long, device=device)
++        self.psm2_candidate_steps = torch.zeros(n, dtype=torch.long, device=device)
++        self.psm2_hold_steps = torch.zeros(n, dtype=torch.long, device=device)
++        self.first_grasped = torch.zeros(n, dtype=torch.bool, device=device)
++        self.lifted = torch.zeros(n, dtype=torch.bool, device=device)
++        self.stable_lift_steps = torch.zeros(n, dtype=torch.long, device=device)
++        self.stable_lift_achieved = torch.zeros(n, dtype=torch.bool, device=device)
++        self.new_stable_lift = torch.zeros(n, dtype=torch.bool, device=device)
++        self.previous_peg_pos = torch.zeros(n, 3, device=device)
++        self.previous_peg_valid = torch.zeros(n, dtype=torch.bool, device=device)
++        self.receiver_grasped = torch.zeros(n, dtype=torch.bool, device=device)
++        self.handover = torch.zeros(n, dtype=torch.bool, device=device)
++        self.settled_steps = torch.zeros(n, dtype=torch.long, device=device)
++        self.new_first_grasp = torch.zeros(n, dtype=torch.bool, device=device)
++        self.new_lift = torch.zeros(n, dtype=torch.bool, device=device)
++        self.new_receiver_grasp = torch.zeros(n, dtype=torch.bool, device=device)
++        self.new_handover = torch.zeros(n, dtype=torch.bool, device=device)
++        self.last_step = -1
++
++    def reset(self, env_ids):
++        for name in (
++            "psm1_hold_steps", "psm2_hold_steps", "holder", "receiver_latched",
++            "hold_offset", "source_peg_xy", "source_cleared", "psm1_candidate_steps", "psm2_candidate_steps",
++            "first_grasped", "lifted", "stable_lift_steps", "stable_lift_achieved",
++            "new_stable_lift", "previous_peg_pos", "previous_peg_valid", "receiver_grasped",
++            "handover", "settled_steps", "new_first_grasp", "new_lift", "new_receiver_grasp", "new_handover",
++        ):
++            getattr(self, name)[env_ids] = 0
++
++
++def _state(env) -> TransferState:
++    if not hasattr(env, "_peg_transfer_state"):
++        env._peg_transfer_state = TransferState(env)
++    return env._peg_transfer_state
++
++
++def update_assisted_grasp(env, env_ids=None):
++    """Latch a nearby closed gripper and translate the peg with its tool tip.
++
++    The peg follows a nearby closed gripper until release. While still threaded
++    on the source post, it may only move vertically; the post and board have
++    physical colliders for the dynamic peg.
++    """
++    state = _state(env)
++    obj = env.scene["object"]
++    peg = obj.data.root_pos_w[:, :3]
++    ee1 = _ee_w(env, SceneEntityCfg("ee_1_frame"))
++    ee2 = _ee_w(env, SceneEntityCfg("ee_2_frame"))
++    closed1 = _closed_score(env, 1) > 0.5
++    closed2 = _closed_score(env, 2) > 0.5
++
++    near1 = _distance(ee1, peg + peg.new_tensor(PSM1_GRASP_OFFSET)) < GRASP_RADIUS
++    candidate1 = (state.holder == 0) & closed1 & near1
++    state.psm1_candidate_steps = torch.where(candidate1, state.psm1_candidate_steps + 1, 0)
++    attach1 = candidate1 & (state.psm1_candidate_steps >= GRASP_DWELL_STEPS)
++    state.holder[attach1] = 1
++    state.hold_offset[attach1] = peg[attach1] - ee1[attach1]
++    state.source_peg_xy[attach1] = peg[attach1, :2]
++    state.source_cleared[attach1] = peg[attach1, 2] >= (
++        env.scene.env_origins[attach1, 2] + POST_CLEARANCE_ROOT_Z
++    )
+ 
++    receiver_point = peg + peg.new_tensor((0.012, 0.0, 0.0))
++    near2 = _distance(ee2, receiver_point) < GRASP_RADIUS
++    # The receiver must not take the peg while it is still threaded on L5/L6.
++    candidate2 = (state.holder == 1) & state.source_cleared & closed2 & near2
++    state.psm2_candidate_steps = torch.where(candidate2, state.psm2_candidate_steps + 1, 0)
++    state.receiver_latched |= candidate2 & (state.psm2_candidate_steps >= GRASP_DWELL_STEPS)
++    state.receiver_latched &= closed2
++
++    release1 = (state.holder == 1) & _open_gripper(env, 1)
++    transfer = release1 & state.receiver_latched
++    state.holder[release1] = 0
++    state.holder[transfer] = 2
++    state.hold_offset[transfer] = peg[transfer] - ee2[transfer]
++    state.receiver_latched[release1] = False
++    release2 = (state.holder == 2) & _open_gripper(env, 2)
++    state.holder[release2] = 0
++
++    held_ids = (state.holder > 0).nonzero(as_tuple=False).squeeze(-1)
++    if held_ids.numel() == 0:
++        return
++    held_by_1 = state.holder[held_ids] == 1
++    tool_pos = torch.where(held_by_1[:, None], ee1[held_ids], ee2[held_ids])
++    root_pose = obj.data.root_pose_w[held_ids].clone()
++    root_pose[:, :3] = tool_pos + state.hold_offset[held_ids]
++    root_pose[:, 2] = torch.maximum(root_pose[:, 2], env.scene.env_origins[held_ids, 2] + PEG_Z)
++    before_clear = held_by_1 & (~state.source_cleared[held_ids])
++    clearance_z = env.scene.env_origins[held_ids, 2] + POST_CLEARANCE_ROOT_Z
++    lateral_error = torch.linalg.vector_norm(root_pose[:, :2] - state.source_peg_xy[held_ids], dim=1)
++    # A tool that pulls away sideways before lifting clear loses the assisted hold.
++    lost = before_clear & (root_pose[:, 2] < clearance_z) & (lateral_error > GRASP_RADIUS)
++    state.holder[held_ids[lost]] = 0
++    state.receiver_latched[held_ids[lost]] = False
++    keep = ~lost
++    held_ids, held_by_1, tool_pos, root_pose = (
++        held_ids[keep], held_by_1[keep], tool_pos[keep], root_pose[keep]
++    )
++    if held_ids.numel() == 0:
++        return
++    before_clear = held_by_1 & (~state.source_cleared[held_ids])
++    # Prevent teleporting the block sideways through the source cylinder.
++    root_pose[before_clear, :2] = state.source_peg_xy[held_ids[before_clear]]
++    just_cleared = before_clear & (
++        root_pose[:, 2] >= env.scene.env_origins[held_ids, 2] + POST_CLEARANCE_ROOT_Z
++    )
++    state.source_cleared[held_ids[just_cleared]] = True
++    # Keep the next update continuous after the vertical-only part of the lift.
++    state.hold_offset[held_ids[just_cleared], :2] = (
++        root_pose[just_cleared, :2] - tool_pos[just_cleared, :2]
++    )
++    root_pose[:, 3:7] = root_pose.new_tensor((1.0, 0.0, 0.0, 0.0))
++    obj.write_root_pose_to_sim(root_pose, env_ids=held_ids)
++    obj.write_root_velocity_to_sim(torch.zeros(held_ids.numel(), 6, device=env.device), env_ids=held_ids)
++
++
++def reset_transfer_state(env, env_ids: torch.Tensor):
++    """Clear phase history after each episode, including asynchronous vector resets."""
++    _state(env).reset(env_ids)
++
++
++def update_transfer_state(env) -> TransferState:
++    state = _state(env)
++    if state.last_step == env.common_step_counter:
++        return state
++    state.last_step = env.common_step_counter
++    p1_grip = _gripping(env, 1)
++    p2_grip = _gripping(env, 2)
++    state.psm1_hold_steps = torch.where(p1_grip, state.psm1_hold_steps + 1, 0)
++    state.psm2_hold_steps = torch.where(p2_grip, state.psm2_hold_steps + 1, 0)
++    height = _object_w(env)[:, 2]
++
++    state.new_first_grasp = (~state.first_grasped) & (state.psm1_hold_steps >= 1)
++    state.first_grasped |= state.new_first_grasp
++    state.new_lift = (~state.lifted) & (state.psm1_hold_steps >= 1) & (height > 0.045)
++    state.lifted |= state.new_lift
++    peg = env.scene["object"].data.root_pos_w[:, :3]
++    peg_speed = torch.linalg.vector_norm(peg - state.previous_peg_pos, dim=1) / env.step_dt
++    steady_lift = (
++        state.previous_peg_valid & p1_grip & (~_open_gripper(env, 1))
++        & (height >= 0.055) & (height <= 0.080) & (peg_speed < 0.08)
++    )
++    state.stable_lift_steps = torch.where(steady_lift, state.stable_lift_steps + 1, 0)
++    state.new_stable_lift = (~state.stable_lift_achieved) & (state.stable_lift_steps >= STABLE_LIFT_STEPS)
++    state.stable_lift_achieved |= state.new_stable_lift
++    state.previous_peg_pos[:] = peg
++    state.previous_peg_valid[:] = True
++    state.new_receiver_grasp = (
++        state.stable_lift_achieved & (~state.receiver_grasped) & (state.psm2_hold_steps >= 1) & (height > 0.045)
++    )
++    state.receiver_grasped |= state.new_receiver_grasp
++    state.new_handover = (
++        state.receiver_grasped & (~state.handover) & p2_grip & (~p1_grip)
++        & _open_gripper(env, 1) & (height > 0.045)
++    )
++    state.handover |= state.new_handover
+ 
+-def reached_peg(
+-    env,
+-    ee_frame_cfg: SceneEntityCfg,
+-    object_cfg: SceneEntityCfg = SceneEntityCfg("object"),
+-    std: float = 0.04,
+-) -> torch.Tensor:
+-    return 1.0 - torch.tanh(torch.linalg.vector_norm(ee_to_object(env, ee_frame_cfg, object_cfg), dim=1) / std)
++    delta = peg - _world_point(env, TARGET_POST_LOCAL)
++    xy_ok = torch.linalg.vector_norm(delta[:, :2], dim=1) < 0.008
++    z_ok = delta[:, 2].abs() < 0.010
++    stable = torch.linalg.vector_norm(env.scene["object"].data.root_lin_vel_w, dim=1) < 0.025
++    clear_1 = _distance(_ee_w(env, SceneEntityCfg("ee_1_frame")), peg) > 0.025
++    clear_2 = _distance(_ee_w(env, SceneEntityCfg("ee_2_frame")), peg) > 0.025
++    placed = state.handover & xy_ok & z_ok & stable & clear_1 & clear_2 & _open_gripper(env, 2)
++    state.settled_steps = torch.where(placed, state.settled_steps + 1, 0)
++    return state
+ 
+ 
+-def holding_peg(
+-    env,
+-    ee_frame_cfg: SceneEntityCfg,
+-    robot_cfg: SceneEntityCfg,
+-    object_cfg: SceneEntityCfg = SceneEntityCfg("object"),
+-) -> torch.Tensor:
+-    return reached_peg(env, ee_frame_cfg, object_cfg, std=0.025) * _closed_score(env, robot_cfg)
++def peg_transfer_success(env) -> torch.Tensor:
++    """R2 placement for five steps after assisted lift, receipt and giver release."""
++    return update_transfer_state(env).settled_steps >= 5
+ 
+ 
+-def peg_lifted(
+-    env,
+-    object_cfg: SceneEntityCfg = SceneEntityCfg("object"),
+-    minimum_height: float = 0.05,
+-) -> torch.Tensor:
+-    return (_object_w(env, object_cfg)[:, 2] > minimum_height).float()
++def first_lift_completed(env) -> torch.Tensor:
++    """Finish lift training only after the peg is held nearly still for 0.3 s."""
++    return update_transfer_state(env).stable_lift_achieved
+ 
+ 
+-def receiver_reach(
+-    env,
+-    ee_frame_cfg: SceneEntityCfg,
+-    object_cfg: SceneEntityCfg = SceneEntityCfg("object"),
+-) -> torch.Tensor:
+-    return peg_lifted(env, object_cfg) * reached_peg(env, ee_frame_cfg, object_cfg)
++def handover_completed(env) -> torch.Tensor:
++    return update_transfer_state(env).handover
+ 
+ 
+-def receiver_holds(
+-    env,
+-    ee_frame_cfg: SceneEntityCfg,
+-    robot_cfg: SceneEntityCfg,
+-    object_cfg: SceneEntityCfg = SceneEntityCfg("object"),
+-) -> torch.Tensor:
+-    return peg_lifted(env, object_cfg) * holding_peg(env, ee_frame_cfg, robot_cfg, object_cfg)
++def phase_observation(env) -> torch.Tensor:
++    """Markov-relevant task progress and measured contact for the policy."""
++    state = _state(env)
++    return torch.stack(
++        (
++            _lift_fraction(env), grip_score(env, 1), grip_score(env, 2),
++            state.lifted.float(), state.receiver_grasped.float(), state.handover.float(),
++        ),
++        dim=1,
++    )
+ 
+ 
+-def transport_to_target(
+-    env,
+-    ee_frame_cfg: SceneEntityCfg,
+-    robot_cfg: SceneEntityCfg,
+-    object_cfg: SceneEntityCfg = SceneEntityCfg("object"),
+-    std: float = 0.08,
+-) -> torch.Tensor:
+-    # Reward motion to the right post only after the receiving PSM is at the peg.
+-    distance = torch.linalg.vector_norm(object_to_target(env, object_cfg), dim=1)
+-    return receiver_holds(env, ee_frame_cfg, robot_cfg, object_cfg) * (1.0 - torch.tanh(distance / std))
++def object_velocity(env, object_cfg: SceneEntityCfg = SceneEntityCfg("object")) -> torch.Tensor:
++    return env.scene[object_cfg.name].data.root_lin_vel_w
+ 
+ 
+-def place_at_target(
+-    env,
+-    object_cfg: SceneEntityCfg = SceneEntityCfg("object"),
+-    std: float = 0.015,
+-) -> torch.Tensor:
+-    # This is a diagnostic and a dense placement signal; success is stricter.
+-    distance = torch.linalg.vector_norm(object_to_target(env, object_cfg), dim=1)
+-    return 1.0 - torch.tanh(distance / std)
+-
+-
+-def peg_transfer_success(
+-    env,
+-    object_cfg: SceneEntityCfg = SceneEntityCfg("object"),
+-    ee_1_cfg: SceneEntityCfg = SceneEntityCfg("ee_1_frame"),
+-    ee_2_cfg: SceneEntityCfg = SceneEntityCfg("ee_2_frame"),
+-    robot_2_cfg: SceneEntityCfg = SceneEntityCfg(
+-        "robot_2", joint_names=["psm_tool_gripper.*_joint"]
+-    ),
+-) -> torch.Tensor:
+-    """Peg settled over R2, released by PSM2, with both tools clear."""
+-    obj = env.scene[object_cfg.name]
+-    peg_w = obj.data.root_pos_w[:, :3]
+-    delta = peg_w - _target_w(env)
+-    xy_ok = torch.linalg.vector_norm(delta[:, :2], dim=1) < 0.008
+-    z_ok = delta[:, 2].abs() < 0.012
+-    stable = torch.linalg.vector_norm(obj.data.root_lin_vel_w, dim=1) < 0.03
+-    psm_1_clear = torch.linalg.vector_norm(_ee_w(env, ee_1_cfg) - peg_w, dim=1) > 0.025
+-    psm_2_clear = torch.linalg.vector_norm(_ee_w(env, ee_2_cfg) - peg_w, dim=1) > 0.025
+-    psm_2_open = _closed_score(env, robot_2_cfg) < 0.2
+-    return xy_ok & z_ok & stable & psm_1_clear & psm_2_clear & psm_2_open
++def object_to_target(env) -> torch.Tensor:
++    return _world_point(env, TARGET_POST_LOCAL) - _object_w(env)
++
++
++def ee_to_object(env, ee_frame_cfg: SceneEntityCfg) -> torch.Tensor:
++    return _object_w(env) - _ee_w(env, ee_frame_cfg)
++
++
++def ee_to_psm1_grasp(env) -> torch.Tensor:
++    peg = _object_w(env)
++    return peg + peg.new_tensor(PSM1_GRASP_OFFSET) - _ee_w(env, SceneEntityCfg("ee_1_frame"))
++
++
++def _psm1_grasp_distance(env) -> torch.Tensor:
++    return torch.linalg.vector_norm(ee_to_psm1_grasp(env), dim=1)
+ 
+ 
+ def object_position_in_robot_root_frame(
+-    env,
+-    robot_cfg: SceneEntityCfg,
+-    object_cfg: SceneEntityCfg = SceneEntityCfg("object"),
++    env, robot_cfg: SceneEntityCfg, object_cfg: SceneEntityCfg = SceneEntityCfg("object")
+ ) -> torch.Tensor:
+-    """Peg position expressed in the selected PSM base frame."""
+     robot = env.scene[robot_cfg.name]
+-    object_pos_w = _object_w(env, object_cfg)
+-    object_pos_b, _ = subtract_frame_transforms(
+-        robot.data.root_state_w[:, :3], robot.data.root_state_w[:, 3:7], object_pos_w
++    position, _ = subtract_frame_transforms(
++        robot.data.root_state_w[:, :3], robot.data.root_state_w[:, 3:7], _object_w(env, object_cfg)
++    )
++    return position
++
++
++def _progress_measure(env, kind: str) -> torch.Tensor:
++    peg = _object_w(env)
++    if kind == "psm1_reach":
++        return _proximity(_psm1_grasp_distance(env), 0.035)
++    if kind == "psm1_precision":
++        return _proximity(_psm1_grasp_distance(env), 0.007)
++    if kind == "psm1_open_approach":
++        return _proximity(_psm1_grasp_distance(env), 0.025) * _open_fraction(env, 1)
++    if kind == "psm1_lift":
++        return _lift_fraction(env) * grip_score(env, 1)
++    if kind == "handover_position":
++        return (
++            _proximity(_distance(peg, _world_point(env, HANDOVER_LOCAL)), 0.055)
++            * _lift_fraction(env) * grip_score(env, 1)
++        )
++    if kind == "psm2_reach":
++        # The receiving tool approaches the opposite face of the lifted block.
++        receiver_point = peg + peg.new_tensor((0.012, 0.0, 0.0))
++        return _proximity(_distance(_ee_w(env, SceneEntityCfg("ee_2_frame")), receiver_point), 0.035) * _lift_fraction(env)
++    if kind == "transport":
++        return (
++            _proximity(_distance(peg, _world_point(env, ABOVE_TARGET_LOCAL)), 0.055)
++            * _state(env).handover.float()
++        )
++    if kind == "placement":
++        return (
++            _proximity(_distance(peg, _world_point(env, TARGET_POST_LOCAL)), 0.030)
++            * _state(env).handover.float()
++        )
++    raise ValueError(f"Unknown peg-transfer progress measure: {kind}")
++
++
++class ProgressReward(ManagerTermBase):
++    """Reward change in task potential, avoiding payment for waiting near an object.
++
++    Isaac Lab multiplies each reward term by step_dt. Dividing the difference by
++    step_dt makes the configured weight the value of a completed transition.
++    """
++
++    def __init__(self, cfg, env):
++        super().__init__(cfg, env)
++        self.previous = torch.zeros(env.num_envs, device=env.device)
++        self.initialized = torch.zeros(env.num_envs, dtype=torch.bool, device=env.device)
++
++    def __call__(self, env, kind: str) -> torch.Tensor:
++        current = _progress_measure(env, kind)
++        if kind == "psm1_open_approach":
++            # Remember the best open approach: closing for a real grasp must not erase its bonus.
++            current = torch.maximum(current, self.previous)
++        change = torch.where(self.initialized, current - self.previous, 0.0)
++        self.previous = current.clone()
++        self.initialized[:] = True
++        return change / env.step_dt
++
++    def reset(self, env_ids=None):
++        self.previous[env_ids] = 0.0
++        self.initialized[env_ids] = False
++
++
++def psm1_grasp_reward(env) -> torch.Tensor:
++    return grip_score(env, 1)
++
++
++def psm2_ready_reward(env) -> torch.Tensor:
++    distance = _distance(_ee_w(env, SceneEntityCfg("ee_2_frame")), _world_point(env, RECEIVER_READY_LOCAL))
++    return _proximity(distance, 0.05) * (1.0 - _lift_fraction(env))
++
++
++def psm2_grasp_reward(env) -> torch.Tensor:
++    return grip_score(env, 2) * _lift_fraction(env)
++
++
++def first_grasp_milestone(env) -> torch.Tensor:
++    return update_transfer_state(env).new_first_grasp.float()
++
++
++def lift_milestone(env) -> torch.Tensor:
++    return update_transfer_state(env).new_lift.float()
++
++
++def stable_hold_reward(env) -> torch.Tensor:
++    state = update_transfer_state(env)
++    return torch.where(
++        state.stable_lift_achieved,
++        torch.zeros_like(state.stable_lift_steps, dtype=torch.float),
++        state.stable_lift_steps.clamp(max=STABLE_LIFT_STEPS).float() / STABLE_LIFT_STEPS,
+     )
+-    return object_pos_b
++
++
++def stable_lift_milestone(env) -> torch.Tensor:
++    return update_transfer_state(env).new_stable_lift.float()
++
++
++def receiver_grasp_milestone(env) -> torch.Tensor:
++    return update_transfer_state(env).new_receiver_grasp.float()
++
++
++def handover_milestone(env) -> torch.Tensor:
++    return update_transfer_state(env).new_handover.float()
++
++
++def elapsed_time(env) -> torch.Tensor:
++    return torch.ones(env.num_envs, device=env.device)
+diff --git a/workflows/robotic_surgery/scripts/simulation/exts/robotic.surgery.tasks/robotic/surgery/tasks/surgical/peg_transfer/scene_cfg.py b/workflows/robotic_surgery/scripts/simulation/exts/robotic.surgery.tasks/robotic/surgery/tasks/surgical/peg_transfer/scene_cfg.py
+index 8edc6dd..2e7b58a 100644
+--- a/workflows/robotic_surgery/scripts/simulation/exts/robotic.surgery.tasks/robotic/surgery/tasks/surgical/peg_transfer/scene_cfg.py
++++ b/workflows/robotic_surgery/scripts/simulation/exts/robotic.surgery.tasks/robotic/surgery/tasks/surgical/peg_transfer/scene_cfg.py
+@@ -25,12 +25,17 @@ BOARD_SIZE = (0.25, 0.10, 0.01)
+ Z_CYL = 0.023
+ RAD_CYL = 0.002
+ H_CYL = 0.025
++POST_TOP_Z = Z_CYL + H_CYL / 2
+ 
+-# Peg offset relative to cylinder center.
+-# This offset worked visually for L5.
++# The USD mesh is centered about 5 mm to the right of its root.
++# Place the mesh center on the post axis.
+ PEG_OFFSET_X = -0.005
+-PEG_OFFSET_Y = -0.0015
+-PEG_Z = 0.020
++PEG_OFFSET_Y = 0.0
++# The USD mesh extends 14.6 mm below its root. At z=25 mm its underside
++# starts just above the board top (10 mm), avoiding penetration at reset.
++PEG_Z = 0.025
++PEG_BOTTOM_BELOW_ROOT = 0.0146
++POST_CLEARANCE_ROOT_Z = POST_TOP_Z + PEG_BOTTOM_BELOW_ROOT + 0.002
+ 
+ # Randomization only between L5 and L6
+ POST_L5 = (0.000,  0.000, Z_CYL)
+@@ -42,6 +47,14 @@ LEFT_POST_POSITIONS = [
+ ]
+ 
+ 
++def _board_collision_cfg() -> CollisionPropertiesCfg:
++    return CollisionPropertiesCfg(collision_enabled=True, contact_offset=0.0005, rest_offset=0.0)
++
++
++def _post_collision_cfg() -> CollisionPropertiesCfg:
++    return CollisionPropertiesCfg(collision_enabled=True, contact_offset=0.0005, rest_offset=0.0)
++
++
+ def reset_peg_random_l5_l6(
+     env,
+     env_ids: torch.Tensor,
+@@ -121,7 +134,7 @@ class PegTransferSceneCfg(InteractiveSceneCfg):
+         ),
+         spawn=CuboidCfg(
+             size=BOARD_SIZE,
+-            collision_props=CollisionPropertiesCfg(),
++            collision_props=_board_collision_cfg(),
+         ),
+     )
+ 
+@@ -129,74 +142,74 @@ class PegTransferSceneCfg(InteractiveSceneCfg):
+     post_l1 = AssetBaseCfg(
+         prim_path="{ENV_REGEX_NS}/Post_L1",
+         init_state=AssetBaseCfg.InitialStateCfg(pos=(-0.042, 0.030, Z_CYL)),
+-        spawn=CylinderCfg(radius=RAD_CYL, height=H_CYL, collision_props=CollisionPropertiesCfg()),
++        spawn=CylinderCfg(radius=RAD_CYL, height=H_CYL, collision_props=_post_collision_cfg()),
+     )
+ 
+     post_l2 = AssetBaseCfg(
+         prim_path="{ENV_REGEX_NS}/Post_L2",
+         init_state=AssetBaseCfg.InitialStateCfg(pos=(-0.042, 0.000, Z_CYL)),
+-        spawn=CylinderCfg(radius=RAD_CYL, height=H_CYL, collision_props=CollisionPropertiesCfg()),
++        spawn=CylinderCfg(radius=RAD_CYL, height=H_CYL, collision_props=_post_collision_cfg()),
+     )
+ 
+     post_l3 = AssetBaseCfg(
+         prim_path="{ENV_REGEX_NS}/Post_L3",
+         init_state=AssetBaseCfg.InitialStateCfg(pos=(-0.042, -0.030, Z_CYL)),
+-        spawn=CylinderCfg(radius=RAD_CYL, height=H_CYL, collision_props=CollisionPropertiesCfg()),
++        spawn=CylinderCfg(radius=RAD_CYL, height=H_CYL, collision_props=_post_collision_cfg()),
+     )
+ 
+     post_l4 = AssetBaseCfg(
+         prim_path="{ENV_REGEX_NS}/Post_L4",
+         init_state=AssetBaseCfg.InitialStateCfg(pos=(0.000, 0.030, Z_CYL)),
+-        spawn=CylinderCfg(radius=RAD_CYL, height=H_CYL, collision_props=CollisionPropertiesCfg()),
++        spawn=CylinderCfg(radius=RAD_CYL, height=H_CYL, collision_props=_post_collision_cfg()),
+     )
+ 
+     post_l5 = AssetBaseCfg(
+         prim_path="{ENV_REGEX_NS}/Post_L5",
+         init_state=AssetBaseCfg.InitialStateCfg(pos=(0.000, 0.000, Z_CYL)),
+-        spawn=CylinderCfg(radius=RAD_CYL, height=H_CYL, collision_props=CollisionPropertiesCfg()),
++        spawn=CylinderCfg(radius=RAD_CYL, height=H_CYL, collision_props=_post_collision_cfg()),
+     )
+ 
+     post_l6 = AssetBaseCfg(
+         prim_path="{ENV_REGEX_NS}/Post_L6",
+         init_state=AssetBaseCfg.InitialStateCfg(pos=(0.000, -0.030, Z_CYL)),
+-        spawn=CylinderCfg(radius=RAD_CYL, height=H_CYL, collision_props=CollisionPropertiesCfg()),
++        spawn=CylinderCfg(radius=RAD_CYL, height=H_CYL, collision_props=_post_collision_cfg()),
+     )
+ 
+     # Right posts
+     post_r1 = AssetBaseCfg(
+         prim_path="{ENV_REGEX_NS}/Post_R1",
+         init_state=AssetBaseCfg.InitialStateCfg(pos=(0.042, -0.015, Z_CYL)),
+-        spawn=CylinderCfg(radius=RAD_CYL, height=H_CYL, collision_props=CollisionPropertiesCfg()),
++        spawn=CylinderCfg(radius=RAD_CYL, height=H_CYL, collision_props=_post_collision_cfg()),
+     )
+ 
+     post_r2 = AssetBaseCfg(
+         prim_path="{ENV_REGEX_NS}/Post_R2",
+         init_state=AssetBaseCfg.InitialStateCfg(pos=(0.042, 0.015, Z_CYL)),
+-        spawn=CylinderCfg(radius=RAD_CYL, height=H_CYL, collision_props=CollisionPropertiesCfg()),
++        spawn=CylinderCfg(radius=RAD_CYL, height=H_CYL, collision_props=_post_collision_cfg()),
+     )
+ 
+     post_r3 = AssetBaseCfg(
+         prim_path="{ENV_REGEX_NS}/Post_R3",
+         init_state=AssetBaseCfg.InitialStateCfg(pos=(0.084, 0.035, Z_CYL)),
+-        spawn=CylinderCfg(radius=RAD_CYL, height=H_CYL, collision_props=CollisionPropertiesCfg()),
++        spawn=CylinderCfg(radius=RAD_CYL, height=H_CYL, collision_props=_post_collision_cfg()),
+     )
+ 
+     post_r4 = AssetBaseCfg(
+         prim_path="{ENV_REGEX_NS}/Post_R4",
+         init_state=AssetBaseCfg.InitialStateCfg(pos=(0.084, -0.035, Z_CYL)),
+-        spawn=CylinderCfg(radius=RAD_CYL, height=H_CYL, collision_props=CollisionPropertiesCfg()),
++        spawn=CylinderCfg(radius=RAD_CYL, height=H_CYL, collision_props=_post_collision_cfg()),
+     )
+ 
+     post_r5 = AssetBaseCfg(
+         prim_path="{ENV_REGEX_NS}/Post_R5",
+         init_state=AssetBaseCfg.InitialStateCfg(pos=(0.126, -0.015, Z_CYL)),
+-        spawn=CylinderCfg(radius=RAD_CYL, height=H_CYL, collision_props=CollisionPropertiesCfg()),
++        spawn=CylinderCfg(radius=RAD_CYL, height=H_CYL, collision_props=_post_collision_cfg()),
+     )
+ 
+     post_r6 = AssetBaseCfg(
+         prim_path="{ENV_REGEX_NS}/Post_R6",
+         init_state=AssetBaseCfg.InitialStateCfg(pos=(0.126, 0.015, Z_CYL)),
+-        spawn=CylinderCfg(radius=RAD_CYL, height=H_CYL, collision_props=CollisionPropertiesCfg()),
++        spawn=CylinderCfg(radius=RAD_CYL, height=H_CYL, collision_props=_post_collision_cfg()),
+     )
+ 
+     plane = AssetBaseCfg(
+diff --git a/workflows/robotic_surgery/scripts/simulation/scripts/reinforcement_learning/rsl_rl/play.py b/workflows/robotic_surgery/scripts/simulation/scripts/reinforcement_learning/rsl_rl/play.py
+index fd822e7..d6ee46b 100644
+--- a/workflows/robotic_surgery/scripts/simulation/scripts/reinforcement_learning/rsl_rl/play.py
++++ b/workflows/robotic_surgery/scripts/simulation/scripts/reinforcement_learning/rsl_rl/play.py
+@@ -13,6 +13,7 @@ from isaaclab.app import AppLauncher
+ 
+ # local imports
+ import cli_args  # isort: skip
++from checkpoint_utils import resolve_run_name  # isort: skip
+ 
+ # add argparse arguments
+ parser = argparse.ArgumentParser(description="Train an RL agent with RSL-RL.")
+@@ -39,6 +40,7 @@ simulation_app = app_launcher.app
+ """Rest everything follows."""
+ 
+ import os
++import re
+ 
+ import gymnasium as gym
+ import robotic.surgery.tasks  # noqa: F401
+@@ -62,6 +64,10 @@ def main():
+     log_root_path = os.path.join("logs", "rsl_rl", agent_cfg.experiment_name)
+     log_root_path = os.path.abspath(log_root_path)
+     print(f"[INFO] Loading experiment from directory: {log_root_path}")
++    if args_cli.load_run is not None:
++        resolved_run = resolve_run_name(log_root_path, args_cli.load_run)
++        agent_cfg.load_run = re.escape(resolved_run) + "$"
++        print(f"[INFO] Selected run: {resolved_run}")
+     resume_path = get_checkpoint_path(log_root_path, agent_cfg.load_run, agent_cfg.load_checkpoint)
+     log_dir = os.path.dirname(resume_path)
+ 
+@@ -84,7 +90,7 @@ def main():
+         env = multi_agent_to_single_agent(env)
+ 
+     # wrap around environment for rsl-rl
+-    env = RslRlVecEnvWrapper(env)
++    env = RslRlVecEnvWrapper(env, clip_actions=agent_cfg.clip_actions)
+ 
+     print(f"[INFO]: Loading model checkpoint from: {resume_path}")
+     # load previously trained model
+@@ -112,6 +118,17 @@ def main():
+             actions = policy(obs)
+             # env stepping
+             obs, _, _, _ = env.step(actions)
++        if env.num_envs == 1 and bool(env.unwrapped.reset_buf[0]):
++            base = env.unwrapped
++            if bool(base.termination_manager.get_term("success")[0]):
++                reason = "success"
++            elif bool(base.termination_manager.get_term("object_dropping")[0]):
++                reason = "object_dropping"
++            elif bool(base.reset_time_outs[0]):
++                reason = "time_out"
++            else:
++                reason = "other"
++            print(f"[PLAY] Episode reset: {reason}", flush=True)
+         if args_cli.video:
+             timestep += 1
+             # Exit the play loop after recording one video
+diff --git a/workflows/robotic_surgery/scripts/simulation/scripts/reinforcement_learning/rsl_rl/train.py b/workflows/robotic_surgery/scripts/simulation/scripts/reinforcement_learning/rsl_rl/train.py
+index 589db0a..557f15f 100644
+--- a/workflows/robotic_surgery/scripts/simulation/scripts/reinforcement_learning/rsl_rl/train.py
++++ b/workflows/robotic_surgery/scripts/simulation/scripts/reinforcement_learning/rsl_rl/train.py
+@@ -14,6 +14,7 @@ from isaaclab.app import AppLauncher
+ 
+ # local imports
+ import cli_args  # isort: skip
++from checkpoint_utils import resolve_run_name  # isort: skip
+ 
+ 
+ # add argparse arguments
+@@ -25,6 +26,10 @@ parser.add_argument("--num_envs", type=int, default=None, help="Number of enviro
+ parser.add_argument("--task", type=str, default="Isaac-Peg-Transfer-Dual-PSM-v0", help="Name of the task.")
+ parser.add_argument("--seed", type=int, default=None, help="Seed used for the environment")
+ parser.add_argument("--max_iterations", type=int, default=None, help="RL Policy training iterations.")
++parser.add_argument(
++    "--phase", choices=("lift", "handover", "full"), default="full",
++    help="Sequential curriculum phase; checkpoint architecture stays the same.",
++)
+ parser.add_argument(
+     "--log_dir", type=str, default=None, help="Log directory, if not provided, will use the default log directory."
+ )
+@@ -48,10 +53,12 @@ simulation_app = app_launcher.app
+ """Rest everything follows."""
+ 
+ import os
++import re
+ from datetime import datetime
+ 
+ import gymnasium as gym
+ import robotic.surgery.tasks  # noqa: F401
++from robotic.surgery.tasks.surgical.peg_transfer import mdp as peg_mdp
+ import torch
+ from isaaclab.envs import (
+     DirectMARLEnv,
+@@ -83,16 +90,35 @@ def main(env_cfg: ManagerBasedRLEnvCfg | DirectRLEnvCfg | DirectMARLEnvCfg, agen
+         args_cli.max_iterations if args_cli.max_iterations is not None else agent_cfg.max_iterations
+     )
+ 
+-    # set the environment seed
+-    # note: certain randomizations occur in the environment initialization so we set the seed here
++    # All phases use the same observations and 14 actions, so v2 checkpoints can
++    # continue into the next phase. Only the objective and time limit change.
++    if args_cli.phase == "lift":
++        env_cfg.episode_length_s = 8.0
++        env_cfg.terminations.success.func = peg_mdp.first_lift_completed
++        env_cfg.rewards.success.func = peg_mdp.first_lift_completed
++        env_cfg.rewards.success.weight = 800.0
++        for name in ("handover_position", "psm2_reach", "psm2_grasp", "receiver_grasp_event",
++                     "handover_event", "transport", "placement"):
++            getattr(env_cfg.rewards, name).weight = 0.0
++    elif args_cli.phase == "handover":
++        env_cfg.episode_length_s = 12.0
++        env_cfg.terminations.success.func = peg_mdp.handover_completed
++        env_cfg.rewards.success.func = peg_mdp.handover_completed
++        env_cfg.rewards.success.weight = 1000.0
++        for name in ("transport", "placement"):
++            getattr(env_cfg.rewards, name).weight = 0.0
++
++    if agent_cfg.run_name == "":
++        agent_cfg.run_name = f"peg_{args_cli.phase}_v2"
++
++    # Seed before environment initialization, including randomized L5/L6 resets.
+     env_cfg.seed = agent_cfg.seed
+ 
++    log_root_path = os.path.abspath(os.path.join("logs", "rsl_rl", agent_cfg.experiment_name))
+     # specify directory for logging experiments
+     if args_cli.log_dir:
+         log_dir = args_cli.log_dir
+     else:
+-        log_root_path = os.path.join("logs", "rsl_rl", agent_cfg.experiment_name)
+-        log_root_path = os.path.abspath(log_root_path)
+         # specify directory for logging runs: {time-stamp}_{run_name}
+         log_dir = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+         if agent_cfg.run_name:
+@@ -120,7 +146,7 @@ def main(env_cfg: ManagerBasedRLEnvCfg | DirectRLEnvCfg | DirectMARLEnvCfg, agen
+         env = multi_agent_to_single_agent(env)
+ 
+     # wrap around environment for rsl-rl
+-    env = RslRlVecEnvWrapper(env)
++    env = RslRlVecEnvWrapper(env, clip_actions=agent_cfg.clip_actions)
+ 
+     # create runner from rsl-rl
+     runner = OnPolicyRunner(env, agent_cfg.to_dict(), log_dir=log_dir, device=agent_cfg.device)
+@@ -129,6 +155,8 @@ def main(env_cfg: ManagerBasedRLEnvCfg | DirectRLEnvCfg | DirectMARLEnvCfg, agen
+     # save resume path before creating a new log_dir
+     if agent_cfg.resume:
+         # get path to previous checkpoint
++        if args_cli.load_run is not None:
++            agent_cfg.load_run = re.escape(resolve_run_name(log_root_path, args_cli.load_run)) + "$"
+         resume_path = get_checkpoint_path(log_root_path, agent_cfg.load_run, agent_cfg.load_checkpoint)
+         print(f"[INFO]: Loading model checkpoint from: {resume_path}")
+         # load previously trained model

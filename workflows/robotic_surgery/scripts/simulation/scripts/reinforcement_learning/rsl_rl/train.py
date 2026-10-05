@@ -14,6 +14,7 @@ from isaaclab.app import AppLauncher
 
 # local imports
 import cli_args  # isort: skip
+from checkpoint_utils import resolve_run_name  # isort: skip
 
 
 # add argparse arguments
@@ -25,6 +26,10 @@ parser.add_argument("--num_envs", type=int, default=None, help="Number of enviro
 parser.add_argument("--task", type=str, default="Isaac-Peg-Transfer-Dual-PSM-v0", help="Name of the task.")
 parser.add_argument("--seed", type=int, default=None, help="Seed used for the environment")
 parser.add_argument("--max_iterations", type=int, default=None, help="RL Policy training iterations.")
+parser.add_argument(
+    "--phase", choices=("lift", "handover", "full"), default="full",
+    help="Sequential curriculum phase; checkpoint architecture stays the same.",
+)
 parser.add_argument(
     "--log_dir", type=str, default=None, help="Log directory, if not provided, will use the default log directory."
 )
@@ -48,10 +53,12 @@ simulation_app = app_launcher.app
 """Rest everything follows."""
 
 import os
+import re
 from datetime import datetime
 
 import gymnasium as gym
 import robotic.surgery.tasks  # noqa: F401
+from robotic.surgery.tasks.surgical.peg_transfer import mdp as peg_mdp
 import torch
 from isaaclab.envs import (
     DirectMARLEnv,
@@ -83,16 +90,35 @@ def main(env_cfg: ManagerBasedRLEnvCfg | DirectRLEnvCfg | DirectMARLEnvCfg, agen
         args_cli.max_iterations if args_cli.max_iterations is not None else agent_cfg.max_iterations
     )
 
-    # set the environment seed
-    # note: certain randomizations occur in the environment initialization so we set the seed here
+    # All phases use the same observations and 14 actions, so v2 checkpoints can
+    # continue into the next phase. Only the objective and time limit change.
+    if args_cli.phase == "lift":
+        env_cfg.episode_length_s = 8.0
+        env_cfg.terminations.success.func = peg_mdp.first_lift_completed
+        env_cfg.rewards.success.func = peg_mdp.first_lift_completed
+        env_cfg.rewards.success.weight = 800.0
+        for name in ("handover_position", "psm2_reach", "psm2_grasp", "receiver_grasp_event",
+                     "handover_event", "transport", "placement"):
+            getattr(env_cfg.rewards, name).weight = 0.0
+    elif args_cli.phase == "handover":
+        env_cfg.episode_length_s = 12.0
+        env_cfg.terminations.success.func = peg_mdp.handover_completed
+        env_cfg.rewards.success.func = peg_mdp.handover_completed
+        env_cfg.rewards.success.weight = 1000.0
+        for name in ("transport", "placement"):
+            getattr(env_cfg.rewards, name).weight = 0.0
+
+    if agent_cfg.run_name == "":
+        agent_cfg.run_name = f"peg_{args_cli.phase}_v2"
+
+    # Seed before environment initialization, including randomized L5/L6 resets.
     env_cfg.seed = agent_cfg.seed
 
+    log_root_path = os.path.abspath(os.path.join("logs", "rsl_rl", agent_cfg.experiment_name))
     # specify directory for logging experiments
     if args_cli.log_dir:
         log_dir = args_cli.log_dir
     else:
-        log_root_path = os.path.join("logs", "rsl_rl", agent_cfg.experiment_name)
-        log_root_path = os.path.abspath(log_root_path)
         # specify directory for logging runs: {time-stamp}_{run_name}
         log_dir = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
         if agent_cfg.run_name:
@@ -120,7 +146,7 @@ def main(env_cfg: ManagerBasedRLEnvCfg | DirectRLEnvCfg | DirectMARLEnvCfg, agen
         env = multi_agent_to_single_agent(env)
 
     # wrap around environment for rsl-rl
-    env = RslRlVecEnvWrapper(env)
+    env = RslRlVecEnvWrapper(env, clip_actions=agent_cfg.clip_actions)
 
     # create runner from rsl-rl
     runner = OnPolicyRunner(env, agent_cfg.to_dict(), log_dir=log_dir, device=agent_cfg.device)
@@ -129,6 +155,8 @@ def main(env_cfg: ManagerBasedRLEnvCfg | DirectRLEnvCfg | DirectMARLEnvCfg, agen
     # save resume path before creating a new log_dir
     if agent_cfg.resume:
         # get path to previous checkpoint
+        if args_cli.load_run is not None:
+            agent_cfg.load_run = re.escape(resolve_run_name(log_root_path, args_cli.load_run)) + "$"
         resume_path = get_checkpoint_path(log_root_path, agent_cfg.load_run, agent_cfg.load_checkpoint)
         print(f"[INFO]: Loading model checkpoint from: {resume_path}")
         # load previously trained model

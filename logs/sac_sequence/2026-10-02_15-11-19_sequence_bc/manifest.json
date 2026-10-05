@@ -1,0 +1,74 @@
+{
+  "schema": "peg-sequence-sac-1",
+  "task": "Isaac-Peg-Transfer-Dual-PSM-Sequence-v1",
+  "algorithm": "SAC+joint-BC",
+  "fingerprint": "b827e9291195ffc991d8bb8136edf98c2ccfc30699ca4d2244c59f9437d6313a",
+  "assets": {
+    "data/Isaac/Healthcare/0.5.0/132c82d/Props/PegBlock/block.usd": "d6e3695d6b663702c1cbb5acfc44caace0cc37df95a97fea3e3d5ef86f0aa54d",
+    "data/Isaac/Healthcare/0.5.0/132c82d/Props/Table/table.usd": "d2bb50ca8d5001ba46cb273a779f45a99cfeafd5a3c0ab88ce5e5e7d26cc4e56"
+  },
+  "source": "L5",
+  "target": "R2",
+  "skill": "full",
+  "guidance": 0.0,
+  "versions": {
+    "isaacsim": "5.1.0.0",
+    "isaaclab": "0.48.0",
+    "torch": "2.7.0+cu128",
+    "stable-baselines3": "2.9.0",
+    "gymnasium": "1.2.0"
+  },
+  "seed": 42,
+  "num_envs": 16,
+  "observation_dim": 112,
+  "actor_features": 29,
+  "action_dim": 4,
+  "receiver_grasp_offset_m": [
+    0.014,
+    0.009,
+    -0.006
+  ],
+  "receiver_approach": "positive_y_edge",
+  "parent": null,
+  "demonstrations": {
+    "path": "/home/francesco/Documents/GIGI/i4h-workflows/logs/sac_sequence/full_demos_2026-10-02_15-06-07.npz",
+    "sha256": "c3285e63a2fe59e3a9af02531087e956235483c7dc11ee23d9ad40317f3b6326",
+    "transitions": 8040
+  },
+  "settings": {
+    "learning_rate": 0.0001,
+    "buffer_size": 300000,
+    "learning_starts": 0,
+    "batch_size": 256,
+    "tau": 0.005,
+    "gamma": 0.999,
+    "train_freq": 1,
+    "gradient_steps": 1,
+    "ent_coef": 0.001,
+    "target_entropy": -4.0,
+    "replay_buffer_class": "DemoReplay",
+    "replay_buffer_kwargs": {
+      "demo_path": "/home/francesco/Documents/GIGI/i4h-workflows/logs/sac_sequence/full_demos_2026-10-02_15-06-07.npz",
+      "demo_fraction": 0.5,
+      "handle_timeout_termination": true
+    },
+    "policy_kwargs": {
+      "net_arch": [
+        256,
+        256
+      ],
+      "n_critics": 2,
+      "share_features_extractor": false,
+      "use_sde": false
+    },
+    "verbose": 1
+  },
+  "bc_weight": 5.0,
+  "bc_steps": 6000,
+  "imitation_only": true,
+  "episode_seconds": 60.0,
+  "stage_budget": 600,
+  "evaluation_required": true,
+  "assisted_grasp": true,
+  "physical_grasp_verified": false
+}

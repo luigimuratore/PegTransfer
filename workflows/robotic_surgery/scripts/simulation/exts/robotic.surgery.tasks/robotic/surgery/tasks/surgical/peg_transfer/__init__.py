@@ -16,6 +16,15 @@ gym.register(
     disable_env_checker=True,
 )
 
+# SAC uses a distinct task, observation schema, continuous jaws and guarded geometry.
+# Import its configuration lazily: existing PPO entry points retain their settings.
+gym.register(
+    id="Isaac-Peg-Transfer-Dual-PSM-SAC-v0",
+    entry_point=__name__ + ".sac_env:PegTransferSACEnv",
+    kwargs={"env_cfg_entry_point": __name__ + ".sac_env_cfg:PegTransferSACEnvCfg"},
+    disable_env_checker=True,
+)
+
 gym.register(
     id="Isaac-Peg-Transfer-Dual-PSM-Play-v0",
     entry_point="isaaclab.envs:ManagerBasedRLEnv",

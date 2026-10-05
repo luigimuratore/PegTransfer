@@ -1,0 +1,51 @@
+{
+  "algorithm": "SAC",
+  "schema": "peg-sac-1",
+  "task": "Isaac-Peg-Transfer-Dual-PSM-SAC-v0",
+  "phase": "lift",
+  "seed": 42,
+  "source": "random",
+  "num_envs": 16,
+  "versions": {
+    "isaacsim": "5.1.0.0",
+    "isaaclab": "0.48.0",
+    "isaaclab_rl": "0.4.4",
+    "torch": "2.7.0+cu128",
+    "stable-baselines3": "2.9.0",
+    "gymnasium": "1.2.0"
+  },
+  "fingerprint": "0d06ef06f6055e602e16ba3bc4aa5793ac05800064804567af3f039544738c4e",
+  "observation_dim": 100,
+  "action_dim": 14,
+  "settings": {
+    "learning_rate": 0.0003,
+    "buffer_size": 4096,
+    "learning_starts": 256,
+    "batch_size": 256,
+    "tau": 0.005,
+    "gamma": 0.999,
+    "train_freq": 1,
+    "gradient_steps": 4,
+    "ent_coef": "auto_0.1",
+    "target_entropy": -14.0,
+    "policy_kwargs": {
+      "net_arch": [
+        256,
+        256
+      ],
+      "n_critics": 2,
+      "use_sde": false
+    },
+    "replay_buffer_kwargs": {
+      "handle_timeout_termination": true
+    },
+    "optimize_memory_usage": false,
+    "verbose": 1
+  },
+  "parent_checkpoint": null,
+  "assets": {
+    "data/Isaac/Healthcare/0.5.0/132c82d/Props/PegBlock/block.usd": "d6e3695d6b663702c1cbb5acfc44caace0cc37df95a97fea3e3d5ef86f0aa54d",
+    "data/Isaac/Healthcare/0.5.0/132c82d/Props/Table/table.usd": "d2bb50ca8d5001ba46cb273a779f45a99cfeafd5a3c0ab88ce5e5e7d26cc4e56"
+  },
+  "evaluation_required": true
+}

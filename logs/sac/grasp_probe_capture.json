@@ -1,0 +1,792 @@
+{
+  "task": "Isaac-Peg-Transfer-Dual-PSM-SAC-v0",
+  "fingerprint": "0d06ef06f6055e602e16ba3bc4aa5793ac05800064804567af3f039544738c4e",
+  "versions": {
+    "isaacsim": "5.1.0.0",
+    "isaaclab": "0.48.0",
+    "isaaclab_rl": "0.4.4",
+    "torch": "2.7.0+cu128",
+    "stable-baselines3": "2.9.0",
+    "gymnasium": "1.2.0"
+  },
+  "seed": 123,
+  "controlled_probe": true,
+  "learned_policy": false,
+  "complete": true,
+  "cases": [
+    {
+      "source": "L5",
+      "repetition": 0,
+      "stages": [
+        {
+          "stage": "settle",
+          "achieved": true,
+          "steps": 25,
+          "step_limit": 25,
+          "termination_reason": "achieved",
+          "min_grasp_distance_m": 0.0889236256480217,
+          "min_target_error_m": 0.0,
+          "min_jaw_mean_rad": 0.5,
+          "near_closed_aligned_steps": 0,
+          "last": {
+            "source": "L5",
+            "repetition": 0,
+            "step": 25,
+            "stage": "settle",
+            "reset": false,
+            "grasp_distance_m": 0.0889236256480217,
+            "jaw_mean_rad": 0.5,
+            "jaw_closed": false,
+            "near": false,
+            "aligned": true,
+            "quaternion_vector_norm": 2.943843583125272e-06,
+            "orientation_error_deg": 0.00033733962571998286,
+            "candidate_steps": 0,
+            "holder": 0,
+            "blocked_moves": 0,
+            "peg_xyz": [
+              -0.005786377936601639,
+              7.679000191274099e-08,
+              0.024613022804260254
+            ],
+            "tip_xyz": [
+              -0.06918087601661682,
+              -0.0009130279067903757,
+              0.07721152156591415
+            ],
+            "target_error_m": 0.0,
+            "gripper_joints": [
+              -0.5,
+              0.5
+            ],
+            "metrics": {
+              "grasp_psm1": false,
+              "lift_stable": false,
+              "grasp_psm2": false,
+              "handover": false,
+              "placement": false,
+              "full_success": false
+            }
+          }
+        },
+        {
+          "stage": "above_side",
+          "achieved": true,
+          "steps": 203,
+          "step_limit": 600,
+          "termination_reason": "achieved",
+          "min_grasp_distance_m": 0.025163253769278526,
+          "min_target_error_m": 0.000837175059132278,
+          "min_jaw_mean_rad": 0.5,
+          "near_closed_aligned_steps": 0,
+          "last": {
+            "source": "L5",
+            "repetition": 0,
+            "step": 228,
+            "stage": "above_side",
+            "reset": false,
+            "grasp_distance_m": 0.025163253769278526,
+            "jaw_mean_rad": 0.5,
+            "jaw_closed": false,
+            "near": false,
+            "aligned": true,
+            "quaternion_vector_norm": 2.812664888551808e-06,
+            "orientation_error_deg": 0.00032230765459773027,
+            "candidate_steps": 0,
+            "holder": 0,
+            "blocked_moves": 0,
+            "peg_xyz": [
+              -0.0057863700203597546,
+              7.873859431128949e-08,
+              0.024613026529550552
+            ],
+            "tip_xyz": [
+              -0.0034802237059921026,
+              -0.023734739050269127,
+              0.038999125361442566
+            ],
+            "target_error_m": 0.000837175059132278,
+            "gripper_joints": [
+              -0.5,
+              0.5
+            ],
+            "metrics": {
+              "grasp_psm1": false,
+              "lift_stable": false,
+              "grasp_psm2": false,
+              "handover": false,
+              "placement": false,
+              "full_success": false
+            }
+          }
+        },
+        {
+          "stage": "outside_side",
+          "achieved": true,
+          "steps": 51,
+          "step_limit": 600,
+          "termination_reason": "achieved",
+          "min_grasp_distance_m": 0.015028073452413082,
+          "min_target_error_m": 0.0008104361477307975,
+          "min_jaw_mean_rad": 0.5,
+          "near_closed_aligned_steps": 0,
+          "last": {
+            "source": "L5",
+            "repetition": 0,
+            "step": 279,
+            "stage": "outside_side",
+            "reset": false,
+            "grasp_distance_m": 0.015028073452413082,
+            "jaw_mean_rad": 0.5,
+            "jaw_closed": false,
+            "near": false,
+            "aligned": true,
+            "quaternion_vector_norm": 2.2223734958970454e-06,
+            "orientation_error_deg": 0.00025466524363347977,
+            "candidate_steps": 0,
+            "holder": 0,
+            "blocked_moves": 0,
+            "peg_xyz": [
+              -0.005786377005279064,
+              6.631171345361508e-08,
+              0.024613022804260254
+            ],
+            "tip_xyz": [
+              -0.002770541701465845,
+              -0.024006139487028122,
+              0.01942327618598938
+            ],
+            "target_error_m": 0.0008104361477307975,
+            "gripper_joints": [
+              -0.5,
+              0.5
+            ],
+            "metrics": {
+              "grasp_psm1": false,
+              "lift_stable": false,
+              "grasp_psm2": false,
+              "handover": false,
+              "placement": false,
+              "full_success": false
+            }
+          }
+        },
+        {
+          "stage": "reach",
+          "achieved": true,
+          "steps": 113,
+          "step_limit": 600,
+          "termination_reason": "achieved",
+          "min_grasp_distance_m": 0.0039256359450519085,
+          "min_target_error_m": 0.0004263957089278847,
+          "min_jaw_mean_rad": 0.5,
+          "near_closed_aligned_steps": 0,
+          "last": {
+            "source": "L5",
+            "repetition": 0,
+            "step": 392,
+            "stage": "reach",
+            "reset": false,
+            "grasp_distance_m": 0.0039256359450519085,
+            "jaw_mean_rad": 0.5,
+            "jaw_closed": false,
+            "near": true,
+            "aligned": true,
+            "quaternion_vector_norm": 2.671099082363071e-06,
+            "orientation_error_deg": 0.00030608540816170603,
+            "candidate_steps": 0,
+            "holder": 0,
+            "blocked_moves": 0,
+            "peg_xyz": [
+              -0.0057863774709403515,
+              7.08669176674448e-08,
+              0.024613022804260254
+            ],
+            "tip_xyz": [
+              -0.002785577904433012,
+              -0.012925463728606701,
+              0.018641171976923943
+            ],
+            "target_error_m": 0.0004263957089278847,
+            "gripper_joints": [
+              -0.5,
+              0.5
+            ],
+            "metrics": {
+              "grasp_psm1": false,
+              "lift_stable": false,
+              "grasp_psm2": false,
+              "handover": false,
+              "placement": false,
+              "full_success": false
+            }
+          }
+        },
+        {
+          "stage": "close",
+          "achieved": true,
+          "steps": 22,
+          "step_limit": 600,
+          "termination_reason": "achieved",
+          "min_grasp_distance_m": 0.003903101896867156,
+          "min_target_error_m": 2.140968035746482e-06,
+          "min_jaw_mean_rad": 0.14799189567565918,
+          "near_closed_aligned_steps": 3,
+          "last": {
+            "source": "L5",
+            "repetition": 0,
+            "step": 414,
+            "stage": "close",
+            "reset": false,
+            "grasp_distance_m": 0.00392493512481451,
+            "jaw_mean_rad": 0.14799189567565918,
+            "jaw_closed": true,
+            "near": true,
+            "aligned": true,
+            "quaternion_vector_norm": 0.0,
+            "orientation_error_deg": 0.0,
+            "candidate_steps": 0,
+            "holder": 1,
+            "blocked_moves": 0,
+            "peg_xyz": [
+              -0.005786379799246788,
+              0.0,
+              0.02461305260658264
+            ],
+            "tip_xyz": [
+              -0.002787219360470772,
+              -0.012924822978675365,
+              0.01864260993897915
+            ],
+            "target_error_m": 2.274351118103368e-06,
+            "gripper_joints": [
+              -0.1479899287223816,
+              0.14799384772777557
+            ],
+            "metrics": {
+              "grasp_psm1": true,
+              "lift_stable": false,
+              "grasp_psm2": false,
+              "handover": false,
+              "placement": false,
+              "full_success": false
+            }
+          }
+        },
+        {
+          "stage": "lift",
+          "achieved": true,
+          "steps": 85,
+          "step_limit": 600,
+          "termination_reason": "achieved",
+          "min_grasp_distance_m": 0.003913982771337032,
+          "min_target_error_m": 0.0018241459038108587,
+          "min_jaw_mean_rad": 0.06999999284744263,
+          "near_closed_aligned_steps": 85,
+          "last": {
+            "source": "L5",
+            "repetition": 0,
+            "step": 499,
+            "stage": "lift",
+            "reset": false,
+            "grasp_distance_m": 0.003915466368198395,
+            "jaw_mean_rad": 0.07000000029802322,
+            "jaw_closed": true,
+            "near": true,
+            "aligned": true,
+            "quaternion_vector_norm": 0.0,
+            "orientation_error_deg": 0.0,
+            "candidate_steps": 0,
+            "holder": 1,
+            "blocked_moves": 0,
+            "peg_xyz": [
+              -0.005679013207554817,
+              5.852431058883667e-06,
+              0.05817902088165283
+            ],
+            "tip_xyz": [
+              -0.0025190499145537615,
+              -0.012906232848763466,
+              0.05220858007669449
+            ],
+            "target_error_m": 0.0018241459038108587,
+            "gripper_joints": [
+              -0.07000000029802322,
+              0.07000000029802322
+            ],
+            "metrics": {
+              "grasp_psm1": true,
+              "lift_stable": false,
+              "grasp_psm2": false,
+              "handover": false,
+              "placement": false,
+              "full_success": false
+            }
+          }
+        },
+        {
+          "stage": "hold",
+          "achieved": true,
+          "steps": 16,
+          "step_limit": 600,
+          "termination_reason": "achieved",
+          "min_grasp_distance_m": 0.003915466368198395,
+          "min_target_error_m": 6.094425043556839e-05,
+          "min_jaw_mean_rad": 0.07000000029802322,
+          "near_closed_aligned_steps": 16,
+          "last": {
+            "source": "L5",
+            "repetition": 0,
+            "step": 515,
+            "stage": "hold",
+            "reset": false,
+            "grasp_distance_m": 0.003915466368198395,
+            "jaw_mean_rad": 0.07000000029802322,
+            "jaw_closed": true,
+            "near": true,
+            "aligned": true,
+            "quaternion_vector_norm": 0.0,
+            "orientation_error_deg": 0.0,
+            "candidate_steps": 0,
+            "holder": 1,
+            "blocked_moves": 0,
+            "peg_xyz": [
+              -0.005788756534457207,
+              4.318542778491974e-06,
+              0.059939250349998474
+            ],
+            "tip_xyz": [
+              -0.0026287927757948637,
+              -0.012907766737043858,
+              0.05396880954504013
+            ],
+            "target_error_m": 6.094425043556839e-05,
+            "gripper_joints": [
+              -0.07000000029802322,
+              0.07000000029802322
+            ],
+            "metrics": {
+              "grasp_psm1": true,
+              "lift_stable": true,
+              "grasp_psm2": false,
+              "handover": false,
+              "placement": false,
+              "full_success": false
+            }
+          }
+        }
+      ],
+      "steps": 515,
+      "metrics": {
+        "grasp_psm1": true,
+        "lift_stable": true,
+        "grasp_psm2": false,
+        "handover": false,
+        "placement": false,
+        "full_success": false
+      },
+      "closure_started_in_capture_zone": true,
+      "closure_completed_in_capture_zone": true,
+      "passed": true
+    },
+    {
+      "source": "L6",
+      "repetition": 0,
+      "stages": [
+        {
+          "stage": "settle",
+          "achieved": true,
+          "steps": 25,
+          "step_limit": 25,
+          "termination_reason": "achieved",
+          "min_grasp_distance_m": 0.09639827907085419,
+          "min_target_error_m": 0.0,
+          "min_jaw_mean_rad": 0.5,
+          "near_closed_aligned_steps": 0,
+          "last": {
+            "source": "L6",
+            "repetition": 0,
+            "step": 25,
+            "stage": "settle",
+            "reset": false,
+            "grasp_distance_m": 0.09639827907085419,
+            "jaw_mean_rad": 0.5,
+            "jaw_closed": false,
+            "near": false,
+            "aligned": true,
+            "quaternion_vector_norm": 6.258782150325715e-07,
+            "orientation_error_deg": 7.172036042110016e-05,
+            "candidate_steps": 0,
+            "holder": 0,
+            "blocked_moves": 0,
+            "peg_xyz": [
+              -0.005786394700407982,
+              -0.0299999862909317,
+              0.024613015353679657
+            ],
+            "tip_xyz": [
+              -0.06918087601661682,
+              -0.0009130279067903757,
+              0.07721152156591415
+            ],
+            "target_error_m": 0.0,
+            "gripper_joints": [
+              -0.5,
+              0.5
+            ],
+            "metrics": {
+              "grasp_psm1": false,
+              "lift_stable": false,
+              "grasp_psm2": false,
+              "handover": false,
+              "placement": false,
+              "full_success": false
+            }
+          }
+        },
+        {
+          "stage": "above_side",
+          "achieved": true,
+          "steps": 237,
+          "step_limit": 600,
+          "termination_reason": "achieved",
+          "min_grasp_distance_m": 0.024958856403827667,
+          "min_target_error_m": 0.0007935037720017135,
+          "min_jaw_mean_rad": 0.4999999701976776,
+          "near_closed_aligned_steps": 0,
+          "last": {
+            "source": "L6",
+            "repetition": 0,
+            "step": 262,
+            "stage": "above_side",
+            "reset": false,
+            "grasp_distance_m": 0.024958856403827667,
+            "jaw_mean_rad": 0.5,
+            "jaw_closed": false,
+            "near": false,
+            "aligned": true,
+            "quaternion_vector_norm": 7.859868560444738e-07,
+            "orientation_error_deg": 9.006745920821917e-05,
+            "candidate_steps": 0,
+            "holder": 0,
+            "blocked_moves": 0,
+            "peg_xyz": [
+              -0.005786371883004904,
+              -0.029999904334545135,
+              0.024613019078969955
+            ],
+            "tip_xyz": [
+              -0.0033381234388798475,
+              -0.0535135455429554,
+              0.03891066089272499
+            ],
+            "target_error_m": 0.0007935037720017135,
+            "gripper_joints": [
+              -0.5,
+              0.5
+            ],
+            "metrics": {
+              "grasp_psm1": false,
+              "lift_stable": false,
+              "grasp_psm2": false,
+              "handover": false,
+              "placement": false,
+              "full_success": false
+            }
+          }
+        },
+        {
+          "stage": "outside_side",
+          "achieved": true,
+          "steps": 51,
+          "step_limit": 600,
+          "termination_reason": "achieved",
+          "min_grasp_distance_m": 0.015034910291433334,
+          "min_target_error_m": 0.0007864301442168653,
+          "min_jaw_mean_rad": 0.5,
+          "near_closed_aligned_steps": 0,
+          "last": {
+            "source": "L6",
+            "repetition": 0,
+            "step": 313,
+            "stage": "outside_side",
+            "reset": false,
+            "grasp_distance_m": 0.015034910291433334,
+            "jaw_mean_rad": 0.5,
+            "jaw_closed": false,
+            "near": false,
+            "aligned": true,
+            "quaternion_vector_norm": 8.59929969010409e-07,
+            "orientation_error_deg": 9.854071580223636e-05,
+            "candidate_steps": 0,
+            "holder": 0,
+            "blocked_moves": 0,
+            "peg_xyz": [
+              -0.005786372348666191,
+              -0.029999900609254837,
+              0.024613019078969955
+            ],
+            "tip_xyz": [
+              -0.0027674559969455004,
+              -0.054014235734939575,
+              0.019399091601371765
+            ],
+            "target_error_m": 0.0007864301442168653,
+            "gripper_joints": [
+              -0.5,
+              0.5
+            ],
+            "metrics": {
+              "grasp_psm1": false,
+              "lift_stable": false,
+              "grasp_psm2": false,
+              "handover": false,
+              "placement": false,
+              "full_success": false
+            }
+          }
+        },
+        {
+          "stage": "reach",
+          "achieved": true,
+          "steps": 113,
+          "step_limit": 600,
+          "termination_reason": "achieved",
+          "min_grasp_distance_m": 0.0039318460039794445,
+          "min_target_error_m": 0.00043272378388792276,
+          "min_jaw_mean_rad": 0.5,
+          "near_closed_aligned_steps": 0,
+          "last": {
+            "source": "L6",
+            "repetition": 0,
+            "step": 426,
+            "stage": "reach",
+            "reset": false,
+            "grasp_distance_m": 0.0039318460039794445,
+            "jaw_mean_rad": 0.5,
+            "jaw_closed": false,
+            "near": true,
+            "aligned": true,
+            "quaternion_vector_norm": 7.576677489851136e-07,
+            "orientation_error_deg": 8.682232858005725e-05,
+            "candidate_steps": 0,
+            "holder": 0,
+            "blocked_moves": 0,
+            "peg_xyz": [
+              -0.005786373745650053,
+              -0.0299998689442873,
+              0.024613024666905403
+            ],
+            "tip_xyz": [
+              -0.002787085250020027,
+              -0.04293159022927284,
+              0.018644265830516815
+            ],
+            "target_error_m": 0.00043272378388792276,
+            "gripper_joints": [
+              -0.5,
+              0.5
+            ],
+            "metrics": {
+              "grasp_psm1": false,
+              "lift_stable": false,
+              "grasp_psm2": false,
+              "handover": false,
+              "placement": false,
+              "full_success": false
+            }
+          }
+        },
+        {
+          "stage": "close",
+          "achieved": true,
+          "steps": 22,
+          "step_limit": 600,
+          "termination_reason": "achieved",
+          "min_grasp_distance_m": 0.0039070043712854385,
+          "min_target_error_m": 1.7814941202232148e-06,
+          "min_jaw_mean_rad": 0.1479923576116562,
+          "near_closed_aligned_steps": 3,
+          "last": {
+            "source": "L6",
+            "repetition": 0,
+            "step": 448,
+            "stage": "close",
+            "reset": false,
+            "grasp_distance_m": 0.003930684179067612,
+            "jaw_mean_rad": 0.1479923576116562,
+            "jaw_closed": true,
+            "near": true,
+            "aligned": true,
+            "quaternion_vector_norm": 0.0,
+            "orientation_error_deg": 0.0,
+            "candidate_steps": 0,
+            "holder": 1,
+            "blocked_moves": 0,
+            "peg_xyz": [
+              -0.005786379799246788,
+              -0.029999999329447746,
+              0.0246130283921957
+            ],
+            "tip_xyz": [
+              -0.002788183046504855,
+              -0.04293055087327957,
+              0.018645208328962326
+            ],
+            "target_error_m": 1.7814941202232148e-06,
+            "gripper_joints": [
+              -0.14798922836780548,
+              0.1479954868555069
+            ],
+            "metrics": {
+              "grasp_psm1": true,
+              "lift_stable": false,
+              "grasp_psm2": false,
+              "handover": false,
+              "placement": false,
+              "full_success": false
+            }
+          }
+        },
+        {
+          "stage": "lift",
+          "achieved": true,
+          "steps": 85,
+          "step_limit": 600,
+          "termination_reason": "achieved",
+          "min_grasp_distance_m": 0.0038954715710133314,
+          "min_target_error_m": 0.0018389236647635698,
+          "min_jaw_mean_rad": 0.06999999284744263,
+          "near_closed_aligned_steps": 85,
+          "last": {
+            "source": "L6",
+            "repetition": 0,
+            "step": 533,
+            "stage": "lift",
+            "reset": false,
+            "grasp_distance_m": 0.0038960538804531097,
+            "jaw_mean_rad": 0.06999999284744263,
+            "jaw_closed": true,
+            "near": true,
+            "aligned": true,
+            "quaternion_vector_norm": 0.0,
+            "orientation_error_deg": 0.0,
+            "candidate_steps": 0,
+            "holder": 1,
+            "blocked_moves": 0,
+            "peg_xyz": [
+              -0.005677166394889355,
+              -0.029981886968016624,
+              0.058164410293102264
+            ],
+            "tip_xyz": [
+              -0.002512824721634388,
+              -0.04287433996796608,
+              0.05219658836722374
+            ],
+            "target_error_m": 0.0018389236647635698,
+            "gripper_joints": [
+              -0.07000001519918442,
+              0.06999997049570084
+            ],
+            "metrics": {
+              "grasp_psm1": true,
+              "lift_stable": false,
+              "grasp_psm2": false,
+              "handover": false,
+              "placement": false,
+              "full_success": false
+            }
+          }
+        },
+        {
+          "stage": "hold",
+          "achieved": true,
+          "steps": 16,
+          "step_limit": 600,
+          "termination_reason": "achieved",
+          "min_grasp_distance_m": 0.0038960538804531097,
+          "min_target_error_m": 6.690546433674172e-05,
+          "min_jaw_mean_rad": 0.06999999284744263,
+          "near_closed_aligned_steps": 16,
+          "last": {
+            "source": "L6",
+            "repetition": 0,
+            "step": 549,
+            "stage": "hold",
+            "reset": false,
+            "grasp_distance_m": 0.0038960538804531097,
+            "jaw_mean_rad": 0.07000000029802322,
+            "jaw_closed": true,
+            "near": true,
+            "aligned": true,
+            "quaternion_vector_norm": 0.0,
+            "orientation_error_deg": 0.0,
+            "candidate_steps": 0,
+            "holder": 1,
+            "blocked_moves": 0,
+            "peg_xyz": [
+              -0.005786508321762085,
+              -0.029987333342432976,
+              0.05993430316448212
+            ],
+            "tip_xyz": [
+              -0.002622166881337762,
+              -0.04287978634238243,
+              0.05396648123860359
+            ],
+            "target_error_m": 6.690546433674172e-05,
+            "gripper_joints": [
+              -0.07000000029802322,
+              0.07000000029802322
+            ],
+            "metrics": {
+              "grasp_psm1": true,
+              "lift_stable": true,
+              "grasp_psm2": false,
+              "handover": false,
+              "placement": false,
+              "full_success": false
+            }
+          }
+        }
+      ],
+      "steps": 549,
+      "metrics": {
+        "grasp_psm1": true,
+        "lift_stable": true,
+        "grasp_psm2": false,
+        "handover": false,
+        "placement": false,
+        "full_success": false
+      },
+      "closure_started_in_capture_zone": true,
+      "closure_completed_in_capture_zone": true,
+      "passed": true
+    }
+  ],
+  "probe_revision": 3,
+  "approach_mode": "capture",
+  "validation_scope": "scripted_assisted_grasp_and_lift",
+  "physical_grasp_verified": false,
+  "episode_seconds": 120.0,
+  "stage_limits": {
+    "settle": 25,
+    "above_side": 600,
+    "outside_side": 600,
+    "reach": 600,
+    "close": 600,
+    "lift": 600,
+    "hold": 600
+  },
+  "passed": true,
+  "gripper_joint_names": [
+    "psm_tool_gripper1_joint",
+    "psm_tool_gripper2_joint"
+  ],
+  "thresholds": {
+    "grasp_radius_m": 0.004,
+    "closed_jaw_rad": 0.18,
+    "aligned_qnorm": 0.005
+  }
+}

@@ -1,0 +1,208 @@
+{
+  "checkpoint": "/home/francesco/Documents/GIGI/i4h-workflows/logs/sac/peg_transfer_dual_psm/2026-10-02_12-30-27_peg_L5_recovery_bc_v5/final.zip",
+  "trained_phase": "lift",
+  "evaluated_phase": "lift",
+  "seed": 123,
+  "versions": {
+    "isaacsim": "5.1.0.0",
+    "isaaclab": "0.48.0",
+    "isaaclab_rl": "0.4.4",
+    "torch": "2.7.0+cu128",
+    "stable-baselines3": "2.9.0",
+    "gymnasium": "1.2.0"
+  },
+  "fingerprint": "8185393283bf784e324892c34514545dbe423a2343ad6da541aa1995edef90ae",
+  "episodes": 100,
+  "requested_episodes": 100,
+  "interrupted": false,
+  "complete": true,
+  "source": "L5",
+  "num_envs": 16,
+  "assisted_grasp": true,
+  "grasp_psm1": 0,
+  "grasp_psm1_rate": 0.0,
+  "grasp_psm1_ci95": [
+    0,
+    0.03699480747600191
+  ],
+  "lift_stable": 0,
+  "lift_stable_rate": 0.0,
+  "lift_stable_ci95": [
+    0,
+    0.03699480747600191
+  ],
+  "grasp_psm2": 0,
+  "grasp_psm2_rate": 0.0,
+  "grasp_psm2_ci95": [
+    0,
+    0.03699480747600191
+  ],
+  "handover": 0,
+  "handover_rate": 0.0,
+  "handover_ci95": [
+    0,
+    0.03699480747600191
+  ],
+  "placement": 0,
+  "placement_rate": 0.0,
+  "placement_ci95": [
+    0,
+    0.03699480747600191
+  ],
+  "full_success": 0,
+  "full_success_rate": 0.0,
+  "full_success_ci95": [
+    0,
+    0.03699480747600191
+  ],
+  "timeouts": 100,
+  "failures": 0,
+  "blocked_moves": 0,
+  "by_source": {
+    "L5": {
+      "episodes": 100,
+      "grasp_psm1_rate": 0.0,
+      "lift_stable_rate": 0.0,
+      "grasp_psm2_rate": 0.0,
+      "handover_rate": 0.0,
+      "placement_rate": 0.0,
+      "full_success_rate": 0.0
+    },
+    "L6": {
+      "episodes": 0,
+      "grasp_psm1_rate": null,
+      "lift_stable_rate": null,
+      "grasp_psm2_rate": null,
+      "handover_rate": null,
+      "placement_rate": null,
+      "full_success_rate": null
+    },
+    "P1": {
+      "episodes": 0,
+      "grasp_psm1_rate": null,
+      "lift_stable_rate": null,
+      "grasp_psm2_rate": null,
+      "handover_rate": null,
+      "placement_rate": null,
+      "full_success_rate": null
+    },
+    "P2": {
+      "episodes": 0,
+      "grasp_psm1_rate": null,
+      "lift_stable_rate": null,
+      "grasp_psm2_rate": null,
+      "handover_rate": null,
+      "placement_rate": null,
+      "full_success_rate": null
+    },
+    "P3": {
+      "episodes": 0,
+      "grasp_psm1_rate": null,
+      "lift_stable_rate": null,
+      "grasp_psm2_rate": null,
+      "handover_rate": null,
+      "placement_rate": null,
+      "full_success_rate": null
+    },
+    "P4": {
+      "episodes": 0,
+      "grasp_psm1_rate": null,
+      "lift_stable_rate": null,
+      "grasp_psm2_rate": null,
+      "handover_rate": null,
+      "placement_rate": null,
+      "full_success_rate": null
+    },
+    "P5": {
+      "episodes": 0,
+      "grasp_psm1_rate": null,
+      "lift_stable_rate": null,
+      "grasp_psm2_rate": null,
+      "handover_rate": null,
+      "placement_rate": null,
+      "full_success_rate": null
+    },
+    "P6": {
+      "episodes": 0,
+      "grasp_psm1_rate": null,
+      "lift_stable_rate": null,
+      "grasp_psm2_rate": null,
+      "handover_rate": null,
+      "placement_rate": null,
+      "full_success_rate": null
+    },
+    "P7": {
+      "episodes": 0,
+      "grasp_psm1_rate": null,
+      "lift_stable_rate": null,
+      "grasp_psm2_rate": null,
+      "handover_rate": null,
+      "placement_rate": null,
+      "full_success_rate": null
+    },
+    "P8": {
+      "episodes": 0,
+      "grasp_psm1_rate": null,
+      "lift_stable_rate": null,
+      "grasp_psm2_rate": null,
+      "handover_rate": null,
+      "placement_rate": null,
+      "full_success_rate": null
+    },
+    "P9": {
+      "episodes": 0,
+      "grasp_psm1_rate": null,
+      "lift_stable_rate": null,
+      "grasp_psm2_rate": null,
+      "handover_rate": null,
+      "placement_rate": null,
+      "full_success_rate": null
+    }
+  },
+  "source_positions": {
+    "L5": [
+      0.0,
+      0.0
+    ],
+    "L6": [
+      0.0,
+      -0.03
+    ],
+    "P1": [
+      -0.042,
+      0.03
+    ],
+    "P2": [
+      -0.042,
+      0.0
+    ],
+    "P3": [
+      -0.042,
+      -0.03
+    ],
+    "P4": [
+      0.0,
+      0.03
+    ],
+    "P5": [
+      0.042,
+      -0.015
+    ],
+    "P6": [
+      0.084,
+      0.035
+    ],
+    "P7": [
+      0.084,
+      -0.035
+    ],
+    "P8": [
+      0.126,
+      -0.015
+    ],
+    "P9": [
+      0.126,
+      0.015
+    ]
+  }
+}

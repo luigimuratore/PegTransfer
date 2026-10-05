@@ -1,0 +1,232 @@
+Study this entire Isaac/i4h robotic surgery project.
+
+
+STRICT AUDIT MODE
+
+You may:
+- read files
+- search files
+- inspect logs
+- inspect configs
+- inspect checkpoints metadata
+- inspect TensorBoard/CSV outputs
+- run read-only shell commands such as ls, find, grep, rg, cat, sed, head, tail, pwd, git status, git log, git diff
+
+You may NOT:
+- write files
+- edit files
+- delete files
+- rename or move files
+- run training
+- launch Isaac
+- install packages
+- run git commit/push/reset/checkout
+- modify configs
+- execute scripts that change project state
+- overwrite logs/checkpoints
+
+
+Primary goal:
+Solve the dVRK Peg Transfer task robustly with reinforcement learning.
+
+IMPORTANT:
+For this first pass, DO NOT modify, create, delete, rename, or overwrite any project file.
+Do not run training.
+Do not change configuration files.
+Only inspect, reconstruct, diagnose, and propose experiments.
+
+Tasks:
+
+1. Map the project structure.
+   - Identify the files and directories relevant to robotic surgery, dVRK, Peg Transfer, reinforcement learning, training, evaluation, logging, and checkpoints.
+   - Distinguish active code from obsolete, duplicated, experimental, or unused code where possible.
+
+2. Identify the Peg Transfer environment/task entry point.
+   - Trace the execution path from the command used to start training down to the environment/task implementation.
+   - Identify configuration files and dependencies involved.
+
+3. Reconstruct the observation space.
+   For every observation:
+   - name
+   - source in code
+   - dimensions
+   - reference frame
+   - normalization/scaling
+   - clipping
+   - noise/randomization
+   - whether it is privileged information
+   - whether it is available during inference
+
+4. Reconstruct the action space and control mode.
+   Determine:
+   - action dimensions
+   - joint-space vs Cartesian control
+   - position/velocity/torque targets
+   - scaling
+   - clipping
+   - action rate
+   - smoothing
+   - actuator/controller implementation
+   - mapping from policy outputs to the dVRK joints/end-effector
+
+5. Audit the reward function.
+   List EVERY reward term and for each one report:
+   - mathematical meaning
+   - implementation location
+   - weight/scale
+   - activation conditions
+   - sign
+   - expected magnitude
+   - whether it is dense or sparse
+   - which phase of Peg Transfer it encourages
+   - possible conflicts with other rewards
+
+   Reconstruct the approximate total reward equation.
+
+6. Identify reset, termination, success, and failure conditions.
+   Include:
+   - timeouts
+   - peg/needle/object drops
+   - workspace violations
+   - grasp loss
+   - collisions
+   - joint limits
+   - success criteria
+   - episode initialization/randomization
+
+7. Audit the PPO pipeline.
+   Identify:
+   - algorithm implementation/library
+   - network architecture
+   - actor/critic inputs
+   - learning rate
+   - batch/minibatch sizes
+   - rollout length
+   - number of environments
+   - gamma
+   - lambda/GAE
+   - clipping
+   - entropy coefficient
+   - value loss coefficient
+   - gradient clipping
+   - normalization
+   - scheduler
+   - checkpointing
+   - evaluation
+   - curriculum
+   - domain randomization
+
+8. Inspect existing training and evaluation outputs.
+   Search for:
+   - logs
+   - TensorBoard data
+   - CSV files
+   - checkpoints
+   - videos
+   - evaluation scripts
+   - success metrics
+   - reward component histories
+   - previous experiments
+
+   Summarize what has already been tried.
+
+9. Diagnose why the current policies are failing.
+   Separate clearly:
+   A. facts directly supported by code/logs
+   B. hypotheses
+   C. missing evidence required to validate each hypothesis
+
+   Look specifically for:
+   - reward hacking
+   - badly scaled reward components
+   - insufficient exploration
+   - impossible or noisy observations
+   - poor action scaling
+   - unstable control
+   - sparse-reward bottlenecks
+   - premature termination
+   - curriculum discontinuities
+   - environment reset bugs
+   - frame/sign/unit errors
+   - poor PPO hyperparameters
+   - sim instability
+   - object/grasp physics problems
+
+10. Propose a staged PPO experiment plan.
+    The objective is reliable completion of the complete Peg Transfer task.
+
+    Use controlled experiments:
+    - change one major factor at a time
+    - define a hypothesis for each experiment
+    - define exact code/config changes
+    - define success metrics
+    - define stop/revert criteria
+    - preserve a reproducible baseline
+
+    Prefer task decomposition/curriculum if the complete task is currently too difficult.
+
+11. Design an equivalent SAC pipeline.
+    Do NOT implement it yet.
+
+    Determine:
+    - whether the current environment/action space is suitable for SAC
+    - required code/config changes
+    - SAC actor/critic architecture
+    - replay buffer design
+    - warm-up/exploration strategy
+    - learning rates
+    - batch size
+    - gamma
+    - tau
+    - entropy temperature / automatic entropy tuning
+    - update frequency
+    - observation/action normalization
+    - checkpoint/evaluation strategy
+    - curriculum compatibility
+
+    Explain which parts can be shared with PPO and which must differ.
+
+    Provide a staged SAC experiment plan comparable to the PPO plan.
+
+12. Define the final evaluation protocol for a "solved" Peg Transfer policy.
+    Include at minimum:
+    - success rate
+    - number of evaluation episodes
+    - multiple random seeds
+    - completion time
+    - grasp/drop failure rate
+    - collision rate
+    - robustness to randomized initial conditions
+    - robustness to domain randomization if present
+
+OUTPUT FORMAT
+
+Produce a structured technical report with these sections:
+
+1. Executive summary
+2. Project map
+3. Task execution path
+4. Observation space
+5. Action/control space
+6. Reward audit
+7. Reset / termination / success logic
+8. PPO configuration
+9. Existing experiments and results
+10. Failure analysis
+11. PPO improvement roadmap
+12. SAC architecture and roadmap
+13. Proposed experiment table
+14. Missing information / instrumentation
+15. Recommended first experiment
+
+For every important claim, cite the exact source file and, when possible, function/class/config key.
+
+Use these labels explicitly:
+[FACT]
+[HYPOTHESIS]
+[PROPOSED CHANGE]
+
+Do not silently assume missing information.
+If something cannot be determined from the repository, say so.
+
+Do not modify the project during this audit.

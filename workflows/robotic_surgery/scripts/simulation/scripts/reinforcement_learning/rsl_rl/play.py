@@ -13,6 +13,7 @@ from isaaclab.app import AppLauncher
 
 # local imports
 import cli_args  # isort: skip
+from checkpoint_utils import resolve_run_name  # isort: skip
 
 # add argparse arguments
 parser = argparse.ArgumentParser(description="Train an RL agent with RSL-RL.")
@@ -39,6 +40,7 @@ simulation_app = app_launcher.app
 """Rest everything follows."""
 
 import os
+import re
 
 import gymnasium as gym
 import robotic.surgery.tasks  # noqa: F401
@@ -62,6 +64,10 @@ def main():
     log_root_path = os.path.join("logs", "rsl_rl", agent_cfg.experiment_name)
     log_root_path = os.path.abspath(log_root_path)
     print(f"[INFO] Loading experiment from directory: {log_root_path}")
+    if args_cli.load_run is not None:
+        resolved_run = resolve_run_name(log_root_path, args_cli.load_run)
+        agent_cfg.load_run = re.escape(resolved_run) + "$"
+        print(f"[INFO] Selected run: {resolved_run}")
     resume_path = get_checkpoint_path(log_root_path, agent_cfg.load_run, agent_cfg.load_checkpoint)
     log_dir = os.path.dirname(resume_path)
 
@@ -84,7 +90,7 @@ def main():
         env = multi_agent_to_single_agent(env)
 
     # wrap around environment for rsl-rl
-    env = RslRlVecEnvWrapper(env)
+    env = RslRlVecEnvWrapper(env, clip_actions=agent_cfg.clip_actions)
 
     print(f"[INFO]: Loading model checkpoint from: {resume_path}")
     # load previously trained model
@@ -112,6 +118,17 @@ def main():
             actions = policy(obs)
             # env stepping
             obs, _, _, _ = env.step(actions)
+        if env.num_envs == 1 and bool(env.unwrapped.reset_buf[0]):
+            base = env.unwrapped
+            if bool(base.termination_manager.get_term("success")[0]):
+                reason = "success"
+            elif bool(base.termination_manager.get_term("object_dropping")[0]):
+                reason = "object_dropping"
+            elif bool(base.reset_time_outs[0]):
+                reason = "time_out"
+            else:
+                reason = "other"
+            print(f"[PLAY] Episode reset: {reason}", flush=True)
         if args_cli.video:
             timestep += 1
             # Exit the play loop after recording one video

@@ -31,7 +31,24 @@ data/
 third_party/
 .nvidia-omniverse/
 .config/
-logs/
+# Preserve experiment evidence and SAC checkpoints; omit large replay dumps.
+/logs/*
+!/logs/sac/
+!/logs/sac_sequence/
+/logs/sac/**/*.pkl
+/logs/sac_sequence/**/*.pkl
 *.egg-info/
 outputs/
 checkpoints/
+
+# Empty files created accidentally at the project root.
+/python
+/sudo
+
+# Local credentials and shell state.
+.env
+.env.*
+!.env.example
+.aws/
+.ssh/
+.bash_history
