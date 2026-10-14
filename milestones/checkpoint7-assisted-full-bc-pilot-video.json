@@ -1,0 +1,26 @@
+{
+  "name": "checkpoint7-assisted-full-bc-pilot-video",
+  "date": "2026-10-07",
+  "complete": true,
+  "success": 1,
+  "episodes": 1,
+  "assisted_grasp": true,
+  "native_full_policy_verified": false,
+  "policy_sha256": "64f0512c5be8c6215a67e89c58b5f116a4d613a054e68c2b5ff6d7029a5a660f",
+  "checkpoint_manifest": "milestones/checkpoint7-assisted-full-bc-pilot.json",
+  "checkpoint_manifest_sha256": "dd025397f9790e975eb9ecbfb2e775956f4d9678763069a54936ba76aec89be6",
+  "preserved_bundle": ".checkpoint_runs/checkpoint7-assisted-full-bc-pilot-video",
+  "preserved_policy": ".checkpoint_runs/checkpoint7-assisted-full-bc-pilot/model/policy.pt",
+  "physics_manifest": "milestones/checkpoint3-full-assisted.json",
+  "physics_manifest_sha256": "3416ee107c467cedca24d735064e8b8775646d63afe202d6114a51ac81337bbf",
+  "video": ".checkpoint_runs/checkpoint7-assisted-full-bc-pilot-video/inference_front.mp4",
+  "camera": "Front of PSMs, inclined towards board",
+  "duration_s": 49.28,
+  "width": 1280,
+  "height": 720,
+  "files": {
+    "evaluation.json": "b96629bacd1af31a3efea5d5aa97420f94b0d9463e968107356c8c08a9e366eb",
+    "inference_front.mp4": "16caa23e013899ba5299510aed1b6ea327b8679a9d5d37c14720eb9cb7fa57c5",
+    "video_audit.json": "b06f760fc417b70eceef4bb8328cb19c71aad7f8b0300026a9a29e60c821ee84"
+  }
+}

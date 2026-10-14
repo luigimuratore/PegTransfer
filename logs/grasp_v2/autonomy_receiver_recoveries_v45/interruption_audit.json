@@ -1,0 +1,9 @@
+{
+  "updated_utc": "2026-10-07T12:32:53.866710+00:00",
+  "complete": false,
+  "signal": "SIGINT",
+  "verified_pid_at_interruption": 1350,
+  "exec_session": 21079,
+  "reason": "Collector used default receiver wall60/depth1/tilt20 instead of parent learned wall300/depth4/tilt0. Interrupted before any complete successful dataset or training.",
+  "replaced_by": "autonomy_receiver_recoveries_v47 + autonomy_receiver_bc_v48"
+}

@@ -1,0 +1,18 @@
+[
+  "/home/francesco/miniconda3/envs/PegTransfer/bin/python",
+  "-u",
+  "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/bc_sac_recovery_retry_v5/workflow_sources/residual_main.py",
+  "play",
+  "--checkpoint",
+  "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/bc_sac_recovery_retry_v5/repaired_candidate/candidate.zip",
+  "--headless",
+  "--output",
+  "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/bc_sac_recovery_retry_v5/repair_video",
+  "--video",
+  "--num_envs",
+  "1",
+  "--episodes",
+  "1",
+  "--seed",
+  "59003"
+]

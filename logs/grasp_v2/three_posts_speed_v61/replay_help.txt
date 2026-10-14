@@ -1,0 +1,226 @@
+usage: autonomy_main.py [-h] --output OUTPUT [--policy POLICY]
+                        [--datasets DATASETS [DATASETS ...]]
+                        [--num_envs NUM_ENVS] [--episodes EPISODES]
+                        [--episode_steps EPISODE_STEPS]
+                        [--jitter_mm JITTER_MM] [--yaw_deg YAW_DEG]
+                        [--sources SOURCES [SOURCES ...]]
+                        [--targets TARGETS [TARGETS ...]] [--paired_posts]
+                        [--gripper_load_guard] [--upright_grasp_support]
+                        [--learner_fraction LEARNER_FRACTION]
+                        [--learner_until_stage LEARNER_UNTIL_STAGE]
+                        [--learner_prefix_steps LEARNER_PREFIX_STEPS]
+                        [--sync_learner_reference]
+                        [--receiver_recovery_handoff] [--updates UPDATES]
+                        [--batch_size BATCH_SIZE]
+                        [--architecture {mlp,neighbors,gru,pose,mixture,linear_options}]
+                        [--future_steps FUTURE_STEPS] [--phase_endpoint]
+                        [--pose_entry_supervision] [--exclude_joint_shortcuts]
+                        [--skill {lift,handover,full}]
+                        [--balance_direction {-1.0,1.0}]
+                        [--receiver_mode {wall,vertex}]
+                        [--receiver_wall_angle {60.0,300.0}]
+                        [--receiver_wall_depth RECEIVER_WALL_DEPTH]
+                        [--receiver_wall_tilt RECEIVER_WALL_TILT]
+                        [--receiver_open_angle RECEIVER_OPEN_ANGLE]
+                        [--receiver_release_bottom RECEIVER_RELEASE_BOTTOM]
+                        [--receiver_pressure_min RECEIVER_PRESSURE_MIN]
+                        [--receiver_pressure_max RECEIVER_PRESSURE_MAX]
+                        [--donor_release_rate DONOR_RELEASE_RATE]
+                        [--fixed_donor_during_contact]
+                        [--recapture_receiver_after_transfer]
+                        [--implementation_change IMPLEMENTATION_CHANGE]
+                        [--transition_data TRANSITION_DATA [TRANSITION_DATA ...]]
+                        [--stationary_data STATIONARY_DATA [STATIONARY_DATA ...]]
+                        [--stationary_position_tolerance_mm STATIONARY_POSITION_TOLERANCE_MM]
+                        [--stationary_orientation_tolerance_rad STATIONARY_ORIENTATION_TOLERANCE_RAD]
+                        [--pickup_policy PICKUP_POLICY] [--use_pickup_gate]
+                        [--track_stationary_adjustments]
+                        [--relative_pose_data RELATIVE_POSE_DATA [RELATIVE_POSE_DATA ...]]
+                        [--relative_pose_options RELATIVE_POSE_OPTIONS [RELATIVE_POSE_OPTIONS ...]]
+                        [--router_jaw_inputs]
+                        [--target_object_data TARGET_OBJECT_DATA [TARGET_OBJECT_DATA ...]]
+                        [--target_object_options TARGET_OBJECT_OPTIONS [TARGET_OBJECT_OPTIONS ...]]
+                        [--track_relative_pose_changes] [--diagnostic_events]
+                        [--diagnostic_interval DIAGNOSTIC_INTERVAL]
+                        [--grasp_support GRASP_SUPPORT]
+                        [--support_profile {gentle,firm}]
+                        [--placement_support]
+                        [--free_speed_scale FREE_SPEED_SCALE]
+                        [--contact_speed_scale CONTACT_SPEED_SCALE]
+                        [--motion_profile {contact,clearance,travel,fast_travel}]
+                        [--transport_speed_scale TRANSPORT_SPEED_SCALE]
+                        [--latch_option_poses] [--pressure_supervision]
+                        [--pressure_min PRESSURE_MIN]
+                        [--pressure_max PRESSURE_MAX] [--seed SEED]
+                        [--device DEVICE] [--headless] [--realtime] [--video]
+                        {collect,train,fit_jaws,fit_router,fit_contact,evaluate,play,repackage}
+
+Collect native demonstrations/DAgger corrections and evaluate free BC motors.
+
+positional arguments:
+  {collect,train,fit_jaws,fit_router,fit_contact,evaluate,play,repackage}
+
+options:
+  -h, --help            show this help message and exit
+  --output OUTPUT
+  --policy POLICY
+  --datasets DATASETS [DATASETS ...]
+  --num_envs NUM_ENVS
+  --episodes EPISODES
+  --episode_steps EPISODE_STEPS
+  --jitter_mm JITTER_MM
+  --yaw_deg YAW_DEG
+  --sources SOURCES [SOURCES ...]
+  --targets TARGETS [TARGETS ...]
+  --paired_posts        Reset-only round-robin pairing: sources[i] to
+                        targets[i]
+  --gripper_load_guard  Explicit temporary force relief on jaws; neural task
+                        decisions unchanged
+  --upright_grasp_support
+                        Explicit bounded roll/pitch assistance after measured
+                        grasp
+  --learner_fraction LEARNER_FRACTION
+                        DAgger probability of executing the learner per
+                        environment/step
+  --learner_until_stage LEARNER_UNTIL_STAGE
+                        Limit DAgger perturbations to approach stages while
+                        collecting initial recoveries
+  --learner_prefix_steps LEARNER_PREFIX_STEPS
+                        Collection-only alternative: execute a continuous
+                        learner prefix, then let the expert recover without
+                        alternating controllers
+  --sync_learner_reference
+                        Collection-only: reanchor expert private motor
+                        references during the learner prefix and at handoff
+  --receiver_recovery_handoff
+                        Collection-only: start expert receiver reach from a
+                        measured stable donor lift at the end of the learner
+                        prefix
+  --updates UPDATES
+  --batch_size BATCH_SIZE
+  --architecture {mlp,neighbors,gru,pose,mixture,linear_options}
+  --future_steps FUTURE_STEPS
+                        BC target from future measured poses; no future
+                        observations at inference
+  --phase_endpoint      For pose BC, label measured stage endpoints offline;
+                        stage is NOT an actor input
+  --pose_entry_supervision
+                        BC only: fit latched option poses from measured entry
+                        states; gate and jaws retain current-state inputs
+  --exclude_joint_shortcuts
+                        BC option gate: use measured geometry/contact; exclude
+                        joint and velocity correlations
+  --skill {lift,handover,full}
+  --balance_direction {-1.0,1.0}
+                        Collection-only receiver contact centering experiment
+  --receiver_mode {wall,vertex}
+                        Data-collection receiver grasp candidate; inference
+                        decisions stay in the actor
+  --receiver_wall_angle {60.0,300.0}
+                        Collection-only upper/lower right wall grasp candidate
+                        in degrees
+  --receiver_wall_depth RECEIVER_WALL_DEPTH
+                        Collection-only wall insertion depth below the upper
+                        rim in mm
+  --receiver_wall_tilt RECEIVER_WALL_TILT
+                        Collection-only wall tool entry tilt in degrees
+  --receiver_open_angle RECEIVER_OPEN_ANGLE
+                        Collection-only wall jaw opening in radians
+  --receiver_release_bottom RECEIVER_RELEASE_BOTTOM
+                        Collection-only insertion bottom height in metres
+                        before release; success still requires free stable
+                        seating at 0.010 m
+  --receiver_pressure_min RECEIVER_PRESSURE_MIN
+                        Collection-only lower receiver pressure in N
+  --receiver_pressure_max RECEIVER_PRESSURE_MAX
+                        Collection-only upper receiver pressure in N
+  --donor_release_rate DONOR_RELEASE_RATE
+                        Collection-only gradual donor release rate in rad/s
+  --fixed_donor_during_contact
+                        Collection-only experiment: preserve donor tool pose
+                        during receiver approach and closure
+  --recapture_receiver_after_transfer
+                        Collection-only: measure the loaded receiver-to-peg
+                        transform after the donor retreats
+  --implementation_change IMPLEMENTATION_CHANGE
+                        Description of the current-code fork when repackaging
+                        unchanged weights
+  --transition_data TRANSITION_DATA [TRANSITION_DATA ...]
+                        Repackage: infer option-transition memory from
+                        complete training demonstrations
+  --stationary_data STATIONARY_DATA [STATIONARY_DATA ...]
+                        Repackage: infer which tool references remain
+                        stationary from whole training demonstrations
+  --stationary_position_tolerance_mm STATIONARY_POSITION_TOLERANCE_MM
+                        Training reference excursions below this limit share
+                        the previous neural goal
+  --stationary_orientation_tolerance_rad STATIONARY_ORIENTATION_TOLERANCE_RAD
+                        Training rotation excursions below this limit share
+                        the previous neural orientation
+  --pickup_policy PICKUP_POLICY
+                        Repackage: embed a preserved six-option neural pickup
+                        decoder in a full actor
+  --use_pickup_gate     Repackage: retain the embedded pickup neural decisions
+                        until the full learned router selects continuation
+  --track_stationary_adjustments
+                        Repackage: retain the entry anchor and follow bounded
+                        changes in learned contact pose predictions
+  --relative_pose_data RELATIVE_POSE_DATA [RELATIVE_POSE_DATA ...]
+                        Repackage: fit a peg-frame BC goal decoder from whole
+                        native training visits
+  --relative_pose_options RELATIVE_POSE_OPTIONS [RELATIVE_POSE_OPTIONS ...]
+                        Options whose receiver poses are fitted in the
+                        observed peg frame
+  --router_jaw_inputs   Router fitting: include measured jaw
+                        positions/references to distinguish donor release and
+                        retreat
+  --target_object_data TARGET_OBJECT_DATA [TARGET_OBJECT_DATA ...]
+                        Repackage: fit object destinations from complete
+                        training endpoints; decode through measured receiver
+                        grasp
+  --target_object_options TARGET_OBJECT_OPTIONS [TARGET_OBJECT_OPTIONS ...]
+                        Options whose object destinations are fitted relative
+                        to the target
+  --track_relative_pose_changes
+                        Repackage: follow bounded changes of fitted peg-
+                        relative goals after entry
+  --diagnostic_events   Log all eligible environments at learned option
+                        changes and every 50 steps; no actor input changes
+  --diagnostic_interval DIAGNOSTIC_INTERVAL
+                        Diagnostic-only physical sampling interval in control
+                        steps
+  --grasp_support GRASP_SUPPORT
+                        Explicit bounded grasp spring strength 0..1; all
+                        nonzero runs are assisted
+  --support_profile {gentle,firm}
+                        Assisted grasp force/stiffness preset; strength zero
+                        remains native
+  --placement_support   Explicit temporary centering guide after free release
+                        near the target; assisted only
+  --free_speed_scale FREE_SPEED_SCALE
+                        Reference translation/rotation multiplier away from
+                        contact; original checkpoint uses 1
+  --contact_speed_scale CONTACT_SPEED_SCALE
+                        Reference translation/rotation multiplier in contact;
+                        jaws and hold times stay unchanged
+  --motion_profile {contact,clearance,travel,fast_travel}
+                        Experimental transit caps; travel preserves original
+                        orientation and approach minima
+  --transport_speed_scale TRANSPORT_SPEED_SCALE
+                        Clearance profile only: stable isolated grasp
+                        transport multiplier, 1..4; interaction stays slow
+  --latch_option_poses  Repackage: choose and retain a learned pose on each
+                        learned option change; jaws remain closed-loop learned
+                        outputs
+  --pressure_supervision
+                        Fit jaws: imitate offline expert pressure decisions
+                        with categorical rates and force calibration
+  --pressure_min PRESSURE_MIN
+                        Training-only lower pressure label boundary in N
+  --pressure_max PRESSURE_MAX
+                        Training-only upper pressure label boundary in N
+  --seed SEED
+  --device DEVICE
+  --headless
+  --realtime
+  --video

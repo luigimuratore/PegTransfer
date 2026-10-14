@@ -1,0 +1,106 @@
+{
+  "updated_utc": "2026-10-07T12:00:36.633899+00:00",
+  "complete": true,
+  "algorithm": "Behavior Cloning; weights unchanged",
+  "assisted_grasp": true,
+  "native_full_policy_verified": false,
+  "policy_sha256": "64f0512c5be8c6215a67e89c58b5f116a4d613a054e68c2b5ff6d7029a5a660f",
+  "verified_reports": [
+    {
+      "label": "baseline_fixed",
+      "success": 3,
+      "episodes": 3,
+      "report": "logs/grasp_v2/autonomy_motion_positions_v42/baseline_fixed/evaluation.json",
+      "report_sha256": "f22efb9e42082f202327cd770263ff72c7a35b3d6521aa3b0299cc9c12d698f3"
+    },
+    {
+      "label": "baseline_seed123",
+      "success": 16,
+      "episodes": 16,
+      "report": "logs/grasp_v2/autonomy_motion_positions_v42/baseline_seed123/evaluation.json",
+      "report_sha256": "7e42b67b1b7613b8009e848db18775852f891a65810e567e6ff2f11afb6f8251"
+    },
+    {
+      "label": "baseline_seed9876",
+      "success": 15,
+      "episodes": 16,
+      "report": "logs/grasp_v2/autonomy_motion_positions_v42/baseline_seed9876/evaluation.json",
+      "report_sha256": "85f8a9f426b0f9e782378b57d4bb5a8f2784811246421d813b1bbead527277f0"
+    },
+    {
+      "label": "speed0_fixed",
+      "success": 3,
+      "episodes": 3,
+      "report": "logs/grasp_v2/autonomy_motion_positions_v42/speed0_fixed/evaluation.json",
+      "report_sha256": "22e1cc683eb6ba45394e5023920d1f2f6f1b6f3d33649ee33262c313c7197d7e"
+    },
+    {
+      "label": "speed0_seed123",
+      "success": 13,
+      "episodes": 16,
+      "report": "logs/grasp_v2/autonomy_motion_positions_v42/speed0_seed123/evaluation.json",
+      "report_sha256": "a40683b019b126bbd10113616faed86fe98422e149d697afbf5bcb817fb2de9f"
+    },
+    {
+      "label": "speed1_fixed",
+      "success": 3,
+      "episodes": 3,
+      "report": "logs/grasp_v2/autonomy_motion_positions_v42/speed1_fixed/evaluation.json",
+      "report_sha256": "8880601994b8ff550d95f7f6e6a3695dc99a9c4c43f5ee255fb2a940cff44bf3"
+    },
+    {
+      "label": "speed1_seed123",
+      "success": 11,
+      "episodes": 16,
+      "report": "logs/grasp_v2/autonomy_motion_positions_v42/speed1_seed123/evaluation.json",
+      "report_sha256": "0094c106878cb26f6830b0903b69a5758a5ebfa16d7d73b98eaf35facd942092"
+    },
+    {
+      "label": "level2_round0_seed123",
+      "success": 16,
+      "episodes": 16,
+      "report": "logs/grasp_v2/autonomy_motion_positions_v42/level2_round0_seed123/evaluation.json",
+      "report_sha256": "8e3e17fec24afa4d69fde39e39bdb2ac813c230ba0ac1cd2e046b47f94f5621f"
+    },
+    {
+      "label": "level2_round0_seed9876",
+      "success": 14,
+      "episodes": 16,
+      "report": "logs/grasp_v2/autonomy_motion_positions_v42/level2_round0_seed9876/evaluation.json",
+      "report_sha256": "61358bd5a3e23fcd935444e1e9b33f5d9249e015fdaa03f8acfaf97e47772f1a"
+    }
+  ],
+  "preserved_archives": [
+    {
+      "name": "checkpoint7-assisted-full-bc-pilot",
+      "files_verified": 25
+    },
+    {
+      "name": "checkpoint8-assisted-full-bc-constraints",
+      "files_verified": 30
+    }
+  ],
+  "selected_speed": {
+    "free": 1.0,
+    "contact": 1.0
+  },
+  "accepted_reset_range": {
+    "jitter_mm": 0.25,
+    "yaw_deg": 1
+  },
+  "baseline_success": "31/32",
+  "rejected_speed_successes": [
+    "13/16",
+    "11/16"
+  ],
+  "failed_next_level": {
+    "jitter_mm": 0.5,
+    "yaw_deg": 2,
+    "success": 30,
+    "episodes": 32,
+    "seed123": 16,
+    "seed9876": 14,
+    "failures": "Receiver close: one timeout, one drop"
+  },
+  "next_action": "Record exact receiver closure commands and measured contacts before recovery BC; no donor approach fitting"
+}

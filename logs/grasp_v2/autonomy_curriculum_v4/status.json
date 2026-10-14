@@ -1,0 +1,23 @@
+{
+  "phase": "pickup",
+  "complete": true,
+  "autonomous_pickup_verified": false,
+  "full_task_verified": false,
+  "rounds": [
+    {
+      "round": 0,
+      "policy": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/autonomy_linear_pose_memory_fair_v8/policy.pt",
+      "evaluation": "logs/grasp_v2/autonomy_curriculum_v4/eval_round0/evaluation.json",
+      "success": 21,
+      "episodes": 32
+    },
+    {
+      "round": 1,
+      "policy": "logs/grasp_v2/autonomy_curriculum_v4/bc_round1/policy.pt",
+      "evaluation": "logs/grasp_v2/autonomy_curriculum_v4/eval_round1/evaluation.json",
+      "success": 0,
+      "episodes": 32
+    }
+  ],
+  "reason": "Pickup gate not reached; preserve failed models, diagnose before extending curriculum."
+}

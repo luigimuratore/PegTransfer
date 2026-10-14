@@ -1,0 +1,60 @@
+[
+  {
+    "source_trace": "logs/grasp_v2/wall_psm1_2026-10-05_11-44-24-492301.trace.jsonl",
+    "base_position_w_m": [
+      -0.07,
+      0,
+      0.15
+    ],
+    "joint_positions": {
+      "psm_yaw_joint": 0.6448128819465637,
+      "psm_pitch_end_joint": -2.253565753562725e-06,
+      "psm_main_insertion_joint": 0.11373122781515121,
+      "psm_tool_roll_joint": -2.9869222544220975e-06,
+      "psm_tool_pitch_joint": 1.4952004221413517e-06,
+      "psm_tool_yaw_joint": -0.5235987901687622,
+      "psm_tool_gripper1_joint": -0.1499955803155899,
+      "psm_tool_gripper2_joint": 0.15000469982624054
+    },
+    "tool_tip_w_m": [
+      -0.0044242399744689465,
+      1.541558880546745e-08,
+      0.05506771802902222
+    ],
+    "tool_quaternion_wxyz": [
+      0.9981638789176941,
+      -1.3082549799037224e-07,
+      -0.060570087283849716,
+      1.268678943233681e-06
+    ]
+  },
+  {
+    "source_trace": "logs/grasp_v2/vertex_psm1_2026-10-05_11-45-21-479726.trace.jsonl",
+    "base_position_w_m": [
+      -0.07,
+      0,
+      0.15
+    ],
+    "joint_positions": {
+      "psm_yaw_joint": 0.4071960151195526,
+      "psm_pitch_end_joint": 0.17762525379657745,
+      "psm_main_insertion_joint": 0.12073075771331787,
+      "psm_tool_roll_joint": 1.9614187479019165,
+      "psm_tool_pitch_joint": -1.1290991306304932,
+      "psm_tool_yaw_joint": -0.5235987901687622,
+      "psm_tool_gripper1_joint": -0.449991911649704,
+      "psm_tool_gripper2_joint": 0.4500051438808441
+    },
+    "tool_tip_w_m": [
+      -0.011480553075671196,
+      -0.021451381966471672,
+      0.054997339844703674
+    ],
+    "tool_quaternion_wxyz": [
+      0.5231856107711792,
+      0.5238268971443176,
+      -0.47543811798095703,
+      -0.47522708773612976
+    ]
+  }
+]

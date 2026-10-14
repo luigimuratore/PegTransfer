@@ -1,0 +1,21 @@
+{
+  "complete": false,
+  "stage": "collect_measured_lifts",
+  "pid": 3464644,
+  "pairs": [
+    [
+      "L5",
+      "R2"
+    ],
+    [
+      "L6",
+      "R1"
+    ],
+    [
+      "L4",
+      "R3"
+    ]
+  ],
+  "teacher_collection_only": true,
+  "training_running": false
+}

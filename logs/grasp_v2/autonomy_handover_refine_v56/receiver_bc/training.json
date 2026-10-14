@@ -1,0 +1,73 @@
+{
+  "algorithm": "Receiver-only supervised Behavior Cloning; not SAC",
+  "assisted_training": true,
+  "parent_policy_sha256": "9a371d1f95ea2cefe7680949ab229426672e650e6cc58fe4fe6d2eaf64fa5d74",
+  "dataset_sha256": "0e32dd54ab57dc4acb6eca2f64bc085ab68f81de396493c97908799e40d40ef8",
+  "updates": 2000,
+  "batch_size": 1024,
+  "learning_rate": 2e-05,
+  "refine_existing_receiver": true,
+  "reference_kl_weight": 0.1,
+  "source_collection_complete": false,
+  "completed_trajectory_receipt_used": true,
+  "source_receipt_sha256": "1328f47368f9a4ead43994bce92973a97c2fe598fba24fbb9cbf2b5d3e72fa0f",
+  "receiver_options": [
+    10,
+    11
+  ],
+  "recorded_expert_labels_only": true,
+  "pre_handoff_labels_excluded": true,
+  "original_tensors_unchanged": 91,
+  "donor_and_motor_router_pose_parameters_unchanged": true,
+  "training_episodes": [
+    3,
+    4,
+    5,
+    6,
+    8,
+    10,
+    11,
+    12,
+    13,
+    14
+  ],
+  "validation_episodes": [
+    0,
+    1
+  ],
+  "whole_episode_split": true,
+  "physical_evaluation_required": true,
+  "native_full_policy_verified": false,
+  "collection_seed": 55001,
+  "fresh_validation_seeds": [
+    2468,
+    54321
+  ],
+  "gpu": "NVIDIA RTX 6000 Ada Generation",
+  "history": [
+    {
+      "update": 500,
+      "loss": 0.5124655365943909,
+      "validation_loss": 0.5850574970245361,
+      "validation_accuracy": 0.6030778288841248
+    },
+    {
+      "update": 1000,
+      "loss": 0.5130495429039001,
+      "validation_loss": 0.5293775200843811,
+      "validation_accuracy": 0.673054575920105
+    },
+    {
+      "update": 1500,
+      "loss": 0.4442630112171173,
+      "validation_loss": 0.5046941041946411,
+      "validation_accuracy": 0.7874564528465271
+    },
+    {
+      "update": 2000,
+      "loss": 0.37295931577682495,
+      "validation_loss": 0.4744674563407898,
+      "validation_accuracy": 0.8237514495849609
+    }
+  ]
+}

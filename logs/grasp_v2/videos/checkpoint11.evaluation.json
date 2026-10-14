@@ -1,0 +1,202 @@
+{
+  "complete": true,
+  "episodes": 1,
+  "success": 1,
+  "grasp_psm1": 1,
+  "sampling": "Fixed allocated episode IDs; every allocated episode completes without replacement by faster environments",
+  "lift_stable": 1,
+  "grasp_psm2": 1,
+  "handover": 1,
+  "full_success": 1,
+  "timeouts": 0,
+  "failures": 0,
+  "cases": [
+    {
+      "skill": "full",
+      "success": true,
+      "failure": false,
+      "timeout": false,
+      "length": 4755,
+      "return_": 38.639888763427734,
+      "grasp_psm1": true,
+      "lift_stable": true,
+      "grasp_psm2": true,
+      "handover": true,
+      "full_success": true,
+      "hole_error_mm": 0.0011570790084078908,
+      "peak_force_n": 0.8566612005233765,
+      "assisted_grasp": true,
+      "grasp_support": {
+        "type": "bounded_grasp_spring",
+        "strength": 1.0,
+        "assisted_grasp": true,
+        "profile": "firm",
+        "stiffness_n_m": 300.0,
+        "damping_ns_m": 1.5,
+        "holder": 0,
+        "applied_physics_steps": 17224,
+        "acquisitions": 2,
+        "releases": 2,
+        "force_peak_n": 0.37050661444664,
+        "torque_peak_nm": 0.003416141727939248,
+        "absolute_work_j": 0.009303695522248745,
+        "force_limit_n": 0.4,
+        "torque_limit_nm": 0.004,
+        "placement_guide_enabled": true,
+        "placement_guide_active": false,
+        "placement_guide_steps": 28,
+        "placement_force_peak_n": 0.014395478181540966,
+        "placement_torque_peak_nm": 2.7217858587391675e-05,
+        "object_pose_writes": false,
+        "object_velocity_writes": false,
+        "teacher_stage_inputs": false
+      },
+      "reset": {
+        "source": "L5",
+        "target": "R2",
+        "jitter_mm": [
+          0.12620091438293457,
+          -0.14342355728149414
+        ],
+        "yaw_deg": -4.7030463218688965,
+        "source_post_center_m": [
+          0.0,
+          0.0,
+          0.009999999776482582
+        ],
+        "initial_hole_center_m": [
+          0.00012620091729331762,
+          -0.00014342356007546186,
+          0.009999999776482582
+        ],
+        "reset_only_randomization": true,
+        "board_and_posts_unchanged": true
+      },
+      "terminal_physics": {
+        "peg_m": [
+          0.03621283173561096,
+          0.014994773082435131,
+          0.02461349219083786
+        ],
+        "bottom_m": 0.010000295005738735,
+        "tool_tips_m": [
+          [
+            0.012837010435760021,
+            -0.003996384795755148,
+            0.07547663897275925
+          ],
+          [
+            0.04525275528430939,
+            0.01191447302699089,
+            0.058397091925144196
+          ]
+        ],
+        "forces_n": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "jaws_rad": [
+          [
+            0.32209452986717224,
+            0.32209452986717224
+          ],
+          [
+            0.3609059453010559,
+            0.3609059453010559
+          ]
+        ]
+      },
+      "terminal_teacher_stage": null,
+      "terminal_learned_option": 18
+    }
+  ],
+  "assisted_grasp": true,
+  "programmed_task_controller": false,
+  "teacher_at_inference": false,
+  "mode": "play",
+  "policy_sha256": "9a371d1f95ea2cefe7680949ab229426672e650e6cc58fe4fe6d2eaf64fa5d74",
+  "seed": 2468,
+  "skill": "full",
+  "gpu": "NVIDIA RTX 6000 Ada Generation",
+  "motion_reference": {
+    "free_scale": 2.0,
+    "contact_scale": 1.0,
+    "free_translation_mm_s": 50.0,
+    "contact_translation_mm_s": 3.0,
+    "free_rotation_rad_s": 1.0,
+    "contact_rotation_rad_s": 0.2,
+    "contact_jaw_close_rad_s": 0.02,
+    "jaw_open_rad_s": 0.15,
+    "control_dt_s": 0.01,
+    "joint_limits_changed": false,
+    "actuator_gains_changed": false,
+    "reference_speeds_not_guaranteed_actual_joint_speeds": true,
+    "profile": "travel",
+    "transport_scale": 2.0,
+    "transport_translation_mm_s": 6.0,
+    "near_translation_mm_s": 25.0,
+    "near_rotation_rad_s": 1.0,
+    "slow_peg_clearance_mm": 6.0,
+    "fast_peg_clearance_mm": 25.0,
+    "slow_board_tip_height_mm": 30.0,
+    "fast_board_tip_height_mm": 55.0,
+    "transport_bottom_height_mm": [
+      43.0,
+      50.0
+    ],
+    "other_tool_clearance_mm": [
+      12.0,
+      30.0
+    ],
+    "stable_opposed_contact_seconds": 0.4,
+    "stable_contact_min_force_n": 0.1,
+    "transport_peak_force_ceiling_n": 0.7,
+    "transport_rotation_rad_s": 0.2,
+    "free_acceleration_m_s2": 0.1,
+    "transport_acceleration_m_s2": 0.03,
+    "selector": "Measured peg bounding box, board height, opposed forces and grasp stability; no task phase",
+    "rotation_caps_unchanged": true,
+    "approach_minimum_speed_unchanged": true
+  },
+  "motion_timing": {
+    "rollout_wall_seconds": 298.2811124329892,
+    "realtime_requested": false,
+    "successful_episode_seconds": [
+      47.550000000000004
+    ]
+  },
+  "reset_distribution": {
+    "sources": [
+      "L5"
+    ],
+    "targets": [
+      "R2"
+    ],
+    "jitter_mm": 0.5,
+    "yaw_deg": 5.0,
+    "translation_sampling": "Uniform XY square centered on the same fixed source post; half-width in mm",
+    "rotation_sampling": "Uniform yaw about the peg hole center; bounds in degrees",
+    "reset_only": true
+  },
+  "handover_criterion": "Measured opposed receiver contacts maintained for 2s with donor fingers free; virtual spring assistance remains explicitly active",
+  "low_level_control": "Neural tool motors through generic IK/speed limits, plus explicit grasp spring and optional free-placement guide",
+  "native_full_policy_verified": false,
+  "grasp_support": {
+    "type": "bounded_grasp_spring",
+    "strength": 1.0,
+    "profile": "firm",
+    "force_limit_n": 0.4,
+    "torque_limit_nm": 0.004,
+    "placement_guide_enabled": true,
+    "placement_force_limit_n": 0.15,
+    "placement_torque_limit_nm": 0.002,
+    "object_pose_writes": false,
+    "object_velocity_writes": false
+  }
+}

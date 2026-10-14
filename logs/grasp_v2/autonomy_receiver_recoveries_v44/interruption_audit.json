@@ -1,0 +1,10 @@
+{
+  "updated_utc": "2026-10-07T12:27:46.813206+00:00",
+  "complete": false,
+  "signal": "SIGINT",
+  "verified_pid_at_interruption": 4131525,
+  "exec_session_exit_code": 0,
+  "completed_physical_evaluation": false,
+  "reason": "Shadow expert remained in initial approach during successful learner lift; interrupted before handoff. Corrected receiver recovery starts from measured donor-held lift in V45.",
+  "replaced_by": "logs/grasp_v2/autonomy_receiver_recoveries_v45"
+}

@@ -1,0 +1,4 @@
+{
+  "type": "TypeError",
+  "message": "InteractiveScene.update() got an unexpected keyword argument 'force_recompute'"
+}

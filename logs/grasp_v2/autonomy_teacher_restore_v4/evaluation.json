@@ -1,0 +1,391 @@
+{
+  "complete": true,
+  "episodes": 4,
+  "success": 4,
+  "grasp_psm1": 4,
+  "lift_stable": 4,
+  "grasp_psm2": 0,
+  "handover": 0,
+  "full_success": 0,
+  "timeouts": 0,
+  "failures": 0,
+  "cases": [
+    {
+      "skill": "lift",
+      "success": true,
+      "failure": false,
+      "timeout": false,
+      "length": 2047,
+      "return_": 8.316905975341797,
+      "grasp_psm1": true,
+      "lift_stable": true,
+      "grasp_psm2": false,
+      "handover": false,
+      "full_success": false,
+      "hole_error_mm": 44.38477325439453,
+      "peak_force_n": 0.6781021356582642,
+      "assisted_grasp": false,
+      "reset": {
+        "source": "L5",
+        "target": "R2",
+        "jitter_mm": [
+          0.32586681842803955,
+          -0.2872123420238495
+        ],
+        "yaw_deg": 0.9183968901634216
+      },
+      "terminal_physics": {
+        "peg_m": [
+          -0.0054531097412109375,
+          -0.0003889799118041992,
+          0.05954388529062271
+        ],
+        "bottom_m": 0.044916484504938126,
+        "tool_tips_m": [
+          [
+            -0.005155801773071289,
+            -0.0003769397735595703,
+            0.061341315507888794
+          ],
+          [
+            0.07081913948059082,
+            -0.0009131431579589844,
+            0.07721152901649475
+          ]
+        ],
+        "forces_n": [
+          [
+            0.4089823365211487,
+            0.37356072664260864
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "jaws_rad": [
+          [
+            0.13865387439727783,
+            0.13792948424816132
+          ],
+          [
+            0.150003120303154,
+            0.150003120303154
+          ]
+        ]
+      },
+      "terminal_teacher_stage": 5
+    },
+    {
+      "skill": "lift",
+      "success": true,
+      "failure": false,
+      "timeout": false,
+      "length": 2048,
+      "return_": 8.316459655761719,
+      "grasp_psm1": true,
+      "lift_stable": true,
+      "grasp_psm2": false,
+      "handover": false,
+      "full_success": false,
+      "hole_error_mm": 44.42449951171875,
+      "peak_force_n": 0.6635069847106934,
+      "assisted_grasp": false,
+      "reset": {
+        "source": "L5",
+        "target": "R2",
+        "jitter_mm": [
+          0.22919978201389313,
+          -0.17905035614967346
+        ],
+        "yaw_deg": -1.5225963592529297
+      },
+      "terminal_physics": {
+        "peg_m": [
+          -0.005534648895263672,
+          -4.649162292480469e-05,
+          0.05952736362814903
+        ],
+        "bottom_m": 0.044842351227998734,
+        "tool_tips_m": [
+          [
+            -0.005251288414001465,
+            -3.147125244140625e-05,
+            0.06134139373898506
+          ],
+          [
+            0.07081913948059082,
+            -0.0009131431579589844,
+            0.07721152901649475
+          ]
+        ],
+        "forces_n": [
+          [
+            0.4037240445613861,
+            0.368213415145874
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "jaws_rad": [
+          [
+            0.1382535845041275,
+            0.1375291496515274
+          ],
+          [
+            0.150003120303154,
+            0.150003120303154
+          ]
+        ]
+      },
+      "terminal_teacher_stage": 5
+    },
+    {
+      "skill": "lift",
+      "success": true,
+      "failure": false,
+      "timeout": false,
+      "length": 2055,
+      "return_": 8.309979438781738,
+      "grasp_psm1": true,
+      "lift_stable": true,
+      "grasp_psm2": false,
+      "handover": false,
+      "full_success": false,
+      "hole_error_mm": 44.299110412597656,
+      "peak_force_n": 0.6684749722480774,
+      "assisted_grasp": false,
+      "reset": {
+        "source": "L5",
+        "target": "R2",
+        "jitter_mm": [
+          0.427788645029068,
+          -0.3557588756084442
+        ],
+        "yaw_deg": -1.0462160110473633
+      },
+      "terminal_physics": {
+        "peg_m": [
+          -0.005328178405761719,
+          -0.0002976655960083008,
+          0.05950673297047615
+        ],
+        "bottom_m": 0.044698383659124374,
+        "tool_tips_m": [
+          [
+            -0.005053520202636719,
+            -0.0002530813217163086,
+            0.06134132295846939
+          ],
+          [
+            0.07081913948059082,
+            -0.0009131431579589844,
+            0.07721152901649475
+          ]
+        ],
+        "forces_n": [
+          [
+            0.39306873083114624,
+            0.35481396317481995
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "jaws_rad": [
+          [
+            0.13786792755126953,
+            0.13714367151260376
+          ],
+          [
+            0.150003120303154,
+            0.150003120303154
+          ]
+        ]
+      },
+      "terminal_teacher_stage": 5
+    },
+    {
+      "skill": "lift",
+      "success": true,
+      "failure": false,
+      "timeout": false,
+      "length": 2056,
+      "return_": 8.307539939880371,
+      "grasp_psm1": true,
+      "lift_stable": true,
+      "grasp_psm2": false,
+      "handover": false,
+      "full_success": false,
+      "hole_error_mm": 44.435420989990234,
+      "peak_force_n": 0.6607468724250793,
+      "assisted_grasp": false,
+      "reset": {
+        "source": "L5",
+        "target": "R2",
+        "jitter_mm": [
+          0.2549791634082794,
+          -0.28677400946617126
+        ],
+        "yaw_deg": -1.7957522869110107
+      },
+      "terminal_physics": {
+        "peg_m": [
+          -0.00549626350402832,
+          -0.00015091896057128906,
+          0.05951100215315819
+        ],
+        "bottom_m": 0.044713620096445084,
+        "tool_tips_m": [
+          [
+            -0.00522458553314209,
+            -0.00011336803436279297,
+            0.06134151294827461
+          ],
+          [
+            0.07081913948059082,
+            -0.0009131431579589844,
+            0.07721152901649475
+          ]
+        ],
+        "forces_n": [
+          [
+            0.40132319927215576,
+            0.3643859028816223
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "jaws_rad": [
+          [
+            0.13780778646469116,
+            0.13708075881004333
+          ],
+          [
+            0.150003120303154,
+            0.150003120303154
+          ]
+        ]
+      },
+      "terminal_teacher_stage": 5
+    }
+  ],
+  "assisted_grasp": false,
+  "programmed_task_controller": true,
+  "teacher_at_inference": true,
+  "mode": "collect",
+  "policy_sha256": null,
+  "seed": 42,
+  "skill": "lift",
+  "gpu": "NVIDIA RTX 6000 Ada Generation",
+  "low_level_control": "IK with generic contact speed limits; no object attachment or task goals",
+  "dataset": {
+    "schema": "peg-autonomy-bc-1",
+    "skill": "lift",
+    "assisted_grasp": false,
+    "teacher": true,
+    "learner_fraction": 0.0,
+    "episodes": [
+      0,
+      1,
+      3,
+      2
+    ],
+    "validation_episodes": [
+      2
+    ],
+    "transitions": 8206,
+    "parameters": {
+      "mode": "collect",
+      "output": "logs/grasp_v2/autonomy_teacher_restore_v4",
+      "policy": null,
+      "datasets": null,
+      "num_envs": 4,
+      "episodes": 4,
+      "episode_steps": 4000,
+      "jitter_mm": 0.5,
+      "yaw_deg": 2.0,
+      "sources": [
+        "L5"
+      ],
+      "targets": [
+        "R2"
+      ],
+      "learner_fraction": 0.0,
+      "learner_until_stage": 19,
+      "updates": 6000,
+      "batch_size": 1024,
+      "architecture": "mlp",
+      "future_steps": 0,
+      "phase_endpoint": false,
+      "skill": "lift",
+      "balance_direction": 1.0,
+      "implementation_change": "Preserve XYZ/rotation direction when bounding long pose commands",
+      "seed": 42,
+      "device": "cuda:0",
+      "headless": true,
+      "realtime": false,
+      "video": false
+    },
+    "resets": {
+      "0": {
+        "source": "L5",
+        "target": "R2",
+        "jitter_mm": [
+          0.32586681842803955,
+          -0.2872123420238495
+        ],
+        "yaw_deg": 0.9183968901634216
+      },
+      "1": {
+        "source": "L5",
+        "target": "R2",
+        "jitter_mm": [
+          0.22919978201389313,
+          -0.17905035614967346
+        ],
+        "yaw_deg": -1.5225963592529297
+      },
+      "3": {
+        "source": "L5",
+        "target": "R2",
+        "jitter_mm": [
+          0.427788645029068,
+          -0.3557588756084442
+        ],
+        "yaw_deg": -1.0462160110473633
+      },
+      "2": {
+        "source": "L5",
+        "target": "R2",
+        "jitter_mm": [
+          0.2549791634082794,
+          -0.28677400946617126
+        ],
+        "yaw_deg": -1.7957522869110107
+      }
+    },
+    "source_hashes": {
+      "autonomy_env.py": "c8e96a5dd7311ef8e4c919013d38a6d878b93820490473533fdc2f1ccdd6d3ad",
+      "autonomy_full_teacher.py": "2fdb262a408e3e3ebcd6b3e71bb88761eeaaf1c53f29b608120725ec75a7ea50",
+      "rl_runtime.py": "723f8f07ab7414dafacf9117466e2920b942e4a143a56642c14f40f1d625de05",
+      "replay.py": "8e5f130e02f840f79d3433f5932b489af96de5351770253daaf7fd657d651a3f",
+      "autonomy_learning.py": "5843936629e66de049c34a15d18c98e9e60ab457f72d984f1c3240534037ae43",
+      "autonomy_replay.py": "5fc584e6a3e75254cd726f3eb2330149d348e3c3ff27f1f60c2effe5bb7aeea5",
+      "rl_core.py": "80ddad8671a2a8e1078e347eb0c62a57083ade3f7dc2e79ee335183c19127407",
+      "rl_env.py": "6068ee43839b7f2ce4c7fc7a8bd46d408e8afceee0d5387d2fe5758937ebcbb3",
+      "replay_full.py": "33a65680dc20a25b1808cd0541869d1067b86364e9d0d19439caf8cb12bdaf6f",
+      "autonomy_main.py": "6cb7aab165f5a09513515840654deb9e861e06c5e1ac67439bef0f6e80f3b633",
+      "autonomy_teacher.py": "15b784c833150fa24a5776a6483a229aa123f030860a0a4232cf22ea06704701",
+      "geometry.py": "a6e0333e2843cdb7d686558cd613080112cef49768fd02d034a0d477b732792f",
+      "autonomy_curriculum.py": "ca4196b02235218bc7f6dd0058b0245d9cc53958787ed292803a74d3e4d2606a",
+      "autonomy_audit.py": "1c21a25c2232674ba55be90cd5e924c772e26b6b4276c552b04a7048ce6a7a2a",
+      "peg_profile.json": "4b2cce45a8324e6dd804cacd160912d92cba3bbe653cb28d090ce3b4ef97c8f6"
+    }
+  }
+}

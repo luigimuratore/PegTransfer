@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "device": "cuda:0",
+  "observations": [
+    16,
+    110
+  ],
+  "steps": 100,
+  "num_envs": 16
+}

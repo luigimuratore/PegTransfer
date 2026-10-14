@@ -1,0 +1,8 @@
+{
+  "legacy_sampling": true,
+  "complete_evaluation_not_sufficient_for_promotion": true,
+  "reason": "Early completed episodes may include reset repeats before a slow initially allocated episode completes. v8 uses fixed allocated IDs.",
+  "reported_success": 4,
+  "reported_episodes": 4,
+  "initial_allocated_confirmed_successes": 3
+}

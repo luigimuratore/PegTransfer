@@ -1,0 +1,21 @@
+{
+  "complete": true,
+  "stage": "stopped_on_failed_gate_or_error",
+  "algorithm": "Frozen checkpoint13 BC + residual SAC",
+  "latest_preserved_checkpoint": "checkpoint13",
+  "new_checkpoint_promoted": false,
+  "pipeline_source_hashes": {
+    "residual_main.py": "619843a4aba79cb18ffc80ab397d2fcd98d752d1640712a02dde40e613a533bf",
+    "residual_grasp_guard.py": "09ec2a1b5e277133267b8780018223e20fb44f6984073661bfd90dcc4892b05d",
+    "residual_contact_diagnostic.py": "c8583c18352ba185cf82b9124046bbd3bce60a87b2042a63a0e4649bbb9e47dd",
+    "residual_env.py": "5412672fc34d0438ca7cbdaf13fc5e1ec3359dc273a21cc409086bd2afcf9ce7",
+    "residual_pipeline.py": "12153abe904b639476e40a4d0e6a2b6c59ece23be24da61448b6d230ae709920",
+    "residual_learning.py": "f58f8d66972d41fd025fdb64f9d7901d23c96c2c64dbbce93742f9b3f515aee9",
+    "residual_collision_support.py": "085c1332612b00e1600e817a1f59e6b72a44247e2e14ce40f5bf92d1d109eee5"
+  },
+  "transitions": 12000,
+  "results": [],
+  "held_jaw_guard_enabled": false,
+  "grasp_stiffness_n_m": 900.0,
+  "error": "ValueError('Preflight6 is not a matched successful zero-residual baseline')"
+}

@@ -1,0 +1,22 @@
+{
+  "complete": true,
+  "stage": "baseline_audited",
+  "training": false,
+  "policy_sha256": "9a371d1f95ea2cefe7680949ab229426672e650e6cc58fe4fe6d2eaf64fa5d74",
+  "checkpoint10_unchanged": true,
+  "original_reference_sha256": "c4c3fd68d8cf8085d9a3d53fab8a881b0c2613734af40765cd5e0310726eab1e",
+  "v51_report_sha256": "7e747c4128bba2e91a69097d7275f594549a938e5d2095ce346d5edcac9a20ee",
+  "updated_utc": "2026-10-07T20:21:57.899303+00:00",
+  "archived_success": 16,
+  "episodes": 16,
+  "original_success": 16,
+  "v51_success": 15,
+  "physical_threshold_passed": true,
+  "same_archived_implementation_changed_results": false,
+  "changed_episode_ids": [],
+  "failed_episode_ids": [],
+  "report": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/autonomy_baseline_audit_v52/archived_seed54321/evaluation.json",
+  "report_sha256": "f1a8a24ba00dd2399dde2631837a2735c9d385fd8fa355e1c4e3bdd52ec760b3",
+  "contact_audit": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/autonomy_baseline_audit_v52/receiver_close_audit.json",
+  "note": "All attempts retained; this audit does not erase V51 failures or promote wider domain ranges."
+}

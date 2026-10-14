@@ -1,0 +1,11 @@
+{
+  "complete": true,
+  "stage": "receiver_close_audit_saved",
+  "audit": "logs/grasp_v2/autonomy_isolated_domain_v54/donor_release_audit.json",
+  "native_full_policy_verified": false,
+  "next_step": "Inspect receiver closure before supervised recovery training; keep V42 accepted speed/reset range",
+  "updated_utc": "2026-10-08T10:04:55.991430+00:00",
+  "diagnostic_only": true,
+  "policy": "logs/grasp_v2/autonomy_isolated_domain_v54/runtime/policy.pt",
+  "run": "logs/grasp_v2/autonomy_isolated_domain_v54/runtime_yaw5_seed54321"
+}

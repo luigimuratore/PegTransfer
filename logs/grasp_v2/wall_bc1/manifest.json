@@ -1,0 +1,133 @@
+{
+  "schema": "peg-wall-motor-bc-1",
+  "algorithm": "Behavior Cloning",
+  "experiment": {
+    "schema": "peg-wall-motor-bc-1",
+    "mode": "wall",
+    "arm": 1,
+    "candidate": {
+      "mode": "wall",
+      "vertex": 2,
+      "height_fraction": 0.5,
+      "tip_local_m": [
+        0.00033550214999999994,
+        6.675400111545707e-19,
+        0.0016015485636889934
+      ],
+      "yaw_rad": 0.0,
+      "tool_quaternion_local_wxyz": [
+        -0.9848077530122081,
+        1.5407439555097887e-33,
+        0.17364817766693036,
+        1.2060416625018979e-16
+      ],
+      "approach_direction_local": [
+        -0.3420201433256687,
+        4.188538737676992e-17,
+        0.9396926207859084
+      ],
+      "approach": "oblique_entry",
+      "open_angle_rad": 0.15,
+      "wall_thickness_m": 0.0025234400999999997,
+      "wall_angle_deg": 180.0,
+      "entry_tilt_deg": 20.0,
+      "pinch_twist_deg": 0.0,
+      "arm": 1
+    },
+    "source": "L5",
+    "peg_asset_sha256": "d6e3695d6b663702c1cbb5acfc44caace0cc37df95a97fea3e3d5ef86f0aa54d",
+    "robot_asset_sha256": "5730339c3b806f17a5228c69b97464d0b3469888002f62fb23d9621f746347c8",
+    "code_sha256": "5aa00efc488090eeeea35b059431067befd9619ec945e3cdd05d1b0efb959a14",
+    "parameters": {
+      "mass_g": 5.0,
+      "friction": 0.9,
+      "contact_stiffness": 1000.0,
+      "contact_damping": 0.5,
+      "jaw_torque": 0.015,
+      "jaw_stiffness": 0.6,
+      "grip_force": 0.35,
+      "preload_seconds": 0.4,
+      "max_force": 1.0,
+      "free_speed": 0.025,
+      "contact_speed": 0.005,
+      "lift_speed": 0.003,
+      "rotation_speed": 1.0
+    },
+    "control_dt_s": 0.01
+  },
+  "demonstration_path": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/wall_demos_bc1.npz",
+  "demonstration_sha256": "c7cb68e3a767d67db04e130e3d2c2330addd6caa1646353cd86b02ee96261498",
+  "training_episodes": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "validation_episode": 5,
+  "settings": {
+    "updates": 4000,
+    "batch_size": 256,
+    "learning_rate": 0.0001,
+    "seed": 42,
+    "net_arch": [
+      128,
+      128
+    ],
+    "sampling": "balanced by phase"
+  },
+  "learned_control": "active-arm xyz reference velocity and coupled jaw velocity",
+  "programmed_control": "grasp choice, phase order, orientation/IK, inactive arm, contact/slip guards",
+  "physical_evaluation_required": true,
+  "neural_physical_success_verified": false,
+  "validation": {
+    "normalized_action_mse": 0.0016969963908195496,
+    "by_stage_mse": {
+      "settle": 9.806405614654068e-06,
+      "above": 0.0013761960435658693,
+      "outside": 0.003422735957428813,
+      "reach": 0.00013024297368247062,
+      "close": 0.0011390867875888944,
+      "lift": 0.002610139548778534,
+      "hold": 0.003984715789556503,
+      "lower": 1.8606519006425515e-05,
+      "release": 0.004988989792764187,
+      "retreat": 0.002259110799059272
+    },
+    "scope": "held-out episode, same fixed L5/PSM/pose; no domain randomization validation"
+  },
+  "history": [
+    {
+      "update": 500,
+      "train_mse": 0.0080060213804245
+    },
+    {
+      "update": 1000,
+      "train_mse": 0.004922623746097088
+    },
+    {
+      "update": 1500,
+      "train_mse": 0.003809487447142601
+    },
+    {
+      "update": 2000,
+      "train_mse": 0.003029502695426345
+    },
+    {
+      "update": 2500,
+      "train_mse": 0.0012599797919392586
+    },
+    {
+      "update": 3000,
+      "train_mse": 0.0023944107815623283
+    },
+    {
+      "update": 3500,
+      "train_mse": 0.0012131803669035435
+    },
+    {
+      "update": 4000,
+      "train_mse": 0.0011496375082060695
+    }
+  ]
+}

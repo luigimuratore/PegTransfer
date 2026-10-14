@@ -1,0 +1,378 @@
+{
+  "algorithm": "Hierarchical Behavior Cloning",
+  "options": 6,
+  "learned_option_gate": true,
+  "teacher_stage_at_inference": false,
+  "datasets": [
+    "logs/grasp_v2/autonomy_pickup_data_v1/demonstrations.npz"
+  ],
+  "linear_pose_heads": true,
+  "future_pose_steps": 20,
+  "pose_supervision": "measured phase endpoints",
+  "updates": 12000,
+  "batch_size": 1024,
+  "learning_rate": 0.0001,
+  "device": "cuda:0",
+  "gpu": "NVIDIA RTX 6000 Ada Generation",
+  "input_mask": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    1.0,
+    1.0,
+    0.0,
+    1.0,
+    1.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0
+  ],
+  "physical_evaluation_required": true,
+  "history": [
+    {
+      "update": 500,
+      "loss": 0.0895254909992218,
+      "validation_option_accuracy": 0.9779947400093079
+    },
+    {
+      "update": 1000,
+      "loss": 0.035401009023189545,
+      "validation_option_accuracy": 0.9641517996788025
+    },
+    {
+      "update": 1500,
+      "loss": 0.03366657346487045,
+      "validation_option_accuracy": 0.970328688621521
+    },
+    {
+      "update": 2000,
+      "loss": 0.023188121616840363,
+      "validation_option_accuracy": 0.9718729257583618
+    },
+    {
+      "update": 2500,
+      "loss": 0.022487493231892586,
+      "validation_option_accuracy": 0.9756232500076294
+    },
+    {
+      "update": 3000,
+      "loss": 0.013370015658438206,
+      "validation_option_accuracy": 0.9724244475364685
+    },
+    {
+      "update": 3500,
+      "loss": 0.01160848792642355,
+      "validation_option_accuracy": 0.9762299060821533
+    },
+    {
+      "update": 4000,
+      "loss": 0.015960367396473885,
+      "validation_option_accuracy": 0.9780498743057251
+    },
+    {
+      "update": 4500,
+      "loss": 0.01518286857753992,
+      "validation_option_accuracy": 0.9791529178619385
+    },
+    {
+      "update": 5000,
+      "loss": 0.012545226141810417,
+      "validation_option_accuracy": 0.9804213643074036
+    },
+    {
+      "update": 5500,
+      "loss": 0.008207985199987888,
+      "validation_option_accuracy": 0.9826273918151855
+    },
+    {
+      "update": 6000,
+      "loss": 0.009585095569491386,
+      "validation_option_accuracy": 0.9798698425292969
+    },
+    {
+      "update": 6500,
+      "loss": 0.012662366963922977,
+      "validation_option_accuracy": 0.9801456332206726
+    },
+    {
+      "update": 7000,
+      "loss": 0.013753976672887802,
+      "validation_option_accuracy": 0.9800353050231934
+    },
+    {
+      "update": 7500,
+      "loss": 0.01368816290050745,
+      "validation_option_accuracy": 0.9816346764564514
+    },
+    {
+      "update": 8000,
+      "loss": 0.010321623645722866,
+      "validation_option_accuracy": 0.9826273918151855
+    },
+    {
+      "update": 8500,
+      "loss": 0.009569873102009296,
+      "validation_option_accuracy": 0.9825171232223511
+    },
+    {
+      "update": 9000,
+      "loss": 0.009705066680908203,
+      "validation_option_accuracy": 0.9819656014442444
+    },
+    {
+      "update": 9500,
+      "loss": 0.013243581168353558,
+      "validation_option_accuracy": 0.9842819571495056
+    },
+    {
+      "update": 10000,
+      "loss": 0.009607303887605667,
+      "validation_option_accuracy": 0.9836201071739197
+    },
+    {
+      "update": 10500,
+      "loss": 0.012844929471611977,
+      "validation_option_accuracy": 0.9837304353713989
+    },
+    {
+      "update": 11000,
+      "loss": 0.009806208312511444,
+      "validation_option_accuracy": 0.9836753010749817
+    },
+    {
+      "update": 11500,
+      "loss": 0.010645633563399315,
+      "validation_option_accuracy": 0.9830134510993958
+    },
+    {
+      "update": 12000,
+      "loss": 0.016151636838912964,
+      "validation_option_accuracy": 0.9830134510993958
+    }
+  ],
+  "retrained": true,
+  "neural_parameters_unchanged": false,
+  "implementation_change": "New learned incremental jaw head; frozen movement and option parameters",
+  "transition_counts": [
+    [
+      10226,
+      39,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      2730,
+      39,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      11700,
+      39,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      2921,
+      39,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      45318,
+      39
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      5671
+    ]
+  ],
+  "initial_option": 0,
+  "transition_dataset_hashes": {
+    "logs/grasp_v2/autonomy_pickup_data_v1/demonstrations.npz": "12b860d1fbd51d190155834b3d571ebfedce25be9689762006787e76038d4152"
+  },
+  "parent_policy": "logs/grasp_v2/autonomy_linear_pose_memory_fair_v8/policy.pt",
+  "latch_option_poses": true,
+  "jaw_feedback_algorithm": "Behavior Cloning of one-step jaw reference change from measured forces",
+  "jaw_feedback_updates": 6000,
+  "jaw_feedback_learning_rate": 0.0003,
+  "jaw_feedback_batch_size": 1024,
+  "jaw_feedback_datasets": [
+    "logs/grasp_v2/autonomy_pickup_data_v1/demonstrations.npz",
+    "logs/grasp_v2/autonomy_dagger_approach_v2/demonstrations.npz",
+    "logs/grasp_v2/autonomy_teacher_restore_v4/demonstrations.npz"
+  ],
+  "jaw_supervision": "Offline native expert pressure decisions with counterfactual force calibration",
+  "jaw_rate_categorical": true,
+  "calibration_states_are_physical_demonstrations": false,
+  "pressure_label_band_n": [
+    0.36,
+    0.4
+  ],
+  "movement_and_option_parameters_frozen": true,
+  "jaw_feedback_history": [
+    {
+      "update": 500,
+      "loss": 0.5427186489105225,
+      "validation_loss": 0.19165055453777313
+    },
+    {
+      "update": 1000,
+      "loss": 0.3201883137226105,
+      "validation_loss": 0.15262529253959656
+    },
+    {
+      "update": 1500,
+      "loss": 0.1567121297121048,
+      "validation_loss": 0.10781745612621307
+    },
+    {
+      "update": 2000,
+      "loss": 0.14968183636665344,
+      "validation_loss": 0.08464735746383667
+    },
+    {
+      "update": 2500,
+      "loss": 0.11501168459653854,
+      "validation_loss": 0.07480284571647644
+    },
+    {
+      "update": 3000,
+      "loss": 0.09901270270347595,
+      "validation_loss": 0.062123823910951614
+    },
+    {
+      "update": 3500,
+      "loss": 0.0966033861041069,
+      "validation_loss": 0.052087895572185516
+    },
+    {
+      "update": 4000,
+      "loss": 0.09262963384389877,
+      "validation_loss": 0.04580303281545639
+    },
+    {
+      "update": 4500,
+      "loss": 0.07715750485658646,
+      "validation_loss": 0.04450808838009834
+    },
+    {
+      "update": 5000,
+      "loss": 0.10697196424007416,
+      "validation_loss": 0.04423636943101883
+    },
+    {
+      "update": 5500,
+      "loss": 0.07695463299751282,
+      "validation_loss": 0.03867357224225998
+    },
+    {
+      "update": 6000,
+      "loss": 0.08390912413597107,
+      "validation_loss": 0.04035547748208046
+    }
+  ]
+}

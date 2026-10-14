@@ -1,0 +1,6 @@
+{
+  "complete": false,
+  "interrupted": true,
+  "last_step": 6100,
+  "reason": "Continuous pressure-dependent stiffness partially improves donor pressure but still stalls outside; replace with latched recovery and restore stable aperture only within recovery."
+}

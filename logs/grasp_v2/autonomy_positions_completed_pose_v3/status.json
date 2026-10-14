@@ -1,0 +1,29 @@
+{
+  "phase": "pickup",
+  "complete": true,
+  "autonomous_pickup_verified": false,
+  "full_task_verified": false,
+  "rounds": [
+    {
+      "round": 0,
+      "policy": "logs/grasp_v2/autonomy_positions_completed_pose_v3/jaw_bc_round0/policy.pt",
+      "evaluation": "logs/grasp_v2/autonomy_positions_completed_pose_v3/eval_round0/evaluation.json",
+      "success": 13,
+      "episodes": 32
+    }
+  ],
+  "conditions": {
+    "sources": [
+      "L5",
+      "L6"
+    ],
+    "targets": [
+      "R2"
+    ],
+    "jitter_mm": 0.8,
+    "yaw_deg": 4.0
+  },
+  "pose_entry_supervision": true,
+  "gate": "At least 90% overall and on each source; at least 8 episodes per source; two seeds, same weights",
+  "reason": "Pickup gate not reached; preserve failed models, diagnose before extending curriculum."
+}

@@ -1,0 +1,15 @@
+[
+  "/home/francesco/miniconda3/envs/PegTransfer/bin/python",
+  "-u",
+  "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/bc_sac_residual_v1/pipeline_sources/residual_main.py",
+  "train",
+  "--headless",
+  "--output",
+  "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/bc_sac_residual_v1/training",
+  "--num_envs",
+  "6",
+  "--transitions",
+  "12000",
+  "--seed",
+  "61001"
+]

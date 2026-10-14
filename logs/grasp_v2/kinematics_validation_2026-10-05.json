@@ -1,0 +1,257 @@
+{
+  "date": "2026-10-05",
+  "kind": "offline kinematics and geometry validation",
+  "simulation_run": false,
+  "physical_grasp_verified": false,
+  "new_policy": null,
+  "tests_passed": 24,
+  "robot_asset_sha256": "5730339c3b806f17a5228c69b97464d0b3469888002f62fb23d9621f746347c8",
+  "code_sha256": "297b4fc6d8231178a7922eef76a196fea869c3869d9a0738bec9aac9ecbdb177",
+  "kinematics_sha256": "f97ddbc0967c38b4bebd0433a168daa39b3274ef4123d75e437b8e2860c0cf23",
+  "measured_pose_matches": [
+    {
+      "source_trace": "logs/grasp_v2/wall_psm1_2026-10-05_11-44-24-492301.trace.jsonl",
+      "position_error_mm": 0.00020534516501043043,
+      "rotation_error_rad": 8.873749296976447e-07
+    },
+    {
+      "source_trace": "logs/grasp_v2/vertex_psm1_2026-10-05_11-45-21-479726.trace.jsonl",
+      "position_error_mm": 7.08388338485508e-05,
+      "rotation_error_rad": 5.585942448148815e-07
+    }
+  ],
+  "routes": [
+    {
+      "arm": 1,
+      "mode": "wall",
+      "candidate": {
+        "mode": "wall",
+        "vertex": 2,
+        "height_fraction": 0.5,
+        "tip_local_m": [
+          0.00033550214999999994,
+          6.675400111545707e-19,
+          0.0016015485636889934
+        ],
+        "yaw_rad": 0.0,
+        "tool_quaternion_local_wxyz": [
+          -0.9848077530122081,
+          1.5407439555097887e-33,
+          0.17364817766693036,
+          1.2060416625018979e-16
+        ],
+        "approach_direction_local": [
+          -0.3420201433256687,
+          4.188538737676992e-17,
+          0.9396926207859084
+        ],
+        "approach": "oblique_entry",
+        "open_angle_rad": 0.15,
+        "wall_thickness_m": 0.0025234400999999997,
+        "wall_angle_deg": 180.0,
+        "entry_tilt_deg": 20.0,
+        "pinch_twist_deg": 0.0,
+        "arm": 1
+      },
+      "arrival_check": {
+        "checked": true,
+        "jaw_surface_samples_inside_peg": [
+          0,
+          0
+        ],
+        "jaw_surface_samples_inside_source_post": [
+          0,
+          0
+        ],
+        "minimum_jaw_board_clearance_mm": 15.479433471601949,
+        "sampled_arrival_clear": true,
+        "note": "Sampled jaw surfaces at arrival only; shaft and full approach require physics validation"
+      },
+      "kinematic_route_check": {
+        "checked": true,
+        "reachable": true,
+        "samples_checked": 72,
+        "maximum_position_error_mm": 7.882971488724739e-10,
+        "maximum_rotation_error_rad": 4.167061140605229e-10,
+        "angular_limit_margin_deg": 2.0,
+        "insertion_limit_margin_mm": 1.0,
+        "note": "Nominal sampled route with USD joint limits; not a swept collision or dynamics validation"
+      }
+    },
+    {
+      "arm": 1,
+      "mode": "vertex",
+      "candidate": {
+        "mode": "vertex",
+        "vertex": 2,
+        "height_fraction": 0.5,
+        "tip_local_m": [
+          0.0015568158249999967,
+          -0.007325820044973139,
+          -0.00600573536939919
+        ],
+        "yaw_rad": 5.759586531581287,
+        "tool_quaternion_local_wxyz": [
+          0.8660254037844387,
+          0.4330127018922193,
+          -0.2500000000000001,
+          -2.7755575615628914e-16
+        ],
+        "approach_direction_local": [
+          -0.43301270189221974,
+          -0.7499999999999998,
+          0.49999999999999994
+        ],
+        "approach": "oblique_entry",
+        "open_angle_rad": 0.45,
+        "wall_thickness_m": null,
+        "entry_tilt_deg": 30.0,
+        "pinch_twist_deg": 29.999999999999996,
+        "arm": 1
+      },
+      "arrival_check": {
+        "checked": true,
+        "jaw_surface_samples_inside_peg": [
+          0,
+          0
+        ],
+        "jaw_surface_samples_inside_source_post": [
+          0,
+          0
+        ],
+        "minimum_jaw_board_clearance_mm": 6.256668835830702,
+        "sampled_arrival_clear": true,
+        "note": "Sampled jaw surfaces at arrival only; shaft and full approach require physics validation"
+      },
+      "kinematic_route_check": {
+        "checked": true,
+        "reachable": true,
+        "samples_checked": 72,
+        "maximum_position_error_mm": 6.882916215163088e-11,
+        "maximum_rotation_error_rad": 3.836634109558167e-11,
+        "angular_limit_margin_deg": 2.0,
+        "insertion_limit_margin_mm": 1.0,
+        "note": "Nominal sampled route with USD joint limits; not a swept collision or dynamics validation"
+      }
+    },
+    {
+      "arm": 2,
+      "mode": "wall",
+      "candidate": {
+        "mode": "wall",
+        "vertex": 0,
+        "height_fraction": 0.5,
+        "tip_local_m": [
+          0.008300398198603749,
+          0.0043544072511344754,
+          0.0016015485636889934
+        ],
+        "yaw_rad": 1.0471975511965976,
+        "tool_quaternion_local_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "approach_direction_local": [
+          0.17101007166283438,
+          0.2961981327260238,
+          0.9396926207859084
+        ],
+        "approach": "oblique_entry",
+        "open_angle_rad": 0.15,
+        "wall_thickness_m": 0.002509983188829983,
+        "wall_angle_deg": 59.99999999999999,
+        "entry_tilt_deg": 20.0,
+        "pinch_twist_deg": 0.0,
+        "arm": 2
+      },
+      "arrival_check": {
+        "checked": true,
+        "jaw_surface_samples_inside_peg": [
+          0,
+          0
+        ],
+        "jaw_surface_samples_inside_source_post": [
+          0,
+          0
+        ],
+        "minimum_jaw_board_clearance_mm": 15.47943220541388,
+        "sampled_arrival_clear": true,
+        "note": "Sampled jaw surfaces at arrival only; shaft and full approach require physics validation"
+      },
+      "kinematic_route_check": {
+        "checked": true,
+        "reachable": true,
+        "samples_checked": 72,
+        "maximum_position_error_mm": 5.455497033848559e-10,
+        "maximum_rotation_error_rad": 3.0424205090092775e-10,
+        "angular_limit_margin_deg": 2.0,
+        "insertion_limit_margin_mm": 1.0,
+        "note": "Nominal sampled route with USD joint limits; not a swept collision or dynamics validation"
+      }
+    },
+    {
+      "arm": 2,
+      "mode": "vertex",
+      "candidate": {
+        "mode": "vertex",
+        "vertex": 0,
+        "height_fraction": 0.5,
+        "tip_local_m": [
+          0.013827905299999999,
+          0.0,
+          -0.00600573536939919
+        ],
+        "yaw_rad": 1.5707963267948966,
+        "tool_quaternion_local_wxyz": [
+          0.6123724356957946,
+          0.35355339059327384,
+          0.35355339059327384,
+          0.6123724356957946
+        ],
+        "approach_direction_local": [
+          0.8660254037844387,
+          0.0,
+          0.49999999999999994
+        ],
+        "approach": "oblique_entry",
+        "open_angle_rad": 0.45,
+        "wall_thickness_m": null,
+        "entry_tilt_deg": 30.0,
+        "pinch_twist_deg": 0.0,
+        "arm": 2
+      },
+      "arrival_check": {
+        "checked": true,
+        "jaw_surface_samples_inside_peg": [
+          0,
+          0
+        ],
+        "jaw_surface_samples_inside_source_post": [
+          0,
+          0
+        ],
+        "minimum_jaw_board_clearance_mm": 8.206539423245944,
+        "sampled_arrival_clear": true,
+        "note": "Sampled jaw surfaces at arrival only; shaft and full approach require physics validation"
+      },
+      "kinematic_route_check": {
+        "checked": true,
+        "reachable": true,
+        "samples_checked": 72,
+        "maximum_position_error_mm": 3.606427033771656e-11,
+        "maximum_rotation_error_rad": 1.6991520391008957e-11,
+        "angular_limit_margin_deg": 2.0,
+        "insertion_limit_margin_mm": 1.0,
+        "note": "Nominal sampled route with USD joint limits; not a swept collision or dynamics validation"
+      }
+    }
+  ],
+  "unchanged_joint_limits": true,
+  "limits_margin": {
+    "revolute_deg": 2.0,
+    "insertion_mm": 1.0
+  },
+  "limitations": "Sampled nominal reachability and arrival geometry; not swept collision, compliance or contact dynamics validation. CPU tracking test uses SDK DLS and a simple lagging joint plant."
+}

@@ -1,0 +1,17 @@
+{
+  "parent_sha256": "1b18cb1f3fb70f9382c8f886e92b26c208144d364dd6f8c25e027e51662461b0",
+  "policy_sha256": "7cd89f06ae748e6228231dd37dd25fd5db0ea94449f8a62c0a6fceafc5f9f01c",
+  "existing_tensors_unchanged": 81,
+  "new_tensors": [
+    "contact_pose_mask",
+    "pickup_decoder.contact_pose_mask",
+    "contact_pose_head.net.0.weight",
+    "contact_pose_head.net.0.bias",
+    "contact_pose_head.net.2.weight",
+    "contact_pose_head.net.2.bias",
+    "contact_pose_head.net.4.weight",
+    "contact_pose_head.net.4.bias"
+  ],
+  "embedded_pickup_contact_correction_disabled": true,
+  "physical_success_claimed": false
+}

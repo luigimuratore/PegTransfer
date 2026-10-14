@@ -1,0 +1,7 @@
+{
+  "complete": true,
+  "stage": "candidate_requires_physical_evaluation",
+  "transitions": 12000,
+  "candidate": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/bc_sac_residual_v4/training/candidate.zip",
+  "sac_sha256": "fa16e2bd31b4ce062aca303aee02ae84de3d8c320aaf352c6baca254f646ec09"
+}

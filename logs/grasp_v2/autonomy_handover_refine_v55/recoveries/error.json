@@ -1,0 +1,4 @@
+{
+  "type": "ValueError",
+  "message": "Receiver recovery requires a measured stable donor lift"
+}

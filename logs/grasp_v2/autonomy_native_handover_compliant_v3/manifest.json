@@ -1,0 +1,56 @@
+{
+  "parameters": {
+    "mode": "collect",
+    "output": "logs/grasp_v2/autonomy_native_handover_compliant_v3",
+    "policy": null,
+    "datasets": null,
+    "num_envs": 2,
+    "episodes": 2,
+    "episode_steps": 9000,
+    "jitter_mm": 0.0,
+    "yaw_deg": 0.0,
+    "sources": [
+      "L5"
+    ],
+    "targets": [
+      "R2"
+    ],
+    "learner_fraction": 0.0,
+    "learner_until_stage": 19,
+    "updates": 6000,
+    "batch_size": 1024,
+    "architecture": "mlp",
+    "future_steps": 0,
+    "phase_endpoint": false,
+    "skill": "handover",
+    "balance_direction": -1.0,
+    "implementation_change": "Preserve XYZ/rotation direction when bounding long pose commands",
+    "seed": 42,
+    "device": "cuda:0",
+    "headless": true,
+    "realtime": false,
+    "video": false
+  },
+  "source_hashes": {
+    "autonomy_env.py": "e866cb23b5cb7d97285cdf3b680310914c80c041053ed92f670d0efbbc3b853f",
+    "autonomy_full_teacher.py": "2fdb262a408e3e3ebcd6b3e71bb88761eeaaf1c53f29b608120725ec75a7ea50",
+    "rl_runtime.py": "723f8f07ab7414dafacf9117466e2920b942e4a143a56642c14f40f1d625de05",
+    "replay.py": "8e5f130e02f840f79d3433f5932b489af96de5351770253daaf7fd657d651a3f",
+    "autonomy_learning.py": "3b9fda15c9b253080f45d908a2210923f91ed66acb0badc9d29c8e0c13d7f662",
+    "autonomy_replay.py": "5fc584e6a3e75254cd726f3eb2330149d348e3c3ff27f1f60c2effe5bb7aeea5",
+    "rl_core.py": "80ddad8671a2a8e1078e347eb0c62a57083ade3f7dc2e79ee335183c19127407",
+    "rl_env.py": "6068ee43839b7f2ce4c7fc7a8bd46d408e8afceee0d5387d2fe5758937ebcbb3",
+    "replay_full.py": "33a65680dc20a25b1808cd0541869d1067b86364e9d0d19439caf8cb12bdaf6f",
+    "autonomy_main.py": "1eab315d09a05223e3f0ab55f9d7e396584e37ddcf3ab8f81035a2b163ff7c03",
+    "autonomy_teacher.py": "15b784c833150fa24a5776a6483a229aa123f030860a0a4232cf22ea06704701",
+    "geometry.py": "a6e0333e2843cdb7d686558cd613080112cef49768fd02d034a0d477b732792f",
+    "autonomy_curriculum.py": "ca4196b02235218bc7f6dd0058b0245d9cc53958787ed292803a74d3e4d2606a",
+    "autonomy_audit.py": "1c21a25c2232674ba55be90cd5e924c772e26b6b4276c552b04a7048ce6a7a2a",
+    "peg_profile.json": "4b2cce45a8324e6dd804cacd160912d92cba3bbe653cb28d090ce3b4ef97c8f6"
+  },
+  "physics_manifest_sha256": "3416ee107c467cedca24d735064e8b8775646d63afe202d6114a51ac81337bbf",
+  "assisted_grasp": false,
+  "programmed_task_controller": true,
+  "skill": "handover",
+  "policy_sha256": null
+}

@@ -1,0 +1,7 @@
+{
+  "original_report_unchanged": true,
+  "classification": "Provisional takeover contact only",
+  "sustained_receiver_hold_verified": false,
+  "followup_diagnostic": "logs/grasp_v2/autonomy_full_vertex_native_v6",
+  "reason": "Full-sequence follow-up loses the peg shortly after donor release; new evaluations require two seconds of receiver-only support"
+}

@@ -1,0 +1,320 @@
+{
+  "complete": false,
+  "requested_episodes": 3,
+  "episodes": 3,
+  "cases": [
+    {
+      "skill": "full",
+      "success": false,
+      "failure": false,
+      "timeout": true,
+      "length": 10000,
+      "return_": -7.981335163116455,
+      "grasp_psm1": true,
+      "lift_stable": false,
+      "grasp_psm2": false,
+      "handover": false,
+      "full_success": false,
+      "hole_error_mm": 44.750667572021484,
+      "peak_force_n": 0.43962612748146057,
+      "assisted_grasp": true,
+      "grasp_support": {
+        "type": "bounded_grasp_spring",
+        "strength": 1.0,
+        "assisted_grasp": true,
+        "profile": "firm",
+        "stiffness_n_m": 300.0,
+        "damping_ns_m": 1.5,
+        "holder": 0,
+        "applied_physics_steps": 0,
+        "acquisitions": 0,
+        "releases": 0,
+        "force_peak_n": 0.0,
+        "torque_peak_nm": 0.0,
+        "absolute_work_j": 0.0,
+        "force_limit_n": 0.4,
+        "torque_limit_nm": 0.004,
+        "placement_guide_enabled": true,
+        "placement_guide_active": false,
+        "placement_guide_steps": 0,
+        "placement_force_peak_n": 0.0,
+        "placement_torque_peak_nm": 0.0,
+        "object_pose_writes": false,
+        "object_velocity_writes": false,
+        "teacher_stage_inputs": false
+      },
+      "reset": {
+        "source": "L5",
+        "target": "R2",
+        "jitter_mm": [
+          -0.0,
+          -0.0
+        ],
+        "yaw_deg": -0.0,
+        "source_post_center_m": [
+          0.0,
+          0.0,
+          0.009999999776482582
+        ],
+        "initial_hole_center_m": [
+          0.0,
+          0.0,
+          0.009999999776482582
+        ],
+        "reset_only_randomization": true,
+        "board_and_posts_unchanged": true
+      },
+      "terminal_physics": {
+        "peg_m": [
+          -0.0059642791748046875,
+          3.5889577702619135e-05,
+          0.024613605812191963
+        ],
+        "bottom_m": 0.010000564157962799,
+        "tool_tips_m": [
+          [
+            -0.005483865737915039,
+            -3.0622784379374934e-06,
+            0.06096387654542923
+          ],
+          [
+            0.07081890106201172,
+            -0.0009130854159593582,
+            0.07721146941184998
+          ]
+        ],
+        "forces_n": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "jaws_rad": [
+          [
+            5.1716467344481085e-14,
+            2.0929703803407307e-10
+          ],
+          [
+            0.15000282227993011,
+            0.1500028669834137
+          ]
+        ]
+      },
+      "terminal_teacher_stage": null,
+      "terminal_learned_option": 4
+    },
+    {
+      "skill": "full",
+      "success": false,
+      "failure": false,
+      "timeout": true,
+      "length": 10000,
+      "return_": -7.981245517730713,
+      "grasp_psm1": true,
+      "lift_stable": false,
+      "grasp_psm2": false,
+      "handover": false,
+      "full_success": false,
+      "hole_error_mm": 44.94086456298828,
+      "peak_force_n": 0.4402604401111603,
+      "assisted_grasp": true,
+      "grasp_support": {
+        "type": "bounded_grasp_spring",
+        "strength": 1.0,
+        "assisted_grasp": true,
+        "profile": "firm",
+        "stiffness_n_m": 300.0,
+        "damping_ns_m": 1.5,
+        "holder": 0,
+        "applied_physics_steps": 0,
+        "acquisitions": 0,
+        "releases": 0,
+        "force_peak_n": 0.0,
+        "torque_peak_nm": 0.0,
+        "absolute_work_j": 0.0,
+        "force_limit_n": 0.4,
+        "torque_limit_nm": 0.004,
+        "placement_guide_enabled": true,
+        "placement_guide_active": false,
+        "placement_guide_steps": 0,
+        "placement_force_peak_n": 0.0,
+        "placement_torque_peak_nm": 0.0,
+        "object_pose_writes": false,
+        "object_velocity_writes": false,
+        "teacher_stage_inputs": false
+      },
+      "reset": {
+        "source": "L5",
+        "target": "R2",
+        "jitter_mm": [
+          0.0,
+          -0.0
+        ],
+        "yaw_deg": 0.0,
+        "source_post_center_m": [
+          0.0,
+          0.0,
+          0.009999999776482582
+        ],
+        "initial_hole_center_m": [
+          0.0,
+          0.0,
+          0.009999999776482582
+        ],
+        "reset_only_randomization": true,
+        "board_and_posts_unchanged": true
+      },
+      "terminal_physics": {
+        "peg_m": [
+          -0.006175471469759941,
+          7.488567644031718e-05,
+          0.02461359277367592
+        ],
+        "bottom_m": 0.010000552982091904,
+        "tool_tips_m": [
+          [
+            -0.005483049433678389,
+            -2.144033487638808e-06,
+            0.06096420809626579
+          ],
+          [
+            0.07081901282072067,
+            -0.0009132781415246427,
+            0.07721146941184998
+          ]
+        ],
+        "forces_n": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "jaws_rad": [
+          [
+            8.079802799043634e-11,
+            1.5334156167057245e-10
+          ],
+          [
+            0.15000289678573608,
+            0.15000298619270325
+          ]
+        ]
+      },
+      "terminal_teacher_stage": null,
+      "terminal_learned_option": 4
+    },
+    {
+      "skill": "full",
+      "success": false,
+      "failure": false,
+      "timeout": true,
+      "length": 10000,
+      "return_": -7.981403350830078,
+      "grasp_psm1": true,
+      "lift_stable": false,
+      "grasp_psm2": false,
+      "handover": false,
+      "full_success": false,
+      "hole_error_mm": 44.811317443847656,
+      "peak_force_n": 0.44127506017684937,
+      "assisted_grasp": true,
+      "grasp_support": {
+        "type": "bounded_grasp_spring",
+        "strength": 1.0,
+        "assisted_grasp": true,
+        "profile": "firm",
+        "stiffness_n_m": 300.0,
+        "damping_ns_m": 1.5,
+        "holder": 0,
+        "applied_physics_steps": 0,
+        "acquisitions": 0,
+        "releases": 0,
+        "force_peak_n": 0.0,
+        "torque_peak_nm": 0.0,
+        "absolute_work_j": 0.0,
+        "force_limit_n": 0.4,
+        "torque_limit_nm": 0.004,
+        "placement_guide_enabled": true,
+        "placement_guide_active": false,
+        "placement_guide_steps": 0,
+        "placement_force_peak_n": 0.0,
+        "placement_torque_peak_nm": 0.0,
+        "object_pose_writes": false,
+        "object_velocity_writes": false,
+        "teacher_stage_inputs": false
+      },
+      "reset": {
+        "source": "L5",
+        "target": "R2",
+        "jitter_mm": [
+          -0.0,
+          -0.0
+        ],
+        "yaw_deg": -0.0,
+        "source_post_center_m": [
+          0.0,
+          0.0,
+          0.009999999776482582
+        ],
+        "initial_hole_center_m": [
+          0.0,
+          0.0,
+          0.009999999776482582
+        ],
+        "reset_only_randomization": true,
+        "board_and_posts_unchanged": true
+      },
+      "terminal_physics": {
+        "peg_m": [
+          -0.006064653396606445,
+          0.00014586422184947878,
+          0.02461358718574047
+        ],
+        "bottom_m": 0.010000530630350113,
+        "tool_tips_m": [
+          [
+            -0.0054836273193359375,
+            -2.7642440727504436e-06,
+            0.06096404418349266
+          ],
+          [
+            0.07081890106201172,
+            -0.0009132116101682186,
+            0.07721158862113953
+          ]
+        ],
+        "forces_n": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "jaws_rad": [
+          [
+            4.749115545266136e-10,
+            4.673071929417461e-10
+          ],
+          [
+            0.15000282227993011,
+            0.1500028669834137
+          ]
+        ]
+      },
+      "terminal_teacher_stage": null,
+      "terminal_learned_option": 4
+    }
+  ],
+  "teacher_at_inference": false
+}

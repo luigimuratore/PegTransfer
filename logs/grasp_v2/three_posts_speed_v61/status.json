@@ -1,0 +1,229 @@
+{
+  "complete": true,
+  "stage": "backup_completed_not_promoted",
+  "policy_sha256": "956e60f3a3e8ae424289a247cc448105be749f6134633ffc515db02d5b8059c6",
+  "algorithm": "Frozen BC matched speed sweep",
+  "candidates": [
+    [
+      4,
+      4
+    ],
+    [
+      4,
+      32
+    ],
+    [
+      4,
+      16
+    ],
+    [
+      4,
+      8
+    ],
+    [
+      2,
+      16
+    ]
+  ],
+  "results": [
+    {
+      "label": "pilot_f4_t4",
+      "scales": [
+        4,
+        4
+      ],
+      "success": 3,
+      "episodes": 3,
+      "passed": true,
+      "matched_speed_accepted": true,
+      "mean_episode_seconds": 48.74,
+      "baseline_mean_seconds": 52.33,
+      "duration_reduction_percent": 6.860309573858203,
+      "cases": [
+        {
+          "source": "L5",
+          "target": "R2",
+          "seconds": 43.7,
+          "success": true,
+          "peak_force_n": 0.6959163546562195,
+          "hole_error_mm": 0.004378281533718109
+        },
+        {
+          "source": "L6",
+          "target": "R1",
+          "seconds": 43.050000000000004,
+          "success": true,
+          "peak_force_n": 0.5992744565010071,
+          "hole_error_mm": 0.0008422802202403545
+        },
+        {
+          "source": "L4",
+          "target": "R3",
+          "seconds": 59.47,
+          "success": true,
+          "peak_force_n": 0.6275185346603394,
+          "hole_error_mm": 0.001188758760690689
+        }
+      ],
+      "report": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/three_posts_speed_v61/travel4_pilot/evaluation.json",
+      "report_sha256": "3c15eac7bfea73a38ab67e616492af9334297a248b0c8b663ca08dd57d7d9cf0"
+    },
+    {
+      "label": "pilot_f4_t32",
+      "scales": [
+        4,
+        32
+      ],
+      "success": 3,
+      "episodes": 3,
+      "passed": true,
+      "matched_speed_accepted": true,
+      "mean_episode_seconds": 43.82666666666667,
+      "baseline_mean_seconds": 52.33,
+      "duration_reduction_percent": 16.249442639658575,
+      "cases": [
+        {
+          "source": "L5",
+          "target": "R2",
+          "seconds": 41.02,
+          "success": true,
+          "peak_force_n": 0.7605534195899963,
+          "hole_error_mm": 0.21131877601146698
+        },
+        {
+          "source": "L6",
+          "target": "R1",
+          "seconds": 36.33,
+          "success": true,
+          "peak_force_n": 0.6577975749969482,
+          "hole_error_mm": 0.14674876630306244
+        },
+        {
+          "source": "L4",
+          "target": "R3",
+          "seconds": 54.13,
+          "success": true,
+          "peak_force_n": 0.6954255700111389,
+          "hole_error_mm": 0.17404843866825104
+        }
+      ],
+      "report": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/three_posts_speed_v61/pilot_f4_t32/evaluation.json",
+      "report_sha256": "b116864a141bbe542834fe6b992f9a1e1df350854649821b5ab119f9d700666a"
+    },
+    {
+      "label": "pilot_f4_t16",
+      "scales": [
+        4,
+        16
+      ],
+      "success": 3,
+      "episodes": 3,
+      "passed": true,
+      "matched_speed_accepted": true,
+      "mean_episode_seconds": 41.663333333333334,
+      "baseline_mean_seconds": 52.33,
+      "duration_reduction_percent": 20.383463914899036,
+      "cases": [
+        {
+          "source": "L5",
+          "target": "R2",
+          "seconds": 38.93,
+          "success": true,
+          "peak_force_n": 0.6973924040794373,
+          "hole_error_mm": 0.0010908948024734855
+        },
+        {
+          "source": "L6",
+          "target": "R1",
+          "seconds": 36.32,
+          "success": true,
+          "peak_force_n": 0.6185079216957092,
+          "hole_error_mm": 0.001054337713867426
+        },
+        {
+          "source": "L4",
+          "target": "R3",
+          "seconds": 49.74,
+          "success": true,
+          "peak_force_n": 0.6530649065971375,
+          "hole_error_mm": 0.000711247615981847
+        }
+      ],
+      "report": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/three_posts_speed_v61/pilot_f4_t16/evaluation.json",
+      "report_sha256": "10d376e553a0df0b4596919e10fed558397cb5d5bcae7799d0dc1eba4e3e0943"
+    },
+    {
+      "label": "pilot_f4_t8",
+      "scales": [
+        4,
+        8
+      ],
+      "success": 3,
+      "episodes": 3,
+      "passed": true,
+      "matched_speed_accepted": true,
+      "mean_episode_seconds": 45.593333333333334,
+      "baseline_mean_seconds": 52.33,
+      "duration_reduction_percent": 12.873431428753424,
+      "cases": [
+        {
+          "source": "L5",
+          "target": "R2",
+          "seconds": 41.910000000000004,
+          "success": true,
+          "peak_force_n": 0.6883702874183655,
+          "hole_error_mm": 0.20458537340164185
+        },
+        {
+          "source": "L6",
+          "target": "R1",
+          "seconds": 38.97,
+          "success": true,
+          "peak_force_n": 0.5459610819816589,
+          "hole_error_mm": 0.0007143632974475622
+        },
+        {
+          "source": "L4",
+          "target": "R3",
+          "seconds": 55.9,
+          "success": true,
+          "peak_force_n": 0.6651029586791992,
+          "hole_error_mm": 0.0014528441242873669
+        }
+      ],
+      "report": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/three_posts_speed_v61/pilot_f4_t8/evaluation.json",
+      "report_sha256": "6ae1d03291bddedaab3e81d6c6786c521e896990d12199ea5b8d8412fe33357d"
+    },
+    {
+      "label": "confirm_f4_t8",
+      "scales": [
+        4,
+        8
+      ],
+      "success": 12,
+      "episodes": 12,
+      "passed": true,
+      "matched_speed_accepted": true,
+      "mean_episode_seconds": 46.06083333333333,
+      "baseline_mean_seconds": 53.046666666666674,
+      "duration_reduction_percent": 13.169222068618847,
+      "report": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/three_posts_speed_v61/confirm_f4_t8/evaluation.json",
+      "report_sha256": "18f001bea72427a3108bab1d42ec4484a409e73baf8abee1698fd9c0d9a4eda8"
+    }
+  ],
+  "assisted_grasp": true,
+  "native_full_policy_verified": false,
+  "rejected_diagnostics": [
+    "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/three_posts_speed_v61/pilot_f12_t32/stationary_rejection.json",
+    "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/three_posts_speed_v61/confirm_f4_t32/stationary_rejection.json",
+    "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/three_posts_speed_v61/confirm_f4_t16/stationary_rejection.json"
+  ],
+  "updated_utc": "2026-10-12T08:52:04.782702+00:00",
+  "supervisor_stopped_after_completed_child": true,
+  "selected_backup_scales": [
+    4,
+    8
+  ],
+  "selected_checkpoint": "milestones/checkpoint13-three-posts-fast-assisted.json",
+  "note": "Both f4/t8 variants passed matched12. Backup46.06s vs saved variant46.30s; this small difference does not establish a benefit of faster empty opening. Saved variant additionally has verified complete three-episode front replay."
+}

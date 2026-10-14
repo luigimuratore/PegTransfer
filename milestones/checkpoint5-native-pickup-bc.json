@@ -1,0 +1,125 @@
+{
+  "name": "checkpoint5-native-pickup-bc",
+  "date": "2026-10-06",
+  "algorithm": "Hierarchical Behavior Cloning; frozen motion/option network plus learned categorical jaw feedback",
+  "policy": "logs/grasp_v2/autonomy_pressure_bc_v11/policy.pt",
+  "preserved_policy": ".checkpoint_runs/checkpoint5-native-pickup-bc/model/policy.pt",
+  "policy_sha256": "7e4b49278bb42897de12753ca279dbdeba6c3a71076f8705a2044b8984fe9411",
+  "baseline_manifest": "milestones/checkpoint3-full-assisted.json",
+  "physics_manifest_sha256": "3416ee107c467cedca24d735064e8b8775646d63afe202d6114a51ac81337bbf",
+  "files": {
+    "reports/evaluation_0.json": "c32276074c3e9129f8d42c0f800c7a0fb0946da92ce1e7e65091b8d8307382e5",
+    "reports/evaluation_1.json": "9b52343a8907f6dd9a85e1ae6890d7be4957c12c14ea75c6b04ff14247b64497",
+    "reports/curriculum_status.json": "21809d843ceadd0ade4aa58cb504837e260d1daf84038f46cc475fdc10d03f05",
+    "reports/evaluation_2.json": "bb8ba636567f9b71dfc514e8e3ce6ec3e6eff6b5a783e9ba5f94e2b27479f818",
+    "model/policy.pt": "7e4b49278bb42897de12753ca279dbdeba6c3a71076f8705a2044b8984fe9411",
+    "model/training.json": "96cc35ed3f3739965471202414d338486b7463bb49ae245e3ee0a11fb740732e",
+    "model/manifest.json": "2ed384efc26723c7eb7c3f37d0a966f73b358025186b3fcd54d8430d0b5b45e6",
+    "model/sources/autonomy_env.py": "c8e96a5dd7311ef8e4c919013d38a6d878b93820490473533fdc2f1ccdd6d3ad",
+    "model/sources/autonomy_full_teacher.py": "f2ca1320d692b9bc4df44ff4d7b703b419032fccb40a78d8353de2e24342e0f5",
+    "model/sources/rl_runtime.py": "723f8f07ab7414dafacf9117466e2920b942e4a143a56642c14f40f1d625de05",
+    "model/sources/replay.py": "8e5f130e02f840f79d3433f5932b489af96de5351770253daaf7fd657d651a3f",
+    "model/sources/autonomy_learning.py": "6921eb878ceb2ef67e438a9ac9369e75ce83071f837311bd2fcbeecba85511eb",
+    "model/sources/autonomy_replay.py": "5fc584e6a3e75254cd726f3eb2330149d348e3c3ff27f1f60c2effe5bb7aeea5",
+    "model/sources/rl_core.py": "80ddad8671a2a8e1078e347eb0c62a57083ade3f7dc2e79ee335183c19127407",
+    "model/sources/rl_env.py": "6068ee43839b7f2ce4c7fc7a8bd46d408e8afceee0d5387d2fe5758937ebcbb3",
+    "model/sources/replay_full.py": "33a65680dc20a25b1808cd0541869d1067b86364e9d0d19439caf8cb12bdaf6f",
+    "model/sources/autonomy_main.py": "a9a4fbc2856ead34bc58eff23936239de7f5e441de768c8d97fd3067d559889d",
+    "model/sources/autonomy_teacher.py": "15b784c833150fa24a5776a6483a229aa123f030860a0a4232cf22ea06704701",
+    "model/sources/geometry.py": "a6e0333e2843cdb7d686558cd613080112cef49768fd02d034a0d477b732792f",
+    "model/sources/autonomy_curriculum.py": "854d96ff657a1a44206b8ad2cfbdb04d4aac3355c539affb516baf8876219250",
+    "model/sources/autonomy_audit.py": "1de3814039c03f2ca05e1178f8f4c5f0722d901f0f197dc7854fcd4a6622d1f7",
+    "model/sources/peg_profile.json": "4b2cce45a8324e6dd804cacd160912d92cba3bbe653cb28d090ce3b4ef97c8f6",
+    "model/sources/__pycache__/replay_full.cpython-311.pyc": "6776302b7a8e9fb867f4ada3b81c0c8b2306fc2c73f541730fce4faaab3baa86",
+    "model/sources/__pycache__/autonomy_learning.cpython-311.pyc": "cf6c91982b9a121036ecb500d070eb16d81daf4e12d9203c2f8f3c4d5a997dcd",
+    "model/sources/__pycache__/autonomy_main.cpython-311.pyc": "4d6289c13af7194139db487dd2a1367b9b75011e39f46984a13806df0c563faf",
+    "videos/pickup_front.mp4": "e53534cce6d4395855ef9468fb2e7ef119959e2398b2ca3e8a10b59dd455c36c",
+    "reports/replay_video_evaluation.json": "f28836f0b55ac96f7c0ae5f7897069dfbb41a4a20fd5948af01fb4141eceab92"
+  },
+  "skill": "lift",
+  "autonomous_pickup_verified": true,
+  "full_task_verified": false,
+  "assisted_grasp": false,
+  "teacher_at_inference": false,
+  "source": "L5",
+  "target": "R2 (unused in pickup)",
+  "position_randomization_mm": 0.5,
+  "yaw_randomization_deg": 2,
+  "confirmation_success": 62,
+  "confirmation_episodes": 64,
+  "confirmation_success_rate": 0.96875,
+  "evidence": [
+    {
+      "path": "logs/grasp_v2/autonomy_pressure_bc_v11_eval16/evaluation.json",
+      "sha256": "c32276074c3e9129f8d42c0f800c7a0fb0946da92ce1e7e65091b8d8307382e5",
+      "seed": 123,
+      "success": 16,
+      "episodes": 16,
+      "failures": 0,
+      "timeouts": 0,
+      "maximum_finger_force_n": 0.4294068515300751
+    },
+    {
+      "path": "logs/grasp_v2/autonomy_curriculum_v5/eval_round0/evaluation.json",
+      "sha256": "9b52343a8907f6dd9a85e1ae6890d7be4957c12c14ea75c6b04ff14247b64497",
+      "seed": 123,
+      "success": 31,
+      "episodes": 32,
+      "failures": 1,
+      "timeouts": 0,
+      "maximum_finger_force_n": 3.520186185836792
+    },
+    {
+      "path": "logs/grasp_v2/autonomy_curriculum_v5/confirmation_round0/evaluation.json",
+      "sha256": "bb8ba636567f9b71dfc514e8e3ce6ec3e6eff6b5a783e9ba5f94e2b27479f818",
+      "seed": 9876,
+      "success": 31,
+      "episodes": 32,
+      "failures": 1,
+      "timeouts": 0,
+      "maximum_finger_force_n": 1.4762120246887207
+    }
+  ],
+  "settings": {
+    "device": "cuda:0",
+    "observation_dim": 98,
+    "action_dim": 14,
+    "encoder": [
+      256,
+      256
+    ],
+    "options": 6,
+    "movement_bc_updates": 12000,
+    "movement_learning_rate": 0.0001,
+    "jaw_network": [
+      64,
+      64
+    ],
+    "jaw_bc_updates": 6000,
+    "jaw_learning_rate": 0.0003,
+    "batch_size": 1024,
+    "pressure_label_band_n": [
+      0.36,
+      0.4
+    ],
+    "control_hz": 100,
+    "physics_hz": 400
+  },
+  "limitations": [
+    "Pickup PSM1 only; native handover and placement not yet verified",
+    "One force-limit failure in each 32-episode confirmation",
+    "Simulator state input; no vision",
+    "Learned transition constraints and cached neural poses; generic IK and speed limits remain",
+    "Rigid peg with compliant contacts; not calibrated deformable rubber",
+    "Small position/yaw variations around L5 only; installed Isaac dependencies/assets must be retained"
+  ],
+  "gui_command": "bash peg_grasp_v2.sh checkpoint5-play",
+  "video_command": "bash peg_grasp_v2.sh checkpoint5-video",
+  "preserved_video": ".checkpoint_runs/checkpoint5-native-pickup-bc/videos/pickup_front.mp4",
+  "replay_verification": {
+    "success": 1,
+    "episodes": 1,
+    "report": ".checkpoint_runs/checkpoint5-native-pickup-bc/reports/replay_video_evaluation.json",
+    "policy_sha256": "7e4b49278bb42897de12753ca279dbdeba6c3a71076f8705a2044b8984fe9411"
+  }
+}

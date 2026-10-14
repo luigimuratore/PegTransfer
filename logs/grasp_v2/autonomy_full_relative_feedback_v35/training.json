@@ -1,0 +1,1798 @@
+{
+  "algorithm": "Hierarchical Behavior Cloning",
+  "options": 19,
+  "learned_option_gate": true,
+  "teacher_stage_at_inference": false,
+  "datasets": [
+    "logs/grasp_v2/autonomy_full_recovery_pipeline_v21/datasets/dataset_0.npz",
+    "logs/grasp_v2/autonomy_full_recovery_pipeline_v21/datasets/dataset_1.npz",
+    "logs/grasp_v2/autonomy_full_recovery_pipeline_v21/datasets/dataset_2.npz"
+  ],
+  "transition_constraints": "Observed training-episode transitions; no validation data",
+  "transition_counts": [
+    [
+      7080,
+      15,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      1050,
+      15,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      4500,
+      15,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      1533,
+      15,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      17385,
+      15,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      2241,
+      15,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      10482,
+      15,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      3197,
+      15,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      780,
+      15,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      4665,
+      15,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      5501,
+      15,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      12302,
+      15,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1065,
+      0,
+      15,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      15423,
+      15,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      7275,
+      15,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      195,
+      15,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1065,
+      15
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      396
+    ]
+  ],
+  "latch_option_poses": true,
+  "pose_entry_supervision": true,
+  "aborted_pose_endpoints_excluded": true,
+  "exclude_joint_shortcuts": true,
+  "linear_pose_heads": true,
+  "future_pose_steps": 20,
+  "pose_supervision": "measured phase endpoints",
+  "updates": 24000,
+  "batch_size": 1024,
+  "learning_rate": 0.0001,
+  "device": "cuda:0",
+  "gpu": "NVIDIA RTX 6000 Ada Generation",
+  "input_mask": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "physical_evaluation_required": true,
+  "history": [
+    {
+      "update": 500,
+      "loss": 0.22217534482479095,
+      "validation_option_accuracy": 0.8249760270118713
+    },
+    {
+      "update": 1000,
+      "loss": 0.11617960035800934,
+      "validation_option_accuracy": 0.891859769821167
+    },
+    {
+      "update": 1500,
+      "loss": 0.07806016504764557,
+      "validation_option_accuracy": 0.9040413498878479
+    },
+    {
+      "update": 2000,
+      "loss": 0.08040749281644821,
+      "validation_option_accuracy": 0.9103236794471741
+    },
+    {
+      "update": 2500,
+      "loss": 0.05087585374712944,
+      "validation_option_accuracy": 0.9171422719955444
+    },
+    {
+      "update": 3000,
+      "loss": 0.05610800161957741,
+      "validation_option_accuracy": 0.9213560223579407
+    },
+    {
+      "update": 3500,
+      "loss": 0.04331370070576668,
+      "validation_option_accuracy": 0.924803614616394
+    },
+    {
+      "update": 4000,
+      "loss": 0.044552553445100784,
+      "validation_option_accuracy": 0.9282512664794922
+    },
+    {
+      "update": 4500,
+      "loss": 0.04054493457078934,
+      "validation_option_accuracy": 0.9274851083755493
+    },
+    {
+      "update": 5000,
+      "loss": 0.04507588967680931,
+      "validation_option_accuracy": 0.9296686053276062
+    },
+    {
+      "update": 5500,
+      "loss": 0.04021970182657242,
+      "validation_option_accuracy": 0.9301666021347046
+    },
+    {
+      "update": 6000,
+      "loss": 0.031554851680994034,
+      "validation_option_accuracy": 0.93196702003479
+    },
+    {
+      "update": 6500,
+      "loss": 0.0344795286655426,
+      "validation_option_accuracy": 0.9324650168418884
+    },
+    {
+      "update": 7000,
+      "loss": 0.032277319580316544,
+      "validation_option_accuracy": 0.9313541054725647
+    },
+    {
+      "update": 7500,
+      "loss": 0.024538679048419,
+      "validation_option_accuracy": 0.9332694411277771
+    },
+    {
+      "update": 8000,
+      "loss": 0.03197799250483513,
+      "validation_option_accuracy": 0.9361424446105957
+    },
+    {
+      "update": 8500,
+      "loss": 0.027737591415643692,
+      "validation_option_accuracy": 0.943918764591217
+    },
+    {
+      "update": 9000,
+      "loss": 0.031154343858361244,
+      "validation_option_accuracy": 0.9413521885871887
+    },
+    {
+      "update": 9500,
+      "loss": 0.03742188587784767,
+      "validation_option_accuracy": 0.9397432804107666
+    },
+    {
+      "update": 10000,
+      "loss": 0.034585099667310715,
+      "validation_option_accuracy": 0.9444933533668518
+    },
+    {
+      "update": 10500,
+      "loss": 0.028571538627147675,
+      "validation_option_accuracy": 0.945987343788147
+    },
+    {
+      "update": 11000,
+      "loss": 0.021994970738887787,
+      "validation_option_accuracy": 0.9442635178565979
+    },
+    {
+      "update": 11500,
+      "loss": 0.02549039013683796,
+      "validation_option_accuracy": 0.9478260278701782
+    },
+    {
+      "update": 12000,
+      "loss": 0.026785852387547493,
+      "validation_option_accuracy": 0.9408925175666809
+    },
+    {
+      "update": 12500,
+      "loss": 0.022529229521751404,
+      "validation_option_accuracy": 0.952193021774292
+    },
+    {
+      "update": 13000,
+      "loss": 0.028270438313484192,
+      "validation_option_accuracy": 0.9488603472709656
+    },
+    {
+      "update": 13500,
+      "loss": 0.021680865436792374,
+      "validation_option_accuracy": 0.9463320970535278
+    },
+    {
+      "update": 14000,
+      "loss": 0.015029104426503181,
+      "validation_option_accuracy": 0.9510055184364319
+    },
+    {
+      "update": 14500,
+      "loss": 0.025410259142518044,
+      "validation_option_accuracy": 0.9515035152435303
+    },
+    {
+      "update": 15000,
+      "loss": 0.01612509787082672,
+      "validation_option_accuracy": 0.9511587619781494
+    },
+    {
+      "update": 15500,
+      "loss": 0.017819106578826904,
+      "validation_option_accuracy": 0.9499712586402893
+    },
+    {
+      "update": 16000,
+      "loss": 0.018458323553204536,
+      "validation_option_accuracy": 0.9490135908126831
+    },
+    {
+      "update": 16500,
+      "loss": 0.01583021692931652,
+      "validation_option_accuracy": 0.9469066858291626
+    },
+    {
+      "update": 17000,
+      "loss": 0.01781182549893856,
+      "validation_option_accuracy": 0.9543765187263489
+    },
+    {
+      "update": 17500,
+      "loss": 0.017442619428038597,
+      "validation_option_accuracy": 0.9585136771202087
+    },
+    {
+      "update": 18000,
+      "loss": 0.021474407985806465,
+      "validation_option_accuracy": 0.9568281769752502
+    },
+    {
+      "update": 18500,
+      "loss": 0.019772857427597046,
+      "validation_option_accuracy": 0.9546063542366028
+    },
+    {
+      "update": 19000,
+      "loss": 0.01867382973432541,
+      "validation_option_accuracy": 0.9566749334335327
+    },
+    {
+      "update": 19500,
+      "loss": 0.01855967752635479,
+      "validation_option_accuracy": 0.9576326012611389
+    },
+    {
+      "update": 20000,
+      "loss": 0.016995389014482498,
+      "validation_option_accuracy": 0.9584753513336182
+    },
+    {
+      "update": 20500,
+      "loss": 0.014682785607874393,
+      "validation_option_accuracy": 0.958820104598999
+    },
+    {
+      "update": 21000,
+      "loss": 0.015060477890074253,
+      "validation_option_accuracy": 0.9591648578643799
+    },
+    {
+      "update": 21500,
+      "loss": 0.015328701585531235,
+      "validation_option_accuracy": 0.9610801935195923
+    },
+    {
+      "update": 22000,
+      "loss": 0.019350115209817886,
+      "validation_option_accuracy": 0.9610801935195923
+    },
+    {
+      "update": 22500,
+      "loss": 0.015037169679999352,
+      "validation_option_accuracy": 0.9595479369163513
+    },
+    {
+      "update": 23000,
+      "loss": 0.017139412462711334,
+      "validation_option_accuracy": 0.9559087753295898
+    },
+    {
+      "update": 23500,
+      "loss": 0.01597185991704464,
+      "validation_option_accuracy": 0.9614632725715637
+    },
+    {
+      "update": 24000,
+      "loss": 0.012380932457745075,
+      "validation_option_accuracy": 0.9612334370613098
+    }
+  ],
+  "jaw_feedback_algorithm": "Behavior Cloning of one-step jaw reference change from measured forces",
+  "retrained": false,
+  "neural_parameters_unchanged": true,
+  "implementation_change": "Bounded measured-peg feedback on fitted BC relative approach goals; same neural weights and destination decoder, no object commands",
+  "jaw_feedback_updates": 10000,
+  "jaw_feedback_learning_rate": 0.0003,
+  "jaw_feedback_batch_size": 1024,
+  "jaw_feedback_datasets": [
+    "logs/grasp_v2/autonomy_full_recovery_pipeline_v21/datasets/dataset_0.npz",
+    "logs/grasp_v2/autonomy_full_recovery_pipeline_v21/datasets/dataset_1.npz",
+    "logs/grasp_v2/autonomy_full_recovery_pipeline_v21/datasets/dataset_2.npz"
+  ],
+  "parent_policy": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/autonomy_full_destination_decoder_v34/policy.pt",
+  "jaw_supervision": "Offline native expert pressure decisions with counterfactual force calibration",
+  "jaw_rate_categorical": true,
+  "calibration_states_are_physical_demonstrations": false,
+  "opening_reference_calibration": true,
+  "receiver_approach_opening_calibration": true,
+  "coupled_arm_pressure_features": true,
+  "full_transfer_rate_class": true,
+  "pressure_label_band_n": [
+    0.36,
+    0.4
+  ],
+  "movement_and_option_parameters_frozen": true,
+  "jaw_feedback_history": [
+    {
+      "update": 500,
+      "loss": 2.045503616333008,
+      "validation_loss": 0.8194155693054199
+    },
+    {
+      "update": 1000,
+      "loss": 1.0753505229949951,
+      "validation_loss": 0.4579613506793976
+    },
+    {
+      "update": 1500,
+      "loss": 0.8058947324752808,
+      "validation_loss": 0.31815242767333984
+    },
+    {
+      "update": 2000,
+      "loss": 0.6864678859710693,
+      "validation_loss": 0.28208765387535095
+    },
+    {
+      "update": 2500,
+      "loss": 0.5882949829101562,
+      "validation_loss": 0.23397105932235718
+    },
+    {
+      "update": 3000,
+      "loss": 0.5810011625289917,
+      "validation_loss": 0.23278625309467316
+    },
+    {
+      "update": 3500,
+      "loss": 0.5118167400360107,
+      "validation_loss": 0.21146872639656067
+    },
+    {
+      "update": 4000,
+      "loss": 0.5063315033912659,
+      "validation_loss": 0.19157324731349945
+    },
+    {
+      "update": 4500,
+      "loss": 0.4187278151512146,
+      "validation_loss": 0.18399856984615326
+    },
+    {
+      "update": 5000,
+      "loss": 0.4607236385345459,
+      "validation_loss": 0.1692553013563156
+    },
+    {
+      "update": 5500,
+      "loss": 0.4329497814178467,
+      "validation_loss": 0.1591303050518036
+    },
+    {
+      "update": 6000,
+      "loss": 0.35398396849632263,
+      "validation_loss": 0.14318369328975677
+    },
+    {
+      "update": 6500,
+      "loss": 0.38942158222198486,
+      "validation_loss": 0.134816974401474
+    },
+    {
+      "update": 7000,
+      "loss": 0.35854583978652954,
+      "validation_loss": 0.12038026750087738
+    },
+    {
+      "update": 7500,
+      "loss": 0.31124943494796753,
+      "validation_loss": 0.11332520842552185
+    },
+    {
+      "update": 8000,
+      "loss": 0.33627626299858093,
+      "validation_loss": 0.11100392788648605
+    },
+    {
+      "update": 8500,
+      "loss": 0.37229013442993164,
+      "validation_loss": 0.10843757539987564
+    },
+    {
+      "update": 9000,
+      "loss": 0.26773449778556824,
+      "validation_loss": 0.09301909059286118
+    },
+    {
+      "update": 9500,
+      "loss": 0.29729706048965454,
+      "validation_loss": 0.09437159448862076
+    },
+    {
+      "update": 10000,
+      "loss": 0.31472456455230713,
+      "validation_loss": 0.08212857693433762
+    }
+  ],
+  "option_router_updates": 10000,
+  "option_router_learning_rate": 0.0001,
+  "option_router_batch_size": 1024,
+  "option_router_datasets": [
+    "logs/grasp_v2/autonomy_full_recovery_pipeline_v21/datasets/dataset_0.npz",
+    "logs/grasp_v2/autonomy_full_recovery_pipeline_v21/datasets/dataset_1.npz",
+    "logs/grasp_v2/autonomy_full_recovery_pipeline_v21/datasets/dataset_2.npz"
+  ],
+  "option_router_history": [
+    {
+      "update": 500,
+      "loss": 1.7189924716949463,
+      "validation_accuracy": 0.8677978515625,
+      "validation_change_accuracy": 0.7161125540733337
+    },
+    {
+      "update": 1000,
+      "loss": 0.5608603358268738,
+      "validation_accuracy": 0.8731689453125,
+      "validation_change_accuracy": 0.9532467126846313
+    },
+    {
+      "update": 1500,
+      "loss": 0.41426971554756165,
+      "validation_accuracy": 0.9051513671875,
+      "validation_change_accuracy": 0.9855769872665405
+    },
+    {
+      "update": 2000,
+      "loss": 0.32301872968673706,
+      "validation_accuracy": 0.9229736328125,
+      "validation_change_accuracy": 0.9753086566925049
+    },
+    {
+      "update": 2500,
+      "loss": 0.3030773997306824,
+      "validation_accuracy": 0.9388427734375,
+      "validation_change_accuracy": 0.9768637418746948
+    },
+    {
+      "update": 3000,
+      "loss": 0.2712573707103729,
+      "validation_accuracy": 0.946533203125,
+      "validation_change_accuracy": 0.9900497198104858
+    },
+    {
+      "update": 3500,
+      "loss": 0.24773165583610535,
+      "validation_accuracy": 0.950927734375,
+      "validation_change_accuracy": 0.9639174938201904
+    },
+    {
+      "update": 4000,
+      "loss": 0.23942583799362183,
+      "validation_accuracy": 0.95263671875,
+      "validation_change_accuracy": 0.9672544002532959
+    },
+    {
+      "update": 4500,
+      "loss": 0.22714707255363464,
+      "validation_accuracy": 0.95947265625,
+      "validation_change_accuracy": 0.9804401397705078
+    },
+    {
+      "update": 5000,
+      "loss": 0.24148978292942047,
+      "validation_accuracy": 0.9610595703125,
+      "validation_change_accuracy": 0.9868766069412231
+    },
+    {
+      "update": 5500,
+      "loss": 0.19024935364723206,
+      "validation_accuracy": 0.9591064453125,
+      "validation_change_accuracy": 0.9663212299346924
+    },
+    {
+      "update": 6000,
+      "loss": 0.18991807103157043,
+      "validation_accuracy": 0.963134765625,
+      "validation_change_accuracy": 0.9798488020896912
+    },
+    {
+      "update": 6500,
+      "loss": 0.19423127174377441,
+      "validation_accuracy": 0.96533203125,
+      "validation_change_accuracy": 0.9715762734413147
+    },
+    {
+      "update": 7000,
+      "loss": 0.20099759101867676,
+      "validation_accuracy": 0.9642333984375,
+      "validation_change_accuracy": 0.9765013456344604
+    },
+    {
+      "update": 7500,
+      "loss": 0.16734819114208221,
+      "validation_accuracy": 0.96630859375,
+      "validation_change_accuracy": 0.9850745797157288
+    },
+    {
+      "update": 8000,
+      "loss": 0.17990295588970184,
+      "validation_accuracy": 0.9693603515625,
+      "validation_change_accuracy": 0.9733656644821167
+    },
+    {
+      "update": 8500,
+      "loss": 0.17516326904296875,
+      "validation_accuracy": 0.9671630859375,
+      "validation_change_accuracy": 0.9799498915672302
+    },
+    {
+      "update": 9000,
+      "loss": 0.17008985579013824,
+      "validation_accuracy": 0.970458984375,
+      "validation_change_accuracy": 0.9793814420700073
+    },
+    {
+      "update": 9500,
+      "loss": 0.18058717250823975,
+      "validation_accuracy": 0.971923828125,
+      "validation_change_accuracy": 0.9874999523162842
+    },
+    {
+      "update": 10000,
+      "loss": 0.1477576047182083,
+      "validation_accuracy": 0.9693603515625,
+      "validation_change_accuracy": 0.9724999666213989
+    }
+  ],
+  "option_router_labels": "Causal observed transitions; no future progress labels or teacher at inference",
+  "option_router_absolute_position_inputs": false,
+  "option_router_goal_context_calibration": true,
+  "option_router_contact_features": "Finger force norms/opposition, measured progress and own neural pose error; jaw position/reference optional; no absolute height or force direction",
+  "option_router_calibration_states_are_physical_demonstrations": false,
+  "option_router_pressure_calibration": "Offline counterfactual pressure on observed close transitions, preserving actual progress flags",
+  "movement_and_jaw_parameters_frozen": true,
+  "option_router_training_episodes": 15,
+  "option_router_validation_episodes": 4,
+  "stationary_reference_evidence": [
+    {
+      "option": 0,
+      "training_visits": 15,
+      "reference_excursion_mm": [
+        78.9992446899414,
+        7.450580596923828e-06
+      ],
+      "reference_rotation_rad": [
+        0.3252888321876526,
+        7.018283176840612e-10
+      ],
+      "hold_position": [
+        false,
+        true
+      ],
+      "hold_orientation": [
+        false,
+        true
+      ]
+    },
+    {
+      "option": 1,
+      "training_visits": 15,
+      "reference_excursion_mm": [
+        14.439554214477539,
+        0.0
+      ],
+      "reference_rotation_rad": [
+        7.671783532714471e-05,
+        7.105561929960497e-16
+      ],
+      "hold_position": [
+        false,
+        true
+      ],
+      "hold_orientation": [
+        true,
+        true
+      ]
+    },
+    {
+      "option": 2,
+      "training_visits": 15,
+      "reference_excursion_mm": [
+        14.950037002563477,
+        0.0
+      ],
+      "reference_rotation_rad": [
+        0.0001643748109927401,
+        7.105561929960497e-16
+      ],
+      "hold_position": [
+        false,
+        true
+      ],
+      "hold_orientation": [
+        true,
+        true
+      ]
+    },
+    {
+      "option": 3,
+      "training_visits": 15,
+      "reference_excursion_mm": [
+        3.725290298461914e-06,
+        0.0
+      ],
+      "reference_rotation_rad": [
+        2.987075120586269e-08,
+        7.105561929960497e-16
+      ],
+      "hold_position": [
+        true,
+        true
+      ],
+      "hold_orientation": [
+        true,
+        true
+      ]
+    },
+    {
+      "option": 4,
+      "training_visits": 15,
+      "reference_excursion_mm": [
+        34.76972961425781,
+        0.0
+      ],
+      "reference_rotation_rad": [
+        1.7892703851885017e-07,
+        7.105561929960497e-16
+      ],
+      "hold_position": [
+        false,
+        true
+      ],
+      "hold_orientation": [
+        true,
+        true
+      ]
+    },
+    {
+      "option": 5,
+      "training_visits": 15,
+      "reference_excursion_mm": [
+        0.17405599355697632,
+        0.0
+      ],
+      "reference_rotation_rad": [
+        1.1940224453610426e-07,
+        7.105561929960497e-16
+      ],
+      "hold_position": [
+        true,
+        true
+      ],
+      "hold_orientation": [
+        true,
+        true
+      ]
+    },
+    {
+      "option": 6,
+      "training_visits": 15,
+      "reference_excursion_mm": [
+        21.102001190185547,
+        0.0
+      ],
+      "reference_rotation_rad": [
+        1.0735831068586776e-07,
+        2.5694761395618146e-15
+      ],
+      "hold_position": [
+        false,
+        true
+      ],
+      "hold_orientation": [
+        true,
+        true
+      ]
+    },
+    {
+      "option": 7,
+      "training_visits": 15,
+      "reference_excursion_mm": [
+        0.06299091875553131,
+        50.258731842041016
+      ],
+      "reference_rotation_rad": [
+        1.0731254462825746e-07,
+        1.0422358512878418
+      ],
+      "hold_position": [
+        true,
+        false
+      ],
+      "hold_orientation": [
+        true,
+        false
+      ]
+    },
+    {
+      "option": 8,
+      "training_visits": 15,
+      "reference_excursion_mm": [
+        6.006323019391857e-06,
+        9.788334846496582
+      ],
+      "reference_rotation_rad": [
+        5.976814776431638e-08,
+        5.645683631883003e-05
+      ],
+      "hold_position": [
+        true,
+        false
+      ],
+      "hold_orientation": [
+        true,
+        true
+      ]
+    },
+    {
+      "option": 9,
+      "training_visits": 15,
+      "reference_excursion_mm": [
+        7.450580596923828e-06,
+        14.980833053588867
+      ],
+      "reference_rotation_rad": [
+        5.963311622281253e-08,
+        6.0518392274389043e-05
+      ],
+      "hold_position": [
+        true,
+        false
+      ],
+      "hold_orientation": [
+        true,
+        true
+      ]
+    },
+    {
+      "option": 10,
+      "training_visits": 15,
+      "reference_excursion_mm": [
+        7.459303560608532e-06,
+        1.5779165029525757
+      ],
+      "reference_rotation_rad": [
+        8.943280960238553e-08,
+        0.1199866384267807
+      ],
+      "hold_position": [
+        true,
+        true
+      ],
+      "hold_orientation": [
+        true,
+        true
+      ]
+    },
+    {
+      "option": 11,
+      "training_visits": 15,
+      "reference_excursion_mm": [
+        0.10539336502552032,
+        1.9061883687973022
+      ],
+      "reference_rotation_rad": [
+        8.940891405018192e-08,
+        0.12077799439430237
+      ],
+      "hold_position": [
+        true,
+        true
+      ],
+      "hold_orientation": [
+        true,
+        true
+      ]
+    },
+    {
+      "option": 12,
+      "training_visits": 15,
+      "reference_excursion_mm": [
+        14.751859664916992,
+        0.002353220945224166
+      ],
+      "reference_rotation_rad": [
+        8.943569440589272e-08,
+        2.1600374111585552e-07
+      ],
+      "hold_position": [
+        false,
+        true
+      ],
+      "hold_orientation": [
+        true,
+        true
+      ]
+    },
+    {
+      "option": 13,
+      "training_visits": 0,
+      "hold_position": [
+        false,
+        false
+      ],
+      "hold_orientation": [
+        false,
+        false
+      ]
+    },
+    {
+      "option": 14,
+      "training_visits": 15,
+      "reference_excursion_mm": [
+        7.459303560608532e-06,
+        32.60384750366211
+      ],
+      "reference_rotation_rad": [
+        8.941906770587593e-08,
+        0.21507008373737335
+      ],
+      "hold_position": [
+        true,
+        false
+      ],
+      "hold_orientation": [
+        true,
+        false
+      ]
+    },
+    {
+      "option": 15,
+      "training_visits": 15,
+      "reference_excursion_mm": [
+        4.842873750021681e-06,
+        14.549991607666016
+      ],
+      "reference_rotation_rad": [
+        2.9840141024806144e-08,
+        2.9865788064853405e-07
+      ],
+      "hold_position": [
+        true,
+        false
+      ],
+      "hold_orientation": [
+        true,
+        true
+      ]
+    },
+    {
+      "option": 16,
+      "training_visits": 15,
+      "reference_excursion_mm": [
+        0.0,
+        0.03179507330060005
+      ],
+      "reference_rotation_rad": [
+        4.237195175890024e-13,
+        1.7884178760141367e-07
+      ],
+      "hold_position": [
+        true,
+        true
+      ],
+      "hold_orientation": [
+        true,
+        true
+      ]
+    },
+    {
+      "option": 17,
+      "training_visits": 15,
+      "reference_excursion_mm": [
+        0.0,
+        14.738874435424805
+      ],
+      "reference_rotation_rad": [
+        4.237195175890024e-13,
+        2.741888636137446e-07
+      ],
+      "hold_position": [
+        true,
+        false
+      ],
+      "hold_orientation": [
+        true,
+        true
+      ]
+    },
+    {
+      "option": 18,
+      "training_visits": 15,
+      "reference_excursion_mm": [
+        0.0,
+        7.450580596923828e-06
+      ],
+      "reference_rotation_rad": [
+        4.237195175890024e-13,
+        2.741824118857039e-07
+      ],
+      "hold_position": [
+        true,
+        true
+      ],
+      "hold_orientation": [
+        true,
+        true
+      ]
+    }
+  ],
+  "stationary_dataset_hashes": {
+    "logs/grasp_v2/autonomy_full_recovery_pipeline_v21/datasets/dataset_0.npz": "afdbe0491a632b7958b503ac8f448209571e20863030a930bd5fb59432036856",
+    "logs/grasp_v2/autonomy_full_recovery_pipeline_v21/datasets/dataset_1.npz": "3db6aad393f7c76c16ef486169393364e616ff6f26ff074362c4a0b8a040aa85",
+    "logs/grasp_v2/autonomy_full_recovery_pipeline_v21/datasets/dataset_2.npz": "6f9ed0158038795de2aac72d86c1e00fe5d25981d058e4cead7acb0569d684d7"
+  },
+  "stationary_position_tolerance_m": 0.002,
+  "stationary_orientation_tolerance_rad": 0.13,
+  "stationary_reference_memory_learned_from_training_only": true,
+  "pickup_parent_policy": "/home/francesco/Documents/GIGI/i4h-workflows/.checkpoint_runs/checkpoint5-native-pickup-bc/model/policy.pt",
+  "pickup_parent_sha256": "7e4b49278bb42897de12753ca279dbdeba6c3a71076f8705a2044b8984fe9411",
+  "pickup_neural_parameters_frozen": true,
+  "composition": "Embedded pickup neural gate/pose/jaws; learned full router selects continuation from its final option; full motor heads for remaining options",
+  "pickup_neural_gate_retained": true,
+  "neural_pose_adjustment_memory": true,
+  "neural_pose_adjustment_bounds_m": 0.002,
+  "neural_pose_adjustment_rotation_bound_rad": 0.13,
+  "adjust_stationary_position": [
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      true
+    ],
+    [
+      false,
+      true
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ]
+  ],
+  "adjust_stationary_orientation": [
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      true
+    ],
+    [
+      false,
+      true
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ]
+  ],
+  "relative_pose_decoder": "Peg-frame transforms fitted by supervised pose averaging, whole training episodes only",
+  "relative_pose_evidence": [
+    {
+      "option": 7,
+      "arm": 1,
+      "training_visits": 15,
+      "heldout_visits": 4,
+      "learned_local_pose": [
+        0.008561977185308933,
+        -0.004367795307189226,
+        0.023522352799773216,
+        0.8660433292388916,
+        -0.00017728294187691063,
+        0.0002362135419389233,
+        -0.49996888637542725
+      ],
+      "heldout_position_rmse_mm": 0.16966959834098816,
+      "heldout_rotation_rmse_rad": 9.574262367095798e-05
+    },
+    {
+      "option": 8,
+      "arm": 1,
+      "training_visits": 15,
+      "heldout_visits": 4,
+      "learned_local_pose": [
+        0.008242926560342312,
+        -0.004369254689663649,
+        0.01365306880325079,
+        0.8660088777542114,
+        0.00014011103485245258,
+        -0.00016276784299407154,
+        -0.500028669834137
+      ],
+      "heldout_position_rmse_mm": 0.03296298533678055,
+      "heldout_rotation_rmse_rad": 6.608435796806589e-05
+    },
+    {
+      "option": 9,
+      "arm": 1,
+      "training_visits": 15,
+      "heldout_visits": 4,
+      "learned_local_pose": [
+        0.008287608623504639,
+        -0.00435737706720829,
+        -0.001383318449370563,
+        0.8660264015197754,
+        2.746572863543406e-05,
+        -2.5351466319989413e-05,
+        -0.4999982714653015
+      ],
+      "heldout_position_rmse_mm": 0.010384179651737213,
+      "heldout_rotation_rmse_rad": 2.5669489332358353e-05
+    },
+    {
+      "option": 10,
+      "arm": 1,
+      "training_visits": 15,
+      "heldout_visits": 4,
+      "learned_local_pose": [
+        0.008283625356853008,
+        -0.004349755588918924,
+        -0.0012302938848733902,
+        0.8675926327705383,
+        0.007464079186320305,
+        -0.0018810703186318278,
+        -0.49721601605415344
+      ],
+      "heldout_position_rmse_mm": 0.08693589270114899,
+      "heldout_rotation_rmse_rad": 0.06360598653554916
+    },
+    {
+      "option": 11,
+      "arm": 1,
+      "training_visits": 15,
+      "heldout_visits": 4,
+      "learned_local_pose": [
+        0.008270451799035072,
+        -0.004380965139716864,
+        -0.001182548119686544,
+        0.8655815720558167,
+        0.0034015800338238478,
+        -0.0021494103129953146,
+        -0.5007516741752625
+      ],
+      "heldout_position_rmse_mm": 0.17211371660232544,
+      "heldout_rotation_rmse_rad": 0.014237631112337112
+    }
+  ],
+  "relative_pose_dataset_hashes": {
+    "logs/grasp_v2/autonomy_full_recovery_pipeline_v21/datasets/dataset_0.npz": "afdbe0491a632b7958b503ac8f448209571e20863030a930bd5fb59432036856",
+    "logs/grasp_v2/autonomy_full_recovery_pipeline_v21/datasets/dataset_1.npz": "3db6aad393f7c76c16ef486169393364e616ff6f26ff074362c4a0b8a040aa85",
+    "logs/grasp_v2/autonomy_full_recovery_pipeline_v21/datasets/dataset_2.npz": "6f9ed0158038795de2aac72d86c1e00fe5d25981d058e4cead7acb0569d684d7"
+  },
+  "original_neural_parameters_unchanged": true,
+  "new_relative_decoder_parameters_fitted": true,
+  "option_router_uses_jaw_position": true,
+  "target_object_decoder": "Object destinations fitted relative to target; tool goals decoded through measured tool-to-peg pose; tool motors only",
+  "target_object_evidence": [
+    {
+      "option": 14,
+      "training_visits": 15,
+      "heldout_visits": 4,
+      "learned_target_object_pose": [
+        -0.006142366211861372,
+        -0.0003151810960844159,
+        0.04953446984291077,
+        0.9999995827674866,
+        0.0006761237746104598,
+        -0.0004971476155333221,
+        0.00041622985736466944
+      ],
+      "heldout_position_rmse_mm": 0.047768618911504745,
+      "heldout_rotation_rmse_rad": 0.002244744449853897
+    },
+    {
+      "option": 15,
+      "training_visits": 15,
+      "heldout_visits": 4,
+      "learned_target_object_pose": [
+        -0.005811059847474098,
+        -3.454028728810954e-06,
+        0.035187847912311554,
+        0.9999995827674866,
+        0.0006739339441992342,
+        -0.0004951260052621365,
+        0.00042665997170843184
+      ],
+      "heldout_position_rmse_mm": 0.04397892579436302,
+      "heldout_rotation_rmse_rad": 0.0022398594301193953
+    }
+  ],
+  "target_object_dataset_hashes": {
+    "logs/grasp_v2/autonomy_full_recovery_pipeline_v21/datasets/dataset_0.npz": "afdbe0491a632b7958b503ac8f448209571e20863030a930bd5fb59432036856",
+    "logs/grasp_v2/autonomy_full_recovery_pipeline_v21/datasets/dataset_1.npz": "3db6aad393f7c76c16ef486169393364e616ff6f26ff074362c4a0b8a040aa85",
+    "logs/grasp_v2/autonomy_full_recovery_pipeline_v21/datasets/dataset_2.npz": "6f9ed0158038795de2aac72d86c1e00fe5d25981d058e4cead7acb0569d684d7"
+  },
+  "new_target_decoder_parameters_fitted": true,
+  "fitted_relative_pose_change_tracking": true,
+  "relative_tracking_position_bound_m": 0.002,
+  "relative_tracking_rotation_bound_rad": 0.13,
+  "relative_tracking_mask": [
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      true
+    ],
+    [
+      false,
+      true
+    ],
+    [
+      false,
+      true
+    ],
+    [
+      false,
+      true
+    ],
+    [
+      false,
+      true
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ]
+  ]
+}

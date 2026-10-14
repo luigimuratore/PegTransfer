@@ -1,0 +1,55 @@
+{
+  "diagnostic_interrupted": true,
+  "complete": false,
+  "reason": "All three tools rose while pegs stayed on board; stationary grasp distance 35.126 mm from steps 1000 through 2500; no measured lift. Stop before another pressure-head fit.",
+  "last_progress": {
+    "complete": false,
+    "step": 2500,
+    "episodes": 0,
+    "progress": [
+      3,
+      0,
+      0,
+      0
+    ],
+    "teacher_at_inference": false,
+    "stages": null,
+    "learned_options": [
+      5,
+      5,
+      5
+    ],
+    "forces_n": [
+      [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ]
+    ]
+  }
+}

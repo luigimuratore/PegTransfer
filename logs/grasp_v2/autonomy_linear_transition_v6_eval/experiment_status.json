@@ -1,0 +1,5 @@
+{
+  "complete": false,
+  "interrupted": true,
+  "reason": "Diagnostic stopped after 2500 control steps: all four tools at learned lift pose with no peg contacts and no stable lift. Superseded by v7 learned pose memory; no complete episode success claimed."
+}

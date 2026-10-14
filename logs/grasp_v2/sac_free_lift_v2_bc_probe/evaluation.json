@@ -1,0 +1,14 @@
+{
+  "episodes": 0,
+  "success": 0,
+  "full_success": 0,
+  "complete": false,
+  "diagnostic_only": true,
+  "steps": 1000,
+  "min_wall_grasp_distance_mm": 20.89700698852539,
+  "peak_force_n": 0.0,
+  "assisted_grasp": false,
+  "cases": [],
+  "trace": "logs/grasp_v2/sac_free_lift_v2_bc_probe/policy_probe.trace.jsonl",
+  "checkpoint_sha256": "e8b1cb420c0b99987f5cea605dfaf7e7b91361c0339312dc744e190718fbe1dc"
+}

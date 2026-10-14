@@ -1,0 +1,6 @@
+{
+  "original": "logs/grasp_v2/autonomy_full_native_demos_v14/completed_demonstrations.npz",
+  "sha256": "9b6c1e382dcbb54d2e009960d0c7c90a58203575c99758e3992a132f1155b291",
+  "partial_collection_snapshot": true,
+  "only_completed_successful_episodes": true
+}

@@ -1,0 +1,71 @@
+{
+  "complete": true,
+  "native_full_policy_verified": false,
+  "policy": "logs/grasp_v2/autonomy_full_firm_constraints_v41/policy.pt",
+  "policy_sha256": "64f0512c5be8c6215a67e89c58b5f116a4d613a054e68c2b5ff6d7029a5a660f",
+  "algorithm": "Frozen learned BC policy; explicit grasp and optional placement constraints",
+  "support_profile": "firm",
+  "placement_support": true,
+  "strengths": [
+    1.0,
+    0.5,
+    0.25,
+    0.1,
+    0.0
+  ],
+  "conditions": {
+    "sources": [
+      "L5"
+    ],
+    "targets": [
+      "R2"
+    ],
+    "jitter_mm": 0.25,
+    "yaw_deg": 1.0
+  },
+  "results": [
+    {
+      "strength": 1.0,
+      "seed": 123,
+      "success": 16,
+      "episodes": 16,
+      "passed": true,
+      "report": "logs/grasp_v2/autonomy_full_constraints_curriculum_v41/support_1p0_seed123/evaluation.json",
+      "report_sha256": "30306ea22663fd4a641599c23c0e859c71613b768fbd77a377b9d21fed95ef63"
+    },
+    {
+      "strength": 1.0,
+      "seed": 9876,
+      "success": 15,
+      "episodes": 16,
+      "passed": true,
+      "report": "logs/grasp_v2/autonomy_full_constraints_curriculum_v41/support_1p0_seed9876/evaluation.json",
+      "report_sha256": "02f5dda8f0efb326c151afdb74b6c4ee5ec0ea2efcd7fbf53be44f36e25b80d2"
+    },
+    {
+      "strength": 0.5,
+      "seed": 123,
+      "success": 15,
+      "episodes": 16,
+      "passed": true,
+      "report": "logs/grasp_v2/autonomy_full_constraints_curriculum_v41/support_0p5_seed123/evaluation.json",
+      "report_sha256": "47e1d5ef6ca6925b87fb773de1dd1d94e954814bf0cfbcaf35c616f8fb36b264"
+    },
+    {
+      "strength": 0.5,
+      "seed": 9876,
+      "success": 14,
+      "episodes": 16,
+      "passed": false,
+      "report": "logs/grasp_v2/autonomy_full_constraints_curriculum_v41/support_0p5_seed9876/evaluation.json",
+      "report_sha256": "39a929810114579821c991e68c28d45bff93a34c18eede561a4523acde9d5d2e"
+    }
+  ],
+  "stage": "gate_failed",
+  "updated_utc": "2026-10-07T09:16:54.738353+00:00",
+  "pilot_report": "logs/grasp_v2/autonomy_full_firm_constraints_v41_pilot/evaluation.json",
+  "pilot_report_sha256": "6abafc463fb08015128120b16416a3ba2809322eb6a9ce9ec6b8e3563afdc039",
+  "current_strength": 0.5,
+  "failed_strength": 0.5,
+  "reason": "Retain current/reference checkpoints; collect targeted recoveries before reducing assistance"
+}

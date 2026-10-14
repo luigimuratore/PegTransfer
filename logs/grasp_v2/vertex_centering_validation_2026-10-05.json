@@ -1,0 +1,142 @@
+{
+  "schema": "peg-contact-vertex-validation-1",
+  "wall_recorded_samples_replayed": 2148,
+  "wall_controller_outputs_identical": true,
+  "wall_runtime_unchanged": true,
+  "vertex_routes": {
+    "psm1": {
+      "candidate": {
+        "mode": "vertex",
+        "vertex": 2,
+        "height_fraction": 0.5,
+        "tip_local_m": [
+          0.0025020858913282823,
+          -0.006594872050255197,
+          -0.005822736294013857
+        ],
+        "yaw_rad": 5.759586531581287,
+        "tool_quaternion_local_wxyz": [
+          0.8652011394955537,
+          0.4435054165891108,
+          -0.23087430661751707,
+          -0.03777549755589518
+        ],
+        "approach_direction_local": [
+          -0.43301270189221974,
+          -0.7499999999999998,
+          0.49999999999999994
+        ],
+        "approach": "oblique_entry",
+        "open_angle_rad": 0.5,
+        "wall_thickness_m": null,
+        "entry_tilt_deg": 30.0,
+        "pinch_twist_deg": 25.0,
+        "arm": 1,
+        "radial_inset_m": 0.003,
+        "pinch_center_offset_m": 0.0005,
+        "closure_geometry_check": {
+          "first_overlap_angle_rad": [
+            0.4,
+            0.4
+          ],
+          "angle_imbalance_rad": 0.0,
+          "note": "Sampled undeformed pad/peg geometry, not a force or friction proof"
+        }
+      },
+      "arrival": {
+        "checked": true,
+        "jaw_surface_samples_inside_peg": [
+          0,
+          0
+        ],
+        "jaw_surface_samples_inside_source_post": [
+          0,
+          0
+        ],
+        "minimum_jaw_board_clearance_mm": 6.795467146753585,
+        "sampled_arrival_clear": true,
+        "note": "Sampled jaw surfaces at arrival only; shaft and full approach require physics validation"
+      },
+      "route": {
+        "checked": true,
+        "reachable": true,
+        "samples_checked": 72,
+        "maximum_position_error_mm": 8.147960113068547e-10,
+        "maximum_rotation_error_rad": 5.03873536105568e-10,
+        "angular_limit_margin_deg": 2.0,
+        "insertion_limit_margin_mm": 1.0,
+        "note": "Nominal sampled route with USD joint limits; not a swept collision or dynamics validation"
+      }
+    },
+    "psm2": {
+      "candidate": {
+        "mode": "vertex",
+        "vertex": 0,
+        "height_fraction": 0.5,
+        "tip_local_m": [
+          0.012827905299999998,
+          0.0,
+          -0.00600573536939919
+        ],
+        "yaw_rad": 1.5707963267948966,
+        "tool_quaternion_local_wxyz": [
+          0.6123724356957946,
+          0.35355339059327384,
+          0.35355339059327384,
+          0.6123724356957946
+        ],
+        "approach_direction_local": [
+          0.8660254037844387,
+          0.0,
+          0.49999999999999994
+        ],
+        "approach": "oblique_entry",
+        "open_angle_rad": 0.5,
+        "wall_thickness_m": null,
+        "entry_tilt_deg": 30.0,
+        "pinch_twist_deg": 0.0,
+        "arm": 2,
+        "radial_inset_m": 0.003,
+        "pinch_center_offset_m": 0.0,
+        "closure_geometry_check": {
+          "first_overlap_angle_rad": [
+            0.35,
+            0.35
+          ],
+          "angle_imbalance_rad": 0.0,
+          "note": "Sampled undeformed pad/peg geometry, not a force or friction proof"
+        }
+      },
+      "arrival": {
+        "checked": true,
+        "jaw_surface_samples_inside_peg": [
+          0,
+          0
+        ],
+        "jaw_surface_samples_inside_source_post": [
+          0,
+          0
+        ],
+        "minimum_jaw_board_clearance_mm": 8.313081715696706,
+        "sampled_arrival_clear": true,
+        "note": "Sampled jaw surfaces at arrival only; shaft and full approach require physics validation"
+      },
+      "route": {
+        "checked": true,
+        "reachable": true,
+        "samples_checked": 72,
+        "maximum_position_error_mm": 4.303640952934327e-11,
+        "maximum_rotation_error_rad": 2.023224985655279e-11,
+        "angular_limit_margin_deg": 2.0,
+        "insertion_limit_margin_mm": 1.0,
+        "note": "Nominal sampled route with USD joint limits; not a swept collision or dynamics validation"
+      }
+    }
+  },
+  "simulator_executed": false,
+  "new_vertex_physical_success_verified": false,
+  "cpu_tests_passed": 41,
+  "code_sha256": "89fcc1b1e4b75740007c03b146e63e0d7f60b62bf75701b8e12ee992b71e7620",
+  "changes": "Vertex-only mesh centering, 3 mm inset, coupled-jaw first-contact balance, abort on ejection. Wall pressure outputs unchanged.",
+  "closure_fixture_sha256": "25e81ce635a11225a29c4e399953a557d2d5044aaf5da4b7c47fedea3baab70a"
+}

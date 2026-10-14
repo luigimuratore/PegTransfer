@@ -1,0 +1,51 @@
+{
+  "checkpoint": "checkpoint13",
+  "created_utc": "2026-10-12T13:13:13.765390+00:00",
+  "derivative_only": true,
+  "source_video": "logs/grasp_v2/videos/checkpoint13_three_episodes.mp4",
+  "source_video_sha256": "b71d92fc7204062eee7598e0bbd243021dd67ce6df3f257c2c5ffcfd1779b523",
+  "video": "logs/grasp_v2/videos/checkpoint13_three_episodes_under5MB.mp4",
+  "video_sha256": "8558395f98704c93c9bf04abf852259646df5654039ef7f6299bba0ce966c4df",
+  "policy_sha256": "956e60f3a3e8ae424289a247cc448105be749f6134633ffc515db02d5b8059c6",
+  "evaluation_sha256": "e9b93c4e1c8674c1a49a8aed8c602477341b506f1171458e7efa70860358cc7d",
+  "physical_report": "logs/grasp_v2/videos/checkpoint13_three_episodes.evaluation.json",
+  "original_video_unchanged": true,
+  "bytes": 4666750,
+  "limit_bytes": 5000000,
+  "media": {
+    "programs": [],
+    "streams": [
+      {
+        "codec_name": "hevc",
+        "profile": "Main 10",
+        "codec_tag_string": "hvc1",
+        "width": 1280,
+        "height": 720,
+        "avg_frame_rate": "25/1",
+        "nb_frames": "3592"
+      }
+    ],
+    "format": {
+      "duration": "143.680000",
+      "size": "4666750"
+    }
+  },
+  "lossless": false,
+  "encoder": "hevc_nvenc on RTX6000 Ada, p7/main10, full-resolution multipass VBR255k/max270k",
+  "full_video_decoded_without_errors": true,
+  "all_frames_preserved": true,
+  "quality_comparison": {
+    "ssim": 0.995763,
+    "psnr_db": 51.192589,
+    "frames_compared": 3592,
+    "sampled_frames_visually_reviewed_s": [
+      20,
+      28,
+      40.32,
+      125
+    ],
+    "note": "Visually close to original; numerical pixel identity is not claimed."
+  },
+  "tested_lossless_size_bytes": 48964971,
+  "verification_logs": "logs/grasp_v2/checkpoint13_compression_20261012_150851_512771"
+}

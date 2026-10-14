@@ -1,0 +1,61 @@
+{
+  "complete": false,
+  "interrupted": true,
+  "reason": "Vertex receiver slips while donor opens; no receiver-only elevated hold reached. Stop stationary diagnostic to test a wall grasp.",
+  "full_task_verified": false,
+  "handover_sustained_hold_verified": false,
+  "last_progress": {
+    "complete": false,
+    "step": 6500,
+    "episodes": 0,
+    "progress": [
+      3,
+      3,
+      3,
+      0
+    ],
+    "teacher_at_inference": true,
+    "stages": [
+      11,
+      11,
+      11
+    ],
+    "learned_options": null,
+    "forces_n": [
+      [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.4814361333847046,
+          0.47484639286994934
+        ]
+      ]
+    ]
+  },
+  "evidence_hashes": {
+    "manifest.json": "9f9ae70dfe01286e8eed92ff939c03160d04a4c6cbcbce5d8e08e7d0d3d9499a",
+    "motion_probe.json": "62ef43079b146ede13b019caee3590c4a0227c9de386e8a8c140f5efcb52d48a"
+  }
+}

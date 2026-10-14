@@ -1,0 +1,6 @@
+logs/grasp_v2/full_assisted_front_2026-10-05.trace.jsonl filter=lfs diff=lfs merge=lfs -text
+logs/grasp_v2/full_assisted_frozen_replay_2026-10-05.trace.jsonl filter=lfs diff=lfs merge=lfs -text
+logs/grasp_v2/full_assisted_validation3_2026-10-05.trace.jsonl filter=lfs diff=lfs merge=lfs -text
+logs/grasp_v2/full_bc2_validation3_2026-10-05.trace.jsonl filter=lfs diff=lfs merge=lfs -text
+logs/grasp_v2/full_bc_inference_2026-10-06_10-51-37-839894.trace.jsonl filter=lfs diff=lfs merge=lfs -text
+logs/grasp_v2/full_bc_inference_2026-10-06_11-03-13-449458.trace.jsonl filter=lfs diff=lfs merge=lfs -text

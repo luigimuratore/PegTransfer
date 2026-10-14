@@ -1,0 +1,9 @@
+{
+  "complete": false,
+  "interrupted": true,
+  "reason": "No successful pickup in the completed first batch; unstable approach diagnosed.",
+  "completed_episodes": 8,
+  "observed_successes": 0,
+  "teacher_at_inference": false,
+  "assisted_grasp": false
+}

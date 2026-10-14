@@ -1,0 +1,44 @@
+{
+  "complete": false,
+  "stage": "workflow_error",
+  "algorithm": "Expert recoveries then receiver-only BC refinement; not SAC",
+  "parent_checkpoint": "checkpoint11",
+  "parent_policy_sha256": "9a371d1f95ea2cefe7680949ab229426672e650e6cc58fe4fe6d2eaf64fa5d74",
+  "results": [],
+  "assisted_grasp": true,
+  "native_full_policy_verified": false,
+  "training_running": false,
+  "condition": {
+    "source": "L5",
+    "target": "R2",
+    "jitter_mm": 0.5,
+    "yaw_deg": 5.0
+  },
+  "teacher_at_inference": false,
+  "teacher_collection_only": true,
+  "inference_motor_router_donor_and_pose_weights_protected": true,
+  "fit_settings": {
+    "updates": 2000,
+    "batch_size": 1024,
+    "learning_rate": 2e-05,
+    "reference_kl_weight": 0.1
+  },
+  "validation_seeds": [
+    2468,
+    54321
+  ],
+  "collection_seed": 55001,
+  "workflow_source_hashes": {
+    "autonomy_handover_refine.py": "66f8c938a76808d8d9f0336eb0746abb913b4db4eec0008cfb8fffd4c7a2bc04",
+    "autonomy_receiver_fit.py": "3a4e378e5c179ea1f13619e787b8533cba248c084898137c383030d0336fb143",
+    "autonomy_replay.py": "c510a1c77221ae8d6ca872f586c7eee1e2129b3712fbb992e766712c6ece5a07",
+    "autonomy_learning.py": "0f24b869f257d7b252468ec8f34d8e91aa73aeefbee202481b951f69b0f9fc34",
+    "autonomy_motion_curriculum.py": "2dfa51260e7b1930764adb817a8fab4dcdfb6c04fecac7d49e39e06b2248bf56",
+    "autonomy_constraints_gate.py": "a0fc253f2041941e090da327a9b32e3e5c20bd0bb8f9dc6f1d74729cc9a22c40",
+    "preserve_autonomy.py": "9fe0b8df05e56b3922e16a73155ee325e8944e750b27dc6f26426a128870947e",
+    "geometry.py": "f823b78fb6a4fbf943cf276c14fe872b7edeea41859c2358aa9bd2c7fa50214b",
+    "rl_core.py": "80ddad8671a2a8e1078e347eb0c62a57083ade3f7dc2e79ee335183c19127407"
+  },
+  "updated_utc": "2026-10-08T10:26:31.722976+00:00",
+  "error": "FileNotFoundError: [Errno 2] No such file or directory: '/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/autonomy_handover_refine_v55/recoveries/evaluation.json'"
+}

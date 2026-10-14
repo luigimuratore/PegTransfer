@@ -1,0 +1,71 @@
+{
+  "checkpoint": "checkpoint13",
+  "reviewed_utc": "2026-10-12T08:52:04.782702+00:00",
+  "checkpoint_manifest_sha256": "a73bc859da9a6f8eb072c2bd9248c9161800a4578eac62f2c9c8bbfc0f3f0bb5",
+  "policy_sha256": "956e60f3a3e8ae424289a247cc448105be749f6134633ffc515db02d5b8059c6",
+  "three_episode_video_sha256": "b71d92fc7204062eee7598e0bbd243021dd67ce6df3f257c2c5ffcfd1779b523",
+  "first_episode_video_sha256": "b377774f7803441a8f5629a83fa16a7747d638b69ad1a9a4b87151faf3511371",
+  "physical_report_sha256": "e9b93c4e1c8674c1a49a8aed8c602477341b506f1171458e7efa70860358cc7d",
+  "entire_video_decoded_without_errors": true,
+  "video_duration_matches_physical_episode_lengths_within_0_05s": true,
+  "front_board_and_both_psms_visible": true,
+  "three_distinct_pickups_and_placements_visually_checked": true,
+  "all_three_measured_full_success": true,
+  "visual_inspection": "Sampled starts, terminal placements and first-episode transfer/receiver frames; full-file decode and physical report verify episode completion",
+  "frames": [
+    {
+      "label": "episode1_start",
+      "time_s": 0.16,
+      "frame": "logs/grasp_v2/checkpoint13_visual_review_20261012_104913/episode1_start.png",
+      "sha256": "830a6e2d77a0021bc364b4cd8bb613997460076480058a27a29dbab10b4a5844"
+    },
+    {
+      "label": "episode1_end",
+      "time_s": 40.32,
+      "frame": "logs/grasp_v2/checkpoint13_visual_review_20261012_104913/episode1_end.png",
+      "sha256": "d7f8f5026b8e76a0316cbb6f4c54d8f739b02b097e1ff7de91189ef200f8f192"
+    },
+    {
+      "label": "episode2_start",
+      "time_s": 40.56,
+      "frame": "logs/grasp_v2/checkpoint13_visual_review_20261012_104913/episode2_start.png",
+      "sha256": "03de380ab54b3618f83eb072bc3746ada70519df341a31a610ea19e24ad5161d"
+    },
+    {
+      "label": "episode2_end",
+      "time_s": 87.08,
+      "frame": "logs/grasp_v2/checkpoint13_visual_review_20261012_104913/episode2_end.png",
+      "sha256": "a56f5a77853653a9829bf496e38a7f1dac75afaccf352a90cdf39b59ea772a6e"
+    },
+    {
+      "label": "episode3_start",
+      "time_s": 87.32,
+      "frame": "logs/grasp_v2/checkpoint13_visual_review_20261012_104913/episode3_start.png",
+      "sha256": "eb87adbf21da59f134d97ea8c088d5c863caca31abdc4548c9d9092e1c5a82a7"
+    },
+    {
+      "label": "episode3_end",
+      "time_s": 143.6,
+      "frame": "logs/grasp_v2/checkpoint13_visual_review_20261012_104913/episode3_end.png",
+      "sha256": "78b32ec7cd2bb865f84f289b59188d0b97dc55dc3768f1ae08407642996a4b52"
+    },
+    {
+      "label": "episode1_transfer",
+      "time_s": 20.0,
+      "frame": "logs/grasp_v2/checkpoint13_visual_review_20261012_104913/episode1_transfer.png",
+      "sha256": "c048ba392f361917508ad9c52f53729a432a7f89d14fc41e6ab0518f43bc7aa5"
+    },
+    {
+      "label": "episode1_receiver",
+      "time_s": 28.0,
+      "frame": "logs/grasp_v2/checkpoint13_visual_review_20261012_104913/episode1_receiver.png",
+      "sha256": "2e3ade48178899ddedda3211d0a710d3ffa306e24bcb7a583895db46050be6c2"
+    },
+    {
+      "label": "episode2_start_clear",
+      "time_s": 40.92,
+      "frame": "logs/grasp_v2/checkpoint13_visual_review_20261012_104913/episode2_start_clear.png",
+      "sha256": "f00e524b6c94339e7bc208903e520c2b2c14ea9f913d8a78a295aafffee623dc"
+    }
+  ]
+}

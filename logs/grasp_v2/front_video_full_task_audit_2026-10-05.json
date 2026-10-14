@@ -1,0 +1,121 @@
+{
+  "date": "2026-10-05",
+  "camera": {
+    "eye": [
+      0.025,
+      0.32,
+      0.25
+    ],
+    "target": [
+      0.025,
+      0.0,
+      0.035
+    ]
+  },
+  "native_checkpoint_unchanged": true,
+  "video": "logs/grasp_v2/videos/wall_bc3_front_verified_2026-10-05.mp4",
+  "video_report": "logs/grasp_v2/wall_bc3_front_verified_2026-10-05.json",
+  "video_verified": true,
+  "full_physical_experiments": [
+    {
+      "report": "logs/grasp_v2/full_wall_trial1_2026-10-05.json",
+      "report_sha256": "9a3cc1027242d0c5e141ec19379bc897c92027921ff899cb0d948b88c730a16d",
+      "successes": 0,
+      "episodes": 1,
+      "terminal_stage": "receiver_close",
+      "reason": "psm1_grasp_slipped",
+      "donor_depth_mm": 1.0,
+      "receiver_depth_mm": 1.0,
+      "donor_balance": false,
+      "donor_compliance": false,
+      "donor_policy": "logs/grasp_v2/wall_bc3/policy.npz",
+      "device": "cuda:0",
+      "complete": true,
+      "source_snapshot_verified": false
+    },
+    {
+      "report": "logs/grasp_v2/full_wall_trial2_2026-10-05.json",
+      "report_sha256": "6daf23d42d7ac120b957335988e866ee4a40a4c6bc2cd5351a340cc1fcbf6c7e",
+      "successes": 0,
+      "episodes": 1,
+      "terminal_stage": "receiver_close",
+      "reason": "psm1_grasp_slipped",
+      "donor_depth_mm": 1.0,
+      "receiver_depth_mm": 1.0,
+      "donor_balance": false,
+      "donor_compliance": false,
+      "donor_policy": "logs/grasp_v2/wall_bc3/policy.npz",
+      "device": "cuda:0",
+      "complete": true,
+      "source_snapshot_verified": false
+    },
+    {
+      "report": "logs/grasp_v2/full_wall_trial3_deeper_2026-10-05.json",
+      "report_sha256": "d26213f957a6282b9c56e39032173fa88a974c7e9f567008db3c1c8a1d3dd945",
+      "successes": 0,
+      "episodes": 1,
+      "terminal_stage": "donor_lift",
+      "reason": "excessive_finger_force",
+      "donor_depth_mm": 2.0,
+      "receiver_depth_mm": 3.0,
+      "donor_balance": false,
+      "donor_compliance": false,
+      "donor_policy": null,
+      "device": "cuda:0",
+      "complete": true,
+      "source_snapshot_verified": false
+    },
+    {
+      "report": "logs/grasp_v2/full_wall_trial4_receiver_deeper_2026-10-05.json",
+      "report_sha256": "cdc7fa09e991ab1bbba019a9bd803979b6925aa923efe44ce099881488e3e27a",
+      "successes": 0,
+      "episodes": 1,
+      "terminal_stage": "receiver_close",
+      "reason": "psm1_grasp_slipped",
+      "donor_depth_mm": 1.0,
+      "receiver_depth_mm": 3.0,
+      "donor_balance": false,
+      "donor_compliance": false,
+      "donor_policy": "logs/grasp_v2/wall_bc3/policy.npz",
+      "device": "cuda:0",
+      "complete": true,
+      "source_snapshot_verified": false
+    },
+    {
+      "report": "logs/grasp_v2/full_wall_trial5_compliance_2026-10-05.json",
+      "report_sha256": "12122f49da4fd01529fa209d773fe408c4480f85ae4cf2ab236aaa4c407f1693",
+      "successes": 0,
+      "episodes": 1,
+      "terminal_stage": "receiver_close",
+      "reason": "psm1_grasp_slipped",
+      "donor_depth_mm": 1.0,
+      "receiver_depth_mm": 3.0,
+      "donor_balance": false,
+      "donor_compliance": true,
+      "donor_policy": "logs/grasp_v2/wall_bc3/policy.npz",
+      "device": "cuda:0",
+      "complete": true,
+      "source_snapshot_verified": true
+    },
+    {
+      "report": "logs/grasp_v2/full_wall_trial6_balanced_donor_2026-10-05.json",
+      "report_sha256": "491c162695033d20401338c4e14a52311d128a9a7c08acd0060e8bc77167fca3",
+      "successes": 0,
+      "episodes": 1,
+      "terminal_stage": "donor_lift",
+      "reason": "excessive_finger_force",
+      "donor_depth_mm": 2.0,
+      "receiver_depth_mm": 3.0,
+      "donor_balance": true,
+      "donor_compliance": false,
+      "donor_policy": null,
+      "device": "cuda:0",
+      "complete": true,
+      "source_snapshot_verified": true
+    }
+  ],
+  "full_success": 0,
+  "tested_episodes": 6,
+  "full_task_learned_policy_trained": false,
+  "next_required": "Stable physical handover before successful full-task demonstrations and imitation training"
+}

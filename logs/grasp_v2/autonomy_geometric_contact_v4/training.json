@@ -1,0 +1,274 @@
+{
+  "algorithm": "Future-pose Behavior Cloning",
+  "datasets": [
+    "logs/grasp_v2/autonomy_pickup_data_v1/demonstrations.npz"
+  ],
+  "future_pose_steps": 20,
+  "updates": 15000,
+  "batch_size": 1024,
+  "learning_rate": 0.0001,
+  "pose_supervision": "measured phase endpoints",
+  "input_mask": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    1.0,
+    1.0,
+    0.0,
+    1.0,
+    1.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0
+  ],
+  "constant_feature_threshold": 0.0001,
+  "architecture": [
+    256,
+    256
+  ],
+  "observation_dim": 98,
+  "learned_pose_and_jaw_outputs": 16,
+  "device": "cuda:0",
+  "gpu": "NVIDIA RTX 6000 Ada Generation",
+  "teacher_at_inference": false,
+  "physical_evaluation_required": true,
+  "history": [
+    {
+      "update": 500,
+      "train_loss": 0.01882942207157612,
+      "validation_loss": 0.007873780094087124
+    },
+    {
+      "update": 1000,
+      "train_loss": 0.019859591498970985,
+      "validation_loss": 0.006581188179552555
+    },
+    {
+      "update": 1500,
+      "train_loss": 0.01520576048642397,
+      "validation_loss": 0.006164498161524534
+    },
+    {
+      "update": 2000,
+      "train_loss": 0.015874719247221947,
+      "validation_loss": 0.005533713381737471
+    },
+    {
+      "update": 2500,
+      "train_loss": 0.014727199450135231,
+      "validation_loss": 0.005236056167632341
+    },
+    {
+      "update": 3000,
+      "train_loss": 0.013745361939072609,
+      "validation_loss": 0.005055649671703577
+    },
+    {
+      "update": 3500,
+      "train_loss": 0.014901798218488693,
+      "validation_loss": 0.0054806009866297245
+    },
+    {
+      "update": 4000,
+      "train_loss": 0.012496143579483032,
+      "validation_loss": 0.00507134385406971
+    },
+    {
+      "update": 4500,
+      "train_loss": 0.017675884068012238,
+      "validation_loss": 0.004636358469724655
+    },
+    {
+      "update": 5000,
+      "train_loss": 0.01236751303076744,
+      "validation_loss": 0.0044474792666733265
+    },
+    {
+      "update": 5500,
+      "train_loss": 0.012962067499756813,
+      "validation_loss": 0.005276927258819342
+    },
+    {
+      "update": 6000,
+      "train_loss": 0.015662169083952904,
+      "validation_loss": 0.004555907100439072
+    },
+    {
+      "update": 6500,
+      "train_loss": 0.011425825767219067,
+      "validation_loss": 0.004166204947978258
+    },
+    {
+      "update": 7000,
+      "train_loss": 0.011966378428041935,
+      "validation_loss": 0.0040885587222874165
+    },
+    {
+      "update": 7500,
+      "train_loss": 0.012416129931807518,
+      "validation_loss": 0.0038633449003100395
+    },
+    {
+      "update": 8000,
+      "train_loss": 0.012651665136218071,
+      "validation_loss": 0.0036525537725538015
+    },
+    {
+      "update": 8500,
+      "train_loss": 0.010438562370836735,
+      "validation_loss": 0.0035897756461054087
+    },
+    {
+      "update": 9000,
+      "train_loss": 0.012456984259188175,
+      "validation_loss": 0.0036659191828221083
+    },
+    {
+      "update": 9500,
+      "train_loss": 0.013329696841537952,
+      "validation_loss": 0.003407346783205867
+    },
+    {
+      "update": 10000,
+      "train_loss": 0.015309802256524563,
+      "validation_loss": 0.0034009679220616817
+    },
+    {
+      "update": 10500,
+      "train_loss": 0.012977845035493374,
+      "validation_loss": 0.0035522598773241043
+    },
+    {
+      "update": 11000,
+      "train_loss": 0.013237359002232552,
+      "validation_loss": 0.003269604640081525
+    },
+    {
+      "update": 11500,
+      "train_loss": 0.013636792078614235,
+      "validation_loss": 0.004327717237174511
+    },
+    {
+      "update": 12000,
+      "train_loss": 0.011183448135852814,
+      "validation_loss": 0.0035455769393593073
+    },
+    {
+      "update": 12500,
+      "train_loss": 0.011037690564990044,
+      "validation_loss": 0.0033604667987674475
+    },
+    {
+      "update": 13000,
+      "train_loss": 0.011899221688508987,
+      "validation_loss": 0.0034538786858320236
+    },
+    {
+      "update": 13500,
+      "train_loss": 0.010632193647325039,
+      "validation_loss": 0.003473857184872031
+    },
+    {
+      "update": 14000,
+      "train_loss": 0.011803111992776394,
+      "validation_loss": 0.004063528962433338
+    },
+    {
+      "update": 14500,
+      "train_loss": 0.011469578370451927,
+      "validation_loss": 0.0032500047236680984
+    },
+    {
+      "update": 15000,
+      "train_loss": 0.01460329256951809,
+      "validation_loss": 0.003106343559920788
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "complete": false,
+  "stage": "collection_interrupted",
+  "requested_episodes": 32,
+  "completed_episodes": 16,
+  "successful_full_trajectories": 12,
+  "training_ran": false,
+  "underlying_error": {
+    "type": "ValueError",
+    "message": "Receiver recovery requires a measured stable donor lift"
+  },
+  "environment_closed": true,
+  "receipt_sha256": "1328f47368f9a4ead43994bce92973a97c2fe598fba24fbb9cbf2b5d3e72fa0f",
+  "dataset_sha256": "0e32dd54ab57dc4acb6eca2f64bc085ab68f81de396493c97908799e40d40ef8",
+  "restart": "logs/grasp_v2/autonomy_handover_refine_v56",
+  "reuse": "Only 12 measured full successful trajectories; collection remains incomplete; TRAIN10 / VALID2"
+}

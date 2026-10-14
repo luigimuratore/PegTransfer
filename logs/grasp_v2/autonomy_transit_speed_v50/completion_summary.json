@@ -1,0 +1,125 @@
+{
+  "complete": true,
+  "stage": "transit_speed_validated",
+  "policy_sha256": "9a371d1f95ea2cefe7680949ab229426672e650e6cc58fe4fe6d2eaf64fa5d74",
+  "selected": {
+    "policy": "logs/grasp_v2/autonomy_transit_speed_v50/runtime/policy.pt",
+    "policy_sha256": "9a371d1f95ea2cefe7680949ab229426672e650e6cc58fe4fe6d2eaf64fa5d74",
+    "motion_profile": "travel",
+    "free_speed_scale": 2.0,
+    "transport_speed_scale": 2.0,
+    "matched_mean_seconds": 47.6413125,
+    "reports": [
+      {
+        "label": "transit0_fixed",
+        "report": "logs/grasp_v2/autonomy_transit_speed_v50/transit0_fixed/evaluation.json",
+        "report_sha256": "bd52798da9105196eb4edff5fbe9a92cd6f1049997403ce7aa3ebc06589f49b8"
+      },
+      {
+        "label": "transit0_seed2468",
+        "report": "logs/grasp_v2/autonomy_transit_speed_v50/transit0_seed2468/evaluation.json",
+        "report_sha256": "657e9dcc15361cabf104082e60343b47a9ce36cd15b2bcc595584e6d8651e49f"
+      },
+      {
+        "label": "transit0_seed54321",
+        "report": "logs/grasp_v2/autonomy_transit_speed_v50/transit0_seed54321/evaluation.json",
+        "report_sha256": "c4c3fd68d8cf8085d9a3d53fab8a881b0c2613734af40765cd5e0310726eab1e"
+      }
+    ]
+  },
+  "results": [
+    {
+      "label": "baseline_runtime_fixed",
+      "success": 3,
+      "episodes": 3,
+      "physical_gate_passed": true,
+      "matched_speed_accepted": null,
+      "report_sha256": "34c837204759ec497cb383e18b9737bf37a8eff4ce06af177467a9a6f4e73851",
+      "environment_closed": true
+    },
+    {
+      "label": "transit0_fixed",
+      "success": 3,
+      "episodes": 3,
+      "physical_gate_passed": true,
+      "matched_speed_accepted": true,
+      "report_sha256": "bd52798da9105196eb4edff5fbe9a92cd6f1049997403ce7aa3ebc06589f49b8",
+      "environment_closed": true
+    },
+    {
+      "label": "transit0_seed2468",
+      "success": 15,
+      "episodes": 16,
+      "physical_gate_passed": true,
+      "matched_speed_accepted": true,
+      "report_sha256": "657e9dcc15361cabf104082e60343b47a9ce36cd15b2bcc595584e6d8651e49f",
+      "environment_closed": true
+    },
+    {
+      "label": "transit0_seed54321",
+      "success": 16,
+      "episodes": 16,
+      "physical_gate_passed": true,
+      "matched_speed_accepted": true,
+      "report_sha256": "c4c3fd68d8cf8085d9a3d53fab8a881b0c2613734af40765cd5e0310726eab1e",
+      "environment_closed": true
+    },
+    {
+      "label": "transit1_fixed",
+      "success": 3,
+      "episodes": 3,
+      "physical_gate_passed": true,
+      "matched_speed_accepted": true,
+      "report_sha256": "778a3be47838650eb27d54f6f188e0e8199249939e4f514d03b4e9a8a3683367",
+      "environment_closed": true
+    },
+    {
+      "label": "transit1_seed2468",
+      "success": 15,
+      "episodes": 16,
+      "physical_gate_passed": true,
+      "matched_speed_accepted": true,
+      "report_sha256": "abaadcc4e98240f6bafbd8f225ecfa90de1db182f2c00d5d5d90df42a5035eb8",
+      "environment_closed": true
+    },
+    {
+      "label": "transit1_seed54321",
+      "success": 15,
+      "episodes": 16,
+      "physical_gate_passed": true,
+      "matched_speed_accepted": false,
+      "report_sha256": "d512990956d804053694fac453a3183c0dbc9c9c74ae7129756e314ccde683b0",
+      "environment_closed": true
+    },
+    {
+      "label": "transit2_fixed",
+      "success": 3,
+      "episodes": 3,
+      "physical_gate_passed": true,
+      "matched_speed_accepted": true,
+      "report_sha256": "1149c08c682f9dbab52558c5a3dacf8d8c823463852dd654871d994db16deca1",
+      "environment_closed": true
+    },
+    {
+      "label": "transit2_seed2468",
+      "success": 16,
+      "episodes": 16,
+      "physical_gate_passed": true,
+      "matched_speed_accepted": true,
+      "report_sha256": "9442b0ef3c958564747a8cd3d6051253ad73a6d452e0a94da75dabc1588909bc",
+      "environment_closed": true
+    },
+    {
+      "label": "transit2_seed54321",
+      "success": 14,
+      "episodes": 16,
+      "physical_gate_passed": false,
+      "matched_speed_accepted": false,
+      "report_sha256": "d83633317b0b54577219c8a67e1ca97e225137e9ac1e721184443adf193828e3",
+      "environment_closed": true
+    }
+  ],
+  "baseline_mean_simulated_seconds": 51.96741935483871,
+  "selected_mean_simulated_seconds": 47.64451612903223,
+  "duration_gain_percent": 8.318487389741758
+}

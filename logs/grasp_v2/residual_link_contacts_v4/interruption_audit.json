@@ -1,0 +1,5 @@
+{
+  "complete": false,
+  "interrupted": true,
+  "reason": "Late-created multi-link filtered contact view returned all zeros, including known real donor finger contacts; diagnostic view not accepted as evidence. Testing controlled inter-arm collision exclusion next."
+}

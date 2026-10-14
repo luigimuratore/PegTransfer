@@ -1,0 +1,6 @@
+{
+  "complete": false,
+  "interrupted": true,
+  "last_step": 3900,
+  "reason": "Receiver non-finger/peg collision exclusions leave donor pressure loss and receiver_outside stall unchanged; rejected. Next compare stronger bounded grasp spring with original collisions restored."
+}

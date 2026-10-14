@@ -1,0 +1,36 @@
+{
+  "complete": true,
+  "native_full_policy_verified": false,
+  "policy": "logs/grasp_v2/autonomy_full_relative_feedback_v35/policy.pt",
+  "policy_sha256": "1b18cb1f3fb70f9382c8f886e92b26c208144d364dd6f8c25e027e51662461b0",
+  "pilot_report": "logs/grasp_v2/autonomy_full_relative_feedback_v35_eval3/evaluation.json",
+  "pilot_report_sha256": "f4fa7d730603493d4bc95dae9b290601ca2e71fd2d14d3ba9ca50f0399eedcd8",
+  "conditions": {
+    "sources": [
+      "L5"
+    ],
+    "targets": [
+      "R2"
+    ],
+    "jitter_mm": 0.25,
+    "yaw_deg": 1.0
+  },
+  "requirement": "At least 15/16 physically complete cases on each seed, same weights",
+  "results": [
+    {
+      "seed": 123,
+      "success": 13,
+      "episodes": 16,
+      "passed": false,
+      "report": "logs/grasp_v2/autonomy_full_relative_feedback_v35_certification/seed123/evaluation.json",
+      "report_sha256": "b3a403b29fd37bda4e6971a1bfe52d73ec1493fc1793b5915c24913181bc832b"
+    }
+  ],
+  "certification_source_hashes": {
+    "certification_source.py": "eff6d7b02148d9b622462f5b35c520d6c030c5dc5fb3d2afa28922af707f1ff7",
+    "certification_gate_source.py": "28714efa53a89a9543edd2b66b640e840746da17aac8870255f48f6aa6f6bf96"
+  },
+  "stage": "not_promoted",
+  "updated_utc": "2026-10-06T20:41:34.139576+00:00",
+  "reason": "Native full evaluation failed; original checkpoints retained"
+}

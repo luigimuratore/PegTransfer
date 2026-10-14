@@ -1,0 +1,137 @@
+{
+  "schema": "peg-free-sac-v2-1",
+  "parameters": {
+    "mode": "train",
+    "demonstrations": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/sac_free_demonstrations_v2.npz",
+    "checkpoint": null,
+    "skill": "lift",
+    "num_envs": 16,
+    "steps": 100000,
+    "episode_steps": 4000,
+    "bc_steps": 6000,
+    "critic_warmup": 1000,
+    "batch_size": 1024,
+    "learning_rate": 0.0001,
+    "gamma": 0.9995,
+    "ent_coef": 1e-05,
+    "bc_weight": 1.0,
+    "demo_fraction": 0.25,
+    "gradient_steps": 1,
+    "episodes": 16,
+    "seed": 42,
+    "device": "cuda:0",
+    "headless": true,
+    "realtime": false,
+    "video": false,
+    "output": "logs/grasp_v2/sac_free_lift_v1",
+    "skip_pre_eval": false,
+    "promotion_report": null,
+    "buffer_size": 250000
+  },
+  "assisted_grasp": false,
+  "actor": "14 signed continuous XYZ/angular-velocity/jaw actions, both arms",
+  "actor_inputs": "110 physical state/reference/history features; final destination; no stage or waypoint",
+  "curriculum_skill": "lift",
+  "source": "L5",
+  "target": "R2",
+  "domain_randomization": false,
+  "physics_base_manifest": "/home/francesco/Documents/GIGI/i4h-workflows/milestones/checkpoint3-full-assisted.json",
+  "base_manifest_sha256": "3416ee107c467cedca24d735064e8b8775646d63afe202d6114a51ac81337bbf",
+  "versions": {
+    "isaacsim": "5.1.0.0",
+    "isaaclab": "0.48.0",
+    "torch": "2.7.0+cu128",
+    "numpy": "1.26.0",
+    "scipy": "1.15.3"
+  },
+  "limitation": "First experiment, physical rollout evaluation required; receiver grip previously slipped without fixture",
+  "source_hashes": {
+    "rl_runtime.py": "723f8f07ab7414dafacf9117466e2920b942e4a143a56642c14f40f1d625de05",
+    "rl_data.py": "5a06f26869132527f9270cb4bba28e0be82d1dfb7a5e4462d2f8ba273b7038a6",
+    "rl_main.py": "971e69f00dafd00a4159c9122b300f94e30c87d60f6d5dd1bb6e1f8db1762908",
+    "rl_core.py": "e7b01f56da833c6ca0a1ed3845716cb4ed50986d5d5522e01666e562c2980539",
+    "rl_replay.py": "44e3c8316c9af0931349f6340c6a068c30af325d6e7c17354e3be2e5c0d459bf",
+    "rl_env.py": "6068ee43839b7f2ce4c7fc7a8bd46d408e8afceee0d5387d2fe5758937ebcbb3",
+    "rl_learning.py": "830895d13d563176d72b579eab2ecd2063e8a25b11a5be5c51baf5cdd88a3df3",
+    "geometry.py": "a6e0333e2843cdb7d686558cd613080112cef49768fd02d034a0d477b732792f",
+    "peg_profile.json": "4b2cce45a8324e6dd804cacd160912d92cba3bbe653cb28d090ce3b4ef97c8f6"
+  },
+  "gpu_name": "NVIDIA RTX 6000 Ada Generation",
+  "actual_materials": {
+    "psm1_finger1": {
+      "shapes": 2,
+      "static_friction_range": [
+        0.8999999761581421,
+        0.8999999761581421
+      ],
+      "dynamic_friction_range": [
+        0.8999999761581421,
+        0.8999999761581421
+      ]
+    },
+    "psm1_finger2": {
+      "shapes": 2,
+      "static_friction_range": [
+        0.8999999761581421,
+        0.8999999761581421
+      ],
+      "dynamic_friction_range": [
+        0.8999999761581421,
+        0.8999999761581421
+      ]
+    },
+    "psm2_finger1": {
+      "shapes": 2,
+      "static_friction_range": [
+        0.8999999761581421,
+        0.8999999761581421
+      ],
+      "dynamic_friction_range": [
+        0.8999999761581421,
+        0.8999999761581421
+      ]
+    },
+    "psm2_finger2": {
+      "shapes": 2,
+      "static_friction_range": [
+        0.8999999761581421,
+        0.8999999761581421
+      ],
+      "dynamic_friction_range": [
+        0.8999999761581421,
+        0.8999999761581421
+      ]
+    },
+    "peg": {
+      "shapes": 704,
+      "static_friction_range": [
+        0.8999999761581421,
+        0.8999999761581421
+      ],
+      "dynamic_friction_range": [
+        0.8999999761581421,
+        0.8999999761581421
+      ],
+      "initial_coefficients": [
+        [
+          0.8999999761581421,
+          0.8999999761581421
+        ]
+      ],
+      "initialization_method": "USD binding already correct in PhysX"
+    }
+  },
+  "bc_validation": {
+    "weighted_validation_mse": 0.0033617308363318443,
+    "updates": 6000,
+    "held_out_episode": 2
+  },
+  "demonstrations_sha256": "6ce5fc9a8b0e1ba9347fe3ac8c616de3c8d43ec30a94e43740003d08fbade3be",
+  "checkpoint_sha256": "09359a4a9c0a61213592e9af4206c38b7b0e1fbf91dd156eff4ac7e13fed12b4",
+  "evaluation": {
+    "success": 0,
+    "episodes": 16,
+    "skill": "lift",
+    "full_success": 0
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "checkpoint": "checkpoint13",
+  "policy_sha256": "956e60f3a3e8ae424289a247cc448105be749f6134633ffc515db02d5b8059c6",
+  "video_sha256": "b71d92fc7204062eee7598e0bbd243021dd67ce6df3f257c2c5ffcfd1779b523",
+  "evaluation_sha256": "e9b93c4e1c8674c1a49a8aed8c602477341b506f1171458e7efa70860358cc7d",
+  "episode_indices": [
+    0,
+    1,
+    2
+  ],
+  "physical_report_covers_episodes": 3,
+  "all_three_episodes_success": true,
+  "assisted_grasp": true,
+  "media": {
+    "codec_name": "h264",
+    "width": 1280,
+    "height": 720,
+    "avg_frame_rate": "25/1",
+    "duration": "143.680000",
+    "nb_frames": "3592"
+  },
+  "replay_settings": {
+    "skill": "full",
+    "num_envs": 1,
+    "episodes": 3,
+    "episode_steps": 10000,
+    "seed": 59003,
+    "sources": [
+      "L5",
+      "L6",
+      "L4"
+    ],
+    "targets": [
+      "R2",
+      "R1",
+      "R3"
+    ],
+    "paired_posts": true,
+    "jitter_mm": 0.0,
+    "yaw_deg": 0.0,
+    "grasp_support": 1.0,
+    "support_profile": "firm",
+    "placement_support": true,
+    "gripper_load_guard": true,
+    "upright_grasp_support": true,
+    "motion_profile": "fast_travel",
+    "free_speed_scale": 4,
+    "transport_speed_scale": 8
+  }
+}

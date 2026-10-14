@@ -1,0 +1,62 @@
+{
+  "parameters": {
+    "mode": "evaluate",
+    "output": "logs/grasp_v2/autonomy_curriculum_v4/eval_round1",
+    "policy": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/autonomy_curriculum_v4/bc_round1/policy.pt",
+    "datasets": null,
+    "num_envs": 16,
+    "episodes": 32,
+    "episode_steps": 5000,
+    "jitter_mm": 0.5,
+    "yaw_deg": 2.0,
+    "sources": [
+      "L5"
+    ],
+    "targets": [
+      "R2"
+    ],
+    "learner_fraction": 0.0,
+    "learner_until_stage": 19,
+    "updates": 6000,
+    "batch_size": 1024,
+    "architecture": "mlp",
+    "future_steps": 0,
+    "phase_endpoint": false,
+    "skill": "lift",
+    "balance_direction": 1.0,
+    "receiver_mode": "wall",
+    "implementation_change": "Preserve XYZ/rotation direction when bounding long pose commands",
+    "transition_data": null,
+    "latch_option_poses": false,
+    "pressure_supervision": false,
+    "pressure_min": 0.3,
+    "pressure_max": 0.4,
+    "seed": 223,
+    "device": "cuda:0",
+    "headless": true,
+    "realtime": false,
+    "video": false
+  },
+  "source_hashes": {
+    "autonomy_env.py": "c8e96a5dd7311ef8e4c919013d38a6d878b93820490473533fdc2f1ccdd6d3ad",
+    "autonomy_full_teacher.py": "f2ca1320d692b9bc4df44ff4d7b703b419032fccb40a78d8353de2e24342e0f5",
+    "rl_runtime.py": "723f8f07ab7414dafacf9117466e2920b942e4a143a56642c14f40f1d625de05",
+    "replay.py": "8e5f130e02f840f79d3433f5932b489af96de5351770253daaf7fd657d651a3f",
+    "autonomy_learning.py": "6921eb878ceb2ef67e438a9ac9369e75ce83071f837311bd2fcbeecba85511eb",
+    "autonomy_replay.py": "5fc584e6a3e75254cd726f3eb2330149d348e3c3ff27f1f60c2effe5bb7aeea5",
+    "rl_core.py": "80ddad8671a2a8e1078e347eb0c62a57083ade3f7dc2e79ee335183c19127407",
+    "rl_env.py": "6068ee43839b7f2ce4c7fc7a8bd46d408e8afceee0d5387d2fe5758937ebcbb3",
+    "replay_full.py": "33a65680dc20a25b1808cd0541869d1067b86364e9d0d19439caf8cb12bdaf6f",
+    "autonomy_main.py": "a9a4fbc2856ead34bc58eff23936239de7f5e441de768c8d97fd3067d559889d",
+    "autonomy_teacher.py": "15b784c833150fa24a5776a6483a229aa123f030860a0a4232cf22ea06704701",
+    "geometry.py": "a6e0333e2843cdb7d686558cd613080112cef49768fd02d034a0d477b732792f",
+    "autonomy_curriculum.py": "854d96ff657a1a44206b8ad2cfbdb04d4aac3355c539affb516baf8876219250",
+    "autonomy_audit.py": "1de3814039c03f2ca05e1178f8f4c5f0722d901f0f197dc7854fcd4a6622d1f7",
+    "peg_profile.json": "4b2cce45a8324e6dd804cacd160912d92cba3bbe653cb28d090ce3b4ef97c8f6"
+  },
+  "physics_manifest_sha256": "3416ee107c467cedca24d735064e8b8775646d63afe202d6114a51ac81337bbf",
+  "assisted_grasp": false,
+  "programmed_task_controller": false,
+  "skill": "lift",
+  "policy_sha256": "8cf3be3609156e0663ef920c8d29e26c229f5d9e9ba15a7af38d3548e1f1dd86"
+}

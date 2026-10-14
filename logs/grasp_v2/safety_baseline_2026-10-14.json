@@ -1,0 +1,57 @@
+{
+  "date": "2026-10-14",
+  "kind": "Existing report summary; not a full safety evaluation",
+  "force_signal": "Filtered normal finger-to-peg contact force, control-rate sampled; no board force or full shear/wrench",
+  "paired_comparison": [
+    "BC_V5",
+    "BC_SAC_V5"
+  ],
+  "independent_BC_baseline_available": false,
+  "results": [
+    {
+      "label": "BC_V5",
+      "report": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/bc_sac_residual_v5/baseline12/evaluation.json",
+      "report_sha256": "a4f8712f63335e21b5b614fb6b6b0a7409129c5ea673d949172eb9506ac7d548",
+      "seed": 59002,
+      "episodes": 12,
+      "success": 12,
+      "timeouts": 0,
+      "failures": 0,
+      "successful_episode_mean_seconds": 44.85166666666667,
+      "maximum_recorded_per_finger_normal_force_n": 0.6941382884979248,
+      "maximum_successful_placement_error_mm": 0.21718338131904602,
+      "jaw_guard_intervention_control_steps": 277,
+      "assisted_grasp": true
+    },
+    {
+      "label": "BC_SAC_V5",
+      "report": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/bc_sac_residual_v5/confirmation12/evaluation.json",
+      "report_sha256": "14cea22d6061a982ac11b16e8c84f3b056cf4d7e64493799478f23984a0fcb86",
+      "seed": 59002,
+      "episodes": 12,
+      "success": 12,
+      "timeouts": 0,
+      "failures": 0,
+      "successful_episode_mean_seconds": 45.483333333333334,
+      "maximum_recorded_per_finger_normal_force_n": 0.6938179731369019,
+      "maximum_successful_placement_error_mm": 0.27562347054481506,
+      "jaw_guard_intervention_control_steps": 696,
+      "assisted_grasp": true
+    },
+    {
+      "label": "BC_SAC_V5_independent",
+      "report": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/bc_sac_recovery_retry_v5/independent12/evaluation.json",
+      "report_sha256": "955c6220b558a546aee6e161de427ca767f5487cc5d69b312b7bb139fc414ac5",
+      "seed": 62002,
+      "episodes": 12,
+      "success": 11,
+      "timeouts": 1,
+      "failures": 0,
+      "successful_episode_mean_seconds": 44.39181818181818,
+      "maximum_recorded_per_finger_normal_force_n": 0.6731720566749573,
+      "maximum_successful_placement_error_mm": 0.27087095379829407,
+      "jaw_guard_intervention_control_steps": 828,
+      "assisted_grasp": true
+    }
+  ]
+}

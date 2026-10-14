@@ -1,0 +1,38 @@
+{
+  "complete": true,
+  "reviewed_utc": "2026-10-12T08:53:09.313772+00:00",
+  "checkpoint": "milestones/checkpoint13-three-posts-fast-assisted.json",
+  "checkpoint_sha256": "a73bc859da9a6f8eb072c2bd9248c9161800a4578eac62f2c9c8bbfc0f3f0bb5",
+  "training_running": false,
+  "evaluation_running": false,
+  "selected_scales": [
+    4,
+    8
+  ],
+  "neural_weights_unchanged": true,
+  "policy_sha256": "956e60f3a3e8ae424289a247cc448105be749f6134633ffc515db02d5b8059c6",
+  "pilot": "3/3",
+  "matched_confirmation": "12/12",
+  "three_episode_front_replay": "3/3",
+  "mean_confirmation_seconds": 46.296666666666674,
+  "baseline_seconds": 53.046666666666674,
+  "reduction_percent": 12.724644966695987,
+  "assisted_grasp": true,
+  "native_full_policy_verified": false,
+  "visual_verification": "logs/grasp_v2/videos/checkpoint13.visual_verification.json",
+  "archive_verified_files": 55,
+  "prior_archives_verified": {
+    "checkpoint10": 52,
+    "checkpoint11": 40,
+    "checkpoint12": 49
+  },
+  "alias_settings_checked": [
+    "checkpoint13-play",
+    "checkpoint13-video"
+  ],
+  "notes": [
+    "Higher tested speed profiles failed physical confirmation and were not promoted.",
+    "Both f4/t8 opening variants passed matched12, with46.06 and46.30 seconds; this small difference does not establish an opening-speed benefit.",
+    "Saved replay uses frozen sources/configuration and retains explicit grasp/placement helpers."
+  ]
+}

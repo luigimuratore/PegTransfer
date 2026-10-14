@@ -1,0 +1,422 @@
+{
+  "complete": true,
+  "episodes": 16,
+  "success": 0,
+  "grasp_psm1": 0,
+  "lift_stable": 0,
+  "grasp_psm2": 0,
+  "handover": 0,
+  "full_success": 0,
+  "timeouts": 0,
+  "failures": 16,
+  "cases": [
+    {
+      "skill": "lift",
+      "success": false,
+      "failure": true,
+      "timeout": false,
+      "length": 359,
+      "return_": -10.62210750579834,
+      "grasp_psm1": false,
+      "lift_stable": false,
+      "grasp_psm2": false,
+      "handover": false,
+      "full_success": false,
+      "hole_error_mm": 45.00801086425781,
+      "peak_force_n": 1.1710283756256104,
+      "assisted_grasp": false,
+      "reset": {
+        "source": "L5",
+        "target": "R2",
+        "jitter_mm": [
+          -0.31725379824638367,
+          -0.3048340678215027
+        ],
+        "yaw_deg": 0.7890276908874512
+      }
+    },
+    {
+      "skill": "lift",
+      "success": false,
+      "failure": true,
+      "timeout": false,
+      "length": 362,
+      "return_": -10.626209259033203,
+      "grasp_psm1": false,
+      "lift_stable": false,
+      "grasp_psm2": false,
+      "handover": false,
+      "full_success": false,
+      "hole_error_mm": 44.48505783081055,
+      "peak_force_n": 1.02605140209198,
+      "assisted_grasp": false,
+      "reset": {
+        "source": "L5",
+        "target": "R2",
+        "jitter_mm": [
+          0.2651407718658447,
+          -0.49241265654563904
+        ],
+        "yaw_deg": 0.10786103457212448
+      }
+    },
+    {
+      "skill": "lift",
+      "success": false,
+      "failure": true,
+      "timeout": false,
+      "length": 363,
+      "return_": -10.6279878616333,
+      "grasp_psm1": false,
+      "lift_stable": false,
+      "grasp_psm2": false,
+      "handover": false,
+      "full_success": false,
+      "hole_error_mm": 44.42881393432617,
+      "peak_force_n": 1.1176722049713135,
+      "assisted_grasp": false,
+      "reset": {
+        "source": "L5",
+        "target": "R2",
+        "jitter_mm": [
+          -0.013794750906527042,
+          0.378258615732193
+        ],
+        "yaw_deg": -0.7843390703201294
+      }
+    },
+    {
+      "skill": "lift",
+      "success": false,
+      "failure": true,
+      "timeout": false,
+      "length": 364,
+      "return_": -10.629196166992188,
+      "grasp_psm1": false,
+      "lift_stable": false,
+      "grasp_psm2": false,
+      "handover": false,
+      "full_success": false,
+      "hole_error_mm": 44.54413986206055,
+      "peak_force_n": 2.2644522190093994,
+      "assisted_grasp": false,
+      "reset": {
+        "source": "L5",
+        "target": "R2",
+        "jitter_mm": [
+          0.15438330173492432,
+          -0.3895424008369446
+        ],
+        "yaw_deg": -1.397926688194275
+      }
+    },
+    {
+      "skill": "lift",
+      "success": false,
+      "failure": true,
+      "timeout": false,
+      "length": 367,
+      "return_": -10.63542366027832,
+      "grasp_psm1": false,
+      "lift_stable": false,
+      "grasp_psm2": false,
+      "handover": false,
+      "full_success": false,
+      "hole_error_mm": 45.02191162109375,
+      "peak_force_n": 1.565970778465271,
+      "assisted_grasp": false,
+      "reset": {
+        "source": "L5",
+        "target": "R2",
+        "jitter_mm": [
+          -0.3277076184749603,
+          -0.44795554876327515
+        ],
+        "yaw_deg": -1.5249735116958618
+      }
+    },
+    {
+      "skill": "lift",
+      "success": false,
+      "failure": true,
+      "timeout": false,
+      "length": 381,
+      "return_": -10.664408683776855,
+      "grasp_psm1": false,
+      "lift_stable": false,
+      "grasp_psm2": false,
+      "handover": false,
+      "full_success": false,
+      "hole_error_mm": 44.687801361083984,
+      "peak_force_n": 1.1052136421203613,
+      "assisted_grasp": false,
+      "reset": {
+        "source": "L5",
+        "target": "R2",
+        "jitter_mm": [
+          -0.08366769552230835,
+          0.3511989712715149
+        ],
+        "yaw_deg": -1.7518107891082764
+      }
+    },
+    {
+      "skill": "lift",
+      "success": false,
+      "failure": true,
+      "timeout": false,
+      "length": 386,
+      "return_": -10.67617130279541,
+      "grasp_psm1": false,
+      "lift_stable": false,
+      "grasp_psm2": false,
+      "handover": false,
+      "full_success": false,
+      "hole_error_mm": 44.601566314697266,
+      "peak_force_n": 1.0486973524093628,
+      "assisted_grasp": false,
+      "reset": {
+        "source": "L5",
+        "target": "R2",
+        "jitter_mm": [
+          -0.1408146619796753,
+          -0.00024071337247733027
+        ],
+        "yaw_deg": -0.47659775614738464
+      }
+    },
+    {
+      "skill": "lift",
+      "success": false,
+      "failure": true,
+      "timeout": false,
+      "length": 444,
+      "return_": -10.78322696685791,
+      "grasp_psm1": false,
+      "lift_stable": false,
+      "grasp_psm2": false,
+      "handover": false,
+      "full_success": false,
+      "hole_error_mm": 44.67585372924805,
+      "peak_force_n": 1.0990567207336426,
+      "assisted_grasp": false,
+      "reset": {
+        "source": "L5",
+        "target": "R2",
+        "jitter_mm": [
+          -0.1989484578371048,
+          0.11918801814317703
+        ],
+        "yaw_deg": 1.5994993448257446
+      }
+    },
+    {
+      "skill": "lift",
+      "success": false,
+      "failure": true,
+      "timeout": false,
+      "length": 369,
+      "return_": -10.638280868530273,
+      "grasp_psm1": false,
+      "lift_stable": false,
+      "grasp_psm2": false,
+      "handover": false,
+      "full_success": false,
+      "hole_error_mm": 44.96429443359375,
+      "peak_force_n": 1.053057074546814,
+      "assisted_grasp": false,
+      "reset": {
+        "source": "L5",
+        "target": "R2",
+        "jitter_mm": [
+          -0.4776519238948822,
+          0.1506001353263855
+        ],
+        "yaw_deg": -1.241254210472107
+      }
+    },
+    {
+      "skill": "lift",
+      "success": false,
+      "failure": true,
+      "timeout": false,
+      "length": 364,
+      "return_": -10.630596160888672,
+      "grasp_psm1": false,
+      "lift_stable": false,
+      "grasp_psm2": false,
+      "handover": false,
+      "full_success": false,
+      "hole_error_mm": 44.86909866333008,
+      "peak_force_n": 2.1165971755981445,
+      "assisted_grasp": false,
+      "reset": {
+        "source": "L5",
+        "target": "R2",
+        "jitter_mm": [
+          -0.3374488949775696,
+          0.21267713606357574
+        ],
+        "yaw_deg": -0.4415832459926605
+      }
+    },
+    {
+      "skill": "lift",
+      "success": false,
+      "failure": true,
+      "timeout": false,
+      "length": 367,
+      "return_": -10.635104179382324,
+      "grasp_psm1": false,
+      "lift_stable": false,
+      "grasp_psm2": false,
+      "handover": false,
+      "full_success": false,
+      "hole_error_mm": 44.6672248840332,
+      "peak_force_n": 2.211434841156006,
+      "assisted_grasp": false,
+      "reset": {
+        "source": "L5",
+        "target": "R2",
+        "jitter_mm": [
+          -0.15250857174396515,
+          0.07930076122283936
+        ],
+        "yaw_deg": -1.6511095762252808
+      }
+    },
+    {
+      "skill": "lift",
+      "success": false,
+      "failure": true,
+      "timeout": false,
+      "length": 389,
+      "return_": -10.67947006225586,
+      "grasp_psm1": false,
+      "lift_stable": false,
+      "grasp_psm2": false,
+      "handover": false,
+      "full_success": false,
+      "hole_error_mm": 45.37522506713867,
+      "peak_force_n": 1.0087352991104126,
+      "assisted_grasp": false,
+      "reset": {
+        "source": "L5",
+        "target": "R2",
+        "jitter_mm": [
+          0.16529805958271027,
+          -0.28455477952957153
+        ],
+        "yaw_deg": -0.8300093412399292
+      }
+    },
+    {
+      "skill": "lift",
+      "success": false,
+      "failure": true,
+      "timeout": false,
+      "length": 397,
+      "return_": -10.698626518249512,
+      "grasp_psm1": false,
+      "lift_stable": false,
+      "grasp_psm2": false,
+      "handover": false,
+      "full_success": false,
+      "hole_error_mm": 44.692466735839844,
+      "peak_force_n": 1.1047974824905396,
+      "assisted_grasp": false,
+      "reset": {
+        "source": "L5",
+        "target": "R2",
+        "jitter_mm": [
+          0.3328806161880493,
+          -0.20448173582553864
+        ],
+        "yaw_deg": 0.11533116549253464
+      }
+    },
+    {
+      "skill": "lift",
+      "success": false,
+      "failure": true,
+      "timeout": false,
+      "length": 398,
+      "return_": -10.70180892944336,
+      "grasp_psm1": false,
+      "lift_stable": false,
+      "grasp_psm2": false,
+      "handover": false,
+      "full_success": false,
+      "hole_error_mm": 44.82231903076172,
+      "peak_force_n": 1.000465989112854,
+      "assisted_grasp": false,
+      "reset": {
+        "source": "L5",
+        "target": "R2",
+        "jitter_mm": [
+          0.24703127145767212,
+          -0.4216352701187134
+        ],
+        "yaw_deg": 1.7885494232177734
+      }
+    },
+    {
+      "skill": "lift",
+      "success": false,
+      "failure": true,
+      "timeout": false,
+      "length": 487,
+      "return_": -10.871525764465332,
+      "grasp_psm1": false,
+      "lift_stable": false,
+      "grasp_psm2": false,
+      "handover": false,
+      "full_success": false,
+      "hole_error_mm": 45.60663986206055,
+      "peak_force_n": 1.0035078525543213,
+      "assisted_grasp": false,
+      "reset": {
+        "source": "L5",
+        "target": "R2",
+        "jitter_mm": [
+          -0.4964030683040619,
+          0.22265900671482086
+        ],
+        "yaw_deg": -0.6637523174285889
+      }
+    },
+    {
+      "skill": "lift",
+      "success": false,
+      "failure": true,
+      "timeout": false,
+      "length": 446,
+      "return_": -10.785776138305664,
+      "grasp_psm1": false,
+      "lift_stable": false,
+      "grasp_psm2": false,
+      "handover": false,
+      "full_success": false,
+      "hole_error_mm": 44.30084228515625,
+      "peak_force_n": 1.3478745222091675,
+      "assisted_grasp": false,
+      "reset": {
+        "source": "L5",
+        "target": "R2",
+        "jitter_mm": [
+          0.34316492080688477,
+          -0.14349910616874695
+        ],
+        "yaw_deg": 0.4580492675304413
+      }
+    }
+  ],
+  "assisted_grasp": false,
+  "programmed_task_controller": false,
+  "teacher_at_inference": false,
+  "mode": "evaluate",
+  "policy_sha256": "b21356ac9132f25689df8e3f19c652c1d2701c16377791ce9338b14cec56fbfa",
+  "seed": 123,
+  "skill": "lift",
+  "gpu": "NVIDIA RTX 6000 Ada Generation"
+}

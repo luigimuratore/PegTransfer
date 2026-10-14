@@ -1,0 +1,10 @@
+{
+  "device": "cuda:0",
+  "gpu": "NVIDIA RTX 6000 Ada Generation",
+  "unit_tests": 7,
+  "passed": true,
+  "physics_envs": 16,
+  "physics_smoke_steps": 100,
+  "scope": "Infrastructure verified; autonomous task success not established",
+  "training_directory": "logs/grasp_v2/sac_free_lift_v1"
+}

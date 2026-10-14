@@ -1,0 +1,127 @@
+{
+  "name": "checkpoint2-wall-bc3",
+  "date": "2026-10-05",
+  "task": "PSM1 wall approach, physical grasp, 35 mm lift, 2 s hold, lower, release",
+  "checkpoint": "logs/grasp_v2/wall_bc3/policy.npz",
+  "checkpoint_sha256": "e4bcfd706e25ff1dcc2637bde10849230e18a746d8f2dbfac7791fce89ae7794",
+  "frozen_sources": "logs/grasp_v2/wall_bc3/sources",
+  "experiment": {
+    "schema": "peg-wall-motor-bc-3",
+    "mode": "wall",
+    "arm": 1,
+    "candidate": {
+      "mode": "wall",
+      "vertex": 2,
+      "height_fraction": 0.5,
+      "tip_local_m": [
+        0.00033550214999999994,
+        6.675400111545707e-19,
+        0.0016015485636889934
+      ],
+      "yaw_rad": 0.0,
+      "tool_quaternion_local_wxyz": [
+        -0.9848077530122081,
+        1.5407439555097887e-33,
+        0.17364817766693036,
+        1.2060416625018979e-16
+      ],
+      "approach_direction_local": [
+        -0.3420201433256687,
+        4.188538737676992e-17,
+        0.9396926207859084
+      ],
+      "approach": "oblique_entry",
+      "open_angle_rad": 0.15,
+      "wall_thickness_m": 0.0025234400999999997,
+      "wall_angle_deg": 180.0,
+      "entry_tilt_deg": 20.0,
+      "pinch_twist_deg": 0.0,
+      "arm": 1
+    },
+    "source": "L5",
+    "peg_asset_sha256": "d6e3695d6b663702c1cbb5acfc44caace0cc37df95a97fea3e3d5ef86f0aa54d",
+    "robot_asset_sha256": "5730339c3b806f17a5228c69b97464d0b3469888002f62fb23d9621f746347c8",
+    "code_sha256": "9f32fef4fb89392b97e876ed4d965a9304ca9abd5d65db35ce11384043520480",
+    "parameters": {
+      "mass_g": 5.0,
+      "friction": 0.9,
+      "contact_stiffness": 1000.0,
+      "contact_damping": 0.5,
+      "jaw_torque": 0.015,
+      "jaw_stiffness": 0.6,
+      "grip_force": 0.35,
+      "preload_seconds": 0.4,
+      "max_force": 1.0,
+      "free_speed": 0.025,
+      "contact_speed": 0.005,
+      "lift_speed": 0.003,
+      "rotation_speed": 1.0
+    },
+    "control_dt_s": 0.01
+  },
+  "versions": {
+    "isaacsim": "5.1.0.0",
+    "isaaclab": "0.48.0",
+    "torch": "2.7.0+cu128"
+  },
+  "evaluation": "logs/grasp_v2/wall_psm1_2026-10-05_16-36-44-152149.json",
+  "evaluation_sha256": "64de99f27fa30143215b8ff00986ae45eefe75da4d43337c3c29e0a9a0ce8c38",
+  "successful_episodes": 3,
+  "requested_episodes": 3,
+  "assisted_grasp": false,
+  "object_pose_servo": false,
+  "measured_hold": [
+    {
+      "episode": 0,
+      "hold_seconds": 2.0,
+      "minimum_lift_mm": 34.79297250509262,
+      "median_finger_forces_n": [
+        0.34986018263934976,
+        0.3114516140676448
+      ],
+      "maximum_slip_mm": 0.015769326359020838
+    },
+    {
+      "episode": 1,
+      "hold_seconds": 2.12,
+      "minimum_lift_mm": 34.725943356752396,
+      "median_finger_forces_n": [
+        0.3490124586499079,
+        0.3089036115512117
+      ],
+      "maximum_slip_mm": 0.025021019166156483
+    },
+    {
+      "episode": 2,
+      "hold_seconds": 2.0,
+      "minimum_lift_mm": 34.78797689080238,
+      "median_finger_forces_n": [
+        0.3486315056610051,
+        0.30713006269434495
+      ],
+      "maximum_slip_mm": 0.02507234616568514
+    }
+  ],
+  "limitations": [
+    "Fixed L5; no domain randomization",
+    "Programmed goals, phases, orientation, pressure/slip guards; learned positive response gains",
+    "PSM2 handover and full-task policy not part of this checkpoint"
+  ],
+  "video": "logs/grasp_v2/videos/wall_bc3_front_verified_2026-10-05.mp4",
+  "video_report": "logs/grasp_v2/wall_bc3_front_verified_2026-10-05.json",
+  "camera": {
+    "eye": [
+      0.025,
+      0.32,
+      0.25
+    ],
+    "target": [
+      0.025,
+      0.0,
+      0.035
+    ]
+  },
+  "replay_command": "bash peg_grasp_v2.sh probe --mode wall --policy logs/grasp_v2/wall_bc3/policy.npz --device cuda:0 --episodes 1 --realtime",
+  "video_metadata": "logs/grasp_v2/videos/wall_bc3_front_verified_2026-10-05.json",
+  "video_sha256": "0db4f77ebd054c85fdc8d6c3406811ee53d1a115f7d50b308b9b22f20c3c3213"
+}

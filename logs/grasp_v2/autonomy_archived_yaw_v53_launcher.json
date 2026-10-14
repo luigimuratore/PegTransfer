@@ -1,0 +1,7 @@
+{
+  "pid": 3709300,
+  "output": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/autonomy_archived_yaw_v53",
+  "log": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/autonomy_archived_yaw_v53_startup.log",
+  "training": false,
+  "changed_parameter": "yaw 2 -> 5 degrees"
+}

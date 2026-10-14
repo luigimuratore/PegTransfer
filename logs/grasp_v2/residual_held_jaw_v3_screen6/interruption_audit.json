@@ -1,0 +1,6 @@
+{
+  "complete": false,
+  "interrupted": true,
+  "last_step": 5900,
+  "reason": "Held-jaw guard does not recover environment2; L6 environment4 failed before handover. Not accepted or used for SAC. Check all-link contacts next."
+}

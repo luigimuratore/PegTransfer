@@ -1,0 +1,22 @@
+{
+  "schema": "peg-wall-learning-validation-1",
+  "cpu_tests_passed": 45,
+  "short_training_test": {
+    "synthetic_data": true,
+    "updates": 12,
+    "episodes": 3,
+    "validation_episode": 2,
+    "numpy_export_prediction_mse_matches_torch": true
+  },
+  "simulator_executed": false,
+  "actual_demonstrations_collected": false,
+  "physical_neural_evaluation_verified": false,
+  "observation_dim": 37,
+  "action_dim": 4,
+  "learned_control": "xyz reference velocity and coupled-jaw velocity",
+  "programmed_control": "grasp choice, phases, orientation/IK, inactive arm, physical contact/slip guards",
+  "code_sha256": "7028a2e741e1a298fc21cffd52615c9055b9676ab5d848c90a4716315d996389",
+  "latest_vertex_report": "logs/grasp_v2/vertex_psm1_2026-10-05_14-59-11-945189.json",
+  "latest_vertex_successes": 0,
+  "latest_vertex_episodes": 1
+}

@@ -1,0 +1,4 @@
+{
+  "error": "RuntimeError('Zero-residual baseline failed: no SAC optimization or checkpoint promotion')",
+  "complete": false
+}

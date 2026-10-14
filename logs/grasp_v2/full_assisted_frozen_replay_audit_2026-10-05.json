@@ -1,0 +1,56 @@
+{
+  "report": "logs/grasp_v2/full_assisted_frozen_replay_2026-10-05.json",
+  "report_sha256": "efa9c0e7e85feb2aa32da2c585507f635a760640c1c68cfeb6f221232685e317",
+  "trace_sha256": "2e7b5a96f8e26b6535e2113b3f62aa09fef0070ae8a11c42c4aff79f306126d6",
+  "passed": true,
+  "full_success": 1,
+  "assisted_grasp": true,
+  "full_task_learned_policy": false,
+  "unassisted_full_success": 0,
+  "source": "L5",
+  "target": "R2",
+  "device": "cuda:0",
+  "measurements": [
+    {
+      "stages": [
+        "settle",
+        "donor_above",
+        "donor_outside",
+        "donor_reach",
+        "donor_close",
+        "donor_lift",
+        "donor_hold",
+        "donor_transfer",
+        "receiver_above",
+        "receiver_outside",
+        "receiver_reach",
+        "receiver_close",
+        "donor_release",
+        "donor_retreat",
+        "receiver_hold",
+        "receiver_transport",
+        "receiver_insert",
+        "receiver_release",
+        "receiver_retreat",
+        "placement_settle"
+      ],
+      "samples": 5921,
+      "final_free_samples": 100,
+      "maximum_finger_force_n": 0.6227813778562216,
+      "pressure_override_samples": 0,
+      "receiver_preload_verified": true,
+      "receiver_preload_seconds": 0.4000000000000002,
+      "donor_pickup_unassisted": true,
+      "maximum_support_activation_displacement_mm": 0.0052699278625847265,
+      "placement": {
+        "placed": true,
+        "hole_error_mm": 0.41199952169346915,
+        "tilt_rad": 1.0032587872155674e-06,
+        "bottom_m": 0.010000890120863914,
+        "minimum_post_hole_clearance_mm": 2.4660878398724346
+      },
+      "simulated_duration_s": 59.21,
+      "final_free_seconds": 1.0
+    }
+  ]
+}

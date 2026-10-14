@@ -1,0 +1,36 @@
+{
+  "episodes": 1,
+  "success": 0,
+  "full_success": 0,
+  "grasp_psm1": 0,
+  "lift_stable": 0,
+  "grasp_psm2": 0,
+  "handover": 0,
+  "failures": 0,
+  "timeouts": 1,
+  "cases": [
+    {
+      "skill": "lift",
+      "success": false,
+      "failure": false,
+      "timeout": true,
+      "length": 1,
+      "return_": -0.0021298190113157034,
+      "grasp_psm1": false,
+      "lift_stable": false,
+      "grasp_psm2": false,
+      "handover": false,
+      "full_success": false,
+      "hole_error_mm": 44.59992980957031,
+      "peak_force_n": 0.0,
+      "assisted_grasp": false
+    }
+  ],
+  "complete": true,
+  "deterministic": true,
+  "assisted_grasp": false,
+  "programmed_task_controller": false,
+  "stage_waypoints": false,
+  "learned_motor_actions": 14,
+  "checkpoint_sha256": "09359a4a9c0a61213592e9af4206c38b7b0e1fbf91dd156eff4ac7e13fed12b4"
+}

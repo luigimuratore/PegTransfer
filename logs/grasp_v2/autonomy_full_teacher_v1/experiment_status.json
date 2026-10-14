@@ -1,0 +1,6 @@
+{
+  "complete": false,
+  "interrupted": true,
+  "full_task_verified": false,
+  "reason": "Experiment stopped after donor grasp was lost during receiver close; log retained. No successful full episodes collected."
+}

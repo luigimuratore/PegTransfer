@@ -1,0 +1,120 @@
+{
+  "schema": "peg-free-sac-v2-1",
+  "parameters": {
+    "mode": "smoke",
+    "demonstrations": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/sac_free_demonstrations.npz",
+    "checkpoint": null,
+    "skill": "lift",
+    "num_envs": 16,
+    "steps": 100000,
+    "episode_steps": 8000,
+    "bc_steps": 6000,
+    "critic_warmup": 1000,
+    "batch_size": 1024,
+    "learning_rate": 0.0001,
+    "gamma": 0.995,
+    "ent_coef": 1e-05,
+    "bc_weight": 1.0,
+    "demo_fraction": 0.25,
+    "gradient_steps": 1,
+    "episodes": 3,
+    "seed": 42,
+    "device": "cuda:0",
+    "headless": true,
+    "realtime": false,
+    "video": false,
+    "output": "logs/grasp_v2/sac_free_smoke_v1",
+    "skip_pre_eval": false,
+    "buffer_size": 250000
+  },
+  "assisted_grasp": false,
+  "actor": "14 signed continuous XYZ/angular-velocity/jaw actions, both arms",
+  "actor_inputs": "110 physical state/reference/history features; final destination; no stage or waypoint",
+  "curriculum_skill": "lift",
+  "source": "L5",
+  "target": "R2",
+  "domain_randomization": false,
+  "physics_base_manifest": "/home/francesco/Documents/GIGI/i4h-workflows/milestones/checkpoint3-full-assisted.json",
+  "base_manifest_sha256": "3416ee107c467cedca24d735064e8b8775646d63afe202d6114a51ac81337bbf",
+  "versions": {
+    "isaacsim": "5.1.0.0",
+    "isaaclab": "0.48.0",
+    "torch": "2.7.0+cu128",
+    "numpy": "1.26.0",
+    "scipy": "1.15.3"
+  },
+  "limitation": "First experiment, physical rollout evaluation required; receiver grip previously slipped without fixture",
+  "source_hashes": {
+    "rl_runtime.py": "723f8f07ab7414dafacf9117466e2920b942e4a143a56642c14f40f1d625de05",
+    "rl_data.py": "2be58603f32d97956f4eb991016eab263b26e7964701b3cd133acccd86883e55",
+    "rl_main.py": "bd29508355844d184a32d237b926e5620ec68226d0ca6bf771e2015a1235c9e1",
+    "rl_core.py": "a08968b1a0a1bbe5a618667baa3a8434584dbdb1f153d8547286c690d92963d9",
+    "rl_env.py": "325ea9b93468f896a1aa172942b2a1904b95a8450bf06d2f4f409de6847723ec",
+    "rl_learning.py": "782b38844a029e2b0dea82a524297e532fedeb8b7ddcefe3ca1b8b0565b678b6"
+  },
+  "gpu_name": "NVIDIA RTX 6000 Ada Generation",
+  "actual_materials": {
+    "psm1_finger1": {
+      "shapes": 2,
+      "static_friction_range": [
+        0.8999999761581421,
+        0.8999999761581421
+      ],
+      "dynamic_friction_range": [
+        0.8999999761581421,
+        0.8999999761581421
+      ]
+    },
+    "psm1_finger2": {
+      "shapes": 2,
+      "static_friction_range": [
+        0.8999999761581421,
+        0.8999999761581421
+      ],
+      "dynamic_friction_range": [
+        0.8999999761581421,
+        0.8999999761581421
+      ]
+    },
+    "psm2_finger1": {
+      "shapes": 2,
+      "static_friction_range": [
+        0.8999999761581421,
+        0.8999999761581421
+      ],
+      "dynamic_friction_range": [
+        0.8999999761581421,
+        0.8999999761581421
+      ]
+    },
+    "psm2_finger2": {
+      "shapes": 2,
+      "static_friction_range": [
+        0.8999999761581421,
+        0.8999999761581421
+      ],
+      "dynamic_friction_range": [
+        0.8999999761581421,
+        0.8999999761581421
+      ]
+    },
+    "peg": {
+      "shapes": 704,
+      "static_friction_range": [
+        0.8999999761581421,
+        0.8999999761581421
+      ],
+      "dynamic_friction_range": [
+        0.8999999761581421,
+        0.8999999761581421
+      ],
+      "initial_coefficients": [
+        [
+          0.8999999761581421,
+          0.8999999761581421
+        ]
+      ],
+      "initialization_method": "USD binding already correct in PhysX"
+    }
+  }
+}

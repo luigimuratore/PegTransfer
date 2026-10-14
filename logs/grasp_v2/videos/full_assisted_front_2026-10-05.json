@@ -1,0 +1,29 @@
+{
+  "video": "logs/grasp_v2/videos/full_assisted_front_2026-10-05.mp4",
+  "video_sha256": "b112dec5a00371de0ef79ad5c279bc291fa11438de538f829440df4c08ba14ee",
+  "report": "logs/grasp_v2/full_assisted_front_2026-10-05.json",
+  "report_sha256": "827b47e1affa4823edd0a1233c55eba0fc4b554fbe02bc5ebdef78c1fcddaa1c",
+  "camera": {
+    "eye": [
+      0.025,
+      0.32,
+      0.25
+    ],
+    "target": [
+      0.025,
+      0.0,
+      0.035
+    ]
+  },
+  "full_success": 1,
+  "assisted_grasp": true,
+  "full_task_learned_policy": false,
+  "encoder": "h264_nvenc",
+  "resolution": [
+    1280,
+    720
+  ],
+  "fps": 25,
+  "frames": 1480,
+  "duration_s": 59.2
+}

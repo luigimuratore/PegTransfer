@@ -1,0 +1,16 @@
+[
+  "/home/francesco/miniconda3/envs/PegTransfer/bin/python",
+  "-u",
+  "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/bc_sac_recovery_retry_v5/workflow_sources/residual_pipeline.py",
+  "--output",
+  "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/bc_sac_residual_v5",
+  "--transitions",
+  "12000",
+  "--held_jaw_guard",
+  "--grasp_stiffness",
+  "900",
+  "--spring_scope",
+  "donor_recovery",
+  "--held_jaw_recovery_only",
+  "--recovery_before_lift"
+]

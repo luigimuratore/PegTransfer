@@ -1,0 +1,107 @@
+{
+  "updated_utc": "2026-10-07T12:27:46.813206+00:00",
+  "complete": true,
+  "success": 14,
+  "episodes": 16,
+  "grasp_psm1": 16,
+  "lift_stable": 16,
+  "grasp_psm2": 15,
+  "handover": 14,
+  "assisted_grasp": true,
+  "native_full_policy_verified": false,
+  "report_sha256": "5746c18fb1919b852e309e930b50458224cfb3f75ea6122da7aaab227abc5b82",
+  "failed_receiver_close_cases": [
+    {
+      "episode_id": 1,
+      "recorded_samples": 258,
+      "first_step": 2666,
+      "last_step": 9950,
+      "receiver_force_min_n": 0.0,
+      "last_receiver_forces_n": [
+        0.11869121342897415,
+        0.175286203622818
+      ],
+      "last_force_opposition_cosine": -0.9107715487480164,
+      "last_receiver_jaws_rad": [
+        0.2122068554162979,
+        0.21277734637260437
+      ],
+      "last_neural_jaw_rate_rad_s": 0.0,
+      "last_jaw_class_probabilities": [
+        2.247790774750541e-20,
+        0.4806995093822479,
+        0.5192992687225342,
+        2.2937195607948324e-17,
+        1.1898479215233237e-06,
+        1.7643341215095587e-13
+      ],
+      "sampled_neural_close_fraction": 0.07364340871572495,
+      "sampled_neural_hold_fraction": 0.9263566136360168,
+      "sampled_emitted_close_fraction": 0.07364340871572495,
+      "last_receiver_neural_goal_error_mm": 0.035072438418865204,
+      "last_physical_progress": [
+        1.0,
+        1.0,
+        1.0,
+        0.0
+      ],
+      "physical_result": {
+        "success": false,
+        "timeout": true,
+        "failure": false,
+        "grasp_psm1": true,
+        "lift_stable": true,
+        "grasp_psm2": true,
+        "handover": false,
+        "terminal_learned_option": 10
+      }
+    },
+    {
+      "episode_id": 15,
+      "recorded_samples": 11,
+      "first_step": 2677,
+      "last_step": 2705,
+      "receiver_force_min_n": 0.0,
+      "last_receiver_forces_n": [
+        0.0,
+        0.0
+      ],
+      "last_force_opposition_cosine": 0.0,
+      "last_receiver_jaws_rad": [
+        0.23797190189361572,
+        0.23797191679477692
+      ],
+      "last_neural_jaw_rate_rad_s": -0.020000001415610313,
+      "last_jaw_class_probabilities": [
+        3.185165076569768e-13,
+        0.9855828285217285,
+        0.014405513182282448,
+        1.769372537374636e-09,
+        7.733591701253317e-06,
+        3.83192355002393e-06
+      ],
+      "sampled_neural_close_fraction": 1.0,
+      "sampled_neural_hold_fraction": 0.0,
+      "sampled_emitted_close_fraction": 1.0,
+      "last_receiver_neural_goal_error_mm": 0.0018910770304501057,
+      "last_physical_progress": [
+        1.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "physical_result": {
+        "success": false,
+        "timeout": false,
+        "failure": true,
+        "grasp_psm1": true,
+        "lift_stable": true,
+        "grasp_psm2": false,
+        "handover": false,
+        "terminal_learned_option": 10
+      }
+    }
+  ],
+  "environment_closed": true,
+  "policy_sha256": "64f0512c5be8c6215a67e89c58b5f116a4d613a054e68c2b5ff6d7029a5a660f"
+}

@@ -1,0 +1,30 @@
+{
+  "audited_utc": "2026-10-12T15:01:35.854162+00:00",
+  "pipeline_stopped": true,
+  "training_running": false,
+  "evaluation_running": false,
+  "sac_optimizer_started": false,
+  "baseline_success": 12,
+  "baseline_episodes": 12,
+  "warm_success": 5,
+  "warm_episodes": 6,
+  "failed_warm_cases": [
+    {
+      "environment": 2,
+      "source": "L4",
+      "target": "R3",
+      "timeout": true,
+      "length": 10000,
+      "grasp_psm1": true,
+      "lift_stable": true,
+      "grasp_psm2": false,
+      "handover": false
+    }
+  ],
+  "candidate_produced": false,
+  "new_checkpoint_promoted": false,
+  "latest_preserved_checkpoint": "checkpoint13",
+  "cause": "Zero-residual warm baseline5/6; one L4\u2192R3 receiver timeout. Kit cleanup reported process exit0 and supervisor wrongly attempted missing-candidate evaluation.",
+  "fix": "Supervisor validates error/status, candidate hash, completed physical evaluation and cleanup before continuing; two regression tests passed.",
+  "original_pipeline_status_sha256": "a1441045bbaaaea94c3b03176b6fc3019074a618ef80cc7e22cbcd8b84dc1b89"
+}

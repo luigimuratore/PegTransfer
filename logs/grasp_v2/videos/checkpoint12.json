@@ -1,0 +1,21 @@
+{
+  "checkpoint": "checkpoint12",
+  "policy_sha256": "956e60f3a3e8ae424289a247cc448105be749f6134633ffc515db02d5b8059c6",
+  "video_sha256": "bac5354bda7c22489aa5a893541af143f02d8741b594ceb2283fe08331243bbb",
+  "evaluation_sha256": "c361b4b7bb771ed0a1585f430f917770fc867d49b9efcdc8536bb148f00889b0",
+  "description": "First complete episode from the three-episode successful replay",
+  "episode_indices": [
+    0
+  ],
+  "all_three_episodes_success": true,
+  "physical_report_covers_episodes": 3,
+  "assisted_grasp": true,
+  "media": {
+    "codec_name": "h264",
+    "width": 1280,
+    "height": 720,
+    "avg_frame_rate": "25/1",
+    "duration": "47.600000",
+    "nb_frames": "1190"
+  }
+}

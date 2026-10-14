@@ -1,0 +1,142 @@
+{
+  "algorithm": "Future-pose Behavior Cloning",
+  "datasets": [
+    "logs/grasp_v2/autonomy_pickup_data_v1/demonstrations.npz"
+  ],
+  "future_pose_steps": 20,
+  "updates": 12000,
+  "batch_size": 1024,
+  "learning_rate": 0.0001,
+  "architecture": [
+    256,
+    256
+  ],
+  "observation_dim": 98,
+  "learned_pose_and_jaw_outputs": 16,
+  "device": "cuda:0",
+  "gpu": "NVIDIA RTX 6000 Ada Generation",
+  "teacher_at_inference": false,
+  "physical_evaluation_required": true,
+  "history": [
+    {
+      "update": 500,
+      "train_loss": 0.003978350665420294,
+      "validation_loss": 0.004518456291407347
+    },
+    {
+      "update": 1000,
+      "train_loss": 0.0010903764050453901,
+      "validation_loss": 0.0010715587995946407
+    },
+    {
+      "update": 1500,
+      "train_loss": 0.0005391816375777125,
+      "validation_loss": 0.00042702830978669226
+    },
+    {
+      "update": 2000,
+      "train_loss": 0.0003426799667067826,
+      "validation_loss": 0.00025568422279320657
+    },
+    {
+      "update": 2500,
+      "train_loss": 0.00026587594766169786,
+      "validation_loss": 0.00018073774117510766
+    },
+    {
+      "update": 3000,
+      "train_loss": 0.00020970561308786273,
+      "validation_loss": 0.00014060297689866275
+    },
+    {
+      "update": 3500,
+      "train_loss": 0.00018128920055460185,
+      "validation_loss": 0.00011976256064372137
+    },
+    {
+      "update": 4000,
+      "train_loss": 0.00016871903790161014,
+      "validation_loss": 0.00011264513886999339
+    },
+    {
+      "update": 4500,
+      "train_loss": 0.00016688165487721562,
+      "validation_loss": 9.863453306024894e-05
+    },
+    {
+      "update": 5000,
+      "train_loss": 0.00013698733528144658,
+      "validation_loss": 7.318299321923405e-05
+    },
+    {
+      "update": 5500,
+      "train_loss": 0.00011495412036310881,
+      "validation_loss": 6.608415424125269e-05
+    },
+    {
+      "update": 6000,
+      "train_loss": 0.00010428119276184589,
+      "validation_loss": 5.922139098402113e-05
+    },
+    {
+      "update": 6500,
+      "train_loss": 0.00010804902558447793,
+      "validation_loss": 5.860825694981031e-05
+    },
+    {
+      "update": 7000,
+      "train_loss": 0.00012018872803309932,
+      "validation_loss": 5.238489757175557e-05
+    },
+    {
+      "update": 7500,
+      "train_loss": 0.00010826039215316996,
+      "validation_loss": 5.166601840755902e-05
+    },
+    {
+      "update": 8000,
+      "train_loss": 9.56099756876938e-05,
+      "validation_loss": 5.3458104957826436e-05
+    },
+    {
+      "update": 8500,
+      "train_loss": 7.933098095236346e-05,
+      "validation_loss": 4.6020501031307504e-05
+    },
+    {
+      "update": 9000,
+      "train_loss": 8.858610817696899e-05,
+      "validation_loss": 4.4324915506877005e-05
+    },
+    {
+      "update": 9500,
+      "train_loss": 0.00015747598081361502,
+      "validation_loss": 0.00015656808682251722
+    },
+    {
+      "update": 10000,
+      "train_loss": 7.963144162204117e-05,
+      "validation_loss": 4.36618211097084e-05
+    },
+    {
+      "update": 10500,
+      "train_loss": 8.205467747757211e-05,
+      "validation_loss": 3.985565126640722e-05
+    },
+    {
+      "update": 11000,
+      "train_loss": 9.418428817298263e-05,
+      "validation_loss": 3.8725484046153724e-05
+    },
+    {
+      "update": 11500,
+      "train_loss": 8.178270945791155e-05,
+      "validation_loss": 3.8066809793235734e-05
+    },
+    {
+      "update": 12000,
+      "train_loss": 7.487245602533221e-05,
+      "validation_loss": 3.748656308744103e-05
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "complete": false,
+  "interrupted": true,
+  "last_step": 3000,
+  "reason": "Verified inter-arm exclusions leave the L4 donor-force loss and receiver_outside stall unchanged. Rejected, not used for training."
+}

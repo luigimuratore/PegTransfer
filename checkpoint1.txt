@@ -1,0 +1,110 @@
+REPORT — riferimento tecnico: checkpoint13
+Il nome checkpoint1.txt identifica il documento; il modello descritto
+è checkpoint13. BC + SAC è il nuovo esperimento separato.
+
+1. OBIETTIVO E RISULTATO
+PSM1 prende e solleva il peg dalla board, lo porta nella zona di
+scambio e lo passa a PSM2, che lo deposita su un altro cilindro.
+Percorsi verificati: L5→R2, L6→R1, L4→R3.
+Risultati: pilot 3/3, conferma 12/12 e video 3/3. La conferma include
+piccoli offset ±0,1 mm e rotazioni yaw ±0,5° della posizione iniziale.
+
+2. MODELLI USATI
+Checkpoint13 usa Behavior Cloning (BC): apprendimento per imitazione.
+La policy è strutturata in moduli MLP, reti dense che leggono numeri:
+- Encoder 256+256 neuroni: elabora lo stato osservato.
+- Router 256+128: sceglie fra 19 comportamenti appresi, come reach,
+ close e lift, usando lo stato e gli errori rispetto agli obiettivi.
+- Decoder di posa: teste lineari e pose relative al peg/destinazione
+ stimate dagli esempi; produce gli obiettivi dei due strumenti.
+- Reti delle pinze 64+64: scelgono chiusura, mantenimento e apertura
+ usando forze, apertura misurata e comportamento corrente.
+- Modulo di picking già verificato, incorporato nella policy completa;
+ una rete 32+32 affina la scelta fra chiusura e sollevamento.
+La policy memorizza comportamento e obiettivi per evitare salti.
+L'IK, cinematica inversa, traduce gli obiettivi degli strumenti in
+comandi ai giunti. Le reti principali BC usano attivazioni SiLU.
+
+3. OBSERVATION SPACE — COSA VEDE LA RETE
+La BC riceve un vettore di 98 valori numerici del simulatore.
+Non usa immagini. I singoli moduli possono usare un sottoinsieme.
+
+Per ciascun PSM: 35 valori, quindi 70 complessivi:
+ posizione XYZ e orientamento dello strumento        3+4
+ posizioni e velocità dei sei giunti controllati     6+6
+ posizioni delle due dita                             2
+ forze XYZ sulle due dita                             6
+ posizione e orientamento del peg rispetto al PSM    3+4
+ riferimento corrente di apertura della pinza         1
+Gli orientamenti osservati sono quaternioni, rappresentati da 4 numeri.
+
+Stato condiviso: 28 valori:
+ posizione e orientamento del peg                   3+4
+ velocità lineare e angolare del peg                3+3
+ altezza del punto più basso del peg                  1
+ posizioni di partenza e destinazione               3+3
+ indicatori di grasp PSM1, lift, grasp PSM2, handover   4
+ durate di contatto, lift e deposito stabili           4
+
+Il wrapper produce 110 valori: 12 riferimenti interni di traslazione
+e rotazione vengono esclusi prima della BC. Gli ingressi sono scalati
+e normalizzati per facilitare l'apprendimento.
+
+4. ACTION SPACE — COSA COMANDA LA RETE
+Uscita continua: 14 valori fra -1 e +1, sette per ciascun PSM:
+- tre spostamenti richiesti: dx, dy, dz;
+- tre componenti di rotazione relativa, in forma asse-angolo;
+- un obiettivo di apertura della pinza.
+La richiesta ha scala massima 3 mm di traslazione e 0,15 rad di
+rotazione; la pinza ha obiettivo 0–0,5 rad. IK e limiti di velocità
+regolano il movimento effettivo. Controllo a 100 Hz, fisica a 400 Hz.
+
+5. ESEMPI, ALLENAMENTO E TUNING
+Un esperto programmato genera gli esempi in Isaac: calcola l'approccio
+dalla geometria del peg e usa contatti e forze per afferrare, sollevare,
+scambiare e depositare. Registriamo stati, azioni, comportamenti e pose.
+La BC impara da questi dati; nell'inference l'esperto non interviene.
+Il training procede per picking/lift, scambio e deposito, aggiungendo
+esempi di recupero. Ultimi affinamenti: pinza PSM2 e scelta close/lift,
+2.000 aggiornamenti per modulo, batch 1.024 sulla RTX6000. Per close/lift:
+12 episodi, 10 di training e 2 di validazione.
+Checkpoint13 conserva i pesi di checkpoint12 e modifica il controllo:
+fino a 100 mm/s liberi, 24 mm/s nel trasporto stabile, 3 mm/s al contatto.
+I profili più aggressivi che peggiorano il successo vengono scartati.
+Tempo medio simulato: 46,30 s contro 53,05 s, circa 13% più rapido.
+
+6. NUOVO ESPERIMENTO BC + SAC RESIDUALE
+La BC resta congelata; SAC impara piccole correzioni tramite reward:
+ comando finale = comando BC + correzione SAC, poi limiti del controllo.
+SAC usa un actor che propone correzioni e due critic che ne stimano
+l'utilità. Actor e critic hanno due strati da 256 neuroni.
+Observation space SAC: 249 valori, comprendenti i 110 dati dell'ambiente,
+il comando BC, comportamento/obiettivi memorizzati e stato dei controlli
+e degli aiuti. La BC mantiene i propri 98 ingressi.
+Action space SAC: 14 correzioni continue fra -1 e +1. Nel primo livello
+sono attive solo le sei traslazioni: massimo 0,15 mm di correzione della
+richiesta per braccio, senza contatto, crescente fra 6 e 25 mm di
+distanza dal volume del peg. Rotazioni e pinze restano BC.
+Pilot: learning rate 0,00003; batch 512; replay 100.000 su GPU;
+gamma 0,9995; tau 0,005; entropia fissa 0,00001. Prima 512 aggiornamenti
+dei critic su vere traiettorie BC nella stessa fisica assistita,
+poi 12.000 transizioni SAC con sei ambienti. Correzione media iniziale
+zero e penalità per mantenerla contenuta. Reward per progresso fisico,
+grasp, lift, handover e deposito; penalità per tempo e fallimenti.
+Seguono confronto sugli stessi reset e video del candidato.
+Il pilot V1 si è fermato prima degli aggiornamenti SAC: baseline12/12,
+raccolta iniziale5/6, con un timeout PSM2 su L4→R3. Nessun candidato
+SAC prodotto; checkpoint13 rimane BC e resta conservato.
+Rilancio V4: recupero temporaneo della pressione di PSM1, con molla
+più rigida e ripristino dell'apertura stabile soltanto quando perde
+presa prima del contatto PSM2. Verifica del seed prima fallito:6/6.
+Gli otto nuovi ingressi SAC descrivono la memoria di questo recupero.
+
+7. LIMITI E PROSSIMI PASSI
+Restano aiuti: molla di presa, mantenimento verticale, limite delle
+forze e guida temporanea al deposito. Decisioni apprese, fisica assistita.
+Il peg usa contatti cedevoli; non è gomma con deformazione calibrata.
+I risultati valgono per le tre coppie e le piccole variazioni provate.
+Randomizzazione maggiore e riduzione degli aiuti procederanno tramite
+curriculum, soltanto dopo valutazioni riuscite. Il precedente SAC sul
+lift aveva dato 0/16 e non è incluso nei pesi di checkpoint13.

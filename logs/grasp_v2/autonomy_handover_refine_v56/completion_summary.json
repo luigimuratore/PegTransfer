@@ -1,0 +1,9 @@
+{
+  "complete": true,
+  "success": 0,
+  "episodes": 3,
+  "promoted": false,
+  "reason": "Three timeouts before receiver grasp after BC; keep checkpoint11",
+  "report": "logs/grasp_v2/autonomy_handover_refine_v56/fixed_pilot/evaluation.json",
+  "report_sha256": "505fb7f077d3a8553ab854ef629beb6f4b43a6769e8bcb904587d3defa5c9228"
+}

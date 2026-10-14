@@ -1,0 +1,74 @@
+{
+  "checkpoint": "checkpoint10",
+  "policy_sha256": "9a371d1f95ea2cefe7680949ab229426672e650e6cc58fe4fe6d2eaf64fa5d74",
+  "video": "logs/grasp_v2/videos/checkpoint10_front_20261007.mp4",
+  "video_sha256": "10728b2e28a371f5cf46be381f97eac7f77a43c10e9fd503be6e6b38112c3248",
+  "duration_s": 48.4,
+  "frames": 1210,
+  "resolution": [
+    1280,
+    720
+  ],
+  "fps": 25,
+  "encoder": "h264_nvenc",
+  "camera": {
+    "eye": [
+      0.025,
+      0.32,
+      0.25
+    ],
+    "target": [
+      0.025,
+      0.0,
+      0.035
+    ]
+  },
+  "report": "logs/grasp_v2/checkpoint10_front_video_20261007_v1/evaluation.json",
+  "report_sha256": "b83e52d333a2e0e174c618c5592d9edb6588b420621976459ecf3557cb4e25b9",
+  "environment_closed": true,
+  "success": 1,
+  "episodes": 1,
+  "seed": 2468,
+  "motion_reference": {
+    "free_scale": 2.0,
+    "contact_scale": 1.0,
+    "free_translation_mm_s": 50.0,
+    "contact_translation_mm_s": 3.0,
+    "free_rotation_rad_s": 1.0,
+    "contact_rotation_rad_s": 0.2,
+    "contact_jaw_close_rad_s": 0.02,
+    "jaw_open_rad_s": 0.15,
+    "control_dt_s": 0.01,
+    "joint_limits_changed": false,
+    "actuator_gains_changed": false,
+    "reference_speeds_not_guaranteed_actual_joint_speeds": true,
+    "profile": "travel",
+    "transport_scale": 2.0,
+    "transport_translation_mm_s": 6.0,
+    "near_translation_mm_s": 25.0,
+    "near_rotation_rad_s": 1.0,
+    "slow_peg_clearance_mm": 6.0,
+    "fast_peg_clearance_mm": 25.0,
+    "slow_board_tip_height_mm": 30.0,
+    "fast_board_tip_height_mm": 55.0,
+    "transport_bottom_height_mm": [
+      43.0,
+      50.0
+    ],
+    "other_tool_clearance_mm": [
+      12.0,
+      30.0
+    ],
+    "stable_opposed_contact_seconds": 0.4,
+    "stable_contact_min_force_n": 0.1,
+    "transport_peak_force_ceiling_n": 0.7,
+    "transport_rotation_rad_s": 0.2,
+    "free_acceleration_m_s2": 0.1,
+    "transport_acceleration_m_s2": 0.03,
+    "selector": "Measured peg bounding box, board height, opposed forces and grasp stability; no task phase",
+    "rotation_caps_unchanged": true,
+    "approach_minimum_speed_unchanged": true
+  },
+  "assisted_grasp": true,
+  "native_full_policy_verified": false
+}

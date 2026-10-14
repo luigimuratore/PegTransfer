@@ -1,0 +1,9 @@
+{
+  "skill": "handover",
+  "success": 1,
+  "episodes": 1,
+  "assisted_grasp": false,
+  "teacher_at_inference": true,
+  "evaluation_sha256": "8740b2798c4c6ba27a7e820a28d8b2fc6c03853b59b26a2c723252d41faa1802",
+  "dataset_sha256": "f14444be41b78834675d9f44caf3f235a13db23adfb82052a59e9b5f148e22a4"
+}

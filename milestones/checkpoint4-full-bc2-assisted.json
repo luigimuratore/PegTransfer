@@ -1,0 +1,62 @@
+{
+  "name": "checkpoint4-full-bc2-assisted",
+  "date": "2026-10-05",
+  "algorithm": "Behavior Cloning with frozen donor neural skill",
+  "policy": "logs/grasp_v2/full_bc2/policy.npz",
+  "preserved_policy": ".checkpoint_runs/checkpoint4-full-bc2-assisted/model/policy.npz",
+  "policy_sha256": "3fe9be5e0e86aeb5bc07750ecd8712c50ce0b2d38013a11766a804a388f559a2",
+  "model_manifest_sha256": "9e2488bab1932aa2bbd74261b0617b8e455cb663cc38625ae1cc527b998fb6e2",
+  "baseline_manifest": "milestones/checkpoint3-full-assisted.json",
+  "full_task_learned_motor_policy": true,
+  "end_to_end_policy": false,
+  "assisted_grasp": true,
+  "unassisted_full_success": 0,
+  "source": "L5",
+  "target": "R2",
+  "full_success": 3,
+  "requested_episodes": 3,
+  "device": "cuda:0",
+  "settings": {
+    "updates": 6000,
+    "batch_size": 1024,
+    "learning_rate": 0.0001,
+    "seed": 42,
+    "net_arch": [
+      256,
+      256
+    ],
+    "observation_dim": 76,
+    "action_dim": 5,
+    "device": "cuda:0",
+    "gpu_name": "NVIDIA RTX 6000 Ada Generation",
+    "sampling": "equal phases, complete episode held out"
+  },
+  "architecture": "frozen validated donor pickup actor plus trained full-sequence actor for transfer/receiver/placement",
+  "learned_control": "positive XYZ gains (5..100/s) and both jaw-feedback gains (.5..1.5), all 20 phases",
+  "programmed_control": "stage order/goals, grasp selection, orientation/IK, inactive-arm position, contact guards and fixed fixture",
+  "demonstrations": "logs/grasp_v2/full_demos_bc1.npz",
+  "training_episodes": [
+    0,
+    1
+  ],
+  "validation_episode": 2,
+  "report": "logs/grasp_v2/full_bc2_validation3_2026-10-05.json",
+  "report_sha256": "1d74180ef43b94dd459341144ab61bfccfa3d7d9cfd5e889775204c0be2abfe9",
+  "audit": "logs/grasp_v2/full_bc2_validation3_audit_2026-10-05.json",
+  "audit_sha256": "9ec2000974d1af45ff1f1847ed44b86d93571b5b744bf72e979271549187c093",
+  "final_hole_errors_mm": [
+    0.4087076765125303,
+    0.4184017066388008,
+    0.4046482132858213
+  ],
+  "maximum_finger_force_n": 0.6484305735030788,
+  "final_free_seconds": 1.0,
+  "limitations": [
+    "Fixed L5 to R2; no domain randomization",
+    "Programmed stage goals, grasp selection, orientation/IK and inactive arm",
+    "Ideal temporary fixed attachment during transfer through insertion; removed before release",
+    "Rigid peg with compliant contacts; not a calibrated deformable body"
+  ],
+  "gui_command": "bash peg_grasp_v2.sh full-play --policy .checkpoint_runs/checkpoint4-full-bc2-assisted/model/policy.npz --device cuda:0 --episodes 1 --realtime",
+  "video_command": "bash peg_grasp_v2.sh full-play --policy .checkpoint_runs/checkpoint4-full-bc2-assisted/model/policy.npz --device cuda:0 --video"
+}

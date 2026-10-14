@@ -1,0 +1,43 @@
+{
+  "complete": true,
+  "episodes": 1,
+  "success": 0,
+  "grasp_psm1": 0,
+  "timeouts": 1,
+  "failures": 0,
+  "cases": [
+    {
+      "skill": "lift",
+      "success": false,
+      "failure": false,
+      "timeout": true,
+      "length": 5000,
+      "return_": -7.9695000648498535,
+      "grasp_psm1": false,
+      "lift_stable": false,
+      "grasp_psm2": false,
+      "handover": false,
+      "full_success": false,
+      "hole_error_mm": 44.70155715942383,
+      "peak_force_n": 0.10263560712337494,
+      "assisted_grasp": false,
+      "reset": {
+        "source": "L5",
+        "target": "R2",
+        "jitter_mm": [
+          0.0,
+          -0.0
+        ],
+        "yaw_deg": 0.0
+      }
+    }
+  ],
+  "assisted_grasp": false,
+  "programmed_task_controller": false,
+  "teacher_at_inference": false,
+  "mode": "evaluate",
+  "policy_sha256": "649d4358884445dcbc7cf7e9b90cf2031d4655b207513317645317cc26800e9a",
+  "seed": 42,
+  "skill": "lift",
+  "gpu": "NVIDIA RTX 6000 Ada Generation"
+}

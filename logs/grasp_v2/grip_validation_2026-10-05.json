@@ -1,0 +1,86 @@
+{
+  "schema": "peg-grip-offline-validation-1",
+  "date": "2026-10-05",
+  "code_sha256": "0d01480106ae4be0a023f18e7569703fafc2d975137843fe43b946153008a1f5",
+  "test_command": "PEG_PYTHON=/home/francesco/miniconda3/envs/PegTransfer/bin/python bash peg_grasp_v2.sh tests",
+  "cpu_tests": 32,
+  "cpu_tests_passed": true,
+  "new_simulation_run": false,
+  "new_physical_grasp_verified": false,
+  "actual_friction_runtime_check_executed_in_sim": false,
+  "offline_usd_finger_colliders_bindable": true,
+  "observed_previous_traces": {
+    "wall": {
+      "source_trace": "logs/grasp_v2/wall_psm1_2026-10-05_12-07-42-423750.trace.jsonl",
+      "trace_sha256": "b827b599d16f2b9cfb99aaa909349ce0646c7467103e055075b10e0e87d0653e",
+      "finalized_report_available": false,
+      "close_samples": 26,
+      "close_force_median_n": [
+        0.1346544317834569,
+        0.1702942788610015
+      ],
+      "close_force_peak_n": [
+        0.14155784748001396,
+        0.1754776591056305
+      ],
+      "final_requested_jaw_angle_rad": 0.13649999999999998,
+      "final_actual_jaw_angles_rad": [
+        0.14302398264408112,
+        0.1443881243467331
+      ],
+      "recorded_peg_bottom_range_m": [
+        0.009887582622468472,
+        0.010000544600188732
+      ],
+      "lift_samples": 1808,
+      "first_loss_of_two_loaded_contacts_s": 0.26,
+      "first_translation_slip_over_1_5_mm_s": 0.44
+    },
+    "vertex": {
+      "source_trace": "logs/grasp_v2/vertex_psm1_2026-10-05_12-09-43-594205.trace.jsonl",
+      "trace_sha256": "35fce8229276036a97aa915d2d578450b7315c3ccded4e88f2b88306c7a48661",
+      "finalized_report_available": false,
+      "close_samples": 1108,
+      "close_force_median_n": [
+        0.0,
+        0.0001533707975982264
+      ],
+      "close_force_peak_n": [
+        0.08527308940528168,
+        0.09060056208518162
+      ],
+      "final_requested_jaw_angle_rad": 0.0,
+      "final_actual_jaw_angles_rad": [
+        1.3414540589451462e-09,
+        4.054725479818444e-07
+      ],
+      "recorded_peg_bottom_range_m": [
+        0.009951230138540268,
+        0.010000544600188732
+      ],
+      "lift_samples": 0
+    }
+  },
+  "new_defaults": {
+    "friction": 0.9,
+    "jaw_effort_limit_nm": 0.015,
+    "jaw_stiffness_nm_per_rad": 0.6,
+    "jaw_damping_nm_s_per_rad": 0.02,
+    "normal_force_target_per_finger_n": 0.35,
+    "force_deadband_n": 0.05,
+    "preload_seconds": 0.4,
+    "lift_reference_speed_m_s": 0.003,
+    "max_normal_force_n": 1.0,
+    "contact_loss_abort_seconds": 0.4,
+    "pressure_recovery_abort_seconds": 1.0,
+    "translation_slip_abort_mm": 1.5,
+    "rotation_slip_abort_rad": 0.15
+  },
+  "limitations": [
+    "CPU pressure plant is not contact physics.",
+    "Friction and drive parameters are experimental and uncalibrated.",
+    "Nominal friction capacity estimate does not prove force closure on inclined contacts.",
+    "Peg remains a rigid compound collider with compliant contacts, not FEM rubber.",
+    "Physical grasp and actual material initialization require user-run Isaac probes."
+  ]
+}

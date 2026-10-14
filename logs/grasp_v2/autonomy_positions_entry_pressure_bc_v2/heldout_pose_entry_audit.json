@@ -1,0 +1,78 @@
+{
+  "dataset": "logs/grasp_v2/autonomy_pickup_positions_v2/demonstrations.npz",
+  "meaning": "Offline endpoint prediction only; not physical success",
+  "results": [
+    {
+      "model": "previous",
+      "option": 0,
+      "heldout_xyz_error_mm_mean": 0.1533951312303543,
+      "heldout_xyz_error_mm_max": 0.3380315601825714
+    },
+    {
+      "model": "previous",
+      "option": 1,
+      "heldout_xyz_error_mm_mean": 0.16274243593215942,
+      "heldout_xyz_error_mm_max": 0.33862560987472534
+    },
+    {
+      "model": "previous",
+      "option": 2,
+      "heldout_xyz_error_mm_mean": 0.15966539084911346,
+      "heldout_xyz_error_mm_max": 0.3331025242805481
+    },
+    {
+      "model": "previous",
+      "option": 3,
+      "heldout_xyz_error_mm_mean": 0.1696440726518631,
+      "heldout_xyz_error_mm_max": 0.3409487009048462
+    },
+    {
+      "model": "previous",
+      "option": 4,
+      "heldout_xyz_error_mm_mean": 3.675234079360962,
+      "heldout_xyz_error_mm_max": 26.227798461914062
+    },
+    {
+      "model": "previous",
+      "option": 5,
+      "heldout_xyz_error_mm_mean": 0.11857185512781143,
+      "heldout_xyz_error_mm_max": 0.2472638189792633
+    },
+    {
+      "model": "entry",
+      "option": 0,
+      "heldout_xyz_error_mm_mean": 0.1449064016342163,
+      "heldout_xyz_error_mm_max": 0.342317670583725
+    },
+    {
+      "model": "entry",
+      "option": 1,
+      "heldout_xyz_error_mm_mean": 0.15710137784481049,
+      "heldout_xyz_error_mm_max": 0.33034512400627136
+    },
+    {
+      "model": "entry",
+      "option": 2,
+      "heldout_xyz_error_mm_mean": 0.1791689246892929,
+      "heldout_xyz_error_mm_max": 0.36934027075767517
+    },
+    {
+      "model": "entry",
+      "option": 3,
+      "heldout_xyz_error_mm_mean": 0.1668323129415512,
+      "heldout_xyz_error_mm_max": 0.3414231538772583
+    },
+    {
+      "model": "entry",
+      "option": 4,
+      "heldout_xyz_error_mm_mean": 2.6880857944488525,
+      "heldout_xyz_error_mm_max": 27.959081649780273
+    },
+    {
+      "model": "entry",
+      "option": 5,
+      "heldout_xyz_error_mm_mean": 0.11368037760257721,
+      "heldout_xyz_error_mm_max": 0.22811861336231232
+    }
+  ]
+}

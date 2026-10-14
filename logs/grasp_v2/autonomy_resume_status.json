@@ -1,0 +1,350 @@
+{
+  "updated_utc": "2026-10-14T12:04:53.041713+00:00",
+  "full_task_complete": true,
+  "reference_native_pickup": "milestones/checkpoint5-native-pickup-bc.json",
+  "reference_assisted_full": "milestones/checkpoint13-three-posts-fast-assisted.json",
+  "completed": {
+    "checkpoint5": "62/64 native learned pickup; preserved model/code/reports plus successful front video replay",
+    "position_teacher": "29/32 native teacher pickups, 68705 transitions; L5/L6 +-0.8 mm +-4 degrees",
+    "software_checks": "64 CUDA checks passed after reproducing and fixing reset/close outside inference_mode. Actual Isaac cleanup smoke also running.",
+    "full_wall_v11": "0/3 native full attempts; three drops",
+    "full_wall_v12": "0/3 native full attempts; three drops",
+    "position_dagger": "14/16 successful teacher recoveries; 34203 transitions",
+    "checkpoint5_integrity": "27 preserved files verified; embedded V28 pickup tensors identical to original",
+    "position_curriculum_v1": "Initial checkpoint 22/32; retrained candidate 5/32, 27 timeouts, not promoted",
+    "native_full_teacher_v13": "3/3 native full programmed teacher, preserved checkpoint6; not a neural policy",
+    "positions_v2": "5/32; not promoted",
+    "positions_v3": "13/32; not promoted",
+    "full_bc_v15": "24,000 pose/gate updates, 10,000 pressure updates; diagnostic stall at initial waypoint, not promoted",
+    "native_full_teacher_v14": "10/16 complete: one drop, five placement timeouts; 62,592 successful training transitions",
+    "native_full_bc_v17": "Three valid grasps; diagnostic stalled before lift with 0.30 N pressure band. Interrupted with audit, not a completed 0/3 evaluation.",
+    "native_full_bc_v18": "0.36\u20130.40 N neural jaw band preserves three valid grasps but still stalls before lift; incomplete diagnostic, not promoted",
+    "native_full_teacher_v16": "12/16 complete with remeasured loaded receiver transform, versus 10/16 before; one drop and three placement timeouts",
+    "native_full_prefix_recovery_v20": "4/6 native full teacher recoveries; all 6 lifted; 2 handover drops; 4 complete successful episodes used for training",
+    "native_full_recovery_v21": "Complete native neural pilot 0/3, three reach timeouts with no grasp; not promoted",
+    "native_full_causal_router_v22": "Incomplete diagnostic stopped at option 0; own pose reached but learned choice stalled; audit saved, no promotion",
+    "native_full_goal_router_v23": "Incomplete physical diagnostic: 3 native grasps, 2 stable lifts; one close and two transfer choice stalls. Interrupted with audit, not a full success report",
+    "native_full_contact_router_v24": "Incomplete diagnostic: three native grasps; one completed failure at 1.030 N and two close stalls; no native full success, audit retained",
+    "native_full_grip_invariant_router_v25": "Incomplete diagnostic: one force-limit failure at 1.030 N, two stationary close states. No full neural success. Audit saved",
+    "native_full_pressure_calibrated_router_v26": "Complete 0/3 native full; 3 grasps, 2 stable lifts, 2 drops and 1 timeout; not promoted",
+    "native_full_stationary_memory_v27": "Complete 0/3 native full; 3 grasps, 2 stable lifts, 2 drops and 1 timeout; not promoted",
+    "checkpoint6_integrity": "27 preserved files verified",
+    "native_full_preserved_pickup_v28": "Incomplete diagnostic: 3 grasps, 1 stable lift, one completed drop; other two stationary ungripped option 5. SIGINT with verified PID and audit. Not promoted.",
+    "native_full_preserved_pickup_gate_v29": "Complete native 0/3 full: 3/3 valid pickup and stable lift, 3 drops during receiver close, no receiver grasp/handover. Not promoted.",
+    "native_full_contact_pose_memory_v30": "Complete 0/3 full: 3 native grasps and stable lifts, 3 drops during receiver close; holding a fixed pose alone is insufficient",
+    "native_full_neural_contact_tracking_v31": "Complete 0/3 full: 3 native grasps and stable lifts, 1 receiver grasp and sustained receiver-only handover, 2 drops and 1 donor-release decision timeout; not promoted",
+    "native_relative_decoder_v32": "BC goal templates fitted in peg frame from 15 successful training episodes, 4 held out; receiver reach held-out endpoint RMSE 0.0104 mm. Offline only; no native success claimed",
+    "native_relative_router_v33": "Complete 0/3 full: 3/3 grasps, stable lifts, receiver grasps and sustained handovers, but 3 placement timeouts. Peg misaligned/tilted at deposition; no promotion.",
+    "native_destination_decoder_v34": "Completed 3/3 native full pilot, no teacher/task controller/attachment; hole errors 0.503/0.743/1.183 mm; max finger forces 0.551/0.964/0.782 N. Certification pending.",
+    "native_relative_feedback_v35": "Completed 3/3 native full fixed pilot; hole errors 0.776/0.748/1.313 mm; peak forces 0.587/0.601/0.609 N; certification pending. Same neural weights as V34, bounded feedback of fitted relative poses.",
+    "native_full_v34_front_video": "Interrupted diagnostic: sustained native handover, released flat free peg but off-center at placement. Audit saved before verified SIGINT; not a completed success or a certified video.",
+    "native_destination_decoder_v34_confirmation": "Complete seed123 11/16 native full, 2 handover-approach drops and 3 off-center placement timeouts; 16 grasps/lifts and 14 native handovers. Certification not promoted; second seed not launched. Fixed pilot remains 3/3.",
+    "native_relative_feedback_v35_confirmation": "Complete seed123 13/16 native full: 16 grasps/lifts, 14 receiver grasps/sustained handovers, 2 receiver-close drops and 1 off-center placement timeout. Not promoted; second seed not launched.",
+    "native_lower_release_teacher_v36": "Complete 1/3 native full teacher at 18mm: 3 grasps/lifts/handovers, two >1N force failures during insertion. Lower release rejected; not neural autonomy evidence.",
+    "native_contact_pose_bc_v37_training": "6000 CUDA BC updates, lr 0.0001, batch 1024, 15 whole TRAIN and 4 VALID episodes; heldout pose RMSE 0.0752mm offline only. 81 existing tensors unchanged; only new <=1mm contact pose head enabled for receiver close/release.",
+    "native_contact_pose_bc_v37": "Complete 0/3 native full: all pickup/lifts, three receiver-close drops, no receiver grasp or handover. Dense logs show correction lowered its own target 0.56mm with no peg displacement/receiver contact. Geometry input removed in next experimental head; no promotion.",
+    "native_force_contact_bc_v38_training": "6000 CUDA BC updates, same 15 TRAIN/4 VALID whole episodes; heldout RMSE 0.1533mm offline only. Forces and jaws only, no tool-to-peg residual. All 81 prior tensors unchanged.",
+    "native_force_contact_bc_v38": "Complete 3/3 native full fixed pilot, seed123 L5 to R2; lengths4898/4803/4864, peakforces .589/.974/.757N, holeerrors1.372/.562/1.230mm. Native robustness not certified.",
+    "assisted_grasp_spring_v39_pilot": "Complete 3/3 learned full with physical spring strength1, same V38 weights. No teacher/task controller. Two grasp acquisitions per episode; released holder0 at placement; spring peaks .121/.110/.107N; holeerrors .694/.186/1.385mm.",
+    "checkpoint7": "Preserved same-weight learned full assisted pilot3/3, support1; archive hashes verified. Fixed L5 to R2 only, no native/randomized certification.",
+    "assisted_grasp_spring_v39_confirmation": "Complete seed123 13/16 assisted full, 2 failures and1 placement timeout; gentle grasp insufficient. Curriculum halted at strength1, no second seed/reduction.",
+    "checkpoint7_video": "Complete1/1 assisted learned full replay verified, holeerror .183mm, holder0 at terminal. 49.28s1280x720 frontvideo; immutable supplementary archive/milestone saved.",
+    "firm_constraints_v40_physical_pilot": "3/3 physical assisted full, but cleanup failed due to inference-mode buffer replacement; not promoted. Corrected in V41; new pilot required.",
+    "v41_actual_cleanup_smoke": "Actual Isaac/GPU environment closed successfully; SHA-linked environment_close.json. Intentional4-step timeout, not a task performance evaluation.",
+    "firm_constraints_v41_pilot": "Complete3/3 assisted learned full with clean environment close and matching reportSHA; holder0 and guide inactive at terminal. Same weights as V38. FixedL5R2, not randomized/native certification.",
+    "checkpoint8": "Preserved full learned assisted pilot3/3; firm grasp and free-placement centering guide, all frozen sources/reports verified. GUI/video commands added.",
+    "firm_constraints_v41_confirmation": "Completed: strength1 seed12316/16 and987615/16=31/32. Strength.5 seed12315/16 and987614/16=29/32; gate_failed, no further reduction.",
+    "motion_curriculum_software_checks": "64 existing CUDA tests and6 new CUDA checks pass; checkpoint7/8 archives verified intact. Toy fit checks only parameter protection, not task performance.",
+    "v42_baseline_fixed": "3/3 full assisted at original speed, clean Isaac close; accelerated motion is still pending",
+    "v42_motion_positions": "Complete: original-speed31/32 at.25mm/1deg; accelerated13/16 and11/16 rejected; .5mm/2deg30/32(16/16,14/16) gate failed at receiver close. No weight fitting.",
+    "v43_receiver_close": "Complete14/16 assisted full, clean closure and traceSHAverified.16 pickup/lift,15 receivergrasp,14handover. Case1 weakpressure.119/.175N neuralhold atgoalerror.035mm; case15drop.",
+    "receiver_recovery_cuda_checks": "64 existing CUDA regressions +3 new handoff, parameter-isolation and save/load checks pass; toy2-update fit is not physical performance.",
+    "receiver_recovery_geometry_guard": "Verified actual recipes of all3 parentdatasets:300degwall/depth4mm/tilt0/open.25. Added fitterguard against oppositewall and parentlearnedpose mismatch. Updated3CUDAchecks pass; V45/V46 interrupted beforetraining.",
+    "v55_interrupted_collection": "16/32 completed,12 measured full successful recovery trajectories preserved; teacher handoff before stable lift caused abort. No V55 training. Source collection remains incomplete.",
+    "v56_receiver_bc_training": "2000 CUDA updates on10 whole TRAIN /2 VALID recovery trajectories;91 original tensors protected; validation jaw accuracy82.4% offline only. Physical pilot started.",
+    "v56": "Rejected completed0/3 full fixed pilot; old checkpoint11 intact",
+    "v57": "Completed1/3 three-post full pilot; L6 close stall, L4 force failure",
+    "v58": "Completed1/4 four-post diagnostic; load guard alone insufficient",
+    "v59": "Incomplete full diagnosis: L5R2 and L4R3 completed successfully; L6 close stall. Audited SIGINT, no clean-close receipt; not a completed3/3 evaluation",
+    "v60_lift_collection": "Complete12/12 actual expert lifts,4 each L5/L6/L4; clean closure and SHA verified",
+    "v60_first_bc": "Interrupted at neural option2 on all3 posts; no completed task success. Reject candidate; preserve original gate outside close context",
+    "v60_close_lift_gate_v2": "Incomplete diagnosis: all3 physical grasps but neural close stalled1500steps; audited interruption, no complete result",
+    "v60_contact_boundary_bc": "CUDA BC2000updates,lr3e-4,batch1024,8-32-32-2 invariant contact head;98 original tensors unchanged and exact non-close outputs verified; physical pilot pending",
+    "v60_full_contact_pilot": "Complete3/3 learned full assisted: L5R2(47.17s),L6R1(43.51s),L4R3(66.31s); no teacher, clean closure, hole errors.0015/.0008/.2265mm. Sequential front video pending",
+    "v60_confirmation12": "Complete12/12 learned full assisted:4 each L5R2/L6R1/L4R3; jitter\u00b10.1mm/yaw\u00b10.5deg; SHA verified, clean closure. Not broad domain-randomization certification.",
+    "checkpoint12": "Preserved learned BC full assisted;3/3 pilot,12/12 small-jitter confirmation,3/3 sequential front video; L5R2/L6R1/L4R3;49 archived files verified",
+    "v61_speed_backup": "Same checkpoint12 weights:100mm/s free,24mm/s stable carry; matched pilot3/3 and confirmation12/12. Mean confirmation46.06s vs53.05s (-13.17%). Backup only, no checkpoint promoted yet.",
+    "v62_speed_pilot": "Same checkpoint12 weights:100mm/s free,48mm/s stable carry, faster actor-chosen empty opening below0.28rad. Pilot3/3 mean38.80s vs52.33s(-25.85%). Matched confirmation12 in progress.",
+    "checkpoint13": "55 frozen files verified; pilot3/3, matched confirmation12/12, three-episode front replay3/3. Mean confirmation46.30s vs53.05s (-12.72%). Same BC weights, no teacher, temporary grasp/upright/placement support still active. Canonical first and three-episode videos SHA-linked and visually reviewed.",
+    "residual_cuda_tests": "4/4 CUDA tests: real checkpoint13 neutral composition/frozen weights, norm/interaction bounds, async terminal context, CUDA SAC replay/update/save-load",
+    "residual_zero_baseline": "3/3 full assisted transfers on GPU, L5\u2192R2/L6\u2192R1/L4\u2192R3; logs/grasp_v2/residual_v1_baseline/evaluation.json",
+    "residual_v1": "Baseline12/12; warm5/6 with one L4\u2192R3 timeout. No SAC update/candidate. Supervisor artifact-validation fix verified by two regressions.",
+    "residual_stall_recovery": "V11 preflight6/6 on failed seed61001, max physical force 0.9373613595962524N. Original archived BC weights unchanged.",
+    "residual_recovery_baseline12": "12/12 full assisted transfers with corrected pressure recovery, before SAC optimization",
+    "bc_sac_residual_v4": "BC+SAC V4: 12000 online transitions; baseline12/12, candidate11/12 (one timeout), front video1/1. Candidate not promoted.",
+    "residual_recovery_retry_cuda_tests": "12 CUDA checks passed, including early recovery conditions and immutable candidate fork.",
+    "bc_sac_residual_v5": "V5: repair12/12; new BC+SAC training12000; confirmation12/12, independent seed11/12 (L4\u2192R3 episode8 timeout before stable lift). Front video1/1 complete42s. No promotion."
+  },
+  "running": [],
+  "interrupted_diagnostics": [
+    "autonomy_full_vertex_follow_release_v8",
+    "autonomy_full_wall_lower_v9",
+    "autonomy_full_wall_loaded_center_v10",
+    "autonomy_full_native_bc_v1_eval3",
+    "autonomy_full_native_pressure_bc_v2_eval3",
+    "autonomy_full_native_pressure_bc_v15_eval3",
+    "checkpoint6_native_teacher_front_video",
+    "autonomy_full_native_anticipation_pressure_bc_v17_eval3",
+    "autonomy_full_native_anticipation_pressure_bc_v18_eval3",
+    "autonomy_full_native_close_dagger_v19",
+    "autonomy_full_causal_router_v22_eval3",
+    "autonomy_full_goal_router_v23_eval3",
+    "autonomy_full_contact_router_v24_eval3",
+    "autonomy_full_grip_invariant_router_v25_eval3",
+    "autonomy_full_preserved_pickup_v28_eval3",
+    "autonomy_full_destination_decoder_v34_front_video",
+    "autonomy_full_constraints_curriculum_v40",
+    "autonomy_receiver_recoveries_v44",
+    "autonomy_receiver_recoveries_v45",
+    "autonomy_receiver_bc_v46"
+  ],
+  "next_required": [
+    "Read V56 status.json for current stage; resume file records observed state only",
+    "Fixed3/3 and yaw2/yaw5 paired physical gates before checkpoint12 with named video",
+    "Checkpoint11 intact; wider reset domains untested; grasp and placement support remain active"
+  ],
+  "running_as_of_timestamp_only": true,
+  "reference_native_full_teacher": "milestones/checkpoint6-native-full-teacher.json",
+  "strategy": {
+    "user_authorized_temporary_grasp_constraints": true,
+    "algorithm": "BC learned full control; no new SAC training in this curriculum",
+    "support": "Bounded force/torque spring after measured grasp; no object pose or velocity writes",
+    "strengths": [
+      1,
+      0.5,
+      0.25,
+      0.1,
+      0
+    ],
+    "gate": "At least15/16 on each seed123 and9876 per strength before reduction",
+    "positions": "L5 source post/R2 target fixed; uniform XY square offsets and yaw around hole at reset: .25mm/1deg, .5mm/2deg, .75mm/3.5deg,1mm/5deg",
+    "current_experiment": "V56 receiver BC refinement from12 completed V55 recovery trajectories",
+    "motion_candidates": [
+      {
+        "free": 1.5,
+        "contact": 1.25
+      },
+      {
+        "free": 1.5,
+        "contact": 1.0
+      }
+    ],
+    "speed_gate": "Keep every matched reference success and at least2% lower mean completion time; original grasp/jaw/hold/force/joint criteria unchanged",
+    "assistance_during_randomization": "100% firm spring and near-target free-release centering guide",
+    "bc_recovery": "Executed expert receiver labels afterprefix2100;10wholeTRAIN/2VALID;refinehead10/11 only,lr2e-5/2000CUDAupdates/batch1024/KL0.1;91other tensors protected;physical gates required",
+    "selected_speed": {
+      "motion_profile": "travel",
+      "free_speed_scale": 2.0,
+      "transport_speed_scale": 2.0,
+      "contact_speed_scale": 1.0
+    },
+    "last_passed_reset_range": {
+      "jitter_mm": 0.5,
+      "yaw_deg": 5.0
+    }
+  },
+  "full_task_complete_assisted_pilot": true,
+  "native_full_task_certified": false,
+  "current_task": "V56 receiver-only BC on 12 verified completed V55 recoveries, then physical regression gates",
+  "current_experiment": "logs/grasp_v2/bc_sac_recovery_retry_v5",
+  "current_session": null,
+  "validated_v48": "logs/grasp_v2/autonomy_receiver_bc_v48/receiver_bc/policy.pt",
+  "preserved_v48": "milestones/checkpoint9-assisted-full-bc-randomized.json",
+  "tests_v49": {
+    "cuda_passed": 76,
+    "new_transit": 6,
+    "prior_motion": 6,
+    "autonomy": 64
+  },
+  "native_full_policy_verified": false,
+  "next_required_checks": [
+    "Diagnose independent seed62002 episode8 L4\u2192R3 before widening randomization or reducing assistance.",
+    "Compare zero-residual BC on the same independent resets before attributing regression to SAC."
+  ],
+  "previous_speed_experiment": {
+    "path": "logs/grasp_v2/autonomy_transit_speed_v49",
+    "complete": true,
+    "stage": "speed_not_promoted",
+    "baseline": "3/3",
+    "candidates": [
+      "0/3",
+      "0/3",
+      "0/3"
+    ],
+    "selected": null
+  },
+  "preserved_latest": "milestones/checkpoint13-three-posts-fast-assisted.json",
+  "speed_validated": true,
+  "tests_v50": {
+    "cuda_passed": 78,
+    "physical_reports_verified": 10
+  },
+  "training_running": false,
+  "evaluation_running": false,
+  "current_stage": "independent_gate_failed",
+  "next_strategy": "Keep checkpoint12 weights and physical constraints; compare clear motion speeds on matched three-pair seeds, confirm12 and record front video before promoting",
+  "last_domain_result": "V54 baseline30/32 yaw5; one previous success lost; no wider levels tested",
+  "last_completed_result": "V5: repair12/12; new BC+SAC training12000; confirmation12/12, independent seed11/12 (L4\u2192R3 episode8 timeout before stable lift). Front video1/1 complete42s. No promotion.",
+  "last_verified_range": {
+    "jitter_mm": 0.5,
+    "yaw_deg": 5.0,
+    "source": "L5",
+    "target": "R2"
+  },
+  "checkpoint_video_job": {
+    "checkpoint": "checkpoint11",
+    "requested": true,
+    "phase": "complete",
+    "output": "logs/grasp_v2/checkpoint11_front_video_20261007_v2",
+    "video": "logs/grasp_v2/videos/checkpoint11.mp4",
+    "randomization_launcher_temporarily_suspended": false,
+    "randomization_resumes_automatically_after_video": false,
+    "randomization_result": "V54 already completed and stopped at baseline gate",
+    "complete": true,
+    "success": 1,
+    "episodes": 1,
+    "video_sha256": "ef917cd023e3cfa14d3232a1bf98fda9c53da173fe4675ac58505cd956596964",
+    "duration_seconds": 47.52
+  },
+  "last_evaluation": {
+    "complete": true,
+    "stage": "domain_gate_failed",
+    "success": 30,
+    "episodes": 32,
+    "training": false,
+    "policy_sha256": "9a371d1f95ea2cefe7680949ab229426672e650e6cc58fe4fe6d2eaf64fa5d74",
+    "condition": "L5->R2, jitter0.5mm, yaw5deg",
+    "baseline_successes_retained": false,
+    "larger_domains_attempted": false,
+    "results": [
+      {
+        "seed": 2468,
+        "success": 15,
+        "episodes": 16,
+        "failed_cases": [
+          {
+            "episode_id": 15,
+            "success": false,
+            "peak_force_n": 1.0001611709594727,
+            "option": 11
+          }
+        ]
+      },
+      {
+        "seed": 54321,
+        "success": 15,
+        "episodes": 16,
+        "failed_cases": [
+          {
+            "episode_id": 15,
+            "success": false,
+            "peak_force_n": 1.0155705213546753,
+            "option": 11
+          }
+        ]
+      }
+    ],
+    "next": "Analyze donor-release force failures before increasing reset ranges; checkpoint11 archive unchanged"
+  },
+  "collection_running": false,
+  "requested_three_pair_inference_verified": true,
+  "next": [
+    "Monitor V4 training and matched candidate confirmation12",
+    "Record and verify full front candidate episode with frozen sources and both policy SHA hashes"
+  ],
+  "three_pair_pilot_verified": true,
+  "assisted_grasp": true,
+  "last_result": {
+    "checkpoint": "checkpoint12",
+    "policy_sha256": "956e60f3a3e8ae424289a247cc448105be749f6134633ffc515db02d5b8059c6",
+    "video": "logs/grasp_v2/videos/checkpoint12_three_episodes.mp4",
+    "video_success": 3,
+    "video_episodes": 3,
+    "confirmation_success": 12,
+    "confirmation_episodes": 12,
+    "teacher_at_inference": false,
+    "assisted_grasp": true,
+    "native_full_policy_verified": false
+  },
+  "speed_experiment": "logs/grasp_v2/three_posts_speed_v62/status.json",
+  "stage": "bc_sac_residual_v4_warm_rollouts",
+  "parallel_backup": {
+    "workflow": "logs/grasp_v2/three_posts_speed_v61/status.json",
+    "supervisor_pid": 192916,
+    "supervisor_paused": false,
+    "active_confirmation": "confirm_f4_t8",
+    "child_pid": 426970,
+    "supervisor_stopped": true,
+    "child_completed": true,
+    "verified_success": "12/12",
+    "duration_reduction_percent": 13.169222068618847
+  },
+  "current_strategy": "Stall solved: preflight6/6 on failed seed61001 and matched baseline12/12 on seed59002 jitter0.1mm/yaw0.5deg. V4 training process now collecting zero-residual warm trajectories before critic/SAC updates. Conditional donor-pressure spring/aperture recovery active, original collisions/wrench/success limits.10 CUDA checks passed. Checkpoint13 unchanged.",
+  "speed_pilot": {
+    "label": "pilot_f4_t8",
+    "scales": [
+      4,
+      8
+    ],
+    "success": 3,
+    "episodes": 3,
+    "passed": true,
+    "matched_speed_accepted": true,
+    "mean_episode_seconds": 45.26666666666667,
+    "baseline_mean_seconds": 52.33,
+    "duration_reduction_percent": 13.497675011147193,
+    "cases": [
+      {
+        "source": "L5",
+        "target": "R2",
+        "seconds": 41.65,
+        "success": true,
+        "peak_force_n": 0.7156750559806824,
+        "hole_error_mm": 0.0008054147474467754
+      },
+      {
+        "source": "L6",
+        "target": "R1",
+        "seconds": 39.800000000000004,
+        "success": true,
+        "peak_force_n": 0.6749341487884521,
+        "hole_error_mm": 0.2287498414516449
+      },
+      {
+        "source": "L4",
+        "target": "R3",
+        "seconds": 54.35,
+        "success": true,
+        "peak_force_n": 0.7109132409095764,
+        "hole_error_mm": 0.0009790073381736875
+      }
+    ],
+    "report": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/three_posts_speed_v62/pilot_f4_t8/evaluation.json",
+    "report_sha256": "9b4e52bb359df651729af5b6d631325331502a14d64520b2edbc9af64553f765"
+  },
+  "current_speed_gate": "Completed; saved f4/t8 profile retains all12 matched successes. Faster tested profiles rejected. Native full policy and broader randomization remain unverified.",
+  "speed_confirmation": {
+    "success": 12,
+    "episodes": 12,
+    "mean_seconds": 46.296666666666674,
+    "reference_seconds": 53.046666666666674,
+    "reduction_percent": 12.724644966695987
+  },
+  "video": "logs/grasp_v2/videos/checkpoint13_three_episodes.mp4",
+  "visual_verification": "logs/grasp_v2/videos/checkpoint13.visual_verification.json",
+  "residual_pipeline": "logs/grasp_v2/bc_sac_residual_v4/status.json",
+  "residual_audit": "logs/grasp_v2/bc_sac_residual_v1/audit_20261012_170135_854200.json",
+  "stall_diagnosis": "logs/grasp_v2/residual_stall_diagnosis_v2/interruption_audit.json",
+  "current_screen": "logs/grasp_v2/residual_held_jaw_v3_screen6/status.json",
+  "sac_optimizer_started": false
+}

@@ -1,0 +1,166 @@
+{
+  "schema": "peg-contact-probe-2",
+  "strategy": "measured-contact controller; no learned policy",
+  "code_sha256": "3ddd5cb51198b1ab89b97b4db3db7c0982216924625847ece49df8fea33912e4",
+  "geometry_sha256": "4b2cce45a8324e6dd804cacd160912d92cba3bbe653cb28d090ce3b4ef97c8f6",
+  "peg_asset_sha256": "d6e3695d6b663702c1cbb5acfc44caace0cc37df95a97fea3e3d5ef86f0aa54d",
+  "robot_asset_sha256": "5730339c3b806f17a5228c69b97464d0b3469888002f62fb23d9621f746347c8",
+  "physics_model": "rigid mesh-derived compound body with compliant normal contacts; no FEM deformation",
+  "assisted_grasp": false,
+  "object_pose_servo": false,
+  "fixed_or_magnetic_attachment": false,
+  "source": "L5",
+  "candidate": {
+    "mode": "vertex",
+    "vertex": 0,
+    "height_fraction": 0.5,
+    "tip_local_m": [
+      0.013827905299999999,
+      0.0,
+      -0.00600573536939919
+    ],
+    "yaw_rad": 1.5707963267948966,
+    "tool_quaternion_local_wxyz": [
+      0.5,
+      0.5,
+      0.5,
+      0.5
+    ],
+    "approach_direction_local": [
+      1.0,
+      0.0,
+      0.0
+    ],
+    "approach": "side_entry",
+    "open_angle_rad": 0.45,
+    "wall_thickness_m": null
+  },
+  "arrival_geometry_check": {
+    "checked": true,
+    "jaw_surface_samples_inside_peg": [
+      0,
+      0
+    ],
+    "jaw_surface_samples_inside_source_post": [
+      0,
+      0
+    ],
+    "minimum_jaw_board_clearance_mm": 7.607499930416829,
+    "sampled_arrival_clear": true,
+    "note": "Sampled jaw surfaces at arrival only; shaft and full approach require physics validation"
+  },
+  "parameters": {
+    "mode": "vertex",
+    "vertex": 0,
+    "height": 0.5,
+    "arm": 1,
+    "episodes": 1,
+    "seed": 42,
+    "mass_g": 5.0,
+    "friction": 0.6,
+    "contact_stiffness": 1000.0,
+    "contact_damping": 0.5,
+    "jaw_torque": 0.005,
+    "max_force": 1.0,
+    "device": "cuda:0",
+    "enable_cameras": false,
+    "realtime": true,
+    "output": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/vertex_psm1_2026-10-05_11-13-10-646221.json",
+    "robot_usd": null,
+    "headless": false,
+    "hide_ui": false,
+    "create_new_stage": false,
+    "physics_gpu": 0,
+    "active_gpu": 0
+  },
+  "versions": {
+    "isaacsim": "5.1.0.0",
+    "isaaclab": "0.48.0",
+    "torch": "2.7.0+cu128"
+  },
+  "force_evidence": "filtered finger-to-peg normal contact forces, sampled at control rate (100 Hz)",
+  "cases": [
+    {
+      "episode": 0,
+      "physical_grasp_hold_success": false,
+      "complete": false,
+      "reason": "above_budget_exhausted",
+      "stages": [
+        {
+          "stage": "settle",
+          "steps": 50,
+          "achieved": true
+        },
+        {
+          "stage": "above",
+          "steps": 1000,
+          "achieved": false
+        }
+      ],
+      "force_peak_n": [
+        0.0,
+        0.0
+      ],
+      "terminal": {
+        "peg_root_w_m": [
+          -0.005786619149148464,
+          -7.047674444038421e-09,
+          0.024613581597805023
+        ],
+        "tool_tip_w_m": [
+          -0.017125461250543594,
+          0.005392162594944239,
+          0.06597191840410233
+        ],
+        "peg_in_tool_m": [
+          -0.006227636244148016,
+          -0.04134603962302208,
+          -0.010948903858661652
+        ],
+        "peg_quat_in_tool": [
+          0.8136122822761536,
+          -0.5432705283164978,
+          0.12715855240821838,
+          -0.16347157955169678
+        ],
+        "peg_bottom_m": 0.010000539012253284,
+        "peg_speed_m_s": 0.0009236314799636602,
+        "jaw_rad": [
+          0.4500015079975128,
+          0.44999387860298157
+        ],
+        "finger_force_vectors_n": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "finger_contact_points_w_m": [
+          null,
+          null
+        ],
+        "finger_contact_surfaces": [
+          "none",
+          "none"
+        ],
+        "finger_normal_force_n": [
+          0.0,
+          0.0
+        ]
+      }
+    }
+  ],
+  "requested_episodes": 1,
+  "episodes": 1,
+  "interrupted": false,
+  "error": null,
+  "complete": true,
+  "physical_grasp_hold_success": 0,
+  "trace": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/vertex_psm1_2026-10-05_11-13-10-646221.trace.jsonl"
+}

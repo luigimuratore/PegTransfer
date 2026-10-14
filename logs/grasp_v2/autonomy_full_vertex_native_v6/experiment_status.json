@@ -1,0 +1,53 @@
+{
+  "complete": false,
+  "step": 8500,
+  "episodes": 0,
+  "progress": [
+    3,
+    3,
+    3,
+    3
+  ],
+  "teacher_at_inference": true,
+  "stages": [
+    13,
+    12,
+    12
+  ],
+  "forces_n": [
+    [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ]
+    ],
+    [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ]
+    ],
+    [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ]
+    ]
+  ],
+  "interrupted": true,
+  "reason": "All receivers lost contact and pegs fell after transient takeover; stationary diagnostics stopped",
+  "full_task_verified": false,
+  "handover_sustained_hold_verified": false
+}

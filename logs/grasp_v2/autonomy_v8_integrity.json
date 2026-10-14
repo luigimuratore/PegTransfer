@@ -1,0 +1,11 @@
+{
+  "neural_parameters_identical": true,
+  "parameter_tensors": 10,
+  "frozen_source_hashes_verified": true,
+  "candidate": "logs/grasp_v2/autonomy_linear_pose_memory_fair_v8/policy.pt",
+  "policy_sha256": "ee595bdef90022698ff1aaa297322f5f55fe9c50c850878a2d5f3090f9a8295f",
+  "learned_transition_memory": true,
+  "learned_pose_memory": true,
+  "physical_success_not_certified_by_this_check": true,
+  "gpu": "NVIDIA RTX 6000 Ada Generation"
+}

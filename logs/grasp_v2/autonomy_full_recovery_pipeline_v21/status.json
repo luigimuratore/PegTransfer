@@ -1,0 +1,78 @@
+{
+  "complete": true,
+  "native_full_policy_verified": false,
+  "algorithm": "Hierarchical Behavior Cloning with neural pressure feedback",
+  "stage": "not_promoted",
+  "conditions": {
+    "source": "L5",
+    "target": "R2",
+    "jitter_mm": 0.25,
+    "yaw_deg": 1.0
+  },
+  "certification": "Pilot 3/3; then >=90% of 16 cases on each of two seeds with identical weights",
+  "steps": [
+    {
+      "stage": "pose_training",
+      "returncode": 0
+    },
+    {
+      "stage": "jaw_training",
+      "returncode": 0
+    },
+    {
+      "stage": "pilot",
+      "returncode": 0
+    }
+  ],
+  "updated_utc": "2026-10-06T16:20:57.559875+00:00",
+  "datasets": [
+    {
+      "original": "logs/grasp_v2/autonomy_full_wall_fixed_donor_v13/demonstrations.npz",
+      "snapshot": "logs/grasp_v2/autonomy_full_recovery_pipeline_v21/datasets/dataset_0.npz",
+      "sha256": "afdbe0491a632b7958b503ac8f448209571e20863030a930bd5fb59432036856",
+      "episodes": [
+        0,
+        2,
+        1
+      ]
+    },
+    {
+      "original": "logs/grasp_v2/autonomy_full_native_loaded_transform_v16/demonstrations.npz",
+      "snapshot": "logs/grasp_v2/autonomy_full_recovery_pipeline_v21/datasets/dataset_1.npz",
+      "sha256": "3db6aad393f7c76c16ef486169393364e616ff6f26ff074362c4a0b8a040aa85",
+      "episodes": [
+        11,
+        12,
+        2,
+        0,
+        3,
+        5,
+        13,
+        10,
+        6,
+        1,
+        7,
+        9
+      ]
+    },
+    {
+      "original": "logs/grasp_v2/autonomy_full_native_prefix_recovery_v20/demonstrations.npz",
+      "snapshot": "logs/grasp_v2/autonomy_full_recovery_pipeline_v21/datasets/dataset_2.npz",
+      "sha256": "6f9ed0158038795de2aac72d86c1e00fe5d25981d058e4cead7acb0569d684d7",
+      "episodes": [
+        3,
+        4,
+        2,
+        1
+      ]
+    }
+  ],
+  "policy": "logs/grasp_v2/autonomy_full_recovery_pipeline_v21/pressure_bc/policy.pt",
+  "policy_sha256": "99cfd1461f53bc1eac55478fc7ae212aab530b1553ad6ddb46bfd41b8dea6806",
+  "pilot": {
+    "success": 0,
+    "episodes": 3,
+    "report": "logs/grasp_v2/autonomy_full_recovery_pipeline_v21/pilot/evaluation.json"
+  },
+  "reason": "pilot failed native full certification; inspect physical failures before another round"
+}

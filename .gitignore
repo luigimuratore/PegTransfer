@@ -35,6 +35,7 @@ third_party/
 /logs/*
 !/logs/sac/
 !/logs/sac_sequence/
+!/logs/grasp_v2/
 /logs/sac/**/*.pkl
 /logs/sac_sequence/**/*.pkl
 *.egg-info/

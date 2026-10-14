@@ -1,0 +1,11 @@
+{
+  "complete": true,
+  "stage": "receiver_close_audit_saved",
+  "audit": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/autonomy_baseline_audit_v52/receiver_close_audit.json",
+  "native_full_policy_verified": false,
+  "next_step": "Inspect receiver closure before supervised recovery training; keep V42 accepted speed/reset range",
+  "updated_utc": "2026-10-07T20:21:57.712455+00:00",
+  "diagnostic_only": true,
+  "policy": "/home/francesco/Documents/GIGI/i4h-workflows/.checkpoint_runs/checkpoint10-assisted-full-bc-transit/model/policy.pt",
+  "run": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/autonomy_baseline_audit_v52/archived_seed54321"
+}

@@ -1,0 +1,25 @@
+{
+  "schema": "peg-autonomy-bc-1",
+  "source_hashes": {
+    "autonomy_env.py": "e96d42f4e6ed571a9e76dbf3ee1d2ba6202afdcb76f4103e3073dea1b6ea7c57",
+    "autonomy_full_teacher.py": "2fdb262a408e3e3ebcd6b3e71bb88761eeaaf1c53f29b608120725ec75a7ea50",
+    "rl_runtime.py": "723f8f07ab7414dafacf9117466e2920b942e4a143a56642c14f40f1d625de05",
+    "replay.py": "8e5f130e02f840f79d3433f5932b489af96de5351770253daaf7fd657d651a3f",
+    "autonomy_learning.py": "81217502cbe16ded450ffd9f029c5ac13d78464b6601b443d9215665d73d5495",
+    "autonomy_replay.py": "5fc584e6a3e75254cd726f3eb2330149d348e3c3ff27f1f60c2effe5bb7aeea5",
+    "rl_core.py": "80ddad8671a2a8e1078e347eb0c62a57083ade3f7dc2e79ee335183c19127407",
+    "rl_env.py": "6068ee43839b7f2ce4c7fc7a8bd46d408e8afceee0d5387d2fe5758937ebcbb3",
+    "replay_full.py": "33a65680dc20a25b1808cd0541869d1067b86364e9d0d19439caf8cb12bdaf6f",
+    "autonomy_main.py": "b54429af13351f5f30a436c7e590373404e5d56f789e5d4e5746d606a16c2909",
+    "autonomy_teacher.py": "60660d1f13654cca652e050915c100df57851c8a0d700dfba2e94d81669b5bfb",
+    "geometry.py": "a6e0333e2843cdb7d686558cd613080112cef49768fd02d034a0d477b732792f",
+    "autonomy_curriculum.py": "9de88980802515370fae81ba7ee117f46aa68bd5accaff363fadcf60f4e32ecf",
+    "autonomy_audit.py": "1c21a25c2232674ba55be90cd5e924c772e26b6b4276c552b04a7048ce6a7a2a",
+    "peg_profile.json": "4b2cce45a8324e6dd804cacd160912d92cba3bbe653cb28d090ce3b4ef97c8f6"
+  },
+  "policy_sha256": "6eb22675d2d7962d5c7a6b70ef6a25844ab02b2e95635165a16bd83195ace1a6",
+  "physics_manifest_sha256": "3416ee107c467cedca24d735064e8b8775646d63afe202d6114a51ac81337bbf",
+  "skill": "lift",
+  "assisted_grasp": false,
+  "programmed_task_controller": false
+}

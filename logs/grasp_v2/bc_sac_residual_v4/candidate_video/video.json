@@ -1,0 +1,38 @@
+{
+  "video_sha256": "b3c89949626d3f422450c8fbcb9f543bd2d07571680662c8afff6bada262806a",
+  "sac_sha256": "fa16e2bd31b4ce062aca303aee02ae84de3d8c320aaf352c6baca254f646ec09",
+  "base_policy_sha256": "956e60f3a3e8ae424289a247cc448105be749f6134633ffc515db02d5b8059c6",
+  "report_sha256": "6ecf7fe484f9e1571f462d37fefe00d71e5c32ab2a5c8ec2199674c2646eac39",
+  "source_hashes": {
+    "residual_main.py": "37d3d6215a41d9dba4cdad4327d2a037be624759fe1b6d44945de507b0529c46",
+    "residual_env.py": "d2f464a5634f3665d47d39ee4cb4aac13968e051457d4b15990d80773b03e06c",
+    "residual_learning.py": "f58f8d66972d41fd025fdb64f9d7901d23c96c2c64dbbce93742f9b3f515aee9",
+    "residual_grasp_guard.py": "75fc43016778224ac970bb5722ca16fc1de289b0a6882cd083112906d64a4b9a",
+    "residual_contact_diagnostic.py": "d2deea2f399c869215ce6369ab6323f8b813c144d93d0b3d3fbba970a17b87fd",
+    "residual_collision_support.py": "085c1332612b00e1600e817a1f59e6b72a44247e2e14ce40f5bf92d1d109eee5",
+    "residual_spring_support.py": "278f1113eb9c5817d835a9382e839c07ea49525c11108ffc37dd6393123471d6"
+  },
+  "camera": {
+    "eye": [
+      0.025,
+      0.32,
+      0.25
+    ],
+    "target": [
+      0.025,
+      0.0,
+      0.035
+    ]
+  },
+  "stream": {
+    "codec_name": "h264",
+    "width": 1280,
+    "height": 720,
+    "pix_fmt": "yuv420p",
+    "duration": "41.240000",
+    "nb_read_frames": "1031"
+  },
+  "complete_episode": true,
+  "full_success": 1,
+  "decode_verified": true
+}

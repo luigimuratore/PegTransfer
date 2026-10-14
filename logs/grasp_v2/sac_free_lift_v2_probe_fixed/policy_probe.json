@@ -1,0 +1,13 @@
+{
+  "episodes": 0,
+  "success": 0,
+  "full_success": 0,
+  "complete": false,
+  "diagnostic_only": true,
+  "steps": 2000,
+  "min_wall_grasp_distance_mm": 35.83362579345703,
+  "peak_force_n": 0.0,
+  "assisted_grasp": false,
+  "cases": [],
+  "trace": "logs/grasp_v2/sac_free_lift_v2_probe_fixed/policy_probe.trace.jsonl"
+}

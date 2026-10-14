@@ -1,0 +1,34 @@
+{
+  "schema": "peg-autonomy-bc-1",
+  "source_hashes": {
+    "autonomy_env.py": "03a2c1ab9cffe3c121ee1816f96fed8aa6768b1dabdad81a16107d975f150165",
+    "autonomy_full_teacher.py": "1ed713946d57066f2ab59a6648e6bc5601aba15497e118b3227325c6f503f08a",
+    "rl_runtime.py": "723f8f07ab7414dafacf9117466e2920b942e4a143a56642c14f40f1d625de05",
+    "replay.py": "8e5f130e02f840f79d3433f5932b489af96de5351770253daaf7fd657d651a3f",
+    "autonomy_learning.py": "aa5b32b807d56af21b19284019718cfcbd9ac41d44aa6f314845a7f627598707",
+    "autonomy_replay.py": "5fc584e6a3e75254cd726f3eb2330149d348e3c3ff27f1f60c2effe5bb7aeea5",
+    "rl_core.py": "80ddad8671a2a8e1078e347eb0c62a57083ade3f7dc2e79ee335183c19127407",
+    "rl_env.py": "6068ee43839b7f2ce4c7fc7a8bd46d408e8afceee0d5387d2fe5758937ebcbb3",
+    "replay_full.py": "33a65680dc20a25b1808cd0541869d1067b86364e9d0d19439caf8cb12bdaf6f",
+    "autonomy_main.py": "01b7bd98b0f22b76c88efdf83ee17a1622030ab7e03e0b13cd86e2dcc848c995",
+    "autonomy_teacher.py": "15b784c833150fa24a5776a6483a229aa123f030860a0a4232cf22ea06704701",
+    "geometry.py": "abdecdf39cc48ff4c3ec29dad6f22b6ac8ad924549bd1c3b7b8dedce07869d15",
+    "autonomy_curriculum.py": "b31d8c5a4852acf2f51ec4a34244b73fe2327829691812028cd3f9618cd023fc",
+    "autonomy_audit.py": "1de3814039c03f2ca05e1178f8f4c5f0722d901f0f197dc7854fcd4a6622d1f7",
+    "peg_profile.json": "4b2cce45a8324e6dd804cacd160912d92cba3bbe653cb28d090ce3b4ef97c8f6"
+  },
+  "policy_sha256": "3893dc30189a0ea0fff974b443e4cab6ef260dd97ed907aceae06cc90173a17d",
+  "dataset_hashes": {
+    "logs/grasp_v2/autonomy_pickup_data_v1/demonstrations.npz": "12b860d1fbd51d190155834b3d571ebfedce25be9689762006787e76038d4152",
+    "logs/grasp_v2/autonomy_dagger_approach_v2/demonstrations.npz": "de916152edc4171a34d033f7c73a9cf9bf58a8e6eb82b6d8fac7514dabf9f1c2",
+    "logs/grasp_v2/autonomy_teacher_restore_v4/demonstrations.npz": "3c7c70e64434927296afc44057877a92cf5e5d2bf82161a341859c6d280acb61",
+    "logs/grasp_v2/autonomy_pickup_positions_v2/demonstrations.npz": "f3956ef899c38bf6b8cd41c8141a84f4dbaab149335985538b743a01695c0d87",
+    "logs/grasp_v2/autonomy_positions_curriculum_v1/dagger_round1/demonstrations.npz": "86fbcc1a2a822405bc1770a05f03f1016da1c3b06f57153b40b5c297686ed163"
+  },
+  "physics_manifest_sha256": "3416ee107c467cedca24d735064e8b8775646d63afe202d6114a51ac81337bbf",
+  "skill": "lift",
+  "assisted_grasp": false,
+  "programmed_task_controller": false,
+  "parent_checkpoint": null,
+  "parent_policy_sha256": null
+}

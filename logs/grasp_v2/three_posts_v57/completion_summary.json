@@ -1,0 +1,31 @@
+{
+  "complete": true,
+  "success": 0,
+  "episodes": 3,
+  "promoted": false,
+  "pairs": [
+    {
+      "source": "L5",
+      "target": "R2",
+      "success": false,
+      "option": 10,
+      "peak_force_n": 0.4358181059360504
+    },
+    {
+      "source": "L5",
+      "target": "R2",
+      "success": false,
+      "option": 10,
+      "peak_force_n": 0.4394804835319519
+    },
+    {
+      "source": "L5",
+      "target": "R2",
+      "success": false,
+      "option": 10,
+      "peak_force_n": 0.4402800500392914
+    }
+  ],
+  "report": "logs/grasp_v2/three_posts_v57/screen/evaluation.json",
+  "report_sha256": "46562e66cd248f47f6079a935e37008405fd0b2e72eb002ecb7c862a01e31de6"
+}

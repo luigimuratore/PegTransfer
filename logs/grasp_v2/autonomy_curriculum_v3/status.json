@@ -1,0 +1,18 @@
+{
+  "phase": "pickup",
+  "complete": false,
+  "autonomous_pickup_verified": false,
+  "full_task_verified": false,
+  "rounds": [
+    {
+      "round": 0,
+      "policy": "logs/grasp_v2/autonomy_curriculum_v3/bc_round0/policy.pt",
+      "evaluation": "logs/grasp_v2/autonomy_curriculum_v3/eval_round0/evaluation.json",
+      "success": 0,
+      "episodes": 32
+    }
+  ],
+  "running": false,
+  "interrupted": true,
+  "reason": "No process active; interrupted during DAgger collection after 37/48 completed episodes. No complete recovery dataset exists; continue in a new experiment folder."
+}

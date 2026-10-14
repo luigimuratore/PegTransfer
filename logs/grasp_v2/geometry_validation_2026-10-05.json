@@ -1,0 +1,111 @@
+{
+  "date": "2026-10-05",
+  "schema": "peg-contact-offline-validation-2",
+  "validation": "offline mesh audit and CPU checks only",
+  "simulator_run": false,
+  "physical_grasp_success": null,
+  "new_policy_checkpoint": null,
+  "peg_asset_sha256": "d6e3695d6b663702c1cbb5acfc44caace0cc37df95a97fea3e3d5ef86f0aa54d",
+  "robot_asset_sha256": "5730339c3b806f17a5228c69b97464d0b3469888002f62fb23d9621f746347c8",
+  "profile_sha256": "4b2cce45a8324e6dd804cacd160912d92cba3bbe653cb28d090ce3b4ef97c8f6",
+  "bounds_mm": [
+    [
+      -0.9267716086469591,
+      -9.282850660383701,
+      -14.613019302487373
+    ],
+    [
+      15.82873985171318,
+      9.283128194510937,
+      2.6015485636889935
+    ]
+  ],
+  "vertices": 58992,
+  "triangles": 117984,
+  "convex_collision_cells": 672,
+  "sampled_max_radial_error_mm": 0.07701032522761629,
+  "candidate_arrivals": [
+    {
+      "checked": true,
+      "jaw_surface_samples_inside_peg": [
+        0,
+        0
+      ],
+      "jaw_surface_samples_inside_source_post": [
+        0,
+        0
+      ],
+      "minimum_jaw_board_clearance_mm": 7.607499930416829,
+      "sampled_arrival_clear": true,
+      "note": "Sampled jaw surfaces at arrival only; shaft and full approach require physics validation"
+    },
+    {
+      "checked": true,
+      "jaw_surface_samples_inside_peg": [
+        0,
+        0
+      ],
+      "jaw_surface_samples_inside_source_post": [
+        0,
+        0
+      ],
+      "minimum_jaw_board_clearance_mm": 7.607499930416829,
+      "sampled_arrival_clear": true,
+      "note": "Sampled jaw surfaces at arrival only; shaft and full approach require physics validation"
+    },
+    {
+      "checked": true,
+      "jaw_surface_samples_inside_peg": [
+        0,
+        0
+      ],
+      "jaw_surface_samples_inside_source_post": [
+        0,
+        0
+      ],
+      "minimum_jaw_board_clearance_mm": 7.607499930416829,
+      "sampled_arrival_clear": true,
+      "note": "Sampled jaw surfaces at arrival only; shaft and full approach require physics validation"
+    },
+    {
+      "checked": true,
+      "jaw_surface_samples_inside_peg": [
+        0,
+        0
+      ],
+      "jaw_surface_samples_inside_source_post": [
+        0,
+        0
+      ],
+      "minimum_jaw_board_clearance_mm": 16.3204885647704,
+      "sampled_arrival_clear": true,
+      "note": "Sampled jaw surfaces at arrival only; shaft and full approach require physics validation"
+    }
+  ],
+  "checks": {
+    "v2_cpu": {
+      "tests": 11,
+      "passed": true
+    },
+    "v1_sequence_cpu": {
+      "tests": 22,
+      "passed": true
+    },
+    "checkpoint1_integrity": {
+      "passed": true,
+      "fingerprint": "b827e9291195ffc991d8bb8136edf98c2ccfc30699ca4d2244c59f9437d6313a"
+    }
+  },
+  "dependencies": {
+    "numpy": "1.26.0",
+    "scipy": "1.15.3",
+    "trimesh": "4.5.1",
+    "matplotlib": "3.10.3"
+  },
+  "limitations": [
+    "No Isaac Sim grasp trial performed",
+    "Rigid body with compliant contacts; no volumetric rubber deformation",
+    "Arrival clearance is sampled on jaw surfaces; approach and shaft collision remain to validate",
+    "Mass, friction and stiffness are initial hypotheses, not measured real material parameters"
+  ]
+}

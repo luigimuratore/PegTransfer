@@ -1,0 +1,52 @@
+{
+  "parameters": {
+    "mode": "evaluate",
+    "output": "logs/grasp_v2/autonomy_pose_bc_v1_eval",
+    "policy": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/autonomy_pose_bc_v1/policy.pt",
+    "datasets": null,
+    "num_envs": 8,
+    "episodes": 16,
+    "episode_steps": 5000,
+    "jitter_mm": 0.5,
+    "yaw_deg": 2.0,
+    "sources": [
+      "L5"
+    ],
+    "targets": [
+      "R2"
+    ],
+    "learner_fraction": 0.0,
+    "learner_until_stage": 19,
+    "updates": 6000,
+    "batch_size": 1024,
+    "architecture": "mlp",
+    "future_steps": 0,
+    "skill": "lift",
+    "seed": 123,
+    "device": "cuda:0",
+    "headless": true,
+    "realtime": false,
+    "video": false
+  },
+  "source_hashes": {
+    "autonomy_env.py": "e96d42f4e6ed571a9e76dbf3ee1d2ba6202afdcb76f4103e3073dea1b6ea7c57",
+    "autonomy_full_teacher.py": "612a0a3179f7d43df771cc8735be9190a6913cb00a2142906ec3bbb1cc03830c",
+    "rl_runtime.py": "723f8f07ab7414dafacf9117466e2920b942e4a143a56642c14f40f1d625de05",
+    "replay.py": "8e5f130e02f840f79d3433f5932b489af96de5351770253daaf7fd657d651a3f",
+    "autonomy_learning.py": "85cd6bd42b841fb104e6c434a1c91a269d6633dd8b2f0ab344e7b8dd14e3b7af",
+    "autonomy_replay.py": "4113ec9a06124b37b39f6f7410127eac48377ab695ee4c8414c92465f4916204",
+    "rl_core.py": "80ddad8671a2a8e1078e347eb0c62a57083ade3f7dc2e79ee335183c19127407",
+    "rl_env.py": "6068ee43839b7f2ce4c7fc7a8bd46d408e8afceee0d5387d2fe5758937ebcbb3",
+    "replay_full.py": "33a65680dc20a25b1808cd0541869d1067b86364e9d0d19439caf8cb12bdaf6f",
+    "autonomy_main.py": "88efc18267ce846a71da735d9589c30b30e5910f1c29b91e48e6e27cee0d73a8",
+    "autonomy_teacher.py": "60660d1f13654cca652e050915c100df57851c8a0d700dfba2e94d81669b5bfb",
+    "geometry.py": "a6e0333e2843cdb7d686558cd613080112cef49768fd02d034a0d477b732792f",
+    "autonomy_curriculum.py": "9de88980802515370fae81ba7ee117f46aa68bd5accaff363fadcf60f4e32ecf",
+    "peg_profile.json": "4b2cce45a8324e6dd804cacd160912d92cba3bbe653cb28d090ce3b4ef97c8f6"
+  },
+  "physics_manifest_sha256": "3416ee107c467cedca24d735064e8b8775646d63afe202d6114a51ac81337bbf",
+  "assisted_grasp": false,
+  "programmed_task_controller": false,
+  "skill": "lift",
+  "policy_sha256": "f9d41646aa415e7b1cf736fc92017c3ff8b9662b333980b68feda3e8e6388b52"
+}

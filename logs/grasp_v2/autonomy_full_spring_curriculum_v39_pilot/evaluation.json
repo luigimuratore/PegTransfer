@@ -1,0 +1,283 @@
+{
+  "complete": true,
+  "episodes": 3,
+  "success": 3,
+  "grasp_psm1": 3,
+  "sampling": "Fixed allocated episode IDs; every allocated episode completes without replacement by faster environments",
+  "lift_stable": 3,
+  "grasp_psm2": 3,
+  "handover": 3,
+  "full_success": 3,
+  "timeouts": 0,
+  "failures": 0,
+  "cases": [
+    {
+      "skill": "full",
+      "success": true,
+      "failure": false,
+      "timeout": false,
+      "length": 5027,
+      "return_": 38.101898193359375,
+      "grasp_psm1": true,
+      "lift_stable": true,
+      "grasp_psm2": true,
+      "handover": true,
+      "full_success": true,
+      "hole_error_mm": 0.6944652199745178,
+      "peak_force_n": 0.49494144320487976,
+      "assisted_grasp": true,
+      "grasp_support": {
+        "type": "bounded_grasp_spring",
+        "strength": 1.0,
+        "assisted_grasp": true,
+        "holder": 0,
+        "applied_physics_steps": 17716,
+        "acquisitions": 2,
+        "releases": 1,
+        "force_peak_n": 0.1208423599600792,
+        "torque_peak_nm": 0.0020000003278255463,
+        "absolute_work_j": 0.00409812992438674,
+        "force_limit_n": 0.15,
+        "torque_limit_nm": 0.002,
+        "object_pose_writes": false,
+        "object_velocity_writes": false,
+        "teacher_stage_inputs": false
+      },
+      "reset": {
+        "source": "L5",
+        "target": "R2",
+        "jitter_mm": [
+          -0.0,
+          -0.0
+        ],
+        "yaw_deg": -0.0
+      },
+      "terminal_physics": {
+        "peg_m": [
+          0.03668570518493652,
+          0.015454172156751156,
+          0.024613702669739723
+        ],
+        "bottom_m": 0.010000314563512802,
+        "tool_tips_m": [
+          [
+            0.011431217193603516,
+            -0.007536675781011581,
+            0.07502526789903641
+          ],
+          [
+            0.04505300521850586,
+            0.011539421044290066,
+            0.058173663914203644
+          ]
+        ],
+        "forces_n": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "jaws_rad": [
+          [
+            0.3223954141139984,
+            0.322395384311676
+          ],
+          [
+            0.37440648674964905,
+            0.37440648674964905
+          ]
+        ]
+      },
+      "terminal_teacher_stage": null
+    },
+    {
+      "skill": "full",
+      "success": true,
+      "failure": false,
+      "timeout": false,
+      "length": 4996,
+      "return_": 38.14905548095703,
+      "grasp_psm1": true,
+      "lift_stable": true,
+      "grasp_psm2": true,
+      "handover": true,
+      "full_success": true,
+      "hole_error_mm": 0.1863778978586197,
+      "peak_force_n": 0.5859431624412537,
+      "assisted_grasp": true,
+      "grasp_support": {
+        "type": "bounded_grasp_spring",
+        "strength": 1.0,
+        "assisted_grasp": true,
+        "holder": 0,
+        "applied_physics_steps": 17624,
+        "acquisitions": 2,
+        "releases": 1,
+        "force_peak_n": 0.10997097194194794,
+        "torque_peak_nm": 0.0020000003278255463,
+        "absolute_work_j": 0.005678602959960699,
+        "force_limit_n": 0.15,
+        "torque_limit_nm": 0.002,
+        "object_pose_writes": false,
+        "object_velocity_writes": false,
+        "teacher_stage_inputs": false
+      },
+      "reset": {
+        "source": "L5",
+        "target": "R2",
+        "jitter_mm": [
+          0.0,
+          -0.0
+        ],
+        "yaw_deg": 0.0
+      },
+      "terminal_physics": {
+        "peg_m": [
+          0.03608110547065735,
+          0.014892061240971088,
+          0.024613860994577408
+        ],
+        "bottom_m": 0.010000546462833881,
+        "tool_tips_m": [
+          [
+            0.013035452924668789,
+            -0.007130380719900131,
+            0.07527966797351837
+          ],
+          [
+            0.04509417340159416,
+            0.011655042879283428,
+            0.05847639590501785
+          ]
+        ],
+        "forces_n": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "jaws_rad": [
+          [
+            0.32209518551826477,
+            0.32209518551826477
+          ],
+          [
+            0.36530640721321106,
+            0.36530640721321106
+          ]
+        ]
+      },
+      "terminal_teacher_stage": null
+    },
+    {
+      "skill": "full",
+      "success": true,
+      "failure": false,
+      "timeout": false,
+      "length": 5039,
+      "return_": 38.128875732421875,
+      "grasp_psm1": true,
+      "lift_stable": true,
+      "grasp_psm2": true,
+      "handover": true,
+      "full_success": true,
+      "hole_error_mm": 1.3852112293243408,
+      "peak_force_n": 0.6210743188858032,
+      "assisted_grasp": true,
+      "grasp_support": {
+        "type": "bounded_grasp_spring",
+        "strength": 1.0,
+        "assisted_grasp": true,
+        "holder": 0,
+        "applied_physics_steps": 17780,
+        "acquisitions": 2,
+        "releases": 2,
+        "force_peak_n": 0.10678989440202713,
+        "torque_peak_nm": 0.0020000003278255463,
+        "absolute_work_j": 0.005668411031365395,
+        "force_limit_n": 0.15,
+        "torque_limit_nm": 0.002,
+        "object_pose_writes": false,
+        "object_velocity_writes": false,
+        "teacher_stage_inputs": false
+      },
+      "reset": {
+        "source": "L5",
+        "target": "R2",
+        "jitter_mm": [
+          -0.0,
+          -0.0
+        ],
+        "yaw_deg": -0.0
+      },
+      "terminal_physics": {
+        "peg_m": [
+          0.03574728965759277,
+          0.013772002421319485,
+          0.024613652378320694
+        ],
+        "bottom_m": 0.010000511072576046,
+        "tool_tips_m": [
+          [
+            0.013108491897583008,
+            -0.008028662763535976,
+            0.07516514509916306
+          ],
+          [
+            0.04488420486450195,
+            0.011281649582087994,
+            0.05832875892519951
+          ]
+        ],
+        "forces_n": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "jaws_rad": [
+          [
+            0.3222951889038086,
+            0.3222951889038086
+          ],
+          [
+            0.3653063476085663,
+            0.3653063476085663
+          ]
+        ]
+      },
+      "terminal_teacher_stage": null
+    }
+  ],
+  "assisted_grasp": true,
+  "programmed_task_controller": false,
+  "teacher_at_inference": false,
+  "mode": "evaluate",
+  "policy_sha256": "64f0512c5be8c6215a67e89c58b5f116a4d613a054e68c2b5ff6d7029a5a660f",
+  "seed": 123,
+  "skill": "full",
+  "gpu": "NVIDIA RTX 6000 Ada Generation",
+  "handover_criterion": "Measured opposed receiver contacts maintained for 2s with donor fingers free; virtual spring assistance remains explicitly active",
+  "low_level_control": "Neural tool motors through generic IK/speed limits, plus explicitly assisted grasp spring",
+  "native_full_policy_verified": false,
+  "grasp_support": {
+    "type": "bounded_grasp_spring",
+    "strength": 1.0,
+    "force_limit_n": 0.15,
+    "torque_limit_nm": 0.002,
+    "object_pose_writes": false,
+    "object_velocity_writes": false
+  }
+}

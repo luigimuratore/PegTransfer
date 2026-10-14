@@ -1,0 +1,9 @@
+{
+  "complete": false,
+  "active_candidate": "logs/grasp_v2/autonomy_linear_pose_memory_v7/policy.pt",
+  "physical_evaluation": "logs/grasp_v2/autonomy_linear_pose_memory_v7_eval/evaluation.json",
+  "teacher_revalidation": "logs/grasp_v2/autonomy_teacher_restore_v4/evaluation.json",
+  "interrupted_previous_curriculum": "logs/grasp_v2/autonomy_curriculum_v3/status.json",
+  "full_task_verified": false,
+  "next": "Complete v7 physics evaluation, independently evaluate on 32 episodes, correct failed native pickup states before handover training."
+}

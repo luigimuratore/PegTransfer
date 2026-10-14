@@ -1,0 +1,124 @@
+{
+  "complete": false,
+  "interrupted": true,
+  "full_task_verified": false,
+  "reason": "One completed drop failure; remaining receiver grasps stalled with unilateral contact and peg tilt. Preserve completed cases and stop stationary diagnostic.",
+  "completed_cases": [
+    {
+      "skill": "full",
+      "success": false,
+      "failure": true,
+      "timeout": false,
+      "length": 3799,
+      "return_": -4.216437339782715,
+      "grasp_psm1": true,
+      "lift_stable": true,
+      "grasp_psm2": false,
+      "handover": false,
+      "full_success": false,
+      "hole_error_mm": 29.305639266967773,
+      "peak_force_n": 0.6727150678634644,
+      "assisted_grasp": false,
+      "reset": {
+        "source": "L5",
+        "target": "R2",
+        "jitter_mm": [
+          0.0,
+          -0.0
+        ],
+        "yaw_deg": -0.0
+      },
+      "terminal_physics": {
+        "peg_m": [
+          0.017526427283883095,
+          -0.006789168808609247,
+          0.04522170498967171
+        ],
+        "bottom_m": 0.02448517084121704,
+        "tool_tips_m": [
+          [
+            0.018040327355265617,
+            -0.0069868857972323895,
+            0.059469081461429596
+          ],
+          [
+            0.024580664932727814,
+            -0.01181050855666399,
+            0.05940461903810501
+          ]
+        ],
+        "forces_n": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "jaws_rad": [
+          [
+            0.04947945475578308,
+            0.04877564311027527
+          ],
+          [
+            0.14124485850334167,
+            0.1420072764158249
+          ]
+        ]
+      },
+      "terminal_teacher_stage": 10
+    }
+  ],
+  "last_progress": {
+    "complete": false,
+    "step": 6000,
+    "episodes": 1,
+    "progress": [
+      2,
+      2,
+      1,
+      0
+    ],
+    "teacher_at_inference": true,
+    "stages": [
+      10,
+      0,
+      10
+    ],
+    "learned_options": null,
+    "forces_n": [
+      [
+        [
+          0.633258044719696,
+          0.32810941338539124
+        ],
+        [
+          0.0,
+          0.4781622588634491
+        ]
+      ],
+      [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      [
+        [
+          0.6574478149414062,
+          0.30201491713523865
+        ],
+        [
+          0.0,
+          0.4710424840450287
+        ]
+      ]
+    ]
+  }
+}

@@ -1,0 +1,203 @@
+{
+  "name": "checkpoint12-three-posts-assisted",
+  "date": "2026-10-09",
+  "algorithm": "BC contact-invariant donor close/lift choice; not SAC; explicit temporary grasp constraints",
+  "preserved_bundle": ".checkpoint_runs/checkpoint12-three-posts-assisted",
+  "preserved_policy": ".checkpoint_runs/checkpoint12-three-posts-assisted/model/policy.pt",
+  "policy_sha256": "956e60f3a3e8ae424289a247cc448105be749f6134633ffc515db02d5b8059c6",
+  "physics_manifest": "milestones/checkpoint3-full-assisted.json",
+  "physics_manifest_sha256": "3416ee107c467cedca24d735064e8b8775646d63afe202d6114a51ac81337bbf",
+  "reference_checkpoint": "milestones/checkpoint11-assisted-full-bc-yaw5.json",
+  "replay_settings": {
+    "skill": "full",
+    "num_envs": 1,
+    "episodes": 3,
+    "episode_steps": 10000,
+    "seed": 59003,
+    "sources": [
+      "L5",
+      "L6",
+      "L4"
+    ],
+    "targets": [
+      "R2",
+      "R1",
+      "R3"
+    ],
+    "paired_posts": true,
+    "jitter_mm": 0.0,
+    "yaw_deg": 0.0,
+    "grasp_support": 1.0,
+    "support_profile": "firm",
+    "placement_support": true,
+    "gripper_load_guard": true,
+    "upright_grasp_support": true,
+    "motion_profile": "travel",
+    "free_speed_scale": 2.0,
+    "transport_speed_scale": 2.0
+  },
+  "assisted_grasp": true,
+  "native_full_policy_verified": false,
+  "teacher_at_inference": false,
+  "programmed_task_controller": false,
+  "training": {
+    "algorithm": "BC contact-invariant donor close/lift choice; not SAC",
+    "updates": 2000,
+    "learning_rate": 0.0003,
+    "batch_size": 1024,
+    "architecture": [
+      8,
+      32,
+      32,
+      2
+    ],
+    "gpu": "NVIDIA RTX 6000 Ada Generation",
+    "original_motor_jaw_and_full_router_weights_unchanged": true,
+    "protected_tensors": 98,
+    "features": "Two sorted force magnitudes, opposition, two jaws, reference jaw, measured grasp and contact age",
+    "no_teacher_clock_or_source_post_input": true,
+    "new_gate_context": "Only after the network previously selected close (3)",
+    "whole_episode_split": true,
+    "training_episodes": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "validation_episodes": [
+      10,
+      11
+    ],
+    "history": [
+      {
+        "update": 500,
+        "loss": 0.3174724876880646,
+        "heldout_close_lift_accuracy": [
+          0.7122641801834106,
+          0.9991372227668762
+        ]
+      },
+      {
+        "update": 1000,
+        "loss": 0.2246941328048706,
+        "heldout_close_lift_accuracy": [
+          0.8443396091461182,
+          0.9810181260108948
+        ]
+      },
+      {
+        "update": 1500,
+        "loss": 0.22345653176307678,
+        "heldout_close_lift_accuracy": [
+          0.8679245710372925,
+          0.9805867671966553
+        ]
+      },
+      {
+        "update": 2000,
+        "loss": 0.1735507994890213,
+        "heldout_close_lift_accuracy": [
+          0.8773584961891174,
+          0.9810181260108948
+        ]
+      }
+    ],
+    "dataset": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/three_posts_pickup_bc_v60/lift_demonstrations/demonstrations.npz",
+    "dataset_sha256": "7e3d2a621ea43dcf6b9884e33919ca9a76670095ba9d9cf0dc87edf76d4475b9",
+    "physical_collection_report_sha256": "dff680b4409a7d215c78e08ef29bfb0c4d5530f5cd157dd30a1cab7f1ab58165",
+    "physical_full_evaluation_required": true,
+    "native_full_policy_verified": false,
+    "assisted_training": true,
+    "fit_source_sha256": "0dedf7f6c3866fcba521b98dcf1c3d3be552ffe58bacb9d12a734a4da5089fe0"
+  },
+  "neural_weights_unchanged": false,
+  "verified_results": [
+    {
+      "label": "pilot",
+      "success": 3,
+      "episodes": 3,
+      "passed": true,
+      "report": "logs/grasp_v2/three_posts_pickup_bc_v60/full_contact_pilot3/evaluation.json",
+      "report_sha256": "eca8d15ef1608451f5816963ee566cfd56e9ed97e325f5338282673e5f4690a0"
+    },
+    {
+      "label": "confirmation12",
+      "success": 12,
+      "episodes": 12,
+      "passed": true,
+      "report": "logs/grasp_v2/three_posts_pickup_bc_v60/certification/confirmation12/evaluation.json",
+      "report_sha256": "8f9d88788bbebdda404d067cd7891254ab74612c6bc17306e7ce539d7711397a"
+    },
+    {
+      "label": "three_episode_front_video",
+      "success": 3,
+      "episodes": 3,
+      "passed": true,
+      "report": "logs/grasp_v2/three_posts_pickup_bc_v60/certification/three_episode_front_video/evaluation.json",
+      "report_sha256": "c361b4b7bb771ed0a1585f430f917770fc867d49b9efcdc8536bb148f00889b0"
+    }
+  ],
+  "video": "logs/grasp_v2/videos/checkpoint12.mp4",
+  "three_episode_video": "logs/grasp_v2/videos/checkpoint12_three_episodes.mp4",
+  "limitations": [
+    "Three explicit pairs; small 0.1mm/0.5deg pilot, not broad domain-randomization certification",
+    "Firm spring, earlier measured acquisition, upright torque, jaw load relief and placement guide are active"
+  ],
+  "files": {
+    "model/fit_source.py": "0dedf7f6c3866fcba521b98dcf1c3d3be552ffe58bacb9d12a734a4da5089fe0",
+    "model/manifest.json": "0cb3fd3a77e5b31e3eccd78211af230036300269509418a97692367e91ff90b6",
+    "model/policy.pt": "956e60f3a3e8ae424289a247cc448105be749f6134633ffc515db02d5b8059c6",
+    "model/sources/autonomy_assistance_curriculum.py": "a7922b29996d4d63a6e5e8df19570c72d00b720db1eacef380148550a478eb04",
+    "model/sources/autonomy_audit.py": "1de3814039c03f2ca05e1178f8f4c5f0722d901f0f197dc7854fcd4a6622d1f7",
+    "model/sources/autonomy_constraints_curriculum.py": "1ad7759ece102579466f322362b70abfbfe037bfc145fd99c56938fab0ca5722",
+    "model/sources/autonomy_constraints_gate.py": "a0fc253f2041941e090da327a9b32e3e5c20bd0bb8f9dc6f1d74729cc9a22c40",
+    "model/sources/autonomy_curriculum.py": "04701bcbee60a23d687fe35d1e9d8bc216d76ca0984360436b8760a337276cc6",
+    "model/sources/autonomy_env.py": "ff9a3da3d8cd2d69d0687a553e916804ca884bcbbb4608ef9d5366cc2ce2cd11",
+    "model/sources/autonomy_full_certify.py": "eff6d7b02148d9b622462f5b35c520d6c030c5dc5fb3d2afa28922af707f1ff7",
+    "model/sources/autonomy_full_recovery.py": "28714efa53a89a9543edd2b66b640e840746da17aac8870255f48f6aa6f6bf96",
+    "model/sources/autonomy_full_teacher.py": "af1892c3d3a0df1a0a1d60acf72f87b9e3455ce624e2e84c19730491a6690574",
+    "model/sources/autonomy_gripper_guard.py": "ba7b409e279bf440b027d24b78a34e10ba01306e324b4b886dc5d44c9db049e0",
+    "model/sources/autonomy_handover_audit.py": "5b14f0f347e8cd57ffdd8158754dc042dc73cd3d28324a774cd8460f9288aa60",
+    "model/sources/autonomy_learning.py": "0fd2f71926e591effff6e3b4e288826b263b7d874b03ab7c562ddc7c71d8f47c",
+    "model/sources/autonomy_main.py": "5c879f9b7f7cd9940bbd61d828c8d4d8deffc22c8caecac65e347a7648b596da",
+    "model/sources/autonomy_motion_curriculum.py": "2dfa51260e7b1930764adb817a8fab4dcdfb6c04fecac7d49e39e06b2248bf56",
+    "model/sources/autonomy_motion_play.py": "afa479ad1ed7d7b9de4c06786a41867515e6ce04510def588b0ed035e6d9ffeb",
+    "model/sources/autonomy_position_fit.py": "319e5a53967c94bf3df66086f7da32090d5e9195339f8a239f04b7932b1b1493",
+    "model/sources/autonomy_receiver_curriculum.py": "7c4e2a214963fdd78b6a5208fe4fba0a037773c2013881fdd5c6ef3803d2844e",
+    "model/sources/autonomy_receiver_fit.py": "30de31d19bc29aeab97da2a5e674df8937c5b51190b0febf068aa45c89aaee04",
+    "model/sources/autonomy_replay.py": "1c0478d5fc5da1708586e88faf99f07b7ebfd6ea65d8145d3c46da0e5357c63d",
+    "model/sources/autonomy_support.py": "d77de06562c7ce2e8985ac4a4d6c802dacbb0332901dea17f5ebc7035d9ce17d",
+    "model/sources/autonomy_teacher.py": "a67640ce7ca5fba50a40728e9a486bfab8fd4c50d05f76d80b2ab5f5ed2c872b",
+    "model/sources/autonomy_teacher_replay.py": "a351b48f878c6a03f1f3de29c342a867be23c911e171ccbf70a2fd29349875fb",
+    "model/sources/autonomy_three_posts.py": "54c561c30420e55d6b942ed1aed939862c620f8bd3413e2d3f1a5f1530a584ee",
+    "model/sources/autonomy_transit_curriculum.py": "996b32e292e30290eeefc41bd3a09288e0370e22250ba66cb9f980c4d6f93106",
+    "model/sources/autonomy_transit_play.py": "c612b734dc045c8a17af35016fc5036f4fa010381ae24018c5db1c8fbbe1fd04",
+    "model/sources/autonomy_upright_support.py": "0450a8054ec16063c462998746bc7b7679da8a2f8c3041f306a0bfc06474cb25",
+    "model/sources/geometry.py": "abdecdf39cc48ff4c3ec29dad6f22b6ac8ad924549bd1c3b7b8dedce07869d15",
+    "model/sources/peg_profile.json": "4b2cce45a8324e6dd804cacd160912d92cba3bbe653cb28d090ce3b4ef97c8f6",
+    "model/sources/replay.py": "8e5f130e02f840f79d3433f5932b489af96de5351770253daaf7fd657d651a3f",
+    "model/sources/replay_full.py": "33a65680dc20a25b1808cd0541869d1067b86364e9d0d19439caf8cb12bdaf6f",
+    "model/sources/rl_core.py": "80ddad8671a2a8e1078e347eb0c62a57083ade3f7dc2e79ee335183c19127407",
+    "model/sources/rl_env.py": "c24c46309271c8f5e37785f004c5858349894aa8a122fe8b27b240113451bef7",
+    "model/sources/rl_runtime.py": "723f8f07ab7414dafacf9117466e2920b942e4a143a56642c14f40f1d625de05",
+    "model/training.json": "4d58f7b39bb7ceaaef60cd534647c9ad5a164722295eec349321cf14603e393f",
+    "reports/certify_source.py": "1853eb1e54e3ce33d070ac83a9963639414cbdff084055b6417615352490b5b9",
+    "reports/confirmation12_environment_close.json": "dffe8d1f993f99dbc13a38ea42f1477cb2ba7004006c61a83a7a3e14c176fd97",
+    "reports/confirmation12_evaluation.json": "8f9d88788bbebdda404d067cd7891254ab74612c6bc17306e7ce539d7711397a",
+    "reports/lift_collection_environment_close.json": "32feb7b5a6e14e8327fe8abf5899b47a7a7ed0ada57856fdbc2342acd3c7bf88",
+    "reports/lift_collection_evaluation.json": "dff680b4409a7d215c78e08ef29bfb0c4d5530f5cd157dd30a1cab7f1ab58165",
+    "reports/lift_collection_manifest.json": "827d92737e6e396ee9d46414bcb561ff686c35618cb2a0ddec3280c1e6f6867b",
+    "reports/pilot_environment_close.json": "10a4858ca7fef94fe743cb674a70547c4d712ce51574975addc40a7958d7ef37",
+    "reports/pilot_evaluation.json": "eca8d15ef1608451f5816963ee566cfd56e9ed97e325f5338282673e5f4690a0",
+    "reports/three_episode_front_video_environment_close.json": "b1d7cb8e69371706dac1be8252b8993c114eadde92d3ba84c572a6e65874bf32",
+    "reports/three_episode_front_video_evaluation.json": "c361b4b7bb771ed0a1585f430f917770fc867d49b9efcdc8536bb148f00889b0",
+    "videos/checkpoint12.mp4": "bac5354bda7c22489aa5a893541af143f02d8741b594ceb2283fe08331243bbb",
+    "videos/checkpoint12_three_episodes.mp4": "fdd2b8735a55316638a302aa02dcb25d848a5c515daa99599311e65df364cc4e"
+  }
+}

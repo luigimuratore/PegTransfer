@@ -1,0 +1,108 @@
+{
+  "complete": true,
+  "physical_success": 30,
+  "episodes": 32,
+  "level": "baseline .5mm / 2deg",
+  "higher_levels_tested": false,
+  "new_training_performed": false,
+  "checkpoint10_verified_files": 52,
+  "per_seed": [
+    {
+      "seed": 2468,
+      "success": 15,
+      "episodes": 16,
+      "distribution_threshold_passed": true,
+      "strict_matched_gate_passed": true,
+      "grasp_psm1": 16,
+      "lift_stable": 16,
+      "grasp_psm2": 15,
+      "handover": 15,
+      "failed_cases": [
+        {
+          "episode": 15,
+          "terminal_option": 10,
+          "peak_force_n": 0.43103742599487305,
+          "reset": {
+            "source": "L5",
+            "target": "R2",
+            "jitter_mm": [
+              0.3761466443538666,
+              0.40526828169822693
+            ],
+            "yaw_deg": 1.7598971128463745,
+            "source_post_center_m": [
+              0.0,
+              0.0,
+              0.009999999776482582
+            ],
+            "target_post_center_m": [
+              0.041999999433755875,
+              0.014999999664723873,
+              0.009999999776482582
+            ],
+            "initial_hole_center_m": [
+              0.0003761466359719634,
+              0.00040526827797293663,
+              0.009999999776482582
+            ],
+            "reset_only_randomization": true,
+            "board_and_posts_unchanged": true
+          },
+          "failure": true,
+          "timeout": false
+        }
+      ],
+      "report": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/autonomy_domain_v51/baseline_L5_R2_seed2468/evaluation.json",
+      "report_sha256": "b9cce38668e872b19addb44121185907fcd181b5fd4b2fbcb0a968f2f4fe1bd1"
+    },
+    {
+      "seed": 54321,
+      "success": 15,
+      "episodes": 16,
+      "distribution_threshold_passed": true,
+      "strict_matched_gate_passed": false,
+      "grasp_psm1": 16,
+      "lift_stable": 16,
+      "grasp_psm2": 16,
+      "handover": 15,
+      "failed_cases": [
+        {
+          "episode": 9,
+          "terminal_option": 11,
+          "peak_force_n": 1.0352721214294434,
+          "reset": {
+            "source": "L5",
+            "target": "R2",
+            "jitter_mm": [
+              0.213669553399086,
+              -0.4272324740886688
+            ],
+            "yaw_deg": -1.1958063840866089,
+            "source_post_center_m": [
+              0.0,
+              0.0,
+              0.009999999776482582
+            ],
+            "target_post_center_m": [
+              0.041999999433755875,
+              0.014999999664723873,
+              0.009999999776482582
+            ],
+            "initial_hole_center_m": [
+              0.00021366955479606986,
+              -0.00042723247315734625,
+              0.009999999776482582
+            ],
+            "reset_only_randomization": true,
+            "board_and_posts_unchanged": true
+          },
+          "failure": true,
+          "timeout": false
+        }
+      ],
+      "report": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/autonomy_domain_v51/baseline_L5_R2_seed54321/evaluation.json",
+      "report_sha256": "7e747c4128bba2e91a69097d7275f594549a938e5d2095ce346d5edcac9a20ee"
+    }
+  ],
+  "next_step": "Replay archived checkpoint10 on seed54321 with diagnostic observations before attributing the lost case to new reset code or deciding the BC recovery."
+}

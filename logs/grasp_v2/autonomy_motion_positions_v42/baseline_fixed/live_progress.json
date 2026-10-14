@@ -1,0 +1,7 @@
+{
+  "complete": true,
+  "episodes": 3,
+  "success": 3,
+  "full_success": 3,
+  "report": "evaluation.json"
+}

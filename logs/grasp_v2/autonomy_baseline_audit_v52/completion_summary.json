@@ -1,0 +1,13 @@
+{
+  "complete": true,
+  "success": 16,
+  "episodes": 16,
+  "policy_sha256": "9a371d1f95ea2cefe7680949ab229426672e650e6cc58fe4fe6d2eaf64fa5d74",
+  "original_implementation": true,
+  "training": false,
+  "v51_failures_retained": true,
+  "cause_of_difference": "Not established by one archived replay; do not attribute to runtime or GPU without further evidence",
+  "next_experiment": "V53 original archived policy, only yaw widened from2 to5deg",
+  "report": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/autonomy_baseline_audit_v52/archived_seed54321/evaluation.json",
+  "report_sha256": "f1a8a24ba00dd2399dde2631837a2735c9d385fd8fa355e1c4e3bdd52ec760b3"
+}

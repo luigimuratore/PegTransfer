@@ -1,0 +1,60 @@
+{
+  "complete": true,
+  "stage": "yaw5_verified",
+  "training": false,
+  "algorithm": "Frozen checkpoint10 BC generalization screening; not new training",
+  "policy": "/home/francesco/Documents/GIGI/i4h-workflows/.checkpoint_runs/checkpoint10-assisted-full-bc-transit/model/policy.pt",
+  "policy_sha256": "9a371d1f95ea2cefe7680949ab229426672e650e6cc58fe4fe6d2eaf64fa5d74",
+  "milestone_sha256": "9baae4f60f3189e936dd33bd58eccb359e3abda79a977a0a48b7b3a7892d51ba",
+  "frozen_implementation": true,
+  "results": [
+    {
+      "seed": 2468,
+      "success": 15,
+      "episodes": 16,
+      "passed": true,
+      "report": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/autonomy_archived_yaw_v53/yaw5_seed2468/evaluation.json",
+      "report_sha256": "10168565a19f418db707ba69f3a48c42f8a8306c900369da887b1660498cbc79",
+      "failed_cases": [
+        {
+          "episode_id": 15,
+          "option": 11,
+          "grasp_psm1": true,
+          "lift_stable": true,
+          "grasp_psm2": true,
+          "handover": false,
+          "peak_force_n": 1.0038361549377441,
+          "timeout": false,
+          "failure": true
+        }
+      ]
+    },
+    {
+      "seed": 54321,
+      "success": 16,
+      "episodes": 16,
+      "passed": true,
+      "report": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/autonomy_archived_yaw_v53/yaw5_seed54321/evaluation.json",
+      "report_sha256": "386314a1335b5ea24100c381a906e4026c15509f2e1dc5eb249f4ea6bd284833",
+      "failed_cases": []
+    }
+  ],
+  "yaw_deg": 5.0,
+  "jitter_mm": 0.5,
+  "sources": [
+    "L5"
+  ],
+  "targets": [
+    "R2"
+  ],
+  "assisted_grasp": true,
+  "native_full_policy_verified": false,
+  "gate": "At least15/16 complete physically measured tasks on each seed2468 and54321",
+  "baseline_evidence": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/autonomy_baseline_audit_v52/status.json",
+  "v51_failure_retained": true,
+  "updated_utc": "2026-10-07T20:41:16.784331+00:00",
+  "physical_success": 31,
+  "episodes": 32,
+  "training_required": false,
+  "next_step": "Extend the reset range in an isolated runtime and recheck baseline before testing10 degrees"
+}

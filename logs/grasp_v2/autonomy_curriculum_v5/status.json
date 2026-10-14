@@ -1,0 +1,19 @@
+{
+  "phase": "pickup",
+  "complete": true,
+  "autonomous_pickup_verified": true,
+  "full_task_verified": false,
+  "rounds": [
+    {
+      "round": 0,
+      "policy": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/autonomy_pressure_bc_v11/policy.pt",
+      "evaluation": "logs/grasp_v2/autonomy_curriculum_v5/eval_round0/evaluation.json",
+      "success": 31,
+      "episodes": 32
+    }
+  ],
+  "policy": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/autonomy_pressure_bc_v11/policy.pt",
+  "policy_sha256": "7e4b49278bb42897de12753ca279dbdeba6c3a71076f8705a2044b8984fe9411",
+  "confirmation": "logs/grasp_v2/autonomy_curriculum_v5/confirmation_round0/evaluation.json",
+  "next_phase": "Expand valid source posts, then measured unassisted handover. Full task not yet certified."
+}

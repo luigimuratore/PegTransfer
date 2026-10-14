@@ -1,0 +1,295 @@
+{
+  "algorithm": "Hierarchical Behavior Cloning",
+  "options": 6,
+  "learned_option_gate": true,
+  "teacher_stage_at_inference": false,
+  "datasets": [
+    "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/autonomy_pickup_data_v1/demonstrations.npz",
+    "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/autonomy_dagger_approach_v2/demonstrations.npz",
+    "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/autonomy_teacher_restore_v4/demonstrations.npz",
+    "logs/grasp_v2/autonomy_curriculum_v4/dagger_round1/demonstrations.npz"
+  ],
+  "transition_constraints": "Observed training-episode transitions; no validation data",
+  "transition_counts": [
+    [
+      17934,
+      71,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      5051,
+      71,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      21324,
+      71,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      6124,
+      71,
+      0
+    ],
+    [
+      5,
+      0,
+      0,
+      0,
+      78117,
+      66
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      9713
+    ]
+  ],
+  "latch_option_poses": true,
+  "linear_pose_heads": true,
+  "future_pose_steps": 20,
+  "pose_supervision": "measured phase endpoints",
+  "updates": 12000,
+  "batch_size": 1024,
+  "learning_rate": 0.0001,
+  "device": "cuda:0",
+  "gpu": "NVIDIA RTX 6000 Ada Generation",
+  "input_mask": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    1.0,
+    1.0,
+    0.0,
+    1.0,
+    1.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0
+  ],
+  "physical_evaluation_required": true,
+  "history": [
+    {
+      "update": 500,
+      "loss": 0.10818904638290405,
+      "validation_option_accuracy": 0.9476671814918518
+    },
+    {
+      "update": 1000,
+      "loss": 0.060835305601358414,
+      "validation_option_accuracy": 0.9504116773605347
+    },
+    {
+      "update": 1500,
+      "loss": 0.03611909598112106,
+      "validation_option_accuracy": 0.9578655362129211
+    },
+    {
+      "update": 2000,
+      "loss": 0.027205361053347588,
+      "validation_option_accuracy": 0.9629802703857422
+    },
+    {
+      "update": 2500,
+      "loss": 0.03565782308578491,
+      "validation_option_accuracy": 0.9649139046669006
+    },
+    {
+      "update": 3000,
+      "loss": 0.03456796705722809,
+      "validation_option_accuracy": 0.966972291469574
+    },
+    {
+      "update": 3500,
+      "loss": 0.039327096194028854,
+      "validation_option_accuracy": 0.9709643125534058
+    },
+    {
+      "update": 4000,
+      "loss": 0.01876029185950756,
+      "validation_option_accuracy": 0.9733969569206238
+    },
+    {
+      "update": 4500,
+      "loss": 0.03105998784303665,
+      "validation_option_accuracy": 0.9679391384124756
+    },
+    {
+      "update": 5000,
+      "loss": 0.023608436807990074,
+      "validation_option_accuracy": 0.9759855270385742
+    },
+    {
+      "update": 5500,
+      "loss": 0.014740174636244774,
+      "validation_option_accuracy": 0.9738647937774658
+    },
+    {
+      "update": 6000,
+      "loss": 0.019046524539589882,
+      "validation_option_accuracy": 0.9726484417915344
+    },
+    {
+      "update": 6500,
+      "loss": 0.0172440055757761,
+      "validation_option_accuracy": 0.9747692346572876
+    },
+    {
+      "update": 7000,
+      "loss": 0.016153570264577866,
+      "validation_option_accuracy": 0.9774825572967529
+    },
+    {
+      "update": 7500,
+      "loss": 0.014273220673203468,
+      "validation_option_accuracy": 0.9766092896461487
+    },
+    {
+      "update": 8000,
+      "loss": 0.02095261588692665,
+      "validation_option_accuracy": 0.9760167002677917
+    },
+    {
+      "update": 8500,
+      "loss": 0.014455865137279034,
+      "validation_option_accuracy": 0.9762973785400391
+    },
+    {
+      "update": 9000,
+      "loss": 0.013844497501850128,
+      "validation_option_accuracy": 0.9792914390563965
+    },
+    {
+      "update": 9500,
+      "loss": 0.011762388050556183,
+      "validation_option_accuracy": 0.9772330522537231
+    },
+    {
+      "update": 10000,
+      "loss": 0.011898966506123543,
+      "validation_option_accuracy": 0.9785429239273071
+    },
+    {
+      "update": 10500,
+      "loss": 0.011891767382621765,
+      "validation_option_accuracy": 0.9788236021995544
+    },
+    {
+      "update": 11000,
+      "loss": 0.015040379017591476,
+      "validation_option_accuracy": 0.9784181714057922
+    },
+    {
+      "update": 11500,
+      "loss": 0.010995152406394482,
+      "validation_option_accuracy": 0.977077066898346
+    },
+    {
+      "update": 12000,
+      "loss": 0.014393411576747894,
+      "validation_option_accuracy": 0.9790107011795044
+    }
+  ]
+}

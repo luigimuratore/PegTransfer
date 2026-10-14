@@ -1,0 +1,182 @@
+{
+  "date": "2026-10-05T16:09:51.606619",
+  "schema": "wall-bc2-cpu-validation-1",
+  "experiment": {
+    "schema": "peg-wall-motor-bc-2",
+    "mode": "wall",
+    "arm": 1,
+    "candidate": {
+      "mode": "wall",
+      "vertex": 2,
+      "height_fraction": 0.5,
+      "tip_local_m": [
+        0.00033550214999999994,
+        6.675400111545707e-19,
+        0.0016015485636889934
+      ],
+      "yaw_rad": 0.0,
+      "tool_quaternion_local_wxyz": [
+        -0.9848077530122081,
+        1.5407439555097887e-33,
+        0.17364817766693036,
+        1.2060416625018979e-16
+      ],
+      "approach_direction_local": [
+        -0.3420201433256687,
+        4.188538737676992e-17,
+        0.9396926207859084
+      ],
+      "approach": "oblique_entry",
+      "open_angle_rad": 0.15,
+      "wall_thickness_m": 0.0025234400999999997,
+      "wall_angle_deg": 180.0,
+      "entry_tilt_deg": 20.0,
+      "pinch_twist_deg": 0.0,
+      "arm": 1
+    },
+    "source": "L5",
+    "peg_asset_sha256": "d6e3695d6b663702c1cbb5acfc44caace0cc37df95a97fea3e3d5ef86f0aa54d",
+    "robot_asset_sha256": "5730339c3b806f17a5228c69b97464d0b3469888002f62fb23d9621f746347c8",
+    "code_sha256": "5e181bf01b235287acf3d2409c82c60d73baefa16cd844e411a51e673fda3317",
+    "parameters": {
+      "mass_g": 5.0,
+      "friction": 0.9,
+      "contact_stiffness": 1000.0,
+      "contact_damping": 0.5,
+      "jaw_torque": 0.015,
+      "jaw_stiffness": 0.6,
+      "grip_force": 0.35,
+      "preload_seconds": 0.4,
+      "max_force": 1.0,
+      "free_speed": 0.025,
+      "contact_speed": 0.005,
+      "lift_speed": 0.003,
+      "rotation_speed": 1.0
+    },
+    "control_dt_s": 0.01
+  },
+  "unit_tests": {
+    "passed": 50,
+    "command": "python tools/peg_grasp_v2/test_cpu.py"
+  },
+  "sources": {
+    "learning.py": "fa908206ceda495f4cfbae9a5d46fdd81ccca0b13fb9f2c57bdfdcb6031016d1",
+    "train.py": "36cc466e897ae2b06632be1e73be45927042cbc08be802416186dd6c71876ef7",
+    "probe.py": "b4235bbd3ffa9768981bf27a3a42dc7b7816098b4d0ae0bac8d1a937d649b29f",
+    "test_cpu.py": "cff9ab2d3960c1221722f85c6e0341c32502940e76ba4778c5131a81c1339d3b"
+  },
+  "evidence": {
+    "logs/grasp_v2/wall_demos_bc1.npz": "c7cb68e3a767d67db04e130e3d2c2330addd6caa1646353cd86b02ee96261498",
+    "logs/grasp_v2/wall_bc1/policy.npz": "fac35ee2036e3b873fe1c33e5a2d3a0026a9562d3662c6dd63ba19a3ae926ea2",
+    "logs/grasp_v2/wall_psm1_2026-10-05_15-51-53-481827.trace.jsonl": "c2c23b35191d2cbb294827ca82a96edde8958459af056dba3005ad2575b858db",
+    "logs/grasp_v2/wall_psm1_2026-10-05_15-39-34-550120.json": "2bad217dff14810561742684d257046d2a7b93774665684f24b5e107e6639e00"
+  },
+  "physical_collection": {
+    "episodes": 6,
+    "complete_successes": 6,
+    "transitions": 17951
+  },
+  "original_policy": {
+    "checkpoint": "logs/grasp_v2/wall_bc1/policy.npz",
+    "trace_only": true,
+    "conclusive_json_available": false,
+    "last_samples": [
+      {
+        "episode": 0,
+        "stage": "above",
+        "step": 730,
+        "target_error_mm": 6.6821393966674805,
+        "orientation_error_rad": 7.2332904892391525e-06,
+        "neural_action": [
+          0.0032878920901566744,
+          -0.00020025670528411865,
+          0.0016217143274843693,
+          0.0003117564774584025
+        ],
+        "finger_normal_force_n": [
+          0.0,
+          0.0
+        ],
+        "joints_near_limit": []
+      },
+      {
+        "episode": 1,
+        "stage": "above",
+        "step": 730,
+        "target_error_mm": 6.676130294799805,
+        "orientation_error_rad": 7.4147037594229914e-06,
+        "neural_action": [
+          0.004543995950371027,
+          -0.00025644153356552124,
+          -0.00022911280393600464,
+          0.0008112991345115006
+        ],
+        "finger_normal_force_n": [
+          0.0,
+          0.0
+        ],
+        "joints_near_limit": []
+      },
+      {
+        "episode": 2,
+        "stage": "above",
+        "step": 730,
+        "target_error_mm": 6.68501615524292,
+        "orientation_error_rad": 6.48165587335825e-06,
+        "neural_action": [
+          0.003662912640720606,
+          -0.00017079710960388184,
+          0.0016929565463215113,
+          0.0004436205781530589
+        ],
+        "finger_normal_force_n": [
+          0.0,
+          0.0
+        ],
+        "joints_near_limit": []
+      }
+    ]
+  },
+  "change": "Programmed goal-reference feedback with learned positive xyz gains 5..30/s; learned jaw velocity; original physical controller, geometry and limits unchanged",
+  "physics_sources_identical_to_bc1": [
+    "geometry.py",
+    "runtime.py",
+    "motion.py",
+    "grip.py",
+    "peg_profile.json",
+    "robot_kinematics.json"
+  ],
+  "cpu_real_data_training": {
+    "updates": 100,
+    "export_numpy_matches_pytorch": true,
+    "numpy_validation_mse": 0.001652041682973504,
+    "guarded_pause_translation_labels_ignored": 41,
+    "production_checkpoint_created": false
+  },
+  "closed_loop": {
+    "scope": "Toy servo with 0.15 per-step tracking, minimum gains, from actual recorded stalls. No collision/contact simulation.",
+    "results": [
+      {
+        "episode": 0,
+        "simulated_servo_seconds": 0.52,
+        "error_mm": 0.6981401627467045,
+        "within_arrival_tolerance": true
+      },
+      {
+        "episode": 1,
+        "simulated_servo_seconds": 0.52,
+        "error_mm": 0.6972903893007059,
+        "within_arrival_tolerance": true
+      },
+      {
+        "episode": 2,
+        "simulated_servo_seconds": 0.52,
+        "error_mm": 0.6985470374099708,
+        "within_arrival_tolerance": true
+      }
+    ]
+  },
+  "isaac_sim_launched": false,
+  "new_neural_physical_success_verified": false,
+  "full_physical_transfer_verified": false
+}

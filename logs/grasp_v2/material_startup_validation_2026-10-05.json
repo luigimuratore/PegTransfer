@@ -1,0 +1,56 @@
+{
+  "schema": "peg-material-startup-offline-validation-1",
+  "date": "2026-10-05",
+  "code_sha256": "b0d15fb4f4d5f1932748605c47a48d398279826533aefe518511ace25d35a0c0",
+  "observed_user_startup_reports": [
+    {
+      "path": "logs/grasp_v2/wall_psm1_2026-10-05_14-24-25-129679.json",
+      "sha256": "264b4a65965fd589dffffbfbe135a85f4498773f5af4b4dd50c4e7e811e44737",
+      "error": "RuntimeError: Peg actual friction differs from requested friction",
+      "episodes": 0,
+      "complete": false,
+      "initial_physx_materials": null,
+      "actual_physx_materials": null
+    },
+    {
+      "path": "logs/grasp_v2/wall_psm1_2026-10-05_14-25-27-007971.json",
+      "sha256": "3ad9012e02346403051b5198ddf8686f0e0e68f534a0dd2a8e38721521d5642f",
+      "error": "RuntimeError: Peg actual friction differs from requested friction",
+      "episodes": 0,
+      "complete": false,
+      "initial_physx_materials": null,
+      "actual_physx_materials": null
+    },
+    {
+      "path": "logs/grasp_v2/vertex_psm1_2026-10-05_14-26-04-680084.json",
+      "sha256": "2232f44928626abf29d4362f74013cacece029033fad7d81086ce6b2d6cb9e74",
+      "error": "RuntimeError: Peg actual friction differs from requested friction",
+      "episodes": 0,
+      "complete": false,
+      "initial_physx_materials": null,
+      "actual_physx_materials": null
+    }
+  ],
+  "diagnosis": "Peg material verification failed before any probe control steps. Prior reports do not contain the actual offending coefficients.",
+  "changes": [
+    "Bind physics material to original disabled collider as well as new compound cells.",
+    "Assign mismatched peg friction through the initialization-time PhysX tensor API, preserving the restitution column.",
+    "Verify resulting coefficients, reporting actual coefficient pairs on failure.",
+    "Return environment ownership before initialization so startup failures close the environment and app.",
+    "Record initial and verified material coefficients separately."
+  ],
+  "cpu_tests": 34,
+  "cpu_tests_passed": true,
+  "new_simulation_run": false,
+  "startup_fix_verified_on_real_physx": false,
+  "new_physical_grasp_verified": false,
+  "regression_data": "Synthetic material buffer with mixed coefficients, plus a mocked failing launcher; not new Isaac evidence.",
+  "local_primary_api_sources": [
+    "third_party/IsaacLab/source/isaaclab/isaaclab/envs/mdp/events.py:randomize_rigid_body_material",
+    "Installed omni.physics.tensors RigidBodyView.set_material_properties"
+  ],
+  "next_commands": [
+    "bash peg_grasp_v2.sh probe --mode vertex --episodes 1 --realtime",
+    "bash peg_grasp_v2.sh probe --mode wall --episodes 1 --realtime"
+  ]
+}

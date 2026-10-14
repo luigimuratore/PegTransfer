@@ -1,0 +1,59 @@
+{
+  "complete": true,
+  "stage": "pilot_passed",
+  "algorithm": "Frozen checkpoint13 BC + residual SAC",
+  "latest_preserved_checkpoint": "checkpoint13",
+  "new_checkpoint_promoted": false,
+  "pipeline_source_hashes": {
+    "residual_main.py": "360c80af7c2edb11fde7223d08276c2801c781329be83a2c87fc1bda8b6efae0",
+    "residual_grasp_guard.py": "75fc43016778224ac970bb5722ca16fc1de289b0a6882cd083112906d64a4b9a",
+    "residual_contact_diagnostic.py": "d2deea2f399c869215ce6369ab6323f8b813c144d93d0b3d3fbba970a17b87fd",
+    "residual_env.py": "d2f464a5634f3665d47d39ee4cb4aac13968e051457d4b15990d80773b03e06c",
+    "residual_pipeline.py": "f65c8bc246979027ed3952774ff56f5ec8c8d6569932daedd07974f6695091bb",
+    "residual_learning.py": "f58f8d66972d41fd025fdb64f9d7901d23c96c2c64dbbce93742f9b3f515aee9",
+    "residual_spring_support.py": "5b38abb3b6829e9a863dff9d88c2c7ac624034e10132596e6a37c3d535009ba8",
+    "residual_collision_support.py": "085c1332612b00e1600e817a1f59e6b72a44247e2e14ce40f5bf92d1d109eee5"
+  },
+  "transitions": 12000,
+  "results": [
+    {
+      "label": "baseline3",
+      "report": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/bc_sac_residual_v5/baseline3/evaluation.json",
+      "sha256": "f5030de415b0e7bc0397858d9a04f206311905aefb8e97af10b008907ba36551",
+      "success": 3,
+      "episodes": 3
+    },
+    {
+      "label": "baseline12",
+      "report": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/bc_sac_residual_v5/baseline12/evaluation.json",
+      "sha256": "a4f8712f63335e21b5b614fb6b6b0a7409129c5ea673d949172eb9506ac7d548",
+      "success": 12,
+      "episodes": 12
+    },
+    {
+      "label": "confirmation12",
+      "report": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/bc_sac_residual_v5/confirmation12/evaluation.json",
+      "sha256": "14cea22d6061a982ac11b16e8c84f3b056cf4d7e64493799478f23984a0fcb86",
+      "success": 12,
+      "episodes": 12
+    },
+    {
+      "label": "candidate_video",
+      "report": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/bc_sac_residual_v5/candidate_video/evaluation.json",
+      "sha256": "18013d81ac82b1d73549cac59e597cbb5404aeeb2cf79fa0a095c30643f23311",
+      "success": 1,
+      "episodes": 1
+    }
+  ],
+  "held_jaw_guard_enabled": true,
+  "grasp_stiffness_n_m": 900.0,
+  "spring_scope": "donor_recovery",
+  "held_jaw_recovery_only": true,
+  "recovery_before_lift": true,
+  "candidate": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/bc_sac_residual_v5/training/candidate.zip",
+  "candidate_sha256": "ebc25bf366fa9f89e8b7b06480ae1aea74fed5907d16e630e9acaa3c83953ecb",
+  "video": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/videos/bc_sac_residual_v5.mp4",
+  "matched_baseline_preserved": true,
+  "physical_assistance_active": true,
+  "next_step": "Independent seed confirmation before increasing residual/randomization or reducing assistance"
+}

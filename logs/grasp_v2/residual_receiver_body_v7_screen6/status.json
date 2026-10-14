@@ -1,0 +1,8 @@
+{
+  "complete": false,
+  "stage": "physical_evaluation",
+  "step": 3500,
+  "episodes": 0,
+  "requested_episodes": 6,
+  "success": 0
+}

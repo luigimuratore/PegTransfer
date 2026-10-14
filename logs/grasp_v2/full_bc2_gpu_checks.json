@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "device": "cuda:0",
+  "gpu_name": "NVIDIA RTX 6000 Ada Generation",
+  "checks": [
+    "20 phases on held-out episode",
+    "saved CUDA model batch/single inference parity",
+    "contact approach reference bounded",
+    "unbalanced receiver contact pauses closure",
+    "high pressure opens jaws",
+    "released inactive donor stays open",
+    "clock/reward/future annotations ignored",
+    "model and preserved scene hashes verified"
+  ],
+  "max_batch_single_action_difference": 2.9802322387695312e-05,
+  "held_out_action_mse": 6.497783715531114e-07
+}

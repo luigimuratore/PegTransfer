@@ -1,0 +1,5 @@
+{
+  "complete": false,
+  "interrupted": true,
+  "reason": "Teacher diagnostic stopped after 6500 steps: both donors lost peg attachment during receiver_close; no receiver grasp or handover measured. Superseded by vertex receiver experiment."
+}

@@ -1,0 +1,74 @@
+{
+  "complete": false,
+  "requested_episodes": 3,
+  "episodes": 1,
+  "cases": [
+    {
+      "skill": "full",
+      "success": true,
+      "failure": false,
+      "timeout": false,
+      "length": 5993,
+      "return_": 36.79377746582031,
+      "grasp_psm1": true,
+      "lift_stable": true,
+      "grasp_psm2": true,
+      "handover": true,
+      "full_success": true,
+      "hole_error_mm": 1.0747294425964355,
+      "peak_force_n": 0.660301923751831,
+      "assisted_grasp": false,
+      "reset": {
+        "source": "L5",
+        "target": "R2",
+        "jitter_mm": [
+          0.0,
+          -0.0
+        ],
+        "yaw_deg": 0.0
+      },
+      "terminal_physics": {
+        "peg_m": [
+          0.037099599838256836,
+          0.014343367889523506,
+          0.024613797664642334
+        ],
+        "bottom_m": 0.010000461712479591,
+        "tool_tips_m": [
+          [
+            0.009835243225097656,
+            -0.008197358809411526,
+            0.07565298676490784
+          ],
+          [
+            0.04452919960021973,
+            0.010627319104969501,
+            0.0588153600692749
+          ]
+        ],
+        "forces_n": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "jaws_rad": [
+          [
+            0.35859647393226624,
+            0.35859644412994385
+          ],
+          [
+            0.36960676312446594,
+            0.36960676312446594
+          ]
+        ]
+      },
+      "terminal_teacher_stage": 18
+    }
+  ],
+  "teacher_at_inference": true
+}

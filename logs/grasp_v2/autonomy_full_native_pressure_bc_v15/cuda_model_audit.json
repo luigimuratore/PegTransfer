@@ -1,0 +1,17 @@
+{
+  "device": "NVIDIA RTX 6000 Ada Generation",
+  "movement_and_option_parameters_identical": [
+    "encode.0.weight",
+    "encode.0.bias",
+    "encode.2.weight",
+    "encode.2.bias",
+    "gate.weight",
+    "gate.bias",
+    "pose_head.weight",
+    "pose_head.bias",
+    "jaw_head.weight",
+    "jaw_head.bias"
+  ],
+  "gate_and_pose_outputs_independent_of_excluded_joint_and_velocity_features": true,
+  "physical_task_success_verified": false
+}

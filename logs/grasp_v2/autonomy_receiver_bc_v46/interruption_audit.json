@@ -1,0 +1,9 @@
+{
+  "updated_utc": "2026-10-07T12:32:53.866710+00:00",
+  "complete": false,
+  "signal": "SIGINT",
+  "verified_pid_at_interruption": 2300,
+  "exec_session": 41133,
+  "reason": "Stopped waiting workflow before training because collection receiver geometry differed from the parent.",
+  "replaced_by": "autonomy_receiver_recoveries_v47 + autonomy_receiver_bc_v48"
+}

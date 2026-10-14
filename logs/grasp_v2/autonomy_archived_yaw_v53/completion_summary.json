@@ -1,0 +1,43 @@
+{
+  "complete": true,
+  "success": 31,
+  "episodes": 32,
+  "condition": "L5->R2, XY half-width0.5mm, yaw bounds5deg",
+  "training": false,
+  "policy_sha256": "9a371d1f95ea2cefe7680949ab229426672e650e6cc58fe4fe6d2eaf64fa5d74",
+  "milestone": "milestones/checkpoint11-assisted-full-bc-yaw5.json",
+  "seed_results": [
+    {
+      "seed": 2468,
+      "success": 15,
+      "episodes": 16,
+      "passed": true,
+      "report": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/autonomy_archived_yaw_v53/yaw5_seed2468/evaluation.json",
+      "report_sha256": "10168565a19f418db707ba69f3a48c42f8a8306c900369da887b1660498cbc79",
+      "failed_cases": [
+        {
+          "episode_id": 15,
+          "option": 11,
+          "grasp_psm1": true,
+          "lift_stable": true,
+          "grasp_psm2": true,
+          "handover": false,
+          "peak_force_n": 1.0038361549377441,
+          "timeout": false,
+          "failure": true
+        }
+      ]
+    },
+    {
+      "seed": 54321,
+      "success": 16,
+      "episodes": 16,
+      "passed": true,
+      "report": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/autonomy_archived_yaw_v53/yaw5_seed54321/evaluation.json",
+      "report_sha256": "386314a1335b5ea24100c381a906e4026c15509f2e1dc5eb249f4ea6bd284833",
+      "failed_cases": []
+    }
+  ],
+  "remaining_failure": "seed2468 episode15 donor-release force1.003836N",
+  "next": "V54 minimal argument-range extension, then10deg; unchanged controllers and weights"
+}

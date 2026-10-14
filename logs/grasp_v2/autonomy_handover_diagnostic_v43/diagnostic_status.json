@@ -1,0 +1,11 @@
+{
+  "complete": true,
+  "stage": "receiver_close_audit_saved",
+  "audit": "logs/grasp_v2/autonomy_handover_diagnostic_v43/receiver_close_audit.json",
+  "native_full_policy_verified": false,
+  "next_step": "Inspect receiver closure before supervised recovery training; keep V42 accepted speed/reset range",
+  "updated_utc": "2026-10-07T12:07:10.688101+00:00",
+  "diagnostic_only": true,
+  "policy": "logs/grasp_v2/autonomy_motion_positions_v42/runtime/policy.pt",
+  "run": "logs/grasp_v2/autonomy_handover_diagnostic_v43"
+}

@@ -1,0 +1,8 @@
+{
+  "pid": 3855350,
+  "output": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/autonomy_isolated_domain_v54",
+  "log": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/autonomy_isolated_domain_v54_startup.log",
+  "training": false,
+  "parent": "checkpoint11",
+  "source_change": "Only allowed CLI reset range"
+}

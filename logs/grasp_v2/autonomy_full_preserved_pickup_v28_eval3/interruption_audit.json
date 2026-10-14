@@ -1,0 +1,163 @@
+{
+  "complete": false,
+  "interrupted": true,
+  "pid": 669008,
+  "argv": [
+    "/home/francesco/miniconda3/envs/PegTransfer/bin/python",
+    "-u",
+    "tools/peg_grasp_v2/autonomy_replay.py",
+    "evaluate",
+    "--policy",
+    "logs/grasp_v2/autonomy_full_preserved_pickup_v28/policy.pt",
+    "--skill",
+    "full",
+    "--num_envs",
+    "3",
+    "--episodes",
+    "3",
+    "--episode_steps",
+    "10000",
+    "--sources",
+    "L5",
+    "--targets",
+    "R2",
+    "--jitter_mm",
+    "0",
+    "--yaw_deg",
+    "0",
+    "--seed",
+    "123",
+    "--headless",
+    "--diagnostic_trace",
+    "logs/grasp_v2/autonomy_full_preserved_pickup_v28_eval3_observations.json",
+    "--output",
+    "logs/grasp_v2/autonomy_full_preserved_pickup_v28_eval3",
+    ""
+  ],
+  "utc": "2026-10-06T19:28:18.353678+00:00",
+  "reason": "One completed native drop; two failed pickup scenes stationary at option 5 without contacts for more than 25 simulated seconds. Retain as diagnostic; no full-success claim.",
+  "last_progress": {
+    "complete": false,
+    "step": 4500,
+    "episodes": 1,
+    "progress": [
+      2,
+      0,
+      0,
+      0
+    ],
+    "teacher_at_inference": false,
+    "stages": null,
+    "learned_options": [
+      5,
+      5,
+      0
+    ],
+    "forces_n": [
+      [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ]
+    ]
+  },
+  "completed": {
+    "complete": false,
+    "requested_episodes": 3,
+    "episodes": 1,
+    "cases": [
+      {
+        "skill": "full",
+        "success": false,
+        "failure": true,
+        "timeout": false,
+        "length": 2881,
+        "return_": -2.9586706161499023,
+        "grasp_psm1": true,
+        "lift_stable": true,
+        "grasp_psm2": false,
+        "handover": false,
+        "full_success": false,
+        "hole_error_mm": 30.787151336669922,
+        "peak_force_n": 0.6151129603385925,
+        "assisted_grasp": false,
+        "reset": {
+          "source": "L5",
+          "target": "R2",
+          "jitter_mm": [
+            -0.0,
+            -0.0
+          ],
+          "yaw_deg": -0.0
+        },
+        "terminal_physics": {
+          "peg_m": [
+            0.014024972915649414,
+            -0.005973761901259422,
+            0.044805824756622314
+          ],
+          "bottom_m": 0.023799337446689606,
+          "tool_tips_m": [
+            [
+              0.01463937759399414,
+              -0.006920948624610901,
+              0.06138777360320091
+            ],
+            [
+              0.022362232208251953,
+              -0.009204857051372528,
+              0.056173473596572876
+            ]
+          ],
+          "forces_n": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "jaws_rad": [
+            [
+              0.11011368036270142,
+              0.10957513004541397
+            ],
+            [
+              0.21737197041511536,
+              0.21775004267692566
+            ]
+          ]
+        },
+        "terminal_teacher_stage": null
+      }
+    ],
+    "teacher_at_inference": false
+  }
+}

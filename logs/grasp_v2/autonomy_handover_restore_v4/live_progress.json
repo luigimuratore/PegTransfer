@@ -1,0 +1,38 @@
+{
+  "complete": false,
+  "step": 7000,
+  "episodes": 0,
+  "progress": [
+    2,
+    2,
+    0,
+    0
+  ],
+  "teacher_at_inference": true,
+  "stages": [
+    10,
+    10
+  ],
+  "forces_n": [
+    [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ]
+    ],
+    [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ]
+    ]
+  ]
+}

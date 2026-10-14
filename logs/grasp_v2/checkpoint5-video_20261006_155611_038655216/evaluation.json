@@ -1,0 +1,90 @@
+{
+  "complete": true,
+  "episodes": 1,
+  "success": 1,
+  "grasp_psm1": 1,
+  "sampling": "Fixed allocated episode IDs; every allocated episode completes without replacement by faster environments",
+  "lift_stable": 1,
+  "grasp_psm2": 0,
+  "handover": 0,
+  "full_success": 0,
+  "timeouts": 0,
+  "failures": 0,
+  "cases": [
+    {
+      "skill": "lift",
+      "success": true,
+      "failure": false,
+      "timeout": false,
+      "length": 1710,
+      "return_": 8.689817428588867,
+      "grasp_psm1": true,
+      "lift_stable": true,
+      "grasp_psm2": false,
+      "handover": false,
+      "full_success": false,
+      "hole_error_mm": 45.024417877197266,
+      "peak_force_n": 0.41510719060897827,
+      "assisted_grasp": false,
+      "reset": {
+        "source": "L5",
+        "target": "R2",
+        "jitter_mm": [
+          -0.3277076184749603,
+          -0.44795554876327515
+        ],
+        "yaw_deg": -1.5249735116958618
+      },
+      "terminal_physics": {
+        "peg_m": [
+          -0.00607501482591033,
+          -0.00030076687107793987,
+          0.05951473116874695
+        ],
+        "bottom_m": 0.04489466920495033,
+        "tool_tips_m": [
+          [
+            -0.005753577686846256,
+            -0.00030686339596286416,
+            0.06130076199769974
+          ],
+          [
+            0.07081994414329529,
+            -0.0009149250690825284,
+            0.07721143960952759
+          ]
+        ],
+        "forces_n": [
+          [
+            0.40535032749176025,
+            0.37073829770088196
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "jaws_rad": [
+          [
+            0.14009897410869598,
+            0.13935308158397675
+          ],
+          [
+            0.15000294148921967,
+            0.15000297129154205
+          ]
+        ]
+      },
+      "terminal_teacher_stage": null
+    }
+  ],
+  "assisted_grasp": false,
+  "programmed_task_controller": false,
+  "teacher_at_inference": false,
+  "mode": "play",
+  "policy_sha256": "7e4b49278bb42897de12753ca279dbdeba6c3a71076f8705a2044b8984fe9411",
+  "seed": 123,
+  "skill": "lift",
+  "gpu": "NVIDIA RTX 6000 Ada Generation",
+  "low_level_control": "IK with generic contact speed limits; no object attachment or task goals"
+}

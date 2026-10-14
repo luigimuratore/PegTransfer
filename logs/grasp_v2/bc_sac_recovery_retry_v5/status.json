@@ -1,0 +1,46 @@
+{
+  "complete": true,
+  "stage": "independent_gate_failed",
+  "original_checkpoint_preserved": "checkpoint13",
+  "new_checkpoint_promoted": false,
+  "workflow_source_hashes": {
+    "residual_main.py": "360c80af7c2edb11fde7223d08276c2801c781329be83a2c87fc1bda8b6efae0",
+    "residual_env.py": "d2f464a5634f3665d47d39ee4cb4aac13968e051457d4b15990d80773b03e06c",
+    "residual_learning.py": "f58f8d66972d41fd025fdb64f9d7901d23c96c2c64dbbce93742f9b3f515aee9",
+    "residual_grasp_guard.py": "75fc43016778224ac970bb5722ca16fc1de289b0a6882cd083112906d64a4b9a",
+    "residual_contact_diagnostic.py": "d2deea2f399c869215ce6369ab6323f8b813c144d93d0b3d3fbba970a17b87fd",
+    "residual_collision_support.py": "085c1332612b00e1600e817a1f59e6b72a44247e2e14ce40f5bf92d1d109eee5",
+    "residual_spring_support.py": "5b38abb3b6829e9a863dff9d88c2c7ac624034e10132596e6a37c3d535009ba8",
+    "residual_pipeline.py": "f65c8bc246979027ed3952774ff56f5ec8c8d6569932daedd07974f6695091bb",
+    "residual_recovery_retry.py": "c2a2ffc0e491c0f92cc0ae1aecfd0ef5b87eefa1b521afcf1b54d6693cdedb43"
+  },
+  "training_output": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/bc_sac_residual_v5",
+  "results": [
+    {
+      "label": "repair12",
+      "report": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/bc_sac_recovery_retry_v5/repair12/evaluation.json",
+      "sha256": "d1371de770c324df68c9c818bbbc32990bce535e535752fabb954d320951368c",
+      "success": 12,
+      "episodes": 12
+    },
+    {
+      "label": "repair_video",
+      "report": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/bc_sac_recovery_retry_v5/repair_video/evaluation.json",
+      "sha256": "f5fcd1bd919b5ed39f0b067220a78d1713b42c325414a64d684abff977096c80",
+      "success": 1,
+      "episodes": 1
+    },
+    {
+      "label": "independent12",
+      "report": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/bc_sac_recovery_retry_v5/independent12/evaluation.json",
+      "sha256": "955c6220b558a546aee6e161de427ca767f5487cc5d69b312b7bb139fc414ac5",
+      "success": 11,
+      "episodes": 12
+    }
+  ],
+  "video": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/videos/bc_sac_recovery_retry_v5.mp4",
+  "repair_passed": true,
+  "candidate": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/bc_sac_residual_v5/training/candidate.zip",
+  "assisted_grasp": true,
+  "native_full_policy_verified": false
+}

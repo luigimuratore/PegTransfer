@@ -1,0 +1,97 @@
+{
+  "algorithm": "Measured multi-post donor decision BC; not SAC",
+  "updates": 3000,
+  "learning_rate": 0.0001,
+  "batch_size": 1024,
+  "changed_tensors": [
+    "pickup_decoder.gate.bias",
+    "pickup_decoder.gate.weight"
+  ],
+  "changed_decisions": [
+    3,
+    4
+  ],
+  "protected_tensors": 96,
+  "original_motor_jaw_and_full_router_weights_unchanged": true,
+  "whole_episode_split": true,
+  "donor_sources_measured_lifts": {
+    "L5": 4,
+    "L6": 4,
+    "L4": 4
+  },
+  "dataset_sha256": "7e3d2a621ea43dcf6b9884e33919ca9a76670095ba9d9cf0dc87edf76d4475b9",
+  "physical_collection_report_sha256": "dff680b4409a7d215c78e08ef29bfb0c4d5530f5cd157dd30a1cab7f1ab58165",
+  "dataset": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/three_posts_pickup_bc_v60/lift_demonstrations/demonstrations.npz",
+  "fit_source_sha256": "2c053760a523bca4858638b6b3ed3fd7e26411e849c41ad52e16e0149a6fa895",
+  "gpu": "NVIDIA RTX 6000 Ada Generation",
+  "history": [
+    {
+      "update": 500,
+      "loss": 3.462207555770874,
+      "heldout_accuracy": 0.7883326411247253
+    },
+    {
+      "update": 1000,
+      "loss": 3.207306146621704,
+      "heldout_accuracy": 0.7868425250053406
+    },
+    {
+      "update": 1500,
+      "loss": 2.578031539916992,
+      "heldout_accuracy": 0.787289559841156
+    },
+    {
+      "update": 2000,
+      "loss": 2.1516690254211426,
+      "heldout_accuracy": 0.7857994437217712
+    },
+    {
+      "update": 2500,
+      "loss": 1.7588787078857422,
+      "heldout_accuracy": 0.7971986532211304
+    },
+    {
+      "update": 3000,
+      "loss": 1.8498870134353638,
+      "heldout_accuracy": 0.8091939091682434
+    }
+  ],
+  "physical_full_evaluation_required": true,
+  "training_episodes": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10000,
+    10002,
+    10003,
+    10005,
+    10008,
+    10009,
+    10010,
+    10012,
+    10013,
+    10014,
+    10015,
+    10016,
+    10019,
+    10020,
+    10021
+  ],
+  "validation_episodes": [
+    10,
+    11,
+    10001,
+    10004,
+    10006,
+    10018
+  ],
+  "assisted_training": true,
+  "native_full_policy_verified": false
+}

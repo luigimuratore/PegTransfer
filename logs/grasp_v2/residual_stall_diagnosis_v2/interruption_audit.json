@@ -1,0 +1,14 @@
+{
+  "interrupted": true,
+  "complete": false,
+  "completed_episodes": 5,
+  "requested_episodes": 6,
+  "pids": [
+    1613816
+  ],
+  "at_utc": "2026-10-12T15:40:45.531905+00:00",
+  "failed_environment": 2,
+  "last_step": 6700,
+  "diagnosis": "Receiver outside waypoint reached; donor pressure falls while continued closure ratchets jaw from0.1301 to0.094rad; learned router stays option8. Five others completed. Original V1 contains full timeout report.",
+  "trace_sha256": "fb0b0c9f08cc63ddb6225fa587acd47deedf7a57d4226d4931db9f99a5953227"
+}

@@ -1,0 +1,21 @@
+[
+  "/home/francesco/miniconda3/envs/PegTransfer/bin/python",
+  "-u",
+  "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/bc_sac_residual_v1/pipeline_sources/residual_main.py",
+  "evaluate",
+  "--headless",
+  "--output",
+  "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/bc_sac_residual_v1/confirmation12",
+  "--checkpoint",
+  "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/bc_sac_residual_v1/training/candidate.zip",
+  "--num_envs",
+  "12",
+  "--episodes",
+  "12",
+  "--seed",
+  "59002",
+  "--jitter_mm",
+  ".1",
+  "--yaw_deg",
+  ".5"
+]

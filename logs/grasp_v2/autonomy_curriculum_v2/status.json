@@ -1,0 +1,8 @@
+{
+  "phase": "pickup",
+  "complete": false,
+  "autonomous_pickup_verified": false,
+  "full_task_verified": false,
+  "rounds": [],
+  "error": "KeyboardInterrupt: "
+}

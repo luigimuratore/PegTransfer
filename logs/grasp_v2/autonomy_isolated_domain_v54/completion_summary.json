@@ -1,0 +1,40 @@
+{
+  "complete": true,
+  "stage": "domain_gate_failed",
+  "success": 30,
+  "episodes": 32,
+  "training": false,
+  "policy_sha256": "9a371d1f95ea2cefe7680949ab229426672e650e6cc58fe4fe6d2eaf64fa5d74",
+  "condition": "L5->R2, jitter0.5mm, yaw5deg",
+  "baseline_successes_retained": false,
+  "larger_domains_attempted": false,
+  "results": [
+    {
+      "seed": 2468,
+      "success": 15,
+      "episodes": 16,
+      "failed_cases": [
+        {
+          "episode_id": 15,
+          "success": false,
+          "peak_force_n": 1.0001611709594727,
+          "option": 11
+        }
+      ]
+    },
+    {
+      "seed": 54321,
+      "success": 15,
+      "episodes": 16,
+      "failed_cases": [
+        {
+          "episode_id": 15,
+          "success": false,
+          "peak_force_n": 1.0155705213546753,
+          "option": 11
+        }
+      ]
+    }
+  ],
+  "next": "Analyze donor-release force failures before increasing reset ranges; checkpoint11 archive unchanged"
+}

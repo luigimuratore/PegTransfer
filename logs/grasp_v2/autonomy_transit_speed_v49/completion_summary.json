@@ -1,0 +1,47 @@
+{
+  "complete": true,
+  "stage": "speed_not_promoted",
+  "policy_sha256": "9a371d1f95ea2cefe7680949ab229426672e650e6cc58fe4fe6d2eaf64fa5d74",
+  "results": [
+    {
+      "label": "baseline_runtime_fixed",
+      "success": 3,
+      "episodes": 3,
+      "grasp_psm1": 3,
+      "lift_stable": 3,
+      "timeouts": 0,
+      "environment_closed": true,
+      "report_sha256": "409b1ffe55245e0c778256386cdc7496dc2cd8566dfcb5aa8d1236fec0883e89"
+    },
+    {
+      "label": "transit0_fixed",
+      "success": 0,
+      "episodes": 3,
+      "grasp_psm1": 3,
+      "lift_stable": 0,
+      "timeouts": 3,
+      "environment_closed": true,
+      "report_sha256": "9ac5db631c2b042748e4f606e2e956bd1aead5501a8bf7fd6c2cfca909b2a837"
+    },
+    {
+      "label": "transit1_fixed",
+      "success": 0,
+      "episodes": 3,
+      "grasp_psm1": 3,
+      "lift_stable": 0,
+      "timeouts": 3,
+      "environment_closed": true,
+      "report_sha256": "0abc6b77912f35e7ac57842d21f80ac09bff2f4775bf53b22da9771ff24a18e5"
+    },
+    {
+      "label": "transit2_fixed",
+      "success": 0,
+      "episodes": 3,
+      "grasp_psm1": 3,
+      "lift_stable": 0,
+      "timeouts": 3,
+      "environment_closed": true,
+      "report_sha256": "cf461deb554356501b9fefc3461592307d642e64b14e5b8cfc51ac6bd51700b9"
+    }
+  ]
+}

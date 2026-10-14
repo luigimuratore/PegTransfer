@@ -1,0 +1,42 @@
+{
+  "complete": true,
+  "native_full_policy_verified": false,
+  "policy": "logs/grasp_v2/autonomy_full_spring_curriculum_v39/policy.pt",
+  "policy_sha256": "64f0512c5be8c6215a67e89c58b5f116a4d613a054e68c2b5ff6d7029a5a660f",
+  "algorithm": "Frozen learned BC policy; explicit physical grasp assistance curriculum",
+  "strengths": [
+    1.0,
+    0.5,
+    0.25,
+    0.1,
+    0.0
+  ],
+  "conditions": {
+    "sources": [
+      "L5"
+    ],
+    "targets": [
+      "R2"
+    ],
+    "jitter_mm": 0.25,
+    "yaw_deg": 1.0
+  },
+  "results": [
+    {
+      "strength": 1.0,
+      "seed": 123,
+      "success": 13,
+      "episodes": 16,
+      "passed": false,
+      "report": "logs/grasp_v2/autonomy_full_assistance_curriculum_v39/support_1p0_seed123/evaluation.json",
+      "report_sha256": "45487972612892827b18563947959a4aa826e0e651c9367a289766a297376c97"
+    }
+  ],
+  "stage": "gate_failed",
+  "updated_utc": "2026-10-07T08:30:55.943940+00:00",
+  "pilot_report": "logs/grasp_v2/autonomy_full_spring_curriculum_v39_pilot/evaluation.json",
+  "pilot_report_sha256": "db85c608150ba9c185777db6b9148fb54379d31013cca376ec3c6b9e935a114c",
+  "current_strength": 1.0,
+  "failed_strength": 1.0,
+  "reason": "Retain current/reference checkpoints; collect targeted recoveries before reducing assistance"
+}

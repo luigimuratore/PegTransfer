@@ -1,0 +1,22 @@
+{
+  "schema": "peg-contact-measured-result-1",
+  "wall_report": "logs/grasp_v2/wall_psm1_2026-10-05_14-37-08-243176.json",
+  "wall_report_sha256": "032c3a46578449f5462576680f7eb64c2dd155ca645f5f5be93ac5afd0364eae",
+  "vertex_report": "logs/grasp_v2/vertex_psm1_2026-10-05_14-35-12-590444.json",
+  "wall_successes": 1,
+  "wall_episodes": 1,
+  "wall_case_complete": true,
+  "lift_root_delta_mm": 34.878866747021675,
+  "hold_duration_s": 2.0,
+  "hold_median_normal_force_n": [
+    0.3438145975811365,
+    0.30419223501190995
+  ],
+  "maximum_relative_slip_after_preload_mm": 0.008702107543795981,
+  "source_snapshot": "logs/grasp_v2/wall_success1_2026-10-05_source.zip",
+  "source_snapshot_sha256": "0427b72d5af718d79e8009d0cc8f12bee18d6b302e23d2c13804a4375a71062e",
+  "report_code_sha256": "b0d15fb4f4d5f1932748605c47a48d398279826533aefe518511ace25d35a0c0",
+  "snapshot_code_sha256": "b0d15fb4f4d5f1932748605c47a48d398279826533aefe518511ace25d35a0c0",
+  "snapshot_matches_report": true,
+  "scope": "One PSM1 wall grasp, unassisted rigid-body contact, fixed L5. No new learned checkpoint or full transfer. User ran Isaac; agent inspected evidence."
+}

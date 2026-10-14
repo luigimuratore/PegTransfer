@@ -1,0 +1,243 @@
+{
+  "complete": true,
+  "stage": "domain_gate_failed",
+  "algorithm": "Frozen BC generalization screening; no training",
+  "parent_checkpoint": "checkpoint10",
+  "policy_sha256": "9a371d1f95ea2cefe7680949ab229426672e650e6cc58fe4fe6d2eaf64fa5d74",
+  "levels": [
+    {
+      "name": "baseline",
+      "sources": [
+        "L5"
+      ],
+      "targets": [
+        "R2"
+      ],
+      "jitter_mm": 0.5,
+      "yaw_deg": 2.0
+    },
+    {
+      "name": "yaw5",
+      "sources": [
+        "L5"
+      ],
+      "targets": [
+        "R2"
+      ],
+      "jitter_mm": 0.5,
+      "yaw_deg": 5.0
+    },
+    {
+      "name": "yaw10",
+      "sources": [
+        "L5"
+      ],
+      "targets": [
+        "R2"
+      ],
+      "jitter_mm": 0.5,
+      "yaw_deg": 10.0
+    },
+    {
+      "name": "yaw20",
+      "sources": [
+        "L5"
+      ],
+      "targets": [
+        "R2"
+      ],
+      "jitter_mm": 0.5,
+      "yaw_deg": 20.0
+    },
+    {
+      "name": "yaw30",
+      "sources": [
+        "L5"
+      ],
+      "targets": [
+        "R2"
+      ],
+      "jitter_mm": 0.5,
+      "yaw_deg": 30.0
+    },
+    {
+      "name": "offset0.75",
+      "sources": [
+        "L5"
+      ],
+      "targets": [
+        "R2"
+      ],
+      "jitter_mm": 0.75,
+      "yaw_deg": 30.0
+    },
+    {
+      "name": "offset1",
+      "sources": [
+        "L5"
+      ],
+      "targets": [
+        "R2"
+      ],
+      "jitter_mm": 1.0,
+      "yaw_deg": 30.0
+    },
+    {
+      "name": "offset1.1",
+      "sources": [
+        "L5"
+      ],
+      "targets": [
+        "R2"
+      ],
+      "jitter_mm": 1.1,
+      "yaw_deg": 30.0
+    },
+    {
+      "name": "two_targets",
+      "sources": [
+        "L5"
+      ],
+      "targets": [
+        "R2",
+        "R1"
+      ],
+      "jitter_mm": 0.25,
+      "yaw_deg": 2.0
+    },
+    {
+      "name": "two_sources",
+      "sources": [
+        "L5",
+        "L6"
+      ],
+      "targets": [
+        "R2",
+        "R1"
+      ],
+      "jitter_mm": 0.25,
+      "yaw_deg": 2.0
+    },
+    {
+      "name": "inner_posts",
+      "sources": [
+        "L5",
+        "L6",
+        "L4"
+      ],
+      "targets": [
+        "R2",
+        "R1",
+        "R3",
+        "R4"
+      ],
+      "jitter_mm": 0.25,
+      "yaw_deg": 2.0
+    },
+    {
+      "name": "all_posts",
+      "sources": [
+        "L5",
+        "L6",
+        "L4",
+        "L2",
+        "L1",
+        "L3"
+      ],
+      "targets": [
+        "R2",
+        "R1",
+        "R3",
+        "R4",
+        "R5",
+        "R6"
+      ],
+      "jitter_mm": 0.25,
+      "yaw_deg": 2.0
+    },
+    {
+      "name": "all_posts_local",
+      "sources": [
+        "L5",
+        "L6",
+        "L4",
+        "L2",
+        "L1",
+        "L3"
+      ],
+      "targets": [
+        "R2",
+        "R1",
+        "R3",
+        "R4",
+        "R5",
+        "R6"
+      ],
+      "jitter_mm": 0.5,
+      "yaw_deg": 5.0
+    }
+  ],
+  "results": [
+    {
+      "label": "baseline_L5_R2_seed2468",
+      "source": "L5",
+      "target": "R2",
+      "seed": 2468,
+      "passed": true,
+      "success": 15,
+      "episodes": 16,
+      "jitter_mm": 0.5,
+      "yaw_deg": 2.0,
+      "report": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/autonomy_domain_v51/baseline_L5_R2_seed2468/evaluation.json",
+      "report_sha256": "b9cce38668e872b19addb44121185907fcd181b5fd4b2fbcb0a968f2f4fe1bd1"
+    },
+    {
+      "label": "baseline_L5_R2_seed54321",
+      "source": "L5",
+      "target": "R2",
+      "seed": 54321,
+      "passed": false,
+      "success": 15,
+      "episodes": 16,
+      "jitter_mm": 0.5,
+      "yaw_deg": 2.0,
+      "report": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/autonomy_domain_v51/baseline_L5_R2_seed54321/evaluation.json",
+      "report_sha256": "7e747c4128bba2e91a69097d7275f594549a938e5d2095ce346d5edcac9a20ee"
+    }
+  ],
+  "verified_levels": [],
+  "assisted_grasp": true,
+  "native_full_policy_verified": false,
+  "gate": "At least 15/16 on each seed and each explicit post pair; baseline retains every checkpoint10 success",
+  "view": "Front camera: L1..L6 on image right for picking; R1..R6 on image left for placement",
+  "updated_utc": "2026-10-07T16:27:46.631059+00:00",
+  "runtime_policy": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/autonomy_domain_v51/runtime/policy.pt",
+  "failed_level": {
+    "name": "baseline",
+    "sources": [
+      "L5"
+    ],
+    "targets": [
+      "R2"
+    ],
+    "jitter_mm": 0.5,
+    "yaw_deg": 2.0
+  },
+  "failed_reports": [
+    {
+      "label": "baseline_L5_R2_seed54321",
+      "source": "L5",
+      "target": "R2",
+      "seed": 54321,
+      "passed": false,
+      "success": 15,
+      "episodes": 16,
+      "jitter_mm": 0.5,
+      "yaw_deg": 2.0,
+      "report": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/autonomy_domain_v51/baseline_L5_R2_seed54321/evaluation.json",
+      "report_sha256": "7e747c4128bba2e91a69097d7275f594549a938e5d2095ce346d5edcac9a20ee"
+    }
+  ],
+  "training_required": true,
+  "reason": "Range not promoted. Collect targeted BC/DAgger recovery at this level and recheck prior conditions; checkpoint10 retained."
+}

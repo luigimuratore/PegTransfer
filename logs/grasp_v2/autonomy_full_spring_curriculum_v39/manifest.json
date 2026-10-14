@@ -1,0 +1,38 @@
+{
+  "schema": "peg-autonomy-bc-1",
+  "source_hashes": {
+    "autonomy_env.py": "d186650e02a19381e99220bd6b1f760c38ed25f35b3731589a52f72604f74754",
+    "autonomy_full_teacher.py": "db50b3dc1c90274f9ef691ab61653c4c36adbf27b997a837841dbce511d13d31",
+    "rl_runtime.py": "723f8f07ab7414dafacf9117466e2920b942e4a143a56642c14f40f1d625de05",
+    "replay.py": "8e5f130e02f840f79d3433f5932b489af96de5351770253daaf7fd657d651a3f",
+    "autonomy_learning.py": "8f18de022fd2b799f215e449e87f9d97c2a2bb007d99146395c0a359971850b5",
+    "autonomy_full_recovery.py": "28714efa53a89a9543edd2b66b640e840746da17aac8870255f48f6aa6f6bf96",
+    "autonomy_replay.py": "1c0478d5fc5da1708586e88faf99f07b7ebfd6ea65d8145d3c46da0e5357c63d",
+    "autonomy_support.py": "0e7780c33364faf7fa207607c517b92b37aaeffee41d3da45abf573da15669d0",
+    "autonomy_full_certify.py": "eff6d7b02148d9b622462f5b35c520d6c030c5dc5fb3d2afa28922af707f1ff7",
+    "rl_core.py": "80ddad8671a2a8e1078e347eb0c62a57083ade3f7dc2e79ee335183c19127407",
+    "autonomy_teacher_replay.py": "a351b48f878c6a03f1f3de29c342a867be23c911e171ccbf70a2fd29349875fb",
+    "rl_env.py": "c24c46309271c8f5e37785f004c5858349894aa8a122fe8b27b240113451bef7",
+    "replay_full.py": "33a65680dc20a25b1808cd0541869d1067b86364e9d0d19439caf8cb12bdaf6f",
+    "autonomy_main.py": "892ce3f694c808ca01b1a20794b86c0807b185f796f1fa89eb7d151593e01fcd",
+    "autonomy_teacher.py": "15b784c833150fa24a5776a6483a229aa123f030860a0a4232cf22ea06704701",
+    "geometry.py": "abdecdf39cc48ff4c3ec29dad6f22b6ac8ad924549bd1c3b7b8dedce07869d15",
+    "autonomy_curriculum.py": "04701bcbee60a23d687fe35d1e9d8bc216d76ca0984360436b8760a337276cc6",
+    "autonomy_audit.py": "1de3814039c03f2ca05e1178f8f4c5f0722d901f0f197dc7854fcd4a6622d1f7",
+    "peg_profile.json": "4b2cce45a8324e6dd804cacd160912d92cba3bbe653cb28d090ce3b4ef97c8f6"
+  },
+  "policy_sha256": "64f0512c5be8c6215a67e89c58b5f116a4d613a054e68c2b5ff6d7029a5a660f",
+  "dataset_hashes": {
+    "logs/grasp_v2/autonomy_full_recovery_pipeline_v21/datasets/dataset_0.npz": "afdbe0491a632b7958b503ac8f448209571e20863030a930bd5fb59432036856",
+    "logs/grasp_v2/autonomy_full_recovery_pipeline_v21/datasets/dataset_1.npz": "3db6aad393f7c76c16ef486169393364e616ff6f26ff074362c4a0b8a040aa85",
+    "logs/grasp_v2/autonomy_full_recovery_pipeline_v21/datasets/dataset_2.npz": "6f9ed0158038795de2aac72d86c1e00fe5d25981d058e4cead7acb0569d684d7"
+  },
+  "physics_manifest_sha256": "3416ee107c467cedca24d735064e8b8775646d63afe202d6114a51ac81337bbf",
+  "skill": "full",
+  "assisted_grasp": false,
+  "programmed_task_controller": false,
+  "parent_checkpoint": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/autonomy_full_force_contact_bc_v38/policy.pt",
+  "parent_policy_sha256": "64f0512c5be8c6215a67e89c58b5f116a4d613a054e68c2b5ff6d7029a5a660f",
+  "implementation_change": "Optional explicitly reported bounded physical grasp spring; learned neural policy unchanged, no object pose commands",
+  "retrained": false
+}

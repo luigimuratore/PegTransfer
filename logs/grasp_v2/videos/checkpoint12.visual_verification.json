@@ -1,0 +1,31 @@
+{
+  "verified_utc": "2026-10-09T09:36:31.386971+00:00",
+  "checkpoint": "checkpoint12",
+  "policy_sha256": "956e60f3a3e8ae424289a247cc448105be749f6134633ffc515db02d5b8059c6",
+  "front_view_verified": true,
+  "all_three_initial_and_final_posts_visually_distinct": true,
+  "full_decode_verified": true,
+  "video_duration_s": 156.48,
+  "expected_simulated_episode_duration_s": 156.5,
+  "physical_report_sha256": "c361b4b7bb771ed0a1585f430f917770fc867d49b9efcdc8536bb148f00889b0",
+  "cases": [
+    {
+      "source": "L5",
+      "target": "R2",
+      "success": true,
+      "simulated_seconds": 47.63
+    },
+    {
+      "source": "L6",
+      "target": "R1",
+      "success": true,
+      "simulated_seconds": 45.09
+    },
+    {
+      "source": "L4",
+      "target": "R3",
+      "success": true,
+      "simulated_seconds": 63.78
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "label": "episode1_start",
+    "time_s": 0.16,
+    "frame": "logs/grasp_v2/checkpoint13_visual_review_20261012_104913/episode1_start.png"
+  },
+  {
+    "label": "episode1_end",
+    "time_s": 40.32,
+    "frame": "logs/grasp_v2/checkpoint13_visual_review_20261012_104913/episode1_end.png"
+  },
+  {
+    "label": "episode2_start",
+    "time_s": 40.56,
+    "frame": "logs/grasp_v2/checkpoint13_visual_review_20261012_104913/episode2_start.png"
+  },
+  {
+    "label": "episode2_end",
+    "time_s": 87.08,
+    "frame": "logs/grasp_v2/checkpoint13_visual_review_20261012_104913/episode2_end.png"
+  },
+  {
+    "label": "episode3_start",
+    "time_s": 87.32,
+    "frame": "logs/grasp_v2/checkpoint13_visual_review_20261012_104913/episode3_start.png"
+  },
+  {
+    "label": "episode3_end",
+    "time_s": 143.6,
+    "frame": "logs/grasp_v2/checkpoint13_visual_review_20261012_104913/episode3_end.png"
+  },
+  {
+    "label": "episode1_transfer",
+    "time_s": 20.0,
+    "frame": "logs/grasp_v2/checkpoint13_visual_review_20261012_104913/episode1_transfer.png"
+  },
+  {
+    "label": "episode1_receiver",
+    "time_s": 28.0,
+    "frame": "logs/grasp_v2/checkpoint13_visual_review_20261012_104913/episode1_receiver.png"
+  }
+]

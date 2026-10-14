@@ -1,0 +1,583 @@
+{
+  "schema": "peg-autonomy-bc-1",
+  "source_hashes": {
+    "autonomy_env.py": "03a2c1ab9cffe3c121ee1816f96fed8aa6768b1dabdad81a16107d975f150165",
+    "autonomy_full_teacher.py": "db50b3dc1c90274f9ef691ab61653c4c36adbf27b997a837841dbce511d13d31",
+    "rl_runtime.py": "723f8f07ab7414dafacf9117466e2920b942e4a143a56642c14f40f1d625de05",
+    "replay.py": "8e5f130e02f840f79d3433f5932b489af96de5351770253daaf7fd657d651a3f",
+    "autonomy_learning.py": "ea0e4efffe61836c7ecfb2c2f2b386cfd0b72e20b8e1d54d62b9f1b6f66186ca",
+    "autonomy_full_recovery.py": "28714efa53a89a9543edd2b66b640e840746da17aac8870255f48f6aa6f6bf96",
+    "autonomy_replay.py": "fa41fa5bfbd99a2c8d247e37dfce2ab13a13e0738800878d9537466380b96d6d",
+    "autonomy_full_certify.py": "a8d31578fabcc55e6df42e7ae63ab67b84dcc54ead469912cf1b02ed82f02339",
+    "rl_core.py": "80ddad8671a2a8e1078e347eb0c62a57083ade3f7dc2e79ee335183c19127407",
+    "autonomy_teacher_replay.py": "a351b48f878c6a03f1f3de29c342a867be23c911e171ccbf70a2fd29349875fb",
+    "rl_env.py": "6068ee43839b7f2ce4c7fc7a8bd46d408e8afceee0d5387d2fe5758937ebcbb3",
+    "replay_full.py": "33a65680dc20a25b1808cd0541869d1067b86364e9d0d19439caf8cb12bdaf6f",
+    "autonomy_main.py": "e02af4fcce0865d1badab30aa64f4e8101f535eca1f150306fc77cd366325db7",
+    "autonomy_teacher.py": "15b784c833150fa24a5776a6483a229aa123f030860a0a4232cf22ea06704701",
+    "geometry.py": "abdecdf39cc48ff4c3ec29dad6f22b6ac8ad924549bd1c3b7b8dedce07869d15",
+    "autonomy_curriculum.py": "04701bcbee60a23d687fe35d1e9d8bc216d76ca0984360436b8760a337276cc6",
+    "autonomy_audit.py": "1de3814039c03f2ca05e1178f8f4c5f0722d901f0f197dc7854fcd4a6622d1f7",
+    "peg_profile.json": "4b2cce45a8324e6dd804cacd160912d92cba3bbe653cb28d090ce3b4ef97c8f6"
+  },
+  "policy_sha256": "08ee89bbd4127576bba1b356a637a683322ce39d97dcfb35d7330a200b5bebcb",
+  "dataset_hashes": {
+    "logs/grasp_v2/autonomy_full_recovery_pipeline_v21/datasets/dataset_0.npz": "afdbe0491a632b7958b503ac8f448209571e20863030a930bd5fb59432036856",
+    "logs/grasp_v2/autonomy_full_recovery_pipeline_v21/datasets/dataset_1.npz": "3db6aad393f7c76c16ef486169393364e616ff6f26ff074362c4a0b8a040aa85",
+    "logs/grasp_v2/autonomy_full_recovery_pipeline_v21/datasets/dataset_2.npz": "6f9ed0158038795de2aac72d86c1e00fe5d25981d058e4cead7acb0569d684d7"
+  },
+  "physics_manifest_sha256": "3416ee107c467cedca24d735064e8b8775646d63afe202d6114a51ac81337bbf",
+  "skill": "full",
+  "assisted_grasp": false,
+  "programmed_task_controller": false,
+  "parent_checkpoint": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/autonomy_full_contact_pose_memory_v30/policy.pt",
+  "parent_policy_sha256": "9a505717ba452d2a0311d071613d227ef04b8955224db21df84eb91cdaa90dd7",
+  "stationary_reference_evidence": [
+    {
+      "option": 0,
+      "training_visits": 15,
+      "reference_excursion_mm": [
+        78.9992446899414,
+        7.450580596923828e-06
+      ],
+      "reference_rotation_rad": [
+        0.3252888321876526,
+        7.018283176840612e-10
+      ],
+      "hold_position": [
+        false,
+        true
+      ],
+      "hold_orientation": [
+        false,
+        true
+      ]
+    },
+    {
+      "option": 1,
+      "training_visits": 15,
+      "reference_excursion_mm": [
+        14.439554214477539,
+        0.0
+      ],
+      "reference_rotation_rad": [
+        7.671783532714471e-05,
+        7.105561929960497e-16
+      ],
+      "hold_position": [
+        false,
+        true
+      ],
+      "hold_orientation": [
+        true,
+        true
+      ]
+    },
+    {
+      "option": 2,
+      "training_visits": 15,
+      "reference_excursion_mm": [
+        14.950037002563477,
+        0.0
+      ],
+      "reference_rotation_rad": [
+        0.0001643748109927401,
+        7.105561929960497e-16
+      ],
+      "hold_position": [
+        false,
+        true
+      ],
+      "hold_orientation": [
+        true,
+        true
+      ]
+    },
+    {
+      "option": 3,
+      "training_visits": 15,
+      "reference_excursion_mm": [
+        3.725290298461914e-06,
+        0.0
+      ],
+      "reference_rotation_rad": [
+        2.987075120586269e-08,
+        7.105561929960497e-16
+      ],
+      "hold_position": [
+        true,
+        true
+      ],
+      "hold_orientation": [
+        true,
+        true
+      ]
+    },
+    {
+      "option": 4,
+      "training_visits": 15,
+      "reference_excursion_mm": [
+        34.76972961425781,
+        0.0
+      ],
+      "reference_rotation_rad": [
+        1.7892703851885017e-07,
+        7.105561929960497e-16
+      ],
+      "hold_position": [
+        false,
+        true
+      ],
+      "hold_orientation": [
+        true,
+        true
+      ]
+    },
+    {
+      "option": 5,
+      "training_visits": 15,
+      "reference_excursion_mm": [
+        0.17405599355697632,
+        0.0
+      ],
+      "reference_rotation_rad": [
+        1.1940224453610426e-07,
+        7.105561929960497e-16
+      ],
+      "hold_position": [
+        true,
+        true
+      ],
+      "hold_orientation": [
+        true,
+        true
+      ]
+    },
+    {
+      "option": 6,
+      "training_visits": 15,
+      "reference_excursion_mm": [
+        21.102001190185547,
+        0.0
+      ],
+      "reference_rotation_rad": [
+        1.0735831068586776e-07,
+        2.5694761395618146e-15
+      ],
+      "hold_position": [
+        false,
+        true
+      ],
+      "hold_orientation": [
+        true,
+        true
+      ]
+    },
+    {
+      "option": 7,
+      "training_visits": 15,
+      "reference_excursion_mm": [
+        0.06299091875553131,
+        50.258731842041016
+      ],
+      "reference_rotation_rad": [
+        1.0731254462825746e-07,
+        1.0422358512878418
+      ],
+      "hold_position": [
+        true,
+        false
+      ],
+      "hold_orientation": [
+        true,
+        false
+      ]
+    },
+    {
+      "option": 8,
+      "training_visits": 15,
+      "reference_excursion_mm": [
+        6.006323019391857e-06,
+        9.788334846496582
+      ],
+      "reference_rotation_rad": [
+        5.976814776431638e-08,
+        5.645683631883003e-05
+      ],
+      "hold_position": [
+        true,
+        false
+      ],
+      "hold_orientation": [
+        true,
+        true
+      ]
+    },
+    {
+      "option": 9,
+      "training_visits": 15,
+      "reference_excursion_mm": [
+        7.450580596923828e-06,
+        14.980833053588867
+      ],
+      "reference_rotation_rad": [
+        5.963311622281253e-08,
+        6.0518392274389043e-05
+      ],
+      "hold_position": [
+        true,
+        false
+      ],
+      "hold_orientation": [
+        true,
+        true
+      ]
+    },
+    {
+      "option": 10,
+      "training_visits": 15,
+      "reference_excursion_mm": [
+        7.459303560608532e-06,
+        1.5779165029525757
+      ],
+      "reference_rotation_rad": [
+        8.943280960238553e-08,
+        0.1199866384267807
+      ],
+      "hold_position": [
+        true,
+        true
+      ],
+      "hold_orientation": [
+        true,
+        true
+      ]
+    },
+    {
+      "option": 11,
+      "training_visits": 15,
+      "reference_excursion_mm": [
+        0.10539336502552032,
+        1.9061883687973022
+      ],
+      "reference_rotation_rad": [
+        8.940891405018192e-08,
+        0.12077799439430237
+      ],
+      "hold_position": [
+        true,
+        true
+      ],
+      "hold_orientation": [
+        true,
+        true
+      ]
+    },
+    {
+      "option": 12,
+      "training_visits": 15,
+      "reference_excursion_mm": [
+        14.751859664916992,
+        0.002353220945224166
+      ],
+      "reference_rotation_rad": [
+        8.943569440589272e-08,
+        2.1600374111585552e-07
+      ],
+      "hold_position": [
+        false,
+        true
+      ],
+      "hold_orientation": [
+        true,
+        true
+      ]
+    },
+    {
+      "option": 13,
+      "training_visits": 0,
+      "hold_position": [
+        false,
+        false
+      ],
+      "hold_orientation": [
+        false,
+        false
+      ]
+    },
+    {
+      "option": 14,
+      "training_visits": 15,
+      "reference_excursion_mm": [
+        7.459303560608532e-06,
+        32.60384750366211
+      ],
+      "reference_rotation_rad": [
+        8.941906770587593e-08,
+        0.21507008373737335
+      ],
+      "hold_position": [
+        true,
+        false
+      ],
+      "hold_orientation": [
+        true,
+        false
+      ]
+    },
+    {
+      "option": 15,
+      "training_visits": 15,
+      "reference_excursion_mm": [
+        4.842873750021681e-06,
+        14.549991607666016
+      ],
+      "reference_rotation_rad": [
+        2.9840141024806144e-08,
+        2.9865788064853405e-07
+      ],
+      "hold_position": [
+        true,
+        false
+      ],
+      "hold_orientation": [
+        true,
+        true
+      ]
+    },
+    {
+      "option": 16,
+      "training_visits": 15,
+      "reference_excursion_mm": [
+        0.0,
+        0.03179507330060005
+      ],
+      "reference_rotation_rad": [
+        4.237195175890024e-13,
+        1.7884178760141367e-07
+      ],
+      "hold_position": [
+        true,
+        true
+      ],
+      "hold_orientation": [
+        true,
+        true
+      ]
+    },
+    {
+      "option": 17,
+      "training_visits": 15,
+      "reference_excursion_mm": [
+        0.0,
+        14.738874435424805
+      ],
+      "reference_rotation_rad": [
+        4.237195175890024e-13,
+        2.741888636137446e-07
+      ],
+      "hold_position": [
+        true,
+        false
+      ],
+      "hold_orientation": [
+        true,
+        true
+      ]
+    },
+    {
+      "option": 18,
+      "training_visits": 15,
+      "reference_excursion_mm": [
+        0.0,
+        7.450580596923828e-06
+      ],
+      "reference_rotation_rad": [
+        4.237195175890024e-13,
+        2.741824118857039e-07
+      ],
+      "hold_position": [
+        true,
+        true
+      ],
+      "hold_orientation": [
+        true,
+        true
+      ]
+    }
+  ],
+  "stationary_dataset_hashes": {
+    "logs/grasp_v2/autonomy_full_recovery_pipeline_v21/datasets/dataset_0.npz": "afdbe0491a632b7958b503ac8f448209571e20863030a930bd5fb59432036856",
+    "logs/grasp_v2/autonomy_full_recovery_pipeline_v21/datasets/dataset_1.npz": "3db6aad393f7c76c16ef486169393364e616ff6f26ff074362c4a0b8a040aa85",
+    "logs/grasp_v2/autonomy_full_recovery_pipeline_v21/datasets/dataset_2.npz": "6f9ed0158038795de2aac72d86c1e00fe5d25981d058e4cead7acb0569d684d7"
+  },
+  "stationary_position_tolerance_m": 0.002,
+  "stationary_orientation_tolerance_rad": 0.13,
+  "stationary_reference_memory_learned_from_training_only": true,
+  "implementation_change": "Preserve entry contact anchor; follow only bounded changes in own learned pose predictions where demonstrated small adjustments occur; no object commands",
+  "retrained": false,
+  "pickup_parent_policy": "/home/francesco/Documents/GIGI/i4h-workflows/.checkpoint_runs/checkpoint5-native-pickup-bc/model/policy.pt",
+  "pickup_parent_sha256": "7e4b49278bb42897de12753ca279dbdeba6c3a71076f8705a2044b8984fe9411",
+  "pickup_neural_parameters_frozen": true,
+  "composition": "Embedded pickup neural gate/pose/jaws; learned full router selects continuation from its final option; full motor heads for remaining options",
+  "pickup_neural_gate_retained": true,
+  "neural_pose_adjustment_memory": true,
+  "neural_pose_adjustment_bounds_m": 0.002,
+  "neural_pose_adjustment_rotation_bound_rad": 0.13,
+  "adjust_stationary_position": [
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      true
+    ],
+    [
+      false,
+      true
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ]
+  ],
+  "adjust_stationary_orientation": [
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      true
+    ],
+    [
+      false,
+      true
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ]
+  ]
+}

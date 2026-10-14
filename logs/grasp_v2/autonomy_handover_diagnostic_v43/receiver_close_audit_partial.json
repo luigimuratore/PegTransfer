@@ -1,0 +1,579 @@
+{
+  "diagnostic_only": true,
+  "complete_physical_evaluation": false,
+  "policy_sha256": "64f0512c5be8c6215a67e89c58b5f116a4d613a054e68c2b5ff6d7029a5a660f",
+  "trace_sha256": "6ca2cbf41966cd1a45fa9ffbe9fb4d5a2c83622f94887e9af4f8e00b0159904f",
+  "source_hashes_verified": true,
+  "neural_computation_device": "cuda:0",
+  "scope": "Receiver close, learned option 10; logged samples, not all physics substeps",
+  "jaw_class_rates_rad_s": [
+    -0.15000000596046448,
+    -0.020000001415610313,
+    0.0,
+    0.020000001415610313,
+    0.05000000447034836,
+    0.15000000596046448
+  ],
+  "cases": [
+    {
+      "episode_id": 0,
+      "recorded_samples": 19,
+      "first_step": 2681,
+      "last_step": 3164,
+      "receiver_force_min_n": 0.0,
+      "last_receiver_forces_n": [
+        0.3149414360523224,
+        0.47860440611839294
+      ],
+      "last_force_opposition_cosine": -0.9159266352653503,
+      "last_receiver_jaws_rad": [
+        0.2054283171892166,
+        0.20714017748832703
+      ],
+      "last_neural_jaw_rate_rad_s": 0.0,
+      "last_jaw_class_probabilities": [
+        1.877792326910848e-26,
+        0.4244009852409363,
+        0.5737470984458923,
+        8.919769657320595e-20,
+        0.001851873123086989,
+        8.710572580339793e-15
+      ],
+      "sampled_neural_close_fraction": 0.5789473652839661,
+      "sampled_neural_hold_fraction": 0.42105263471603394,
+      "sampled_emitted_close_fraction": 0.5789473652839661,
+      "last_receiver_neural_goal_error_mm": 0.06958173215389252,
+      "last_physical_progress": [
+        1.0,
+        1.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "episode_id": 1,
+      "recorded_samples": 41,
+      "first_step": 2666,
+      "last_step": 3444,
+      "receiver_force_min_n": 0.0,
+      "last_receiver_forces_n": [
+        0.10534518212080002,
+        0.1618608981370926
+      ],
+      "last_force_opposition_cosine": -0.9101863503456116,
+      "last_receiver_jaws_rad": [
+        0.21310782432556152,
+        0.21367290616035461
+      ],
+      "last_neural_jaw_rate_rad_s": 0.0,
+      "last_jaw_class_probabilities": [
+        7.034064755694211e-20,
+        0.49331700801849365,
+        0.5066824555397034,
+        2.7910006927270114e-17,
+        5.853603397554252e-07,
+        1.705437820045258e-13
+      ],
+      "sampled_neural_close_fraction": 0.4390243887901306,
+      "sampled_neural_hold_fraction": 0.5609756112098694,
+      "sampled_emitted_close_fraction": 0.4390243887901306,
+      "last_receiver_neural_goal_error_mm": 0.018462274223566055,
+      "last_physical_progress": [
+        1.0,
+        1.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "episode_id": 2,
+      "recorded_samples": 35,
+      "first_step": 2680,
+      "last_step": 3444,
+      "receiver_force_min_n": 0.0,
+      "last_receiver_forces_n": [
+        0.11501426994800568,
+        0.18618366122245789
+      ],
+      "last_force_opposition_cosine": -0.910876989364624,
+      "last_receiver_jaws_rad": [
+        0.21203254163265228,
+        0.21271267533302307
+      ],
+      "last_neural_jaw_rate_rad_s": 0.0,
+      "last_jaw_class_probabilities": [
+        2.0244914296872904e-20,
+        0.4916716516017914,
+        0.5083274841308594,
+        1.9728499146128576e-17,
+        9.077172649085696e-07,
+        1.6916543578264498e-13
+      ],
+      "sampled_neural_close_fraction": 0.34285715222358704,
+      "sampled_neural_hold_fraction": 0.6571428775787354,
+      "sampled_emitted_close_fraction": 0.34285715222358704,
+      "last_receiver_neural_goal_error_mm": 0.041106801480054855,
+      "last_physical_progress": [
+        1.0,
+        1.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "episode_id": 3,
+      "recorded_samples": 15,
+      "first_step": 2688,
+      "last_step": 3150,
+      "receiver_force_min_n": 0.0,
+      "last_receiver_forces_n": [
+        0.3183465301990509,
+        0.4802441895008087
+      ],
+      "last_force_opposition_cosine": -0.916856586933136,
+      "last_receiver_jaws_rad": [
+        0.2043011337518692,
+        0.20598043501377106
+      ],
+      "last_neural_jaw_rate_rad_s": 0.0,
+      "last_jaw_class_probabilities": [
+        1.855598655951804e-24,
+        0.4400896430015564,
+        0.5598514676094055,
+        2.768207482793929e-19,
+        5.888836312806234e-05,
+        5.72040854897489e-14
+      ],
+      "sampled_neural_close_fraction": 0.6666666865348816,
+      "sampled_neural_hold_fraction": 0.3333333432674408,
+      "sampled_emitted_close_fraction": 0.6666666865348816,
+      "last_receiver_neural_goal_error_mm": 0.09164296835660934,
+      "last_physical_progress": [
+        1.0,
+        1.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "episode_id": 4,
+      "recorded_samples": 41,
+      "first_step": 2666,
+      "last_step": 3444,
+      "receiver_force_min_n": 0.0,
+      "last_receiver_forces_n": [
+        0.11883614957332611,
+        0.16973967850208282
+      ],
+      "last_force_opposition_cosine": -0.9107088446617126,
+      "last_receiver_jaws_rad": [
+        0.21242251992225647,
+        0.21293991804122925
+      ],
+      "last_neural_jaw_rate_rad_s": 0.0,
+      "last_jaw_class_probabilities": [
+        3.073544339188201e-20,
+        0.4970903694629669,
+        0.5029086470603943,
+        2.2442604467368167e-17,
+        9.8545785931492e-07,
+        1.6869020286539027e-13
+      ],
+      "sampled_neural_close_fraction": 0.4390243887901306,
+      "sampled_neural_hold_fraction": 0.5609756112098694,
+      "sampled_emitted_close_fraction": 0.4390243887901306,
+      "last_receiver_neural_goal_error_mm": 0.025159157812595367,
+      "last_physical_progress": [
+        1.0,
+        1.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "episode_id": 5,
+      "recorded_samples": 30,
+      "first_step": 2685,
+      "last_step": 3400,
+      "receiver_force_min_n": 0.0,
+      "last_receiver_forces_n": [
+        0.3274767994880676,
+        0.4620661437511444
+      ],
+      "last_force_opposition_cosine": -0.9167115092277527,
+      "last_receiver_jaws_rad": [
+        0.20471666753292084,
+        0.2061423659324646
+      ],
+      "last_neural_jaw_rate_rad_s": 0.0,
+      "last_jaw_class_probabilities": [
+        1.853579073426825e-26,
+        0.40523913502693176,
+        0.5912800431251526,
+        1.0461769382203832e-19,
+        0.00348080531693995,
+        9.386124554455408e-15
+      ],
+      "sampled_neural_close_fraction": 0.40000003576278687,
+      "sampled_neural_hold_fraction": 0.6000000238418579,
+      "sampled_emitted_close_fraction": 0.40000003576278687,
+      "last_receiver_neural_goal_error_mm": 0.07015235722064972,
+      "last_physical_progress": [
+        1.0,
+        1.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "episode_id": 6,
+      "recorded_samples": 37,
+      "first_step": 2676,
+      "last_step": 3444,
+      "receiver_force_min_n": 0.0,
+      "last_receiver_forces_n": [
+        0.2761540114879608,
+        0.4002079665660858
+      ],
+      "last_force_opposition_cosine": -0.9142123460769653,
+      "last_receiver_jaws_rad": [
+        0.2074170857667923,
+        0.2086726427078247
+      ],
+      "last_neural_jaw_rate_rad_s": -0.020000001415610313,
+      "last_jaw_class_probabilities": [
+        2.87176825329044e-25,
+        0.5654379725456238,
+        0.4342555105686188,
+        3.1720202557361245e-19,
+        0.00030655463342554867,
+        1.9291393908217082e-14
+      ],
+      "sampled_neural_close_fraction": 0.45945948362350464,
+      "sampled_neural_hold_fraction": 0.5405405759811401,
+      "sampled_emitted_close_fraction": 0.45945948362350464,
+      "last_receiver_neural_goal_error_mm": 0.02783670648932457,
+      "last_physical_progress": [
+        1.0,
+        1.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "episode_id": 7,
+      "recorded_samples": 32,
+      "first_step": 2667,
+      "last_step": 3300,
+      "receiver_force_min_n": 0.0,
+      "last_receiver_forces_n": [
+        0.35350659489631653,
+        0.47892463207244873
+      ],
+      "last_force_opposition_cosine": -0.9175491333007812,
+      "last_receiver_jaws_rad": [
+        0.2037477344274521,
+        0.20505492389202118
+      ],
+      "last_neural_jaw_rate_rad_s": 0.0,
+      "last_jaw_class_probabilities": [
+        3.7393683236899554e-25,
+        0.2757200002670288,
+        0.723311185836792,
+        1.183174462024445e-19,
+        0.0009688558639027178,
+        1.5710772187870446e-14
+      ],
+      "sampled_neural_close_fraction": 0.625,
+      "sampled_neural_hold_fraction": 0.375,
+      "sampled_emitted_close_fraction": 0.625,
+      "last_receiver_neural_goal_error_mm": 0.07932217419147491,
+      "last_physical_progress": [
+        1.0,
+        1.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "episode_id": 8,
+      "recorded_samples": 15,
+      "first_step": 2699,
+      "last_step": 3200,
+      "receiver_force_min_n": 0.0,
+      "last_receiver_forces_n": [
+        0.2800009846687317,
+        0.42099273204803467
+      ],
+      "last_force_opposition_cosine": -0.9155248999595642,
+      "last_receiver_jaws_rad": [
+        0.20641809701919556,
+        0.20768439769744873
+      ],
+      "last_neural_jaw_rate_rad_s": -0.020000001415610313,
+      "last_jaw_class_probabilities": [
+        2.3679171527703073e-23,
+        0.6251040101051331,
+        0.3748909831047058,
+        1.1374819097158106e-18,
+        4.996476945962058e-06,
+        2.1854364834743983e-13
+      ],
+      "sampled_neural_close_fraction": 0.5333333611488342,
+      "sampled_neural_hold_fraction": 0.46666669845581055,
+      "sampled_emitted_close_fraction": 0.5333333611488342,
+      "last_receiver_neural_goal_error_mm": 0.07216405868530273,
+      "last_physical_progress": [
+        1.0,
+        1.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "episode_id": 9,
+      "recorded_samples": 29,
+      "first_step": 2690,
+      "last_step": 3444,
+      "receiver_force_min_n": 0.0,
+      "last_receiver_forces_n": [
+        0.12966035306453705,
+        0.1777946949005127
+      ],
+      "last_force_opposition_cosine": -0.9107199311256409,
+      "last_receiver_jaws_rad": [
+        0.21233434975147247,
+        0.21290944516658783
+      ],
+      "last_neural_jaw_rate_rad_s": -0.020000001415610313,
+      "last_jaw_class_probabilities": [
+        1.7830519491672667e-20,
+        0.504987359046936,
+        0.4950113296508789,
+        2.0642020871019888e-17,
+        1.284112045141228e-06,
+        1.9285930545707292e-13
+      ],
+      "sampled_neural_close_fraction": 0.24137930572032928,
+      "sampled_neural_hold_fraction": 0.7586206793785095,
+      "sampled_emitted_close_fraction": 0.24137930572032928,
+      "last_receiver_neural_goal_error_mm": 0.022679215297102928,
+      "last_physical_progress": [
+        1.0,
+        1.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "episode_id": 10,
+      "recorded_samples": 18,
+      "first_step": 2689,
+      "last_step": 3219,
+      "receiver_force_min_n": 0.0,
+      "last_receiver_forces_n": [
+        0.2969253957271576,
+        0.4859654903411865
+      ],
+      "last_force_opposition_cosine": -0.916820228099823,
+      "last_receiver_jaws_rad": [
+        0.2041054368019104,
+        0.20592176914215088
+      ],
+      "last_neural_jaw_rate_rad_s": -0.020000001415610313,
+      "last_jaw_class_probabilities": [
+        1.4570077509271624e-24,
+        0.5375311374664307,
+        0.46243610978126526,
+        2.2177821161555376e-19,
+        3.2698066206648946e-05,
+        4.1286056198146584e-14
+      ],
+      "sampled_neural_close_fraction": 0.6111111044883728,
+      "sampled_neural_hold_fraction": 0.3888888955116272,
+      "sampled_emitted_close_fraction": 0.6111111044883728,
+      "last_receiver_neural_goal_error_mm": 0.13061675429344177,
+      "last_physical_progress": [
+        1.0,
+        1.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "episode_id": 11,
+      "recorded_samples": 26,
+      "first_step": 2705,
+      "last_step": 3444,
+      "receiver_force_min_n": 0.0,
+      "last_receiver_forces_n": [
+        0.11021199077367783,
+        0.16573220491409302
+      ],
+      "last_force_opposition_cosine": -0.910581648349762,
+      "last_receiver_jaws_rad": [
+        0.2125544399023056,
+        0.2130683809518814
+      ],
+      "last_neural_jaw_rate_rad_s": 0.0,
+      "last_jaw_class_probabilities": [
+        4.4191536151928767e-20,
+        0.492728590965271,
+        0.5072705745697021,
+        2.6414600037394698e-17,
+        7.843485718694865e-07,
+        1.7730441951874926e-13
+      ],
+      "sampled_neural_close_fraction": 0.1538461595773697,
+      "sampled_neural_hold_fraction": 0.8461538553237915,
+      "sampled_emitted_close_fraction": 0.1538461595773697,
+      "last_receiver_neural_goal_error_mm": 0.027221905067563057,
+      "last_physical_progress": [
+        1.0,
+        1.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "episode_id": 12,
+      "recorded_samples": 32,
+      "first_step": 2675,
+      "last_step": 3350,
+      "receiver_force_min_n": 0.0,
+      "last_receiver_forces_n": [
+        0.32823628187179565,
+        0.49925726652145386
+      ],
+      "last_force_opposition_cosine": -0.9176750779151917,
+      "last_receiver_jaws_rad": [
+        0.2033848762512207,
+        0.2050572782754898
+      ],
+      "last_neural_jaw_rate_rad_s": 0.0,
+      "last_jaw_class_probabilities": [
+        3.560750493225288e-25,
+        0.38270843029022217,
+        0.6170363426208496,
+        1.2359859374798637e-19,
+        0.0002551657089497894,
+        2.1040848981212536e-14
+      ],
+      "sampled_neural_close_fraction": 0.5625,
+      "sampled_neural_hold_fraction": 0.4375,
+      "sampled_emitted_close_fraction": 0.5625,
+      "last_receiver_neural_goal_error_mm": 0.12632101774215698,
+      "last_physical_progress": [
+        1.0,
+        1.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "episode_id": 13,
+      "recorded_samples": 28,
+      "first_step": 2682,
+      "last_step": 3361,
+      "receiver_force_min_n": 0.0,
+      "last_receiver_forces_n": [
+        0.3366203308105469,
+        0.49363645911216736
+      ],
+      "last_force_opposition_cosine": -0.9178972840309143,
+      "last_receiver_jaws_rad": [
+        0.20292523503303528,
+        0.20453648269176483
+      ],
+      "last_neural_jaw_rate_rad_s": 0.0,
+      "last_jaw_class_probabilities": [
+        4.681300291998118e-25,
+        0.3476170301437378,
+        0.6520156860351562,
+        1.1837797255882864e-19,
+        0.00036732046282850206,
+        1.763292880848158e-14
+      ],
+      "sampled_neural_close_fraction": 0.4642857313156128,
+      "sampled_neural_hold_fraction": 0.535714328289032,
+      "sampled_emitted_close_fraction": 0.4642857313156128,
+      "last_receiver_neural_goal_error_mm": 0.11493874341249466,
+      "last_physical_progress": [
+        1.0,
+        1.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "episode_id": 14,
+      "recorded_samples": 29,
+      "first_step": 2672,
+      "last_step": 3250,
+      "receiver_force_min_n": 0.0,
+      "last_receiver_forces_n": [
+        0.35709384083747864,
+        0.5183641910552979
+      ],
+      "last_force_opposition_cosine": -0.9177537560462952,
+      "last_receiver_jaws_rad": [
+        0.20305541157722473,
+        0.20487156510353088
+      ],
+      "last_neural_jaw_rate_rad_s": 0.0,
+      "last_jaw_class_probabilities": [
+        1.5212180703837582e-24,
+        0.1503596007823944,
+        0.8493224382400513,
+        9.216721034878596e-20,
+        0.00031803405727259815,
+        1.7026590437584956e-14
+      ],
+      "sampled_neural_close_fraction": 0.6551724076271057,
+      "sampled_neural_hold_fraction": 0.3448275923728943,
+      "sampled_emitted_close_fraction": 0.6551724076271057,
+      "last_receiver_neural_goal_error_mm": 0.1133151724934578,
+      "last_physical_progress": [
+        1.0,
+        1.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "episode_id": 15,
+      "recorded_samples": 11,
+      "first_step": 2677,
+      "last_step": 2705,
+      "receiver_force_min_n": 0.0,
+      "last_receiver_forces_n": [
+        0.0,
+        0.0
+      ],
+      "last_force_opposition_cosine": 0.0,
+      "last_receiver_jaws_rad": [
+        0.23797190189361572,
+        0.23797191679477692
+      ],
+      "last_neural_jaw_rate_rad_s": -0.020000001415610313,
+      "last_jaw_class_probabilities": [
+        3.185171039681717e-13,
+        0.9855828285217285,
+        0.01440553367137909,
+        1.769372537374636e-09,
+        7.733607162663247e-06,
+        3.831916274066316e-06
+      ],
+      "sampled_neural_close_fraction": 1.0,
+      "sampled_neural_hold_fraction": 0.0,
+      "sampled_emitted_close_fraction": 1.0,
+      "last_receiver_neural_goal_error_mm": 0.0018910770304501057,
+      "last_physical_progress": [
+        1.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    }
+  ]
+}

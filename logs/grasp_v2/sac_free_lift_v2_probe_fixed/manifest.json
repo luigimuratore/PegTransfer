@@ -1,0 +1,132 @@
+{
+  "schema": "peg-free-sac-v2-2",
+  "parameters": {
+    "mode": "evaluate",
+    "demonstrations": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/sac_free_demonstrations_v3.npz",
+    "checkpoint": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/sac_free_lift_v2/final.zip",
+    "skill": "lift",
+    "num_envs": 1,
+    "steps": 100000,
+    "episode_steps": 2001,
+    "bc_steps": 6000,
+    "critic_warmup": 1000,
+    "batch_size": 1024,
+    "learning_rate": 0.0001,
+    "gamma": 0.9995,
+    "ent_coef": 1e-05,
+    "bc_weight": 80.0,
+    "demo_fraction": 0.25,
+    "gradient_steps": 1,
+    "episodes": 1,
+    "seed": 42,
+    "device": "cuda:0",
+    "headless": true,
+    "realtime": false,
+    "video": false,
+    "output": "logs/grasp_v2/sac_free_lift_v2_probe_fixed",
+    "skip_pre_eval": false,
+    "promotion_report": null,
+    "buffer_size": 250000
+  },
+  "assisted_grasp": false,
+  "actor": "14 signed relative XYZ/rotation targets and absolute jaw opening, both arms",
+  "actor_inputs": "110 physical state/reference/history features; final destination; no stage or waypoint",
+  "curriculum_skill": "lift",
+  "source": "L5",
+  "target": "R2",
+  "domain_randomization": false,
+  "physics_base_manifest": "/home/francesco/Documents/GIGI/i4h-workflows/milestones/checkpoint3-full-assisted.json",
+  "base_manifest_sha256": "3416ee107c467cedca24d735064e8b8775646d63afe202d6114a51ac81337bbf",
+  "versions": {
+    "isaacsim": "5.1.0.0",
+    "isaaclab": "0.48.0",
+    "torch": "2.7.0+cu128",
+    "numpy": "1.26.0",
+    "scipy": "1.15.3"
+  },
+  "limitation": "First experiment, physical rollout evaluation required; receiver grip previously slipped without fixture",
+  "source_hashes": {
+    "rl_runtime.py": "723f8f07ab7414dafacf9117466e2920b942e4a143a56642c14f40f1d625de05",
+    "rl_data.py": "5eb5cae5c262757fcbb2ba48112b54f9f41e8a6231afcd6e823d0d3876102813",
+    "rl_main.py": "15d86de3814803bf4edce6ec14aea8e480ac2c82186577027873e4f8964e2a23",
+    "rl_core.py": "80ddad8671a2a8e1078e347eb0c62a57083ade3f7dc2e79ee335183c19127407",
+    "rl_replay.py": "44e3c8316c9af0931349f6340c6a068c30af325d6e7c17354e3be2e5c0d459bf",
+    "rl_env.py": "6068ee43839b7f2ce4c7fc7a8bd46d408e8afceee0d5387d2fe5758937ebcbb3",
+    "rl_learning.py": "9cada96215424a92f11f6bb1af2101b5e326935e39fadad83ece2b313c95a1e2",
+    "geometry.py": "a6e0333e2843cdb7d686558cd613080112cef49768fd02d034a0d477b732792f",
+    "peg_profile.json": "4b2cce45a8324e6dd804cacd160912d92cba3bbe653cb28d090ce3b4ef97c8f6"
+  },
+  "parent_checkpoint": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/sac_free_lift_v2/final.zip",
+  "parent_checkpoint_sha256": "444cd34cbe1d7558fdf26725e70fe1c737a06693652d436a006db92eb8cc973c",
+  "gpu_name": "NVIDIA RTX 6000 Ada Generation",
+  "actual_materials": {
+    "psm1_finger1": {
+      "shapes": 2,
+      "static_friction_range": [
+        0.8999999761581421,
+        0.8999999761581421
+      ],
+      "dynamic_friction_range": [
+        0.8999999761581421,
+        0.8999999761581421
+      ]
+    },
+    "psm1_finger2": {
+      "shapes": 2,
+      "static_friction_range": [
+        0.8999999761581421,
+        0.8999999761581421
+      ],
+      "dynamic_friction_range": [
+        0.8999999761581421,
+        0.8999999761581421
+      ]
+    },
+    "psm2_finger1": {
+      "shapes": 2,
+      "static_friction_range": [
+        0.8999999761581421,
+        0.8999999761581421
+      ],
+      "dynamic_friction_range": [
+        0.8999999761581421,
+        0.8999999761581421
+      ]
+    },
+    "psm2_finger2": {
+      "shapes": 2,
+      "static_friction_range": [
+        0.8999999761581421,
+        0.8999999761581421
+      ],
+      "dynamic_friction_range": [
+        0.8999999761581421,
+        0.8999999761581421
+      ]
+    },
+    "peg": {
+      "shapes": 704,
+      "static_friction_range": [
+        0.8999999761581421,
+        0.8999999761581421
+      ],
+      "dynamic_friction_range": [
+        0.8999999761581421,
+        0.8999999761581421
+      ],
+      "initial_coefficients": [
+        [
+          0.8999999761581421,
+          0.8999999761581421
+        ]
+      ],
+      "initialization_method": "USD binding already correct in PhysX"
+    }
+  },
+  "evaluation": {
+    "success": 0,
+    "episodes": 0,
+    "skill": "lift",
+    "full_success": 0
+  }
+}

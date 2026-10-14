@@ -1,0 +1,54 @@
+{
+  "complete": false,
+  "step": 7500,
+  "episodes": 0,
+  "progress": [
+    3,
+    3,
+    3,
+    0
+  ],
+  "teacher_at_inference": true,
+  "stages": [
+    11,
+    11,
+    11
+  ],
+  "learned_options": null,
+  "forces_n": [
+    [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ]
+    ],
+    [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ]
+    ],
+    [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ]
+    ]
+  ],
+  "interrupted": true,
+  "handover_sustained_hold_verified": false,
+  "full_task_verified": false,
+  "reason": "Gradual release keeps donor touching while peg drifts, then receiver slips; revise donor withdrawal before full training"
+}

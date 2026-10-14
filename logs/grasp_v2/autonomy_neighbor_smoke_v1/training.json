@@ -1,0 +1,14 @@
+{
+  "algorithm": "Nonparametric Behavior Cloning",
+  "architecture": "5 nearest training states, physical features only",
+  "datasets": [
+    "logs/grasp_v2/autonomy_teacher_smoke_v2/demonstrations.npz"
+  ],
+  "training_transitions": 6036,
+  "validation_transitions": 2023,
+  "validation_mse": 4.0973145587486215e-07,
+  "device": "cuda:0",
+  "gpu": "NVIDIA RTX 6000 Ada Generation",
+  "teacher_at_inference": false,
+  "physical_evaluation_required": true
+}

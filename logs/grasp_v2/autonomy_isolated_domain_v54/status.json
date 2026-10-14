@@ -1,0 +1,107 @@
+{
+  "complete": true,
+  "stage": "domain_gate_failed",
+  "training": false,
+  "results": [
+    {
+      "label": "runtime_yaw5_seed2468",
+      "seed": 2468,
+      "jitter_mm": 0.5,
+      "yaw_deg": 5.0,
+      "success": 15,
+      "episodes": 16,
+      "passed": true,
+      "baseline_successes_retained": true,
+      "report": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/autonomy_isolated_domain_v54/runtime_yaw5_seed2468/evaluation.json",
+      "report_sha256": "929660e9fa06456d6036e1d30f415f41b790dec2eb213fd51c029b091c8939f1",
+      "failed_episode_ids": [
+        15
+      ]
+    },
+    {
+      "label": "runtime_yaw5_seed54321",
+      "seed": 54321,
+      "jitter_mm": 0.5,
+      "yaw_deg": 5.0,
+      "success": 15,
+      "episodes": 16,
+      "passed": false,
+      "baseline_successes_retained": false,
+      "report": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/autonomy_isolated_domain_v54/runtime_yaw5_seed54321/evaluation.json",
+      "report_sha256": "e2344bea592eca582ade28b290bf11c9f1c0e8ae206b4fce6ec917b03e680a5c",
+      "failed_episode_ids": [
+        15
+      ]
+    }
+  ],
+  "verified_levels": [],
+  "policy_sha256": "9a371d1f95ea2cefe7680949ab229426672e650e6cc58fe4fe6d2eaf64fa5d74",
+  "parent_checkpoint": "checkpoint11",
+  "levels": [
+    {
+      "label": "runtime_yaw5",
+      "jitter": 0.5,
+      "yaw": 5.0
+    },
+    {
+      "label": "yaw10",
+      "jitter": 0.5,
+      "yaw": 10.0
+    },
+    {
+      "label": "yaw20",
+      "jitter": 0.5,
+      "yaw": 20.0
+    },
+    {
+      "label": "yaw30",
+      "jitter": 0.5,
+      "yaw": 30.0
+    },
+    {
+      "label": "offset0.75",
+      "jitter": 0.75,
+      "yaw": 30.0
+    },
+    {
+      "label": "offset1",
+      "jitter": 1.0,
+      "yaw": 30.0
+    },
+    {
+      "label": "offset1.1",
+      "jitter": 1.1,
+      "yaw": 30.0
+    }
+  ],
+  "assisted_grasp": true,
+  "native_full_policy_verified": false,
+  "gate": "At least15/16 per seed; yaw5 runtime comparison also retains every V53 success",
+  "sources": [
+    "L5"
+  ],
+  "targets": [
+    "R2"
+  ],
+  "updated_utc": "2026-10-07T21:00:27.838566+00:00",
+  "range_extension": {
+    "policy_sha256": "9a371d1f95ea2cefe7680949ab229426672e650e6cc58fe4fe6d2eaf64fa5d74",
+    "changed_source_files": [
+      "autonomy_main.py"
+    ],
+    "unchanged_source_files": 29,
+    "reset_square_minimum_post_clearance_mm": 0.20987729896567472,
+    "allowed_yaw_deg": 30.0,
+    "allowed_jitter_half_width_mm": 1.1,
+    "controller_and_sampling_unchanged": true,
+    "weights_unchanged": true
+  },
+  "runtime_policy": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/autonomy_isolated_domain_v54/runtime/policy.pt",
+  "failed_level": {
+    "label": "runtime_yaw5",
+    "jitter": 0.5,
+    "yaw": 5.0
+  },
+  "training_required": true,
+  "reason": "Do not widen resets further; retain failed cases and the previous verified condition"
+}

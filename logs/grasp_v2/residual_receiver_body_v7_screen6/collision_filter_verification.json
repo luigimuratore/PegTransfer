@@ -1,0 +1,71 @@
+{
+  "enabled": true,
+  "type": "temporary_collision_support",
+  "interarm": false,
+  "receiver_nonfinger_peg": true,
+  "board_collisions_unchanged": true,
+  "peg_gripper_contact_required": true,
+  "physics_success_criteria_unchanged": true,
+  "verified_usd_pairs": [
+    {
+      "environment": 0,
+      "arm": 1,
+      "pairs": 0
+    },
+    {
+      "environment": 0,
+      "arm": 2,
+      "pairs": 0
+    },
+    {
+      "environment": 1,
+      "arm": 1,
+      "pairs": 0
+    },
+    {
+      "environment": 1,
+      "arm": 2,
+      "pairs": 0
+    },
+    {
+      "environment": 2,
+      "arm": 1,
+      "pairs": 0
+    },
+    {
+      "environment": 2,
+      "arm": 2,
+      "pairs": 0
+    },
+    {
+      "environment": 3,
+      "arm": 1,
+      "pairs": 0
+    },
+    {
+      "environment": 3,
+      "arm": 2,
+      "pairs": 0
+    },
+    {
+      "environment": 4,
+      "arm": 1,
+      "pairs": 0
+    },
+    {
+      "environment": 4,
+      "arm": 2,
+      "pairs": 0
+    },
+    {
+      "environment": 5,
+      "arm": 1,
+      "pairs": 0
+    },
+    {
+      "environment": 5,
+      "arm": 2,
+      "pairs": 0
+    }
+  ]
+}

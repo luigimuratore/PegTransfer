@@ -1,0 +1,71 @@
+{
+  "complete": true,
+  "stage": "speed_not_promoted",
+  "algorithm": "Frozen BC transit speed comparison; no training",
+  "policy_sha256": "9a371d1f95ea2cefe7680949ab229426672e650e6cc58fe4fe6d2eaf64fa5d74",
+  "parent_policy": "logs/grasp_v2/autonomy_receiver_bc_v48/receiver_bc/policy.pt",
+  "results": [
+    {
+      "label": "baseline_runtime_fixed",
+      "seed": 123,
+      "success": 3,
+      "episodes": 3,
+      "physical_gate_passed": true,
+      "motion_profile": "contact",
+      "free_speed_scale": 1.0,
+      "transport_speed_scale": 1.0,
+      "report": "logs/grasp_v2/autonomy_transit_speed_v49/baseline_runtime_fixed/evaluation.json",
+      "report_sha256": "409b1ffe55245e0c778256386cdc7496dc2cd8566dfcb5aa8d1236fec0883e89"
+    },
+    {
+      "label": "transit0_fixed",
+      "seed": 123,
+      "success": 0,
+      "episodes": 3,
+      "physical_gate_passed": false,
+      "motion_profile": "clearance",
+      "free_speed_scale": 2.0,
+      "transport_speed_scale": 3.0,
+      "report": "logs/grasp_v2/autonomy_transit_speed_v49/transit0_fixed/evaluation.json",
+      "report_sha256": "9ac5db631c2b042748e4f606e2e956bd1aead5501a8bf7fd6c2cfca909b2a837",
+      "matched_speed_accepted": false
+    },
+    {
+      "label": "transit1_fixed",
+      "seed": 123,
+      "success": 0,
+      "episodes": 3,
+      "physical_gate_passed": false,
+      "motion_profile": "clearance",
+      "free_speed_scale": 3.0,
+      "transport_speed_scale": 4.0,
+      "report": "logs/grasp_v2/autonomy_transit_speed_v49/transit1_fixed/evaluation.json",
+      "report_sha256": "0abc6b77912f35e7ac57842d21f80ac09bff2f4775bf53b22da9771ff24a18e5",
+      "matched_speed_accepted": false
+    },
+    {
+      "label": "transit2_fixed",
+      "seed": 123,
+      "success": 0,
+      "episodes": 3,
+      "physical_gate_passed": false,
+      "motion_profile": "clearance",
+      "free_speed_scale": 4.0,
+      "transport_speed_scale": 4.0,
+      "report": "logs/grasp_v2/autonomy_transit_speed_v49/transit2_fixed/evaluation.json",
+      "report_sha256": "cf461deb554356501b9fefc3461592307d642e64b14e5b8cfc51ac6bd51700b9",
+      "matched_speed_accepted": false
+    }
+  ],
+  "assisted_grasp": true,
+  "native_full_policy_verified": false,
+  "weights_changed": false,
+  "interaction_speed_mm_s": 3.0,
+  "jaw_speeds_and_hold_times_changed": false,
+  "selected": null,
+  "gate": "3/3 fixed; at least15/16 per seed2468 and54321; retain every baseline successful reset and reduce matched mean simulated duration by at least2%",
+  "updated_utc": "2026-10-07T14:25:34.130761+00:00",
+  "runtime_policy": "logs/grasp_v2/autonomy_transit_speed_v49/runtime/policy.pt",
+  "fallback_policy": "logs/grasp_v2/autonomy_receiver_bc_v48/receiver_bc/policy.pt",
+  "reason": "Original V48 retained; only fully matched faster trials are selectable"
+}

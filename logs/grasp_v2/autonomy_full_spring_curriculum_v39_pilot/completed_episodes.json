@@ -1,0 +1,91 @@
+{
+  "complete": false,
+  "requested_episodes": 3,
+  "episodes": 1,
+  "cases": [
+    {
+      "skill": "full",
+      "success": true,
+      "failure": false,
+      "timeout": false,
+      "length": 4996,
+      "return_": 38.14905548095703,
+      "grasp_psm1": true,
+      "lift_stable": true,
+      "grasp_psm2": true,
+      "handover": true,
+      "full_success": true,
+      "hole_error_mm": 0.1863778978586197,
+      "peak_force_n": 0.5859431624412537,
+      "assisted_grasp": true,
+      "grasp_support": {
+        "type": "bounded_grasp_spring",
+        "strength": 1.0,
+        "assisted_grasp": true,
+        "holder": 0,
+        "applied_physics_steps": 17624,
+        "acquisitions": 2,
+        "releases": 1,
+        "force_peak_n": 0.10997097194194794,
+        "torque_peak_nm": 0.0020000003278255463,
+        "absolute_work_j": 0.005678602959960699,
+        "force_limit_n": 0.15,
+        "torque_limit_nm": 0.002,
+        "object_pose_writes": false,
+        "object_velocity_writes": false,
+        "teacher_stage_inputs": false
+      },
+      "reset": {
+        "source": "L5",
+        "target": "R2",
+        "jitter_mm": [
+          0.0,
+          -0.0
+        ],
+        "yaw_deg": 0.0
+      },
+      "terminal_physics": {
+        "peg_m": [
+          0.03608110547065735,
+          0.014892061240971088,
+          0.024613860994577408
+        ],
+        "bottom_m": 0.010000546462833881,
+        "tool_tips_m": [
+          [
+            0.013035452924668789,
+            -0.007130380719900131,
+            0.07527966797351837
+          ],
+          [
+            0.04509417340159416,
+            0.011655042879283428,
+            0.05847639590501785
+          ]
+        ],
+        "forces_n": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "jaws_rad": [
+          [
+            0.32209518551826477,
+            0.32209518551826477
+          ],
+          [
+            0.36530640721321106,
+            0.36530640721321106
+          ]
+        ]
+      },
+      "terminal_teacher_stage": null
+    }
+  ],
+  "teacher_at_inference": false
+}

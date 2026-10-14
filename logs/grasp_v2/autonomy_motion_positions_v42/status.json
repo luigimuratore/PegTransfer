@@ -1,0 +1,184 @@
+{
+  "complete": true,
+  "stage": "randomization_gate_failed",
+  "algorithm": "Frozen BC speed comparison; gated position curriculum with limited BC recoveries",
+  "levels": [
+    {
+      "jitter_mm": 0.0,
+      "yaw_deg": 0.0
+    },
+    {
+      "jitter_mm": 0.25,
+      "yaw_deg": 1.0
+    },
+    {
+      "jitter_mm": 0.5,
+      "yaw_deg": 2.0
+    },
+    {
+      "jitter_mm": 0.75,
+      "yaw_deg": 3.5
+    },
+    {
+      "jitter_mm": 1.0,
+      "yaw_deg": 5.0
+    }
+  ],
+  "support_strength": 1.0,
+  "support_profile": "firm",
+  "placement_support": true,
+  "native_full_policy_verified": false,
+  "results": [
+    {
+      "label": "baseline_fixed",
+      "success": 3,
+      "episodes": 3,
+      "passed": true,
+      "policy_sha256": "64f0512c5be8c6215a67e89c58b5f116a4d613a054e68c2b5ff6d7029a5a660f",
+      "jitter_mm": 0,
+      "yaw_deg": 0,
+      "seed": 123,
+      "free_scale": 1.0,
+      "contact_scale": 1.0,
+      "report": "logs/grasp_v2/autonomy_motion_positions_v42/baseline_fixed/evaluation.json",
+      "report_sha256": "f22efb9e42082f202327cd770263ff72c7a35b3d6521aa3b0299cc9c12d698f3"
+    },
+    {
+      "label": "baseline_seed123",
+      "success": 16,
+      "episodes": 16,
+      "passed": true,
+      "policy_sha256": "64f0512c5be8c6215a67e89c58b5f116a4d613a054e68c2b5ff6d7029a5a660f",
+      "jitter_mm": 0.25,
+      "yaw_deg": 1,
+      "seed": 123,
+      "free_scale": 1.0,
+      "contact_scale": 1.0,
+      "report": "logs/grasp_v2/autonomy_motion_positions_v42/baseline_seed123/evaluation.json",
+      "report_sha256": "7e42b67b1b7613b8009e848db18775852f891a65810e567e6ff2f11afb6f8251"
+    },
+    {
+      "label": "baseline_seed9876",
+      "success": 15,
+      "episodes": 16,
+      "passed": true,
+      "policy_sha256": "64f0512c5be8c6215a67e89c58b5f116a4d613a054e68c2b5ff6d7029a5a660f",
+      "jitter_mm": 0.25,
+      "yaw_deg": 1,
+      "seed": 9876,
+      "free_scale": 1.0,
+      "contact_scale": 1.0,
+      "report": "logs/grasp_v2/autonomy_motion_positions_v42/baseline_seed9876/evaluation.json",
+      "report_sha256": "85f8a9f426b0f9e782378b57d4bb5a8f2784811246421d813b1bbead527277f0"
+    },
+    {
+      "label": "speed0_fixed",
+      "success": 3,
+      "episodes": 3,
+      "passed": true,
+      "policy_sha256": "64f0512c5be8c6215a67e89c58b5f116a4d613a054e68c2b5ff6d7029a5a660f",
+      "jitter_mm": 0,
+      "yaw_deg": 0,
+      "seed": 123,
+      "free_scale": 1.5,
+      "contact_scale": 1.25,
+      "report": "logs/grasp_v2/autonomy_motion_positions_v42/speed0_fixed/evaluation.json",
+      "report_sha256": "22e1cc683eb6ba45394e5023920d1f2f6f1b6f3d33649ee33262c313c7197d7e"
+    },
+    {
+      "label": "speed0_seed123",
+      "success": 13,
+      "episodes": 16,
+      "passed": false,
+      "policy_sha256": "64f0512c5be8c6215a67e89c58b5f116a4d613a054e68c2b5ff6d7029a5a660f",
+      "jitter_mm": 0.25,
+      "yaw_deg": 1,
+      "seed": 123,
+      "free_scale": 1.5,
+      "contact_scale": 1.25,
+      "report": "logs/grasp_v2/autonomy_motion_positions_v42/speed0_seed123/evaluation.json",
+      "report_sha256": "a40683b019b126bbd10113616faed86fe98422e149d697afbf5bcb817fb2de9f",
+      "matched_speed_accepted": false
+    },
+    {
+      "label": "speed1_fixed",
+      "success": 3,
+      "episodes": 3,
+      "passed": true,
+      "policy_sha256": "64f0512c5be8c6215a67e89c58b5f116a4d613a054e68c2b5ff6d7029a5a660f",
+      "jitter_mm": 0,
+      "yaw_deg": 0,
+      "seed": 123,
+      "free_scale": 1.5,
+      "contact_scale": 1.0,
+      "report": "logs/grasp_v2/autonomy_motion_positions_v42/speed1_fixed/evaluation.json",
+      "report_sha256": "8880601994b8ff550d95f7f6e6a3695dc99a9c4c43f5ee255fb2a940cff44bf3"
+    },
+    {
+      "label": "speed1_seed123",
+      "success": 11,
+      "episodes": 16,
+      "passed": false,
+      "policy_sha256": "64f0512c5be8c6215a67e89c58b5f116a4d613a054e68c2b5ff6d7029a5a660f",
+      "jitter_mm": 0.25,
+      "yaw_deg": 1,
+      "seed": 123,
+      "free_scale": 1.5,
+      "contact_scale": 1.0,
+      "report": "logs/grasp_v2/autonomy_motion_positions_v42/speed1_seed123/evaluation.json",
+      "report_sha256": "0094c106878cb26f6830b0903b69a5758a5ebfa16d7d73b98eaf35facd942092",
+      "matched_speed_accepted": false
+    },
+    {
+      "label": "level2_round0_seed123",
+      "success": 16,
+      "episodes": 16,
+      "passed": true,
+      "policy_sha256": "64f0512c5be8c6215a67e89c58b5f116a4d613a054e68c2b5ff6d7029a5a660f",
+      "jitter_mm": 0.5,
+      "yaw_deg": 2.0,
+      "seed": 123,
+      "free_scale": 1.0,
+      "contact_scale": 1.0,
+      "report": "logs/grasp_v2/autonomy_motion_positions_v42/level2_round0_seed123/evaluation.json",
+      "report_sha256": "8e3e17fec24afa4d69fde39e39bdb2ac813c230ba0ac1cd2e046b47f94f5621f"
+    },
+    {
+      "label": "level2_round0_seed9876",
+      "success": 14,
+      "episodes": 16,
+      "passed": false,
+      "policy_sha256": "64f0512c5be8c6215a67e89c58b5f116a4d613a054e68c2b5ff6d7029a5a660f",
+      "jitter_mm": 0.5,
+      "yaw_deg": 2.0,
+      "seed": 9876,
+      "free_scale": 1.0,
+      "contact_scale": 1.0,
+      "report": "logs/grasp_v2/autonomy_motion_positions_v42/level2_round0_seed9876/evaluation.json",
+      "report_sha256": "61358bd5a3e23fcd935444e1e9b33f5d9249e015fdaa03f8acfaf97e47772f1a"
+    }
+  ],
+  "selected_speed": {
+    "free": 1.0,
+    "contact": 1.0
+  },
+  "gate": "At least 15/16 per seed123 and9876; faster motion must retain every matched baseline success and reduce mean duration by at least2%",
+  "policy": "logs/grasp_v2/autonomy_motion_positions_v42/runtime/policy.pt",
+  "policy_sha256": "64f0512c5be8c6215a67e89c58b5f116a4d613a054e68c2b5ff6d7029a5a660f",
+  "updated_utc": "2026-10-07T11:05:22.066433+00:00",
+  "last_passed_level": 1,
+  "last_verified_policy": "logs/grasp_v2/autonomy_motion_positions_v42/runtime/policy.pt",
+  "last_verified_policy_sha256": "64f0512c5be8c6215a67e89c58b5f116a4d613a054e68c2b5ff6d7029a5a660f",
+  "speed_reference_reports": {
+    "123": {
+      "success": 16,
+      "episodes": 16
+    },
+    "9876": {
+      "success": 15,
+      "episodes": 16
+    }
+  },
+  "failed_level": 2,
+  "reason": "Do not widen reset range: inspect failed approach/handover/placement cases; retain last passed policy and distribution"
+}

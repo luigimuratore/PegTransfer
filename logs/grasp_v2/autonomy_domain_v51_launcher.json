@@ -1,0 +1,7 @@
+{
+  "pid": 1785022,
+  "output": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/autonomy_domain_v51",
+  "log": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/autonomy_domain_v51_startup.log",
+  "algorithm": "Frozen BC screening, no training",
+  "parent": "checkpoint10"
+}

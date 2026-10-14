@@ -1,0 +1,2135 @@
+{
+  "schema": "peg-contact-probe-2",
+  "strategy": "bounded absolute-pose IK trajectory and measured-contact controller; no learned policy",
+  "learned_active_translation_and_jaw": false,
+  "programmed_goal_error_feedback": false,
+  "programmed_pressure_feedback": false,
+  "inference_device": null,
+  "camera": {
+    "eye": [
+      0.025,
+      0.32,
+      0.25
+    ],
+    "target": [
+      0.025,
+      0.0,
+      0.035
+    ]
+  },
+  "policy_checkpoint": null,
+  "policy_sha256": null,
+  "expert_xyz_jaw_actions_applied": true,
+  "programmed_grasp_selection_phases_orientation": true,
+  "demonstrations": null,
+  "code_sha256": "b8a9b6e3e3571efeb0e08f8118e19e944ce9e21d72487bd98ee2fecbc52f9f3d",
+  "geometry_sha256": "4b2cce45a8324e6dd804cacd160912d92cba3bbe653cb28d090ce3b4ef97c8f6",
+  "peg_asset_sha256": "d6e3695d6b663702c1cbb5acfc44caace0cc37df95a97fea3e3d5ef86f0aa54d",
+  "robot_asset_sha256": "5730339c3b806f17a5228c69b97464d0b3469888002f62fb23d9621f746347c8",
+  "physics_model": "rigid mesh-derived compound body with compliant normal contacts; no FEM deformation",
+  "actual_physx_materials": {
+    "psm1_finger1": {
+      "shapes": 2,
+      "static_friction_range": [
+        0.8999999761581421,
+        0.8999999761581421
+      ],
+      "dynamic_friction_range": [
+        0.8999999761581421,
+        0.8999999761581421
+      ]
+    },
+    "psm1_finger2": {
+      "shapes": 2,
+      "static_friction_range": [
+        0.8999999761581421,
+        0.8999999761581421
+      ],
+      "dynamic_friction_range": [
+        0.8999999761581421,
+        0.8999999761581421
+      ]
+    },
+    "psm2_finger1": {
+      "shapes": 2,
+      "static_friction_range": [
+        0.8999999761581421,
+        0.8999999761581421
+      ],
+      "dynamic_friction_range": [
+        0.8999999761581421,
+        0.8999999761581421
+      ]
+    },
+    "psm2_finger2": {
+      "shapes": 2,
+      "static_friction_range": [
+        0.8999999761581421,
+        0.8999999761581421
+      ],
+      "dynamic_friction_range": [
+        0.8999999761581421,
+        0.8999999761581421
+      ]
+    },
+    "peg": {
+      "shapes": 704,
+      "static_friction_range": [
+        0.8999999761581421,
+        0.8999999761581421
+      ],
+      "dynamic_friction_range": [
+        0.8999999761581421,
+        0.8999999761581421
+      ],
+      "initial_coefficients": [
+        [
+          0.8999999761581421,
+          0.8999999761581421
+        ]
+      ],
+      "initialization_method": "USD binding already correct in PhysX"
+    }
+  },
+  "initial_physx_materials": {
+    "peg_coefficients": [
+      [
+        0.8999999761581421,
+        0.8999999761581421
+      ]
+    ],
+    "shape_slots": 704
+  },
+  "assisted_grasp": false,
+  "object_pose_servo": false,
+  "fixed_or_magnetic_attachment": false,
+  "source": "L5",
+  "candidate": {
+    "mode": "wall",
+    "vertex": 0,
+    "height_fraction": 0.5,
+    "tip_local_m": [
+      0.008300398198603749,
+      0.0043544072511344754,
+      0.0016015485636889934
+    ],
+    "yaw_rad": 1.0471975511965976,
+    "tool_quaternion_local_wxyz": [
+      0.8528685319524433,
+      -0.08682408883346515,
+      0.1503837331804353,
+      0.49240387650610395
+    ],
+    "approach_direction_local": [
+      0.17101007166283438,
+      0.2961981327260238,
+      0.9396926207859084
+    ],
+    "approach": "oblique_entry",
+    "open_angle_rad": 0.15,
+    "wall_thickness_m": 0.002509983188829983,
+    "wall_angle_deg": 59.99999999999999,
+    "entry_tilt_deg": 20.0,
+    "pinch_twist_deg": 0.0,
+    "arm": 2
+  },
+  "arrival_geometry_check": {
+    "checked": true,
+    "jaw_surface_samples_inside_peg": [
+      0,
+      0
+    ],
+    "jaw_surface_samples_inside_source_post": [
+      0,
+      0
+    ],
+    "minimum_jaw_board_clearance_mm": 15.47943220541388,
+    "sampled_arrival_clear": true,
+    "note": "Sampled jaw surfaces at arrival only; shaft and full approach require physics validation"
+  },
+  "kinematic_route_check": {
+    "checked": true,
+    "reachable": true,
+    "samples_checked": 72,
+    "maximum_position_error_mm": 5.455497033848559e-10,
+    "maximum_rotation_error_rad": 3.0424205090092775e-10,
+    "angular_limit_margin_deg": 2.0,
+    "insertion_limit_margin_mm": 1.0,
+    "note": "Nominal sampled route with USD joint limits; not a swept collision or dynamics validation",
+    "route_samples": [
+      {
+        "stage": "above",
+        "time_s": 0.0,
+        "position_w_m": [
+          0.07081906852438272,
+          -0.0009128778743109137,
+          0.07721142055894359
+        ],
+        "quaternion_wxyz": [
+          0.9998875046092863,
+          -0.009999708336510399,
+          -0.009999208355260093,
+          -0.004999979166692783
+        ],
+        "joints": {
+          "psm_yaw_joint": 0.01,
+          "psm_pitch_end_joint": 0.01,
+          "psm_main_insertion_joint": 0.07,
+          "psm_tool_roll_joint": 0.01,
+          "psm_tool_pitch_joint": 0.01,
+          "psm_tool_yaw_joint": 0.01
+        }
+      },
+      {
+        "stage": "above",
+        "time_s": 0.2547887317985768,
+        "position_w_m": [
+          0.06484271404703396,
+          -3.0127227371300625e-05,
+          0.07519220050813054
+        ],
+        "quaternion_wxyz": [
+          0.9925771890338148,
+          -0.02879104151960728,
+          0.028362565707649633,
+          0.11470468431771351
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.07424575061046332,
+          "psm_pitch_end_joint": -0.020324925766817527,
+          "psm_main_insertion_joint": 0.07223845240684776,
+          "psm_tool_roll_joint": -0.22777678190180395,
+          "psm_tool_pitch_joint": 0.08737255965096548,
+          "psm_tool_yaw_joint": 0.004792343446728277
+        }
+      },
+      {
+        "stage": "above",
+        "time_s": 0.5095774635971536,
+        "position_w_m": [
+          0.05886635956968518,
+          0.0008526234195683124,
+          0.07317298045731749
+        ],
+        "quaternion_wxyz": [
+          0.9691797907431571,
+          -0.04711574714819312,
+          0.06626465668938962,
+          0.23255028458283042
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.15935696421039075,
+          "psm_pitch_end_joint": -0.05003922327221852,
+          "psm_main_insertion_joint": 0.07505901069821189,
+          "psm_tool_roll_joint": -0.465265856803125,
+          "psm_tool_pitch_joint": 0.1774107612414903,
+          "psm_tool_yaw_joint": -0.031042440437304454
+        }
+      },
+      {
+        "stage": "above",
+        "time_s": 0.7643661953957304,
+        "position_w_m": [
+          0.05289000509233641,
+          0.0017353740665079257,
+          0.07115376040650442
+        ],
+        "quaternion_wxyz": [
+          0.9300745204282097,
+          -0.06467682962491247,
+          0.10309277073005835,
+          0.34662685236880514
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.24334659202108203,
+          "psm_pitch_end_joint": -0.07436737129820717,
+          "psm_main_insertion_joint": 0.07843764967254077,
+          "psm_tool_roll_joint": -0.7069370950139676,
+          "psm_tool_pitch_joint": 0.2642938250428543,
+          "psm_tool_yaw_joint": -0.10219761708279193
+        }
+      },
+      {
+        "stage": "above",
+        "time_s": 1.0191549271943072,
+        "position_w_m": [
+          0.046913650614987645,
+          0.0026181247134475383,
+          0.06913454035569137
+        ],
+        "quaternion_wxyz": [
+          0.8758951723420615,
+          -0.08118966968841983,
+          0.1382500203297595,
+          0.45508550458411323
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.3225262913819554,
+          "psm_pitch_end_joint": -0.09063164097215519,
+          "psm_main_insertion_joint": 0.08230173784554845,
+          "psm_tool_roll_joint": -0.9559131378844689,
+          "psm_tool_pitch_joint": 0.33212185650305265,
+          "psm_tool_yaw_joint": -0.20865953246201513
+        }
+      },
+      {
+        "stage": "above",
+        "time_s": 1.273943658992884,
+        "position_w_m": [
+          0.04093729613763887,
+          0.003500875360387152,
+          0.06711532030487832
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524432,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610407
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.3926828566945139,
+          "psm_pitch_end_joint": -0.10089960761290548,
+          "psm_main_insertion_joint": 0.08642594263992615,
+          "psm_tool_roll_joint": -1.045200794390726,
+          "psm_tool_pitch_joint": 0.3898820480067664,
+          "psm_tool_yaw_joint": -0.2373386330548463
+        }
+      },
+      {
+        "stage": "above",
+        "time_s": 1.5287323907914607,
+        "position_w_m": [
+          0.03496094166029011,
+          0.004383626007326765,
+          0.06509610025406527
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524432,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610407
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.45466626877671207,
+          "psm_pitch_end_joint": -0.10951913589562556,
+          "psm_main_insertion_joint": 0.09079463498436224,
+          "psm_tool_roll_joint": -1.0412121424887923,
+          "psm_tool_pitch_joint": 0.4474826715566662,
+          "psm_tool_yaw_joint": -0.21152393580398726
+        }
+      },
+      {
+        "stage": "above",
+        "time_s": 1.7835211225900376,
+        "position_w_m": [
+          0.028984587182941335,
+          0.005266376654266378,
+          0.06307688020325221
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524432,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610407
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.5098077967840217,
+          "psm_pitch_end_joint": -0.1166530013363438,
+          "psm_main_insertion_joint": 0.09542744011834416,
+          "psm_tool_roll_joint": -1.0363584922988638,
+          "psm_tool_pitch_joint": 0.498320127662618,
+          "psm_tool_yaw_joint": -0.18721132735439272
+        }
+      },
+      {
+        "stage": "above",
+        "time_s": 2.0383098543886145,
+        "position_w_m": [
+          0.023008232705592574,
+          0.006149127301205991,
+          0.06105766015243916
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524432,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610407
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.5588935173246244,
+          "psm_pitch_end_joint": -0.12254824105726322,
+          "psm_main_insertion_joint": 0.10028146526676927,
+          "psm_tool_roll_joint": -1.0308136364167981,
+          "psm_tool_pitch_joint": 0.5432087933890904,
+          "psm_tool_yaw_joint": -0.1642997779059005
+        }
+      },
+      {
+        "stage": "above",
+        "time_s": 2.2930985861871913,
+        "position_w_m": [
+          0.017031878228243806,
+          0.0070318779481456034,
+          0.05903844010162611
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524432,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610407
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.6026667103632669,
+          "psm_pitch_end_joint": -0.1274202325480936,
+          "psm_main_insertion_joint": 0.10532119195924529,
+          "psm_tool_roll_joint": -1.0247358035254648,
+          "psm_tool_pitch_joint": 0.5829117686091423,
+          "psm_tool_yaw_joint": -0.142693658267714
+        }
+      },
+      {
+        "stage": "above",
+        "time_s": 2.547887317985768,
+        "position_w_m": [
+          0.011055523750895031,
+          0.007914628595085219,
+          0.05701922005081306
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524432,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610407
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.6418022760156543,
+          "psm_pitch_end_joint": -0.13145091705828607,
+          "psm_main_insertion_joint": 0.11051736900788645,
+          "psm_tool_roll_joint": -1.0182637283393743,
+          "psm_tool_pitch_joint": 0.6181164660744329,
+          "psm_tool_yaw_joint": -0.12230303157366146
+        }
+      },
+      {
+        "stage": "above",
+        "time_s": 2.802676049784345,
+        "position_w_m": [
+          0.0050791692735462635,
+          0.008797379242024832,
+          0.055
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524432,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610407
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.6768979495769877,
+          "psm_pitch_end_joint": -0.13479108144969346,
+          "psm_main_insertion_joint": 0.11584594850799038,
+          "psm_tool_roll_joint": -1.0115156322417451,
+          "psm_tool_pitch_joint": 0.6494273536910622,
+          "psm_tool_yaw_joint": -0.103043737029808
+        }
+      },
+      {
+        "stage": "outside",
+        "time_s": 0.0,
+        "position_w_m": [
+          0.005079169273546264,
+          0.008797379242024832,
+          0.055
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.6768979495769877,
+          "psm_pitch_end_joint": -0.13479108144969346,
+          "psm_main_insertion_joint": 0.11584594850799038,
+          "psm_tool_roll_joint": -1.0115156322417451,
+          "psm_tool_pitch_joint": 0.6494273536910622,
+          "psm_tool_yaw_joint": -0.103043737029808
+        }
+      },
+      {
+        "stage": "outside",
+        "time_s": 0.05341833753467273,
+        "position_w_m": [
+          0.005079169273546264,
+          0.008797379242024832,
+          0.05366454156163318
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.6687379714285204,
+          "psm_pitch_end_joint": -0.1331306881499736,
+          "psm_main_insertion_joint": 0.11688102025403962,
+          "psm_tool_roll_joint": -1.012594404574982,
+          "psm_tool_pitch_joint": 0.6416900982341976,
+          "psm_tool_yaw_joint": -0.10664820969960626
+        }
+      },
+      {
+        "stage": "outside",
+        "time_s": 0.10683667506934547,
+        "position_w_m": [
+          0.005079169273546264,
+          0.008797379242024832,
+          0.05232908312326636
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.6607417254567226,
+          "psm_pitch_end_joint": -0.1315028472383183,
+          "psm_main_insertion_joint": 0.11792295002139148,
+          "psm_tool_roll_joint": -1.0136251476503857,
+          "psm_tool_pitch_joint": 0.634103236655953,
+          "psm_tool_yaw_joint": -0.11015057863274359
+        }
+      },
+      {
+        "stage": "outside",
+        "time_s": 0.1602550126040182,
+        "position_w_m": [
+          0.005079169273546264,
+          0.008797379242024832,
+          0.05099362468489955
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.652905404784892,
+          "psm_pitch_end_joint": -0.1299068501468129,
+          "psm_main_insertion_joint": 0.11897153463795715,
+          "psm_tool_roll_joint": -1.014610600740102,
+          "psm_tool_pitch_joint": 0.6266635540301997,
+          "psm_tool_yaw_joint": -0.1135550392761703
+        }
+      },
+      {
+        "stage": "outside",
+        "time_s": 0.21367335013869093,
+        "position_w_m": [
+          0.005079169273546264,
+          0.008797379242024832,
+          0.04965816624653273
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.6452252659920331,
+          "psm_pitch_end_joint": -0.12834199875066135,
+          "psm_main_insertion_joint": 0.12002657756743355,
+          "psm_tool_roll_joint": -1.0155533180682212,
+          "psm_tool_pitch_joint": 0.6193678674771573,
+          "psm_tool_yaw_joint": -0.1168655648450154
+        }
+      },
+      {
+        "stage": "outside",
+        "time_s": 0.26709168767336366,
+        "position_w_m": [
+          0.005079169273546264,
+          0.008797379242024832,
+          0.04832270780816591
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.6376976317964116,
+          "psm_pitch_end_joint": -0.12680760573621408,
+          "psm_main_insertion_joint": 0.121087888716531,
+          "psm_tool_roll_joint": -1.0164556829101858,
+          "psm_tool_pitch_joint": 0.612213030674738,
+          "psm_tool_yaw_joint": -0.12008592053187522
+        }
+      },
+      {
+        "stage": "outside",
+        "time_s": 0.3205100252080364,
+        "position_w_m": [
+          0.005079169273546264,
+          0.008797379242024832,
+          0.04698724936979909
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.6303188932326652,
+          "psm_pitch_end_joint": -0.12530299492219588,
+          "psm_main_insertion_joint": 0.12215528424304886,
+          "psm_tool_roll_joint": -1.0173199205241332,
+          "psm_tool_pitch_joint": 0.6051959377520943,
+          "psm_tool_yaw_joint": -0.12321967667116421
+        }
+      },
+      {
+        "stage": "outside",
+        "time_s": 0.37392836274270913,
+        "position_w_m": [
+          0.005079169273546264,
+          0.008797379242024832,
+          0.04565179093143227
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.6230855113738132,
+          "psm_pitch_end_joint": -0.12382750153555035,
+          "psm_main_insertion_joint": 0.12322858636563763,
+          "psm_tool_roll_joint": -1.0181481100112173,
+          "psm_tool_pitch_joint": 0.5983135266253149,
+          "psm_tool_yaw_joint": -0.12627022093759802
+        }
+      },
+      {
+        "stage": "outside",
+        "time_s": 0.42734670027738186,
+        "position_w_m": [
+          0.005079169273546264,
+          0.008797379242024832,
+          0.04431633249306545
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.615994018646291,
+          "psm_pitch_end_joint": -0.12238047244391881,
+          "psm_main_insertion_joint": 0.12430762317559114,
+          "psm_tool_roll_joint": -1.0189421952015938,
+          "psm_tool_pitch_joint": 0.591562781829217,
+          "psm_tool_yaw_joint": -0.12924076965930179
+        }
+      },
+      {
+        "stage": "outside",
+        "time_s": 0.4807650378120546,
+        "position_w_m": [
+          0.005079169273546264,
+          0.008797379242024832,
+          0.04298087405469864
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.6090410197804906,
+          "psm_pitch_end_joint": -0.12096126634639338,
+          "psm_main_insertion_joint": 0.1253922284513911,
+          "psm_tool_roll_joint": -1.019703994650337,
+          "psm_tool_pitch_joint": 0.5849407368932175,
+          "psm_tool_yaw_joint": -0.1321343783174913
+        }
+      },
+      {
+        "stage": "outside",
+        "time_s": 0.5341833753467273,
+        "position_w_m": [
+          0.005079169273546264,
+          0.008797379242024832,
+          0.04164541561633182
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.6022231924374672,
+          "psm_pitch_end_joint": -0.11956925392509196,
+          "psm_main_insertion_joint": 0.12648224147623724,
+          "psm_tool_roll_joint": -1.0204352108219956,
+          "psm_tool_pitch_joint": 0.5784444763075405,
+          "psm_tool_yaw_joint": -0.1349539512988085
+        }
+      },
+      {
+        "stage": "outside",
+        "time_s": 0.5876017128814001,
+        "position_w_m": [
+          0.005079169273546264,
+          0.008797379242024832,
+          0.040309957177965
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.595537287547113,
+          "psm_pitch_end_joint": -0.1182038179595857,
+          "psm_main_insertion_joint": 0.12757750685899466,
+          "psm_tool_roll_joint": -1.0211374385345304,
+          "psm_tool_pitch_joint": 0.5720711371201747,
+          "psm_tool_yaw_joint": -0.13770225095988045
+        }
+      },
+      {
+        "stage": "reach",
+        "time_s": 0.0,
+        "position_w_m": [
+          0.005079169273546264,
+          0.008797379242024832,
+          0.040309957177965
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.595537287547113,
+          "psm_pitch_end_joint": -0.1182038179595857,
+          "psm_main_insertion_joint": 0.12757750685899466,
+          "psm_tool_roll_joint": -1.0211374385345304,
+          "psm_tool_pitch_joint": 0.5720711371201747,
+          "psm_tool_yaw_joint": -0.13770225095988045
+        }
+      },
+      {
+        "stage": "reach",
+        "time_s": 0.27272727272727276,
+        "position_w_m": [
+          0.004845973721278763,
+          0.008393472697398435,
+          0.03902855814962058
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.590783454613634,
+          "psm_pitch_end_joint": -0.11353705956633499,
+          "psm_main_insertion_joint": 0.12871567922471097,
+          "psm_tool_roll_joint": -1.0196239016901751,
+          "psm_tool_pitch_joint": 0.5656056704128616,
+          "psm_tool_yaw_joint": -0.1359127300195052
+        }
+      },
+      {
+        "stage": "reach",
+        "time_s": 0.5454545454545455,
+        "position_w_m": [
+          0.004612778169011261,
+          0.00798956615277204,
+          0.03774715912127616
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.5861312479265312,
+          "psm_pitch_end_joint": -0.10895784590722767,
+          "psm_main_insertion_joint": 0.12985876245548664,
+          "psm_tool_roll_joint": -1.0181774918323883,
+          "psm_tool_pitch_joint": 0.5592677618634022,
+          "psm_tool_yaw_joint": -0.1341688482226407
+        }
+      },
+      {
+        "stage": "reach",
+        "time_s": 0.8181818181818183,
+        "position_w_m": [
+          0.00437958261674376,
+          0.007585659608145643,
+          0.03646576009293173
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.5815776397621167,
+          "psm_pitch_end_joint": -0.10446425421893317,
+          "psm_main_insertion_joint": 0.13100661159989302,
+          "psm_tool_roll_joint": -1.0167950292504966,
+          "psm_tool_pitch_joint": 0.5530542245023149,
+          "psm_tool_yaw_joint": -0.13246889182806817
+        }
+      },
+      {
+        "stage": "reach",
+        "time_s": 1.090909090909091,
+        "position_w_m": [
+          0.004146387064476259,
+          0.007181753063519248,
+          0.03518436106458731
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.5771197126783496,
+          "psm_pitch_end_joint": -0.10005439184297985,
+          "psm_main_insertion_joint": 0.1321590867719773,
+          "psm_tool_roll_joint": -1.0154735033063618,
+          "psm_tool_pitch_joint": 0.5469619517594569,
+          "psm_tool_yaw_joint": -0.13081123133306533
+        }
+      },
+      {
+        "stage": "reach",
+        "time_s": 1.3636363636363638,
+        "position_w_m": [
+          0.003913191512208757,
+          0.006777846518892851,
+          0.03390296203624289
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.5727546550427632,
+          "psm_pitch_end_joint": -0.09572639759168426,
+          "psm_main_insertion_joint": 0.13331605296300464,
+          "psm_tool_roll_joint": -1.0142100624699544,
+          "psm_tool_pitch_joint": 0.5409879164806305,
+          "psm_tool_yaw_joint": -0.12919431639345896
+        }
+      },
+      {
+        "stage": "reach",
+        "time_s": 1.6363636363636367,
+        "position_w_m": [
+          0.0036799959599412555,
+          0.006373939974266455,
+          0.03262156300789847
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.568479756740591,
+          "psm_pitch_end_joint": -0.09147844286405535,
+          "psm_main_insertion_joint": 0.1344773798594785,
+          "psm_tool_roll_joint": -1.0130020049919222,
+          "psm_tool_pitch_joint": 0.5351291698176549,
+          "psm_tool_yaw_joint": -0.12761667110180666
+        }
+      },
+      {
+        "stage": "reach",
+        "time_s": 1.9090909090909094,
+        "position_w_m": [
+          0.0034468004076737544,
+          0.005970033429640059,
+          0.03134016397955405
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.5642924050573864,
+          "psm_pitch_end_joint": -0.08730873253780876,
+          "psm_main_insertion_joint": 0.13564294166738639,
+          "psm_tool_roll_joint": -1.0118467701718203,
+          "psm_tool_pitch_joint": 0.5293828400096601,
+          "psm_tool_yaw_joint": -0.12607688959766694
+        }
+      },
+      {
+        "stage": "reach",
+        "time_s": 2.181818181818182,
+        "position_w_m": [
+          0.003213604855406253,
+          0.005566126885013663,
+          0.03005876495120963
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.5601900807310219,
+          "psm_pitch_end_joint": -0.08321550566148775,
+          "psm_main_insertion_joint": 0.13681261694255364,
+          "psm_tool_roll_joint": -1.0107419301808829,
+          "psm_tool_pitch_joint": 0.5237461310738875,
+          "psm_tool_yaw_joint": -0.12457363198300637
+        }
+      },
+      {
+        "stage": "reach",
+        "time_s": 2.454545454545455,
+        "position_w_m": [
+          0.0029804093031387514,
+          0.005162220340387267,
+          0.028777365922865207
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.5561703541674012,
+          "psm_pitch_end_joint": -0.07919703596826108,
+          "psm_main_insertion_joint": 0.13798628842702693,
+          "psm_tool_roll_joint": -1.0096851824024027,
+          "psm_tool_pitch_joint": 0.5182163214206275,
+          "psm_tool_yaw_joint": -0.12310562051902843
+        }
+      },
+      {
+        "stage": "reach",
+        "time_s": 2.7272727272727275,
+        "position_w_m": [
+          0.0027472137508712502,
+          0.004758313795760871,
+          0.027495966894520787
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.5522308818144749,
+          "psm_pitch_end_joint": -0.07525163223120505,
+          "psm_main_insertion_joint": 0.13916384289132366,
+          "psm_tool_roll_joint": -1.0086743422530506,
+          "psm_tool_pitch_joint": 0.5127907624076108,
+          "psm_tool_yaw_joint": -0.12167163608103504
+        }
+      },
+      {
+        "stage": "reach",
+        "time_s": 3.0000000000000004,
+        "position_w_m": [
+          0.0025140181986037487,
+          0.0043544072511344754,
+          0.026214567866176368
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.5483694026887838,
+          "psm_pitch_end_joint": -0.0713776384777972,
+          "psm_main_insertion_joint": 0.14034517098247326,
+          "psm_tool_roll_joint": -1.0077073364547655,
+          "psm_tool_pitch_joint": 0.5074668768450583,
+          "psm_tool_yaw_joint": -0.12027051485271592
+        }
+      },
+      {
+        "stage": "lift",
+        "time_s": 0.0,
+        "position_w_m": [
+          0.0025140181986037487,
+          0.0043544072511344754,
+          0.026214567866176368
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.5483694026887838,
+          "psm_pitch_end_joint": -0.0713776384777972,
+          "psm_main_insertion_joint": 0.14034517098247326,
+          "psm_tool_roll_joint": -1.0077073364547655,
+          "psm_tool_pitch_joint": 0.5074668768450583,
+          "psm_tool_yaw_joint": -0.12027051485271592
+        }
+      },
+      {
+        "stage": "lift",
+        "time_s": 0.6363636363636365,
+        "position_w_m": [
+          0.0025140181986037487,
+          0.0043544072511344754,
+          0.02939638604799455
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.5617457767809718,
+          "psm_pitch_end_joint": -0.07335308758128406,
+          "psm_main_insertion_joint": 0.13764805494080812,
+          "psm_tool_roll_joint": -1.0055918638987784,
+          "psm_tool_pitch_joint": 0.5197972262545751,
+          "psm_tool_yaw_joint": -0.1139967769927504
+        }
+      },
+      {
+        "stage": "lift",
+        "time_s": 1.272727272727273,
+        "position_w_m": [
+          0.0025140181986037487,
+          0.0043544072511344754,
+          0.03257820422981273
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.5757126238427529,
+          "psm_pitch_end_joint": -0.07542493650149776,
+          "psm_main_insertion_joint": 0.13497444752840052,
+          "psm_tool_roll_joint": -1.0033044549886683,
+          "psm_tool_pitch_joint": 0.5326624731940266,
+          "psm_tool_yaw_joint": -0.10737618440993378
+        }
+      },
+      {
+        "stage": "lift",
+        "time_s": 1.9090909090909094,
+        "position_w_m": [
+          0.0025140181986037487,
+          0.0043544072511344754,
+          0.03576002241163091
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.590303673689013,
+          "psm_pitch_end_joint": -0.07759930827517375,
+          "psm_main_insertion_joint": 0.13232593241015342,
+          "psm_tool_roll_joint": -1.0008263251864709,
+          "psm_tool_pitch_joint": 0.5460917860655677,
+          "psm_tool_yaw_joint": -0.10037978633750758
+        }
+      },
+      {
+        "stage": "lift",
+        "time_s": 2.545454545454546,
+        "position_w_m": [
+          0.0025140181986037487,
+          0.0043544072511344754,
+          0.0389418405934491
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.6055545690905313,
+          "psm_pitch_end_joint": -0.07988274863584695,
+          "psm_main_insertion_joint": 0.1297042206751133,
+          "psm_tool_roll_joint": -0.9981361181397574,
+          "psm_tool_pitch_joint": 0.5601157411459057,
+          "psm_tool_yaw_joint": -0.09297539748763087
+        }
+      },
+      {
+        "stage": "lift",
+        "time_s": 3.1818181818181825,
+        "position_w_m": [
+          0.0025140181986037487,
+          0.0043544072511344754,
+          0.042123658775267275
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.6215028912064889,
+          "psm_pitch_end_joint": -0.08228224970541616,
+          "psm_main_insertion_joint": 0.12711116142308623,
+          "psm_tool_roll_joint": -0.9952094854473583,
+          "psm_tool_pitch_joint": 0.5747662788277874,
+          "psm_tool_yaw_joint": -0.08512714632022582
+        }
+      },
+      {
+        "stage": "lift",
+        "time_s": 3.818181818181819,
+        "position_w_m": [
+          0.0025140181986037487,
+          0.0043544072511344754,
+          0.045305476957085464
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.6381881569810856,
+          "psm_pitch_end_joint": -0.08480527309622084,
+          "psm_main_insertion_joint": 0.1245487529850944,
+          "psm_tool_roll_joint": -0.9920185875913894,
+          "psm_tool_pitch_joint": 0.5900766208156102,
+          "psm_tool_yaw_joint": -0.07679494806175935
+        }
+      },
+      {
+        "stage": "lift",
+        "time_s": 4.454545454545455,
+        "position_w_m": [
+          0.0025140181986037487,
+          0.0043544072511344754,
+          0.04848729513890364
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.6556517792275174,
+          "psm_pitch_end_joint": -0.08745977184976284,
+          "psm_main_insertion_joint": 0.12201915471673201,
+          "psm_tool_roll_joint": -0.9885314996421986,
+          "psm_tool_pitch_joint": 0.6060811370658324,
+          "psm_tool_yaw_joint": -0.06793388808195368
+        }
+      },
+      {
+        "stage": "lift",
+        "time_s": 5.090909090909092,
+        "position_w_m": [
+          0.0025140181986037487,
+          0.0043544072511344754,
+          0.05166911332072183
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.673936977894986,
+          "psm_pitch_end_joint": -0.09025421051138394,
+          "psm_main_insertion_joint": 0.11952469926224257,
+          "psm_tool_roll_joint": -0.9847115017022448,
+          "psm_tool_pitch_joint": 0.6228151486714917,
+          "psm_tool_yaw_joint": -0.0584934981939234
+        }
+      },
+      {
+        "stage": "lift",
+        "time_s": 5.727272727272728,
+        "position_w_m": [
+          0.0025140181986037487,
+          0.0043544072511344754,
+          0.05485093150254001
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.6930886283630473,
+          "psm_pitch_end_joint": -0.0931975824983188,
+          "psm_main_insertion_joint": 0.11706790513309642,
+          "psm_tool_roll_joint": -0.9805162295950458,
+          "psm_tool_pitch_joint": 0.6403146498073167,
+          "psm_tool_yaw_joint": -0.048416904726010936
+        }
+      },
+      {
+        "stage": "lift",
+        "time_s": 6.363636363636365,
+        "position_w_m": [
+          0.0025140181986037487,
+          0.0043544072511344754,
+          0.05803274968435819
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.7131530294885488,
+          "psm_pitch_end_joint": -0.09629942375968485,
+          "psm_main_insertion_joint": 0.11465148937495044,
+          "psm_tool_roll_joint": -0.9758966558579636,
+          "psm_tool_pitch_joint": 0.6586159282165701,
+          "psm_tool_yaw_joint": -0.03763982267936462
+        }
+      },
+      {
+        "stage": "lift",
+        "time_s": 7.000000000000001,
+        "position_w_m": [
+          0.0025140181986037487,
+          0.0043544072511344754,
+          0.06121456786617637
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.7341775705124549,
+          "psm_pitch_end_joint": -0.09956982154556922,
+          "psm_main_insertion_joint": 0.11227838000777775,
+          "psm_tool_roll_joint": -0.9707958644755504,
+          "psm_tool_pitch_joint": 0.6777550594830485,
+          "psm_tool_yaw_joint": -0.026089364773839455
+        }
+      },
+      {
+        "stage": "lower",
+        "time_s": 0.0,
+        "position_w_m": [
+          0.0025140181986037487,
+          0.0043544072511344754,
+          0.06121456786617637
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.7341775705124549,
+          "psm_pitch_end_joint": -0.09956982154556922,
+          "psm_main_insertion_joint": 0.11227838000777775,
+          "psm_tool_roll_joint": -0.9707958644755504,
+          "psm_tool_pitch_joint": 0.6777550594830485,
+          "psm_tool_yaw_joint": -0.026089364773839455
+        }
+      },
+      {
+        "stage": "lower",
+        "time_s": 0.6363636363636365,
+        "position_w_m": [
+          0.0025140181986037487,
+          0.0043544072511344754,
+          0.05803274968435819
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.7131530294885488,
+          "psm_pitch_end_joint": -0.09629942375968477,
+          "psm_main_insertion_joint": 0.1146514893749505,
+          "psm_tool_roll_joint": -0.9758966558579635,
+          "psm_tool_pitch_joint": 0.6586159282165699,
+          "psm_tool_yaw_joint": -0.03763982267936443
+        }
+      },
+      {
+        "stage": "lower",
+        "time_s": 1.272727272727273,
+        "position_w_m": [
+          0.0025140181986037487,
+          0.0043544072511344754,
+          0.05485093150254001
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.6930886283630467,
+          "psm_pitch_end_joint": -0.09319758249831862,
+          "psm_main_insertion_joint": 0.11706790513309646,
+          "psm_tool_roll_joint": -0.9805162295950461,
+          "psm_tool_pitch_joint": 0.640314649807316,
+          "psm_tool_yaw_joint": -0.048416904726011296
+        }
+      },
+      {
+        "stage": "lower",
+        "time_s": 1.9090909090909094,
+        "position_w_m": [
+          0.0025140181986037487,
+          0.0043544072511344754,
+          0.05166911332072183
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.673936977894986,
+          "psm_pitch_end_joint": -0.090254210511384,
+          "psm_main_insertion_joint": 0.11952469926224255,
+          "psm_tool_roll_joint": -0.9847115017022449,
+          "psm_tool_pitch_joint": 0.6228151486714918,
+          "psm_tool_yaw_joint": -0.0584934981939235
+        }
+      },
+      {
+        "stage": "lower",
+        "time_s": 2.545454545454546,
+        "position_w_m": [
+          0.0025140181986037487,
+          0.0043544072511344754,
+          0.04848729513890364
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.6556517792275167,
+          "psm_pitch_end_joint": -0.08745977184976289,
+          "psm_main_insertion_joint": 0.12201915471673194,
+          "psm_tool_roll_joint": -0.9885314996421991,
+          "psm_tool_pitch_joint": 0.6060811370658319,
+          "psm_tool_yaw_joint": -0.06793388808195419
+        }
+      },
+      {
+        "stage": "lower",
+        "time_s": 3.1818181818181825,
+        "position_w_m": [
+          0.0025140181986037487,
+          0.0043544072511344754,
+          0.045305476957085464
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.6381881569810854,
+          "psm_pitch_end_joint": -0.08480527309622075,
+          "psm_main_insertion_joint": 0.12454875298509438,
+          "psm_tool_roll_joint": -0.9920185875913894,
+          "psm_tool_pitch_joint": 0.5900766208156101,
+          "psm_tool_yaw_joint": -0.07679494806175931
+        }
+      },
+      {
+        "stage": "lower",
+        "time_s": 3.818181818181819,
+        "position_w_m": [
+          0.0025140181986037487,
+          0.0043544072511344754,
+          0.042123658775267275
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.6215028912064893,
+          "psm_pitch_end_joint": -0.08228224970541624,
+          "psm_main_insertion_joint": 0.12711116142308615,
+          "psm_tool_roll_joint": -0.9952094854473582,
+          "psm_tool_pitch_joint": 0.5747662788277876,
+          "psm_tool_yaw_joint": -0.08512714632022553
+        }
+      },
+      {
+        "stage": "lower",
+        "time_s": 4.454545454545455,
+        "position_w_m": [
+          0.0025140181986037487,
+          0.0043544072511344754,
+          0.0389418405934491
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.6055545690905312,
+          "psm_pitch_end_joint": -0.07988274863584692,
+          "psm_main_insertion_joint": 0.12970422067511328,
+          "psm_tool_roll_joint": -0.9981361181397574,
+          "psm_tool_pitch_joint": 0.5601157411459057,
+          "psm_tool_yaw_joint": -0.09297539748763087
+        }
+      },
+      {
+        "stage": "lower",
+        "time_s": 5.090909090909092,
+        "position_w_m": [
+          0.0025140181986037487,
+          0.0043544072511344754,
+          0.03576002241163091
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.5903036736890132,
+          "psm_pitch_end_joint": -0.0775993082751738,
+          "psm_main_insertion_joint": 0.1323259324101534,
+          "psm_tool_roll_joint": -1.0008263251864709,
+          "psm_tool_pitch_joint": 0.5460917860655681,
+          "psm_tool_yaw_joint": -0.1003797863375077
+        }
+      },
+      {
+        "stage": "lower",
+        "time_s": 5.727272727272728,
+        "position_w_m": [
+          0.0025140181986037487,
+          0.0043544072511344754,
+          0.03257820422981273
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.5757126238427528,
+          "psm_pitch_end_joint": -0.07542493650149774,
+          "psm_main_insertion_joint": 0.13497444752840052,
+          "psm_tool_roll_joint": -1.003304454988668,
+          "psm_tool_pitch_joint": 0.5326624731940267,
+          "psm_tool_yaw_joint": -0.10737618440993348
+        }
+      },
+      {
+        "stage": "lower",
+        "time_s": 6.363636363636365,
+        "position_w_m": [
+          0.0025140181986037487,
+          0.0043544072511344754,
+          0.02939638604799455
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.5617457767809723,
+          "psm_pitch_end_joint": -0.07335308758128402,
+          "psm_main_insertion_joint": 0.13764805494080817,
+          "psm_tool_roll_joint": -1.005591863898778,
+          "psm_tool_pitch_joint": 0.5197972262545755,
+          "psm_tool_yaw_joint": -0.11399677699274995
+        }
+      },
+      {
+        "stage": "lower",
+        "time_s": 7.000000000000001,
+        "position_w_m": [
+          0.0025140181986037487,
+          0.0043544072511344754,
+          0.026214567866176368
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.5483694026889915,
+          "psm_pitch_end_joint": -0.0713776384779163,
+          "psm_main_insertion_joint": 0.14034517098250998,
+          "psm_tool_roll_joint": -1.0077073364550742,
+          "psm_tool_pitch_joint": 0.507466876847675,
+          "psm_tool_yaw_joint": -0.12027051485310279
+        }
+      },
+      {
+        "stage": "retreat",
+        "time_s": 0.0,
+        "position_w_m": [
+          0.0025140181986037487,
+          0.0043544072511344754,
+          0.026214567866176368
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.5483694026889915,
+          "psm_pitch_end_joint": -0.0713776384779163,
+          "psm_main_insertion_joint": 0.14034517098250998,
+          "psm_tool_roll_joint": -1.0077073364550742,
+          "psm_tool_pitch_joint": 0.507466876847675,
+          "psm_tool_yaw_joint": -0.12027051485310279
+        }
+      },
+      {
+        "stage": "retreat",
+        "time_s": 0.10632375962857403,
+        "position_w_m": [
+          0.0027472137508712502,
+          0.004758313795760871,
+          0.028831425332887607
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.5578659034644092,
+          "psm_pitch_end_joint": -0.07611250465506356,
+          "psm_main_insertion_joint": 0.1380321145451722,
+          "psm_tool_roll_joint": -1.0078153149656748,
+          "psm_tool_pitch_joint": 0.5180029111507132,
+          "psm_tool_yaw_joint": -0.11906433578878581
+        }
+      },
+      {
+        "stage": "retreat",
+        "time_s": 0.21264751925714806,
+        "position_w_m": [
+          0.002980409303138752,
+          0.005162220340387267,
+          0.031448282799598846
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.5677318968782928,
+          "psm_pitch_end_joint": -0.08102550633336773,
+          "psm_main_insertion_joint": 0.13573332338030095,
+          "psm_tool_roll_joint": -1.00795834799697,
+          "psm_tool_pitch_joint": 0.5289427084026431,
+          "psm_tool_yaw_joint": -0.1178014001250865
+        }
+      },
+      {
+        "stage": "retreat",
+        "time_s": 0.3189712788857221,
+        "position_w_m": [
+          0.003213604855406253,
+          0.005566126885013663,
+          0.034065140266310086
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.5779873090835366,
+          "psm_pitch_end_joint": -0.08612516607313561,
+          "psm_main_insertion_joint": 0.13344963129019413,
+          "psm_tool_roll_joint": -1.0081399538611857,
+          "psm_tool_pitch_joint": 0.5403071007032136,
+          "psm_tool_yaw_joint": -0.11647760965761739
+        }
+      },
+      {
+        "stage": "retreat",
+        "time_s": 0.4252950385142961,
+        "position_w_m": [
+          0.0034468004076737544,
+          0.005970033429640059,
+          0.036681997733021325
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.5886533367047071,
+          "psm_pitch_end_joint": -0.09142039633626892,
+          "psm_main_insertion_joint": 0.13118193217057536,
+          "psm_tool_roll_joint": -1.0083639641742,
+          "psm_tool_pitch_joint": 0.552118119369993,
+          "psm_tool_yaw_joint": -0.11508846234367445
+        }
+      },
+      {
+        "stage": "retreat",
+        "time_s": 0.5316187981428702,
+        "position_w_m": [
+          0.003679995959941256,
+          0.006373939974266456,
+          0.039298855199732564
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.5997525269836587,
+          "psm_pitch_end_joint": -0.09692050009376751,
+          "psm_main_insertion_joint": 0.12893118482390514,
+          "psm_tool_roll_joint": -1.0086345446002052,
+          "psm_tool_pitch_joint": 0.5643990506856642,
+          "psm_tool_yaw_joint": -0.11362900136276936
+        }
+      },
+      {
+        "stage": "retreat",
+        "time_s": 0.6379425577714442,
+        "position_w_m": [
+          0.003913191512208757,
+          0.006777846518892851,
+          0.041915712666443804
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.6113088604184465,
+          "psm_pitch_end_joint": -0.10263516655026639,
+          "psm_main_insertion_joint": 0.1266984181442383,
+          "psm_tool_roll_joint": -1.008956214448112,
+          "psm_tool_pitch_joint": 0.5771744893296099,
+          "psm_tool_yaw_joint": -0.11209375627692547
+        }
+      },
+      {
+        "stage": "retreat",
+        "time_s": 0.7442663174000183,
+        "position_w_m": [
+          0.004146387064476259,
+          0.007181753063519248,
+          0.04453257013315504
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.6233478351268319,
+          "psm_pitch_end_joint": -0.10857446073569643,
+          "psm_main_insertion_joint": 0.12448473669000283,
+          "psm_tool_roll_joint": -1.009333864031629,
+          "psm_tool_pitch_joint": 0.5904703879292152,
+          "psm_tool_yaw_joint": -0.11047667482530546
+        }
+      },
+      {
+        "stage": "retreat",
+        "time_s": 0.8505900770285922,
+        "position_w_m": [
+          0.00437958261674376,
+          0.007585659608145644,
+          0.04714942759986628
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.6358965518701777,
+          "psm_pitch_end_joint": -0.11474880548260727,
+          "psm_main_insertion_joint": 0.1222913266575909,
+          "psm_tool_roll_joint": -1.0097727683083884,
+          "psm_tool_pitch_joint": 0.6043141007684755,
+          "psm_tool_yaw_joint": -0.10877104356902297
+        }
+      },
+      {
+        "stage": "retreat",
+        "time_s": 0.9569138366571662,
+        "position_w_m": [
+          0.004612778169011261,
+          0.00798956615277204,
+          0.049766285066577515
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.6489837983016543,
+          "psm_pitch_end_joint": -0.1211689540470883,
+          "psm_main_insertion_joint": 0.12011946226358453,
+          "psm_tool_roll_joint": -1.0102785947930055,
+          "psm_tool_pitch_joint": 0.6187344192148976,
+          "psm_tool_yaw_joint": -0.10696939520332543
+        }
+      },
+      {
+        "stage": "retreat",
+        "time_s": 1.0632375962857403,
+        "position_w_m": [
+          0.004845973721278763,
+          0.008393472697398437,
+          0.05238314253328877
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.662640130538005,
+          "psm_pitch_end_joint": -0.12784595134319077,
+          "psm_main_insertion_joint": 0.11797051253634097,
+          "psm_tool_roll_joint": -1.0108574030574486,
+          "psm_tool_pitch_joint": 0.6337615958591197,
+          "psm_tool_yaw_joint": -0.10506339985268111
+        }
+      },
+      {
+        "stage": "retreat",
+        "time_s": 1.1695613559143143,
+        "position_w_m": [
+          0.005079169273546264,
+          0.008797379242024832,
+          0.055
+        ],
+        "quaternion_wxyz": [
+          0.8528685319524433,
+          -0.08682408883346515,
+          0.1503837331804353,
+          0.49240387650610395
+        ],
+        "joints": {
+          "psm_yaw_joint": -0.6768979495771811,
+          "psm_pitch_end_joint": -0.13479108144983928,
+          "psm_main_insertion_joint": 0.11584594850803182,
+          "psm_tool_roll_joint": -1.0115156322414238,
+          "psm_tool_pitch_joint": 0.6494273536936142,
+          "psm_tool_yaw_joint": -0.10304373702934959
+        }
+      }
+    ]
+  },
+  "kinematics_sha256": "f97ddbc0967c38b4bebd0433a168daa39b3274ef4123d75e437b8e2860c0cf23",
+  "parameters": {
+    "mode": "wall",
+    "vertex": 0,
+    "height": 0.5,
+    "arm": 2,
+    "episodes": 1,
+    "stage_steps": 6000,
+    "seed": 42,
+    "free_speed": 0.025,
+    "contact_speed": 0.005,
+    "lift_speed": 0.003,
+    "rotation_speed": 1.0,
+    "mass_g": 5.0,
+    "friction": 0.9,
+    "contact_stiffness": 1000.0,
+    "contact_damping": 0.5,
+    "jaw_torque": 0.015,
+    "jaw_stiffness": 0.6,
+    "grip_force": 0.35,
+    "preload_seconds": 0.4,
+    "max_force": 1.0,
+    "device": "cuda:0",
+    "enable_cameras": false,
+    "realtime": false,
+    "output": "logs/grasp_v2/wall_psm2_baseline_2026-10-05.json",
+    "demonstrations": null,
+    "policy": null,
+    "camera_eye": [
+      0.025,
+      0.32,
+      0.25
+    ],
+    "camera_target": [
+      0.025,
+      0.0,
+      0.035
+    ],
+    "robot_usd": null,
+    "headless": true,
+    "hide_ui": true,
+    "create_new_stage": false,
+    "physics_gpu": 0,
+    "active_gpu": 0
+  },
+  "versions": {
+    "isaacsim": "5.1.0.0",
+    "isaaclab": "0.48.0",
+    "torch": "2.7.0+cu128"
+  },
+  "force_evidence": "filtered finger-to-peg normal contact forces, sampled at control rate (100 Hz)",
+  "cases": [
+    {
+      "episode": 0,
+      "physical_grasp_hold_success": true,
+      "complete": false,
+      "reason": "release_budget_exhausted",
+      "stages": [
+        {
+          "stage": "settle",
+          "steps": 50,
+          "achieved": true,
+          "budget_steps": 50,
+          "elapsed_s": 0.5,
+          "budget_s": 0.5,
+          "target_error_mm": 2.269949618494138e-05,
+          "orientation_error_rad": 4.1069122858061746e-07,
+          "grip_control": null,
+          "grasp_site_distance_mm": 85.40486907958984,
+          "joints_near_limit": []
+        },
+        {
+          "stage": "above",
+          "steps": 292,
+          "achieved": true,
+          "budget_steps": 6000,
+          "elapsed_s": 2.92,
+          "budget_s": 60.0,
+          "target_error_mm": 0.05184245482087135,
+          "orientation_error_rad": 0.000199854897800833,
+          "grip_control": null,
+          "grasp_site_distance_mm": 29.18987464904785,
+          "joints_near_limit": []
+        },
+        {
+          "stage": "outside",
+          "steps": 70,
+          "achieved": true,
+          "budget_steps": 6000,
+          "elapsed_s": 0.7000000000000001,
+          "budget_s": 60.0,
+          "target_error_mm": 0.05172641947865486,
+          "orientation_error_rad": 0.00019602867541834712,
+          "grip_control": null,
+          "grasp_site_distance_mm": 14.997824668884277,
+          "joints_near_limit": []
+        },
+        {
+          "stage": "reach",
+          "steps": 300,
+          "achieved": true,
+          "budget_steps": 6000,
+          "elapsed_s": 3.0,
+          "budget_s": 60.0,
+          "target_error_mm": 0.22294656932353973,
+          "orientation_error_rad": 1.3410589417617302e-05,
+          "grip_control": null,
+          "grasp_site_distance_mm": 0.22294588387012482,
+          "joints_near_limit": []
+        },
+        {
+          "stage": "close",
+          "steps": 146,
+          "achieved": true,
+          "budget_steps": 6000,
+          "elapsed_s": 1.46,
+          "budget_s": 60.0,
+          "target_error_mm": 0.040770918130874634,
+          "orientation_error_rad": 1.2072932804585434e-05,
+          "grip_control": {
+            "jaw_target_rad": 0.1315999999999998,
+            "pressure_ready": true,
+            "motion_allowed": false,
+            "reason": null,
+            "force_target_n": 0.35,
+            "preload_stable_s": 0.4000000000000002,
+            "slip_mm": 0.0,
+            "rotation_slip_rad": 0.0,
+            "nominal_friction_capacity_n": 0.584604913285345,
+            "peg_weight_n": 0.04905
+          },
+          "grasp_site_distance_mm": 0.26763373613357544,
+          "joints_near_limit": []
+        },
+        {
+          "stage": "lift",
+          "steps": 1194,
+          "achieved": true,
+          "budget_steps": 6000,
+          "elapsed_s": 11.94,
+          "budget_s": 60.0,
+          "target_error_mm": 0.1311688870191574,
+          "orientation_error_rad": 2.8262576961424202e-05,
+          "grip_control": {
+            "jaw_target_rad": 0.13059999999999977,
+            "pressure_ready": true,
+            "motion_allowed": true,
+            "reason": null,
+            "force_target_n": 0.35,
+            "preload_stable_s": 11.759999999999794,
+            "slip_mm": 0.033693607503068615,
+            "rotation_slip_rad": 0.008870669479649129,
+            "nominal_friction_capacity_n": 0.6077085946107063,
+            "peg_weight_n": 0.04905
+          },
+          "grasp_site_distance_mm": 0.28897184133529663,
+          "joints_near_limit": []
+        },
+        {
+          "stage": "hold",
+          "steps": 200,
+          "achieved": true,
+          "budget_steps": 6000,
+          "elapsed_s": 2.0,
+          "budget_s": 60.0,
+          "target_error_mm": 0.04507701098918915,
+          "orientation_error_rad": 1.9317298210808076e-05,
+          "grip_control": {
+            "jaw_target_rad": 0.13059999999999977,
+            "pressure_ready": true,
+            "motion_allowed": true,
+            "reason": null,
+            "force_target_n": 0.35,
+            "preload_stable_s": 13.759999999999751,
+            "slip_mm": 0.03386873876996041,
+            "rotation_slip_rad": 0.008876074434681044,
+            "nominal_friction_capacity_n": 0.6073659810960055,
+            "peg_weight_n": 0.04905
+          },
+          "grasp_site_distance_mm": 0.28912055492401123,
+          "joints_near_limit": []
+        },
+        {
+          "stage": "lower",
+          "steps": 711,
+          "achieved": true,
+          "budget_steps": 6000,
+          "elapsed_s": 7.11,
+          "budget_s": 60.0,
+          "target_error_mm": 0.24853317439556122,
+          "orientation_error_rad": 1.6121419321279973e-05,
+          "grip_control": {
+            "jaw_target_rad": 0.13039999999999977,
+            "pressure_ready": true,
+            "motion_allowed": true,
+            "reason": null,
+            "force_target_n": 0.35,
+            "preload_stable_s": 6.569999999999904,
+            "slip_mm": 0.06023522629801314,
+            "rotation_slip_rad": 0.013409567060103602,
+            "nominal_friction_capacity_n": 0.5961513330479228,
+            "peg_weight_n": 0.04905
+          },
+          "grasp_site_distance_mm": 0.30254819989204407,
+          "joints_near_limit": []
+        },
+        {
+          "stage": "release",
+          "steps": 6000,
+          "achieved": false,
+          "budget_steps": 6000,
+          "elapsed_s": 60.0,
+          "budget_s": 60.0,
+          "target_error_mm": 0.004896150901913643,
+          "orientation_error_rad": 3.941009344998747e-05,
+          "grip_control": null,
+          "grasp_site_distance_mm": 0.2871865928173065,
+          "joints_near_limit": []
+        }
+      ],
+      "force_peak_n": [
+        0.3404285011312238,
+        0.38631675204169097
+      ],
+      "terminal": {
+        "peg_root_w_m": [
+          -0.0059202490374445915,
+          7.404867210425436e-05,
+          0.02483864687383175
+        ],
+        "tool_tip_w_m": [
+          0.0025729394983500242,
+          0.004418536555022001,
+          0.026463143527507782
+        ],
+        "tool_quaternion_wxyz": [
+          0.8528733849525452,
+          -0.08684097975492477,
+          0.1503766030073166,
+          0.49239471554756165
+        ],
+        "joint_positions": {
+          "psm_yaw_joint": -0.5490206480026245,
+          "psm_pitch_end_joint": -0.07202158868312836,
+          "psm_main_insertion_joint": 0.14010797441005707,
+          "psm_tool_roll_joint": -1.0078386068344116,
+          "psm_tool_pitch_joint": 0.5083953738212585,
+          "psm_tool_yaw_joint": -0.12048906087875366,
+          "psm_tool_gripper1_joint": -0.15029051899909973,
+          "psm_tool_gripper2_joint": 0.15000057220458984
+        },
+        "joint_velocities": {
+          "psm_yaw_joint": 0.00027680478524416685,
+          "psm_pitch_end_joint": 3.795764860115014e-05,
+          "psm_main_insertion_joint": 5.260441321297549e-05,
+          "psm_tool_roll_joint": -0.0006396558019332588,
+          "psm_tool_pitch_joint": -0.0003803826111834496,
+          "psm_tool_yaw_joint": -3.791837298194878e-05,
+          "psm_tool_gripper1_joint": 0.10349612683057785,
+          "psm_tool_gripper2_joint": -3.827893124253023e-06
+        },
+        "joints_near_limit": [],
+        "peg_in_tool_m": [
+          -0.006970535963773727,
+          0.005183024797588587,
+          -0.00426564272493124
+        ],
+        "peg_quat_in_tool": [
+          0.8508570194244385,
+          0.08111925423145294,
+          -0.13721086084842682,
+          -0.5006345510482788
+        ],
+        "peg_bottom_m": 0.009769181720912457,
+        "peg_speed_m_s": 0.013159706257283688,
+        "jaw_rad": [
+          0.15029051899909973,
+          0.15000057220458984
+        ],
+        "finger_force_vectors_n": [
+          [
+            -0.009141063317656517,
+            -0.015806488692760468,
+            0.009918428026139736
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "finger_contact_points_w_m": [
+          [
+            0.0017720606410875916,
+            0.003564540296792984,
+            0.027067597955465317
+          ],
+          null
+        ],
+        "finger_contact_surfaces": [
+          "inner",
+          "none"
+        ],
+        "finger_normal_force_n": [
+          0.020779300707229883,
+          0.0
+        ]
+      }
+    }
+  ],
+  "requested_episodes": 1,
+  "episodes": 1,
+  "interrupted": false,
+  "error": null,
+  "complete": true,
+  "physical_grasp_hold_success": 1,
+  "trace": "logs/grasp_v2/wall_psm2_baseline_2026-10-05.trace.jsonl"
+}

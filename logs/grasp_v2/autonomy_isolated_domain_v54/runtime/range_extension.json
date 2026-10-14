@@ -1,0 +1,12 @@
+{
+  "policy_sha256": "9a371d1f95ea2cefe7680949ab229426672e650e6cc58fe4fe6d2eaf64fa5d74",
+  "changed_source_files": [
+    "autonomy_main.py"
+  ],
+  "unchanged_source_files": 29,
+  "reset_square_minimum_post_clearance_mm": 0.20987729896567472,
+  "allowed_yaw_deg": 30.0,
+  "allowed_jitter_half_width_mm": 1.1,
+  "controller_and_sampling_unchanged": true,
+  "weights_unchanged": true
+}

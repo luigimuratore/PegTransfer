@@ -1,0 +1,223 @@
+{
+  "complete": true,
+  "episodes": 3,
+  "success": 0,
+  "grasp_psm1": 3,
+  "sampling": "Fixed allocated episode IDs; every allocated episode completes without replacement by faster environments",
+  "lift_stable": 3,
+  "grasp_psm2": 0,
+  "handover": 0,
+  "full_success": 0,
+  "timeouts": 0,
+  "failures": 3,
+  "cases": [
+    {
+      "skill": "full",
+      "success": false,
+      "failure": true,
+      "timeout": false,
+      "length": 2788,
+      "return_": -2.7921485900878906,
+      "grasp_psm1": true,
+      "lift_stable": true,
+      "grasp_psm2": false,
+      "handover": false,
+      "full_success": false,
+      "hole_error_mm": 30.84691047668457,
+      "peak_force_n": 0.43285706639289856,
+      "assisted_grasp": false,
+      "reset": {
+        "source": "L5",
+        "target": "R2",
+        "jitter_mm": [
+          -0.0,
+          -0.0
+        ],
+        "yaw_deg": -0.0
+      },
+      "terminal_physics": {
+        "peg_m": [
+          0.014389514923095703,
+          -0.006754440255463123,
+          0.03569692000746727
+        ],
+        "bottom_m": 0.01963374949991703,
+        "tool_tips_m": [
+          [
+            0.014657258987426758,
+            -0.00687769940122962,
+            0.061322785913944244
+          ],
+          [
+            0.023146867752075195,
+            -0.0114512387663126,
+            0.058904390782117844
+          ]
+        ],
+        "forces_n": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "jaws_rad": [
+          [
+            0.12618806958198547,
+            0.12612386047840118
+          ],
+          [
+            0.23299995064735413,
+            0.23297210037708282
+          ]
+        ]
+      },
+      "terminal_teacher_stage": null
+    },
+    {
+      "skill": "full",
+      "success": false,
+      "failure": true,
+      "timeout": false,
+      "length": 2824,
+      "return_": -2.8556880950927734,
+      "grasp_psm1": true,
+      "lift_stable": true,
+      "grasp_psm2": false,
+      "handover": false,
+      "full_success": false,
+      "hole_error_mm": 30.98337745666504,
+      "peak_force_n": 0.4342191219329834,
+      "assisted_grasp": false,
+      "reset": {
+        "source": "L5",
+        "target": "R2",
+        "jitter_mm": [
+          0.0,
+          -0.0
+        ],
+        "yaw_deg": 0.0
+      },
+      "terminal_physics": {
+        "peg_m": [
+          0.014283019118010998,
+          -0.006783952470868826,
+          0.03457999229431152
+        ],
+        "bottom_m": 0.018553201109170914,
+        "tool_tips_m": [
+          [
+            0.014689156785607338,
+            -0.006877009756863117,
+            0.06132335215806961
+          ],
+          [
+            0.023123690858483315,
+            -0.011452020145952702,
+            0.058808740228414536
+          ]
+        ],
+        "forces_n": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "jaws_rad": [
+          [
+            0.12832236289978027,
+            0.12826424837112427
+          ],
+          [
+            0.22480037808418274,
+            0.22477196156978607
+          ]
+        ]
+      },
+      "terminal_teacher_stage": null
+    },
+    {
+      "skill": "full",
+      "success": false,
+      "failure": true,
+      "timeout": false,
+      "length": 2816,
+      "return_": -2.8415184020996094,
+      "grasp_psm1": true,
+      "lift_stable": true,
+      "grasp_psm2": false,
+      "handover": false,
+      "full_success": false,
+      "hole_error_mm": 31.01356315612793,
+      "peak_force_n": 0.4441235661506653,
+      "assisted_grasp": false,
+      "reset": {
+        "source": "L5",
+        "target": "R2",
+        "jitter_mm": [
+          -0.0,
+          -0.0
+        ],
+        "yaw_deg": -0.0
+      },
+      "terminal_physics": {
+        "peg_m": [
+          0.014234781265258789,
+          -0.006800142116844654,
+          0.039566706866025925
+        ],
+        "bottom_m": 0.023313317447900772,
+        "tool_tips_m": [
+          [
+            0.014688491821289062,
+            -0.006866901647299528,
+            0.06132077798247337
+          ],
+          [
+            0.023119211196899414,
+            -0.011457251384854317,
+            0.05882108956575394
+          ]
+        ],
+        "forces_n": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "jaws_rad": [
+          [
+            0.12839867174625397,
+            0.12833194434642792
+          ],
+          [
+            0.22660332918167114,
+            0.22657199203968048
+          ]
+        ]
+      },
+      "terminal_teacher_stage": null
+    }
+  ],
+  "assisted_grasp": false,
+  "programmed_task_controller": false,
+  "teacher_at_inference": false,
+  "mode": "evaluate",
+  "policy_sha256": "9a505717ba452d2a0311d071613d227ef04b8955224db21df84eb91cdaa90dd7",
+  "seed": 123,
+  "skill": "full",
+  "gpu": "NVIDIA RTX 6000 Ada Generation",
+  "handover_criterion": "Receiver alone supports peg above 37.5 mm for 2 s, with stable opposed contacts and donor force below 0.01 N",
+  "low_level_control": "IK with generic contact speed limits; no object attachment or task goals"
+}

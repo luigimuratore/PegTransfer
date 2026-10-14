@@ -1,0 +1,31 @@
+{
+  "complete": true,
+  "stage": "stopped_on_failed_gate_or_error",
+  "algorithm": "Frozen checkpoint13 BC + residual SAC",
+  "latest_preserved_checkpoint": "checkpoint13",
+  "new_checkpoint_promoted": false,
+  "pipeline_source_hashes": {
+    "residual_main.py": "f130e5288429836cea0e8472377c148ae9a932460d50d19ea79c888097b63a28",
+    "residual_env.py": "23b9d1ff2ba63d3c763948e01ca99640423bc93cebaa5dffdb9eb097ea9cff59",
+    "residual_pipeline.py": "ee93f160afbe27b34c262d29403bd5ada90f8935f8c3690aa402f34d11a678ab",
+    "residual_learning.py": "f58f8d66972d41fd025fdb64f9d7901d23c96c2c64dbbce93742f9b3f515aee9"
+  },
+  "transitions": 12000,
+  "results": [
+    {
+      "label": "baseline3_reused",
+      "report": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/residual_v1_baseline/evaluation.json",
+      "sha256": "fdcfe8a6f4bcb71af881f9c41aa8f1b44551d699d14b317dadf849c5ec3d2bbe",
+      "success": 3,
+      "episodes": 3
+    },
+    {
+      "label": "baseline12",
+      "report": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/bc_sac_residual_v1/baseline12/evaluation.json",
+      "sha256": "f466a9c2042b708e17c0fac1dd65b730f194076b6b76ba621f6c37285942a98c",
+      "success": 12,
+      "episodes": 12
+    }
+  ],
+  "error": "CalledProcessError(1, ['/home/francesco/miniconda3/envs/PegTransfer/bin/python', '-u', '/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/bc_sac_residual_v1/pipeline_sources/residual_main.py', 'evaluate', '--headless', '--output', '/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/bc_sac_residual_v1/confirmation12', '--checkpoint', '/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/bc_sac_residual_v1/training/candidate.zip', '--num_envs', '12', '--episodes', '12', '--seed', '59002', '--jitter_mm', '.1', '--yaw_deg', '.5'])"
+}

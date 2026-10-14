@@ -1,0 +1,9 @@
+{
+  "complete": false,
+  "interrupted": true,
+  "reason": "Short observation probe confirmed premature jaw closing far from the peg.",
+  "completed_episodes": 7,
+  "observed_successes": 0,
+  "teacher_at_inference": false,
+  "assisted_grasp": false
+}

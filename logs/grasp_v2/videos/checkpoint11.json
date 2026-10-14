@@ -1,0 +1,54 @@
+{
+  "checkpoint": "checkpoint11",
+  "milestone": "milestones/checkpoint11-assisted-full-bc-yaw5.json",
+  "policy_sha256": "9a371d1f95ea2cefe7680949ab229426672e650e6cc58fe4fe6d2eaf64fa5d74",
+  "video": "logs/grasp_v2/videos/checkpoint11.mp4",
+  "video_sha256": "ef917cd023e3cfa14d3232a1bf98fda9c53da173fe4675ac58505cd956596964",
+  "evaluation_sha256": "392e6da83ad426b14917cd438276eb2d3e34996fe3aaf5ba67eff10057238bd5",
+  "original_replay": "logs/grasp_v2/checkpoint11_front_video_20261007_v2",
+  "episode_success": true,
+  "assisted_grasp": true,
+  "teacher_at_inference": false,
+  "camera": {
+    "eye": [
+      0.025,
+      0.32,
+      0.25
+    ],
+    "target": [
+      0.025,
+      0,
+      0.035
+    ]
+  },
+  "encoder": "h264_nvenc",
+  "media": {
+    "codec_name": "h264",
+    "width": 1280,
+    "height": 720,
+    "avg_frame_rate": "25/1",
+    "duration": "47.520000",
+    "nb_frames": "1188"
+  },
+  "replay_settings": {
+    "skill": "full",
+    "grasp_support": 1.0,
+    "num_envs": 1,
+    "episodes": 1,
+    "episode_steps": 10000,
+    "sources": [
+      "L5"
+    ],
+    "targets": [
+      "R2"
+    ],
+    "jitter_mm": 0.5,
+    "yaw_deg": 5.0,
+    "seed": 2468,
+    "support_profile": "firm",
+    "placement_support": true,
+    "motion_profile": "travel",
+    "free_speed_scale": 2.0,
+    "transport_speed_scale": 2.0
+  }
+}

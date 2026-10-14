@@ -1,0 +1,76 @@
+{
+  "algorithm": "Receiver-only supervised Behavior Cloning; not SAC",
+  "assisted_training": true,
+  "parent_policy_sha256": "64f0512c5be8c6215a67e89c58b5f116a4d613a054e68c2b5ff6d7029a5a660f",
+  "dataset_sha256": "71ca67632a38ac720e5d50ef8ce40c5d0b433640a58e4b8f1e272f381ab76ef1",
+  "updates": 2000,
+  "batch_size": 1024,
+  "learning_rate": 5e-05,
+  "receiver_options": [
+    10,
+    11
+  ],
+  "recorded_expert_labels_only": true,
+  "pre_handoff_labels_excluded": true,
+  "original_tensors_unchanged": 90,
+  "donor_and_motor_router_pose_parameters_unchanged": true,
+  "training_episodes": [
+    0,
+    2,
+    3,
+    4,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+  ],
+  "validation_episodes": [
+    1,
+    5,
+    15
+  ],
+  "whole_episode_split": true,
+  "physical_evaluation_required": true,
+  "native_full_policy_verified": false,
+  "collection_seed": 9876,
+  "fresh_validation_seeds": [
+    2468,
+    54321
+  ],
+  "gpu": "NVIDIA RTX 6000 Ada Generation",
+  "history": [
+    {
+      "update": 500,
+      "loss": 0.2529938519001007,
+      "validation_loss": 0.533216655254364,
+      "validation_accuracy": 0.8407205939292908
+    },
+    {
+      "update": 1000,
+      "loss": 0.20071621239185333,
+      "validation_loss": 0.4981740713119507,
+      "validation_accuracy": 0.8378610014915466
+    },
+    {
+      "update": 1500,
+      "loss": 0.1676952987909317,
+      "validation_loss": 0.47659289836883545,
+      "validation_accuracy": 0.841578483581543
+    },
+    {
+      "update": 2000,
+      "loss": 0.14517682790756226,
+      "validation_loss": 0.49826619029045105,
+      "validation_accuracy": 0.8278524279594421
+    }
+  ],
+  "retrained": false,
+  "neural_parameters_unchanged": true,
+  "implementation_change": "Expanded actual post names and mesh-screened reset range; exact checkpoint10 weights and motor speeds",
+  "parent_policy": "/home/francesco/Documents/GIGI/i4h-workflows/.checkpoint_runs/checkpoint10-assisted-full-bc-transit/model/policy.pt"
+}

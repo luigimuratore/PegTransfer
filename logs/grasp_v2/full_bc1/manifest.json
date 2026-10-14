@@ -1,0 +1,194 @@
+{
+  "schema": "peg-full-motor-bc-1",
+  "algorithm": "Behavior Cloning of positive XYZ and jaw feedback gains",
+  "parameters": {
+    "stage_steps": 6000,
+    "seed": 42,
+    "camera_eye": [
+      0.025,
+      0.32,
+      0.25
+    ],
+    "camera_target": [
+      0.025,
+      0.0,
+      0.035
+    ],
+    "mass_g": 5.0,
+    "friction": 0.9,
+    "contact_stiffness": 1000.0,
+    "contact_damping": 0.5,
+    "jaw_torque": 0.015,
+    "jaw_stiffness": 0.6,
+    "grip_force": 0.35,
+    "max_force": 1.0,
+    "preload_seconds": 0.4,
+    "free_speed": 0.025,
+    "contact_speed": 0.005,
+    "lift_speed": 0.003,
+    "rotation_speed": 1.0,
+    "donor_depth_mm": 1.0,
+    "receiver_depth_mm": 1.0,
+    "donor_open": 0.15,
+    "receiver_open": 0.15,
+    "donor_compliance": false,
+    "donor_balance": false,
+    "peg_support": 1.0,
+    "peg_support_type": "fixed",
+    "peg_support_window": "carried"
+  },
+  "physics_hashes": {
+    "geometry.py": "14b4e83a9d915addecc7ac6be6832d19dab9fe7ad7362a09e004648b299aeb5c",
+    "runtime.py": "8d525a2810c15fa42fccffa36e24e580bf66e79f461c8da7dded6ef9ec75a4be",
+    "motion.py": "8393b8d33e040938eec9dfb22e4ffac92b5b7d7cf256322a4925f125df1cb6ab",
+    "grip.py": "24f20bcf907bb42a308e5a46d5fa6058e89e04dbc49926eb6e6728fdb74e6dd0",
+    "peg_profile.json": "4b2cce45a8324e6dd804cacd160912d92cba3bbe653cb28d090ce3b4ef97c8f6",
+    "robot_kinematics.json": "f97ddbc0967c38b4bebd0433a168daa39b3274ef4123d75e437b8e2860c0cf23",
+    "kinematics.py": "61c82e4ecbfcd425ba563c66ada9d49bd8ca37905710f0104bd96055895a4357",
+    "full_geometry.py": "f06a9b32d8f1dd10a054fdeb5cfc376210670b7ea9b208cddf3ffd04d219c88b",
+    "handover_grip.py": "2cf2586ef1bf0092a900c32156aabd2d706526cc3245159a7411285e4701b8b5",
+    "holding_compliance.py": "8c6346a8672798471581af903e281e8295a247927c8ada4a1374f348d3cc4c98",
+    "peg_support.py": "7ee9bd32bcf70e3a492bf098d06ae3567e21ec20d5676269c758ae7d547fd186"
+  },
+  "base_manifest": "/home/francesco/Documents/GIGI/i4h-workflows/milestones/checkpoint3-full-assisted.json",
+  "base_manifest_sha256": "3416ee107c467cedca24d735064e8b8775646d63afe202d6114a51ac81337bbf",
+  "demonstration_path": "/home/francesco/Documents/GIGI/i4h-workflows/logs/grasp_v2/full_demos_bc1.npz",
+  "demonstration_sha256": "a72f44582d0d76973f854ed44326a729a8e93b7e7c0daa566570b9db73a954b6",
+  "demonstration_report_sha256": "54aadb6228fcf720af016e849d78198d2c4e650c8f0757d4450f1e55814198fe",
+  "training_episodes": [
+    0,
+    1
+  ],
+  "validation_episode": 2,
+  "settings": {
+    "updates": 6000,
+    "batch_size": 1024,
+    "learning_rate": 0.0001,
+    "seed": 42,
+    "net_arch": [
+      256,
+      256
+    ],
+    "observation_dim": 76,
+    "action_dim": 5,
+    "device": "cuda:0",
+    "gpu_name": "NVIDIA RTX 6000 Ada Generation",
+    "sampling": "equal phases, complete episode held out"
+  },
+  "learned_control": "positive XYZ gains (5..100/s) and both jaw-feedback gains (.5..1.5), all 20 phases",
+  "programmed_control": "stage order/goals, grasp selection, orientation/IK, inactive-arm position, contact guards and fixed fixture",
+  "assisted_grasp": true,
+  "physical_evaluation_required": true,
+  "end_to_end_policy": false,
+  "validation": {
+    "normalized_action_mse": 6.497783715531114e-07,
+    "by_stage_mse": {
+      "settle": 0.0,
+      "donor_above": 2.5670585657167067e-08,
+      "donor_outside": 3.5935290298994005e-08,
+      "donor_reach": 2.4613282523233693e-09,
+      "donor_close": 5.92974487290121e-08,
+      "donor_lift": 7.148518676484907e-16,
+      "donor_hold": 1.7314965461423526e-08,
+      "donor_transfer": 2.8018232178794733e-09,
+      "receiver_above": 9.082419261119412e-09,
+      "receiver_outside": 1.7946066854790388e-09,
+      "receiver_reach": 3.0305699616484105e-10,
+      "receiver_close": 1.5629323613097768e-08,
+      "donor_release": 6.753708703399752e-08,
+      "donor_retreat": 2.6793038898631494e-09,
+      "receiver_hold": 1.301911556339519e-08,
+      "receiver_transport": 3.8005159694876056e-06,
+      "receiver_insert": 3.095198573219984e-15,
+      "receiver_release": 4.1901706171638964e-13,
+      "receiver_retreat": 1.4481886800865595e-08,
+      "placement_settle": 8.685395624013224e-21
+    },
+    "scope": "one held-out episode in fixed L5 to R2 scene; no domain randomization"
+  },
+  "history": [
+    {
+      "update": 500,
+      "train_mse": 7.55390431095293e-07
+    },
+    {
+      "update": 1000,
+      "train_mse": 1.7936092433501472e-07
+    },
+    {
+      "update": 1500,
+      "train_mse": 2.7857755213744895e-08
+    },
+    {
+      "update": 2000,
+      "train_mse": 8.935361961448507e-08
+    },
+    {
+      "update": 2500,
+      "train_mse": 2.2691491352588855e-08
+    },
+    {
+      "update": 3000,
+      "train_mse": 9.132097034125763e-08
+    },
+    {
+      "update": 3500,
+      "train_mse": 1.224035806046686e-08
+    },
+    {
+      "update": 4000,
+      "train_mse": 1.4447441465392785e-08
+    },
+    {
+      "update": 4500,
+      "train_mse": 8.31916047161485e-09
+    },
+    {
+      "update": 5000,
+      "train_mse": 4.827095523296521e-08
+    },
+    {
+      "update": 5500,
+      "train_mse": 1.4280018945100892e-08
+    },
+    {
+      "update": 6000,
+      "train_mse": 4.482061832788986e-09
+    }
+  ],
+  "files_sha256": {
+    "policy.npz": "fd5763681d189cd5c58796b6b4a612c30bf0b44253bc387522cf754db20882e7",
+    "sources/audit_full.py": "9024b5ef2af3d36b82ddc09d5f1e88988ee2836b7300211add62e2d2e785d100",
+    "sources/full_export.py": "254575f4f0ddb4dfe6a747d5cf0d158ade94ee96c4f7213189a5b90103f8413e",
+    "sources/full_geometry.py": "a0d1ec9913a54e67b548b555933f9472c03de8e4e35f234f4caecd7b420635c9",
+    "sources/full_learning.py": "7836b350abfff1376fe382f845aa3fc293febc9ad14dfa990b2bfe5a114f6fdd",
+    "sources/full_play.py": "55d086eedd02ad65516024e2c00e37f1414a77f2eb63cd8e780b1c22c6248a5d",
+    "sources/full_task.py": "8ce7b51b75373ab9d06504d0148e5d5e2971805d667e09642025bd0a9aab1569",
+    "sources/full_train.py": "a4fb298e1227f82957a80d544c17b2114ad5b1f696974c3485f200dd3c685bf6",
+    "sources/geometry.py": "a6e0333e2843cdb7d686558cd613080112cef49768fd02d034a0d477b732792f",
+    "sources/grip.py": "3abf937d82c23cfeb91b8314adfe8b7e26cb3f3d058684f19db53d085cdf648a",
+    "sources/handover_grip.py": "c5dd213e7facbe3c2c0364ef005893e4826e34f2736495bda68a35fa95cf5917",
+    "sources/holding_compliance.py": "811b2e1a41c1e15ef301f5136881fc3ec8b47bedccd755cff6121c769052316e",
+    "sources/inspect_mesh.py": "6adf1b052afef1184ef7ecaea6d3a820dde46117af78602dd68765aaeedcce8a",
+    "sources/kinematics.py": "ef060b84176fbc499cd0fac8c4d93dc53cf6cbf94adc7659ab8baa0f88081314",
+    "sources/learning.py": "2d1a654fa4d62b0ba29d9600bf98862b24adec1ccc622430b50fdc1890c6a4ba",
+    "sources/measured_grip_samples.json": "50c5900364959628732e99b8bb06b716754692ae761132958712d6fce166a9bc",
+    "sources/measured_kinematics_samples.json": "14c093aacc93f86231eacce2b919ca9697ec21ff668146d1a7587172e8a9da93",
+    "sources/measured_vertex_closure_samples.json": "25e81ce635a11225a29c4e399953a557d2d5044aaf5da4b7c47fedea3baab70a",
+    "sources/motion.py": "0df74470550133342f17cb13d0abdb0bf7ed561fd5349289c485f342dcc1c555",
+    "sources/peg_profile.json": "4b2cce45a8324e6dd804cacd160912d92cba3bbe653cb28d090ce3b4ef97c8f6",
+    "sources/peg_support.py": "4ddab2154eec560e63fb039fd8f903810a09b32147a3495faac3a4ac7ea1eeb3",
+    "sources/preserve_full.py": "3b72c36104a9a9183804b2215606d8345c3e17cf551881e4da4fb26e917645ee",
+    "sources/probe.py": "76a692d48dd963182cfa05fc95c61c5b711d5d6835dfc5aa875a68206499716b",
+    "sources/replay.py": "8e5f130e02f840f79d3433f5932b489af96de5351770253daaf7fd657d651a3f",
+    "sources/replay_full.py": "33a65680dc20a25b1808cd0541869d1067b86364e9d0d19439caf8cb12bdaf6f",
+    "sources/robot_kinematics.json": "f97ddbc0967c38b4bebd0433a168daa39b3274ef4123d75e437b8e2860c0cf23",
+    "sources/runtime.py": "7b3f16247346fab29454e86cdf00915f18d9ae506241dd73be2aa6d5af2a0767",
+    "sources/test_cpu.py": "3abde54e322b61a0b6b3d526eb7159820fef5a212e2afc914c5ec491e9617f27",
+    "sources/test_full.py": "dbda017831dca6bcc204ace211cf363d506a412b4b56bf559e63650d903aab6f",
+    "sources/test_gpu.py": "24a8a1b2ee7aabc3ac8e124a10638e170e76be8724ce49100d01e070e90acdd7",
+    "sources/test_support.py": "9b4f2f9020fa46da150a8a07bbfd3484bebad82a5930fb3d638f2c3e426af98a",
+    "sources/torch_backend.py": "b68ab8e64a163e5f4d43d007e7ee1d35e3a8adae744c3f6666e524373173ba8f",
+    "sources/train.py": "989f7a2091774ea647aa76ca562d5b8f6276cba60c47dfe15ecc6b9bdb7244a6"
+  }
+}
