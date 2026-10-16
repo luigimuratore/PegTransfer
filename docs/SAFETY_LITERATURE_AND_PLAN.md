@@ -2,6 +2,8 @@
 
 Data: 14 ottobre 2026. Questo documento propone uno studio; non introduce nuovi criteri di successo, training o modifiche ai checkpoint.
 
+**Cambio di strategia del16 ottobre2026:** checkpoint13 resta il riferimento congelato. La nuova linea parte dalle dimostrazioni sul dVRK reale (ROS1, endoscopio monoculare), poi IL visiva vanilla, apprendimento/verifica della reward e variante safety-tuned separata. Il piano operativo aggiornato è [DVRK_REAL_TO_ISAAC_PLAN.md](DVRK_REAL_TO_ISAAC_PLAN.md). La precedente sequenza basata su dimostrazioni sintetiche rimane documentata come contesto.
+
 ## Requisiti aggiornati dall'utente
 
 **Policy vanilla e safety-tuned sempre separate.** Conservare il modello di riferimento senza modificarne pesi o configurazione quando si prepara una variante safety. Ogni variante ha cartella, identificativo, pesi, sorgenti/configurazione, report e video propri, collegati tramite SHA256. Non sovrascrivere o sostituire la vanilla con una variante ottimizzata.

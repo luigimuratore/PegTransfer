@@ -586,3 +586,13 @@ open ~/Downloads/bc_sac_residual_v5.mp4
 ### Confronto vanilla e safety-tuned
 
 Le policy vanilla e le varianti safety-tuned rimangono sempre separate e conservate, con pesi, configurazioni, report e video distinti. Il confronto usa gli stessi scenari e criteri di safety. Gli aiuti fisici già presenti sono dichiarati anche nella baseline vanilla; eventuali nuovi vincoli sono riportati come parte della variante. La promozione di una variante non sostituisce né cancella la baseline. Protocollo: [studio di safety](docs/SAFETY_LITERATURE_AND_PLAN.md).
+
+
+### Nuova linea: dimostrazioni dVRK reali
+
+Dal16 ottobre2026 checkpoint13 resta il riferimento congelato. Nuova linea separata: registrazione ROS1 con endoscopio monoculare → dataset immagini/azioni calibrato → IL visiva vanilla → reward verificata e fine tuning con safety → confronti appaiati. Nessun sensore di forza dedicato è attualmente disponibile: stime da motori e misure reali di contatto restano distinte. [Piano operativo, segnali e milestone](docs/DVRK_REAL_TO_ISAAC_PLAN.md).
+
+
+### Board corrente: cilindri da 12 mm
+
+Dal16 ottobre2026 tutti i12 cilindri della scena corrente sono alti12mm, dalla superficie superiore della board alla punta: baseZ=10mm, centroZ=16mm, puntaZ=22mm. Raggio2mm e posizioniXY invariati; quote dei controlli geometrici aggiornate. Geometria USD verificata in Isaac/CUDA: [audit](logs/scene_audits/posts_12mm_20261016_102947_526048.json). Gli archivi dei checkpoint conservano la geometria originale: checkpoint13 resta riproducibile nella sua scena storica.

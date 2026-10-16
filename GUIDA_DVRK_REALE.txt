@@ -1,0 +1,87 @@
+GUIDA BREVE — REGISTRAZIONE dVRK REALE
+16 ottobre 2026
+
+OBIETTIVO
+Checkpoint13 resta conservato come riferimento.
+Nuovo percorso: dimostrazioni reali → IL visiva vanilla → copia safety-tuned.
+Vanilla e safety-tuned restano sempre separate. Safety prima del successo.
+
+SETUP CONFERMATO
+ROS1, versione dVRK precedente; endoscopio monoculare su topic ROS.
+Nessun sensore di forza dedicato sulle pinze; segnali motori da verificare.
+
+1. SUL COMPUTER DEL dVRK
+Apri un terminale con l'ambiente ROS/dVRK già configurato.
+Con lo stack normalmente avviato, esegui:
+
+    rosversion -d
+    rosversion dvrk_robot
+    rostopic list -v
+
+Salva o copia gli output. Se il secondo comando non trova il pacchetto,
+conserva comunque gli altri risultati: non aggiornare il sistema per questo.
+
+2. INDIVIDUA I TOPIC DA REGISTRARE
+- Immagine endoscopica e camera_info/calibrazione.
+- Pose e giunti misurati di PSM1 e PSM2.
+- Aperture delle pinze misurate e desiderate, se disponibili.
+- Pose/riferimenti desiderati dei due PSM.
+- Trasformazioni, stato della camera se mobile, clutch/errori se disponibili.
+
+Esempi di nomi, NON ancora verificati sul vostro sistema:
+    /dvrk/PSM1/position_cartesian_current
+    /dvrk/PSM1/state_joint_current
+Oppure nomi recenti come /PSM1/measured_cp e /PSM1/measured_js.
+Controlla anche PSM2. Non assumere che il nome della pinza sia uguale.
+
+Per ciascun topic selezionato:
+
+    rostopic info NOME_TOPIC
+    rostopic type NOME_TOPIC
+    rostopic hz NOME_TOPIC
+
+Interrompi hz con Ctrl+C dopo qualche secondo.
+Per l'immagine puoi controllare anche: rostopic bw NOME_TOPIC.
+
+3. PRIMO BAG PILOTA
+Prima di molte dimostrazioni, registra UN trasferimento intero.
+Usa una cartella nuova. Sostituisci i segnaposto con i topic verificati:
+
+    rosbag record -O pilot_001.bag TOPIC_CAMERA TOPIC_PSM1 TOPIC_PSM2 ...
+
+Il comando sopra è un modello: i puntini e i segnaposto non vanno copiati.
+La lista completa deve includere anche le pinze e gli altri segnali scelti.
+Avvia prima della dimostrazione manuale; Ctrl+C dopo il deposito stabile.
+Poi verifica:
+
+    rosbag info pilot_001.bag
+
+Registra insieme immagini e robot: un MP4 da solo non basta.
+Conserva il bag originale e annota sorgente, destinazione, operatore,
+esito, scivolamenti/urti/recuperi e calibrazioni usate.
+
+ATTENZIONE AL REPLAY
+Non eseguire rosbag play sul sistema reale collegato: il bag potrebbe
+contenere comandi di movimento. Il replay previsto è offline in Isaac.
+La registrazione deve restare passiva, senza modificare il controllo.
+
+4. COSA PORTARE ALLA WORKSTATION ISAAC
+- Output dei comandi del punto1 e nomi/tipi/frequenze dei topic selezionati.
+- Primo bag completo e output di rosbag info.
+- Camera_info o file di calibrazione disponibili.
+- Note su board, cilindri, strumenti e sull'episodio registrato.
+
+PRIMA DI RACCOGLIERE ALTRI EPISODI
+Verificheremo sincronizzazione, coordinate, pinze e qualità del video.
+Poi converteremo il bag in immagini+azioni e proveremo il replay in Isaac.
+Non basta riprodurre i giunti per dimostrare una presa fisica corretta.
+Eventuali effort/stime dai motori non sono forze di contatto validate.
+
+PER RIPRENDERE LA CONVERSAZIONE SULL'ALTRO COMPUTER
+"Progetto PegTransfer. Checkpoint13 congelato come riferimento. Vogliamo
+registrare dimostrazioni dVRK reali ROS1 con endoscopio monoculare, senza
+sensori di forza dedicati, per IL visiva vanilla e variante safety-tuned
+separate. Primo passo: inventario topic e un bag pilota. Segui la guida
+GUIDA_DVRK_REALE.txt e il piano docs/DVRK_REAL_TO_ISAAC_PLAN.md."
+
+Piano dettagliato nella repository: docs/DVRK_REAL_TO_ISAAC_PLAN.md

@@ -22,9 +22,10 @@ BOARD_Y = 0.0
 BOARD_Z = 0.005
 BOARD_SIZE = (0.25, 0.10, 0.01)
 
-Z_CYL = 0.023
+BOARD_TOP_Z = BOARD_Z + BOARD_SIZE[2] / 2
 RAD_CYL = 0.002
-H_CYL = 0.025
+H_CYL = 0.012  # Full cylinder height: 12 mm from board surface to tip.
+Z_CYL = BOARD_TOP_Z + H_CYL / 2
 POST_TOP_Z = Z_CYL + H_CYL / 2
 
 # The USD mesh is centered about 5 mm to the right of its root.

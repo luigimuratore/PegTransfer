@@ -513,3 +513,13 @@ V4 perde l’episodio11 L4→R3: presa verificata, peg sollevato, ma pressione P
 
 
 V5 conclusa e verificata il14 ottobre: il recupero anticipato risolve il precedente episodio fallito (12/12 sugli stessi reset). Nuovo training BC+SAC12000 transizioni concluso; confronto con baseline12/12 superato. Sul seed indipendente62002:11/12, un timeout dell’episodio8 L4→R3 dopo grasp ma prima del lift stabile, zero fallimenti fisici. Nessuna promozione: checkpoint13 resta il riferimento. Prima di attribuire il limite a SAC serve il confronto BC a residuo zero sullo stesso seed indipendente. Video candidato `logs/grasp_v2/videos/bc_sac_residual_v5.mp4`:1/1 riuscito,42s,1050frame1280×720, intera decodifica e SHA256 verificati, visuale frontale controllata. Nessun training o valutazione residua attivo.
+
+
+### 16 ottobre — nuovo piano con dimostrazioni dVRK reali
+
+Decisione utente: preservare checkpoint13 come riferimento; registrare dimostrazioni reali, costruire IL visiva e reward, poi variante safety-tuned e confronto. Setup confermato: ROS1 precedente, endoscopio monoculare su topic, nessun sensore di forza alle pinze; segnali motori da verificare. Definito protocollo passivo rosbag, sincronizzazione/frame, conversione offline, replay cinematico distinto da replay fisico e test separati. Nessun nuovo training avviato. Primo risultato richiesto: inventario topic/versione e un bag pilota. Documento: `docs/DVRK_REAL_TO_ISAAC_PLAN.md`.
+
+
+### 16 ottobre — cilindri board da12mm
+
+Richiesta utente applicata alla scena corrente: altezza cilindri25→12mm, base appoggiata sulla board aZ10mm, centroZ16mm e puntaZ22mm. Aggiornate le quote delle collisioni geometriche SAC. Verifica Isaac/CUDA sui12 cilindri USD e3 passi di fisica; tutti55 file checkpoint13 SHA-verificati integri. Audit: `logs/scene_audits/posts_12mm_20261016_102947_526048.json`. Nessun training o nuovo checkpoint.

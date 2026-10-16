@@ -1,0 +1,94 @@
+{
+  "complete": true,
+  "device": "cuda:0",
+  "board_top_z_mm": 9.999999776482582,
+  "posts": [
+    {
+      "name": "post_l1",
+      "height_mm": 12.000000104308128,
+      "base_z_mm": 10.000000707805157,
+      "tip_z_mm": 22.000000812113285,
+      "usd_height_mm": 12.0
+    },
+    {
+      "name": "post_l2",
+      "height_mm": 12.000000104308128,
+      "base_z_mm": 10.000000707805157,
+      "tip_z_mm": 22.000000812113285,
+      "usd_height_mm": 12.0
+    },
+    {
+      "name": "post_l3",
+      "height_mm": 12.000000104308128,
+      "base_z_mm": 10.000000707805157,
+      "tip_z_mm": 22.000000812113285,
+      "usd_height_mm": 12.0
+    },
+    {
+      "name": "post_l4",
+      "height_mm": 12.000000104308128,
+      "base_z_mm": 10.000000707805157,
+      "tip_z_mm": 22.000000812113285,
+      "usd_height_mm": 12.0
+    },
+    {
+      "name": "post_l5",
+      "height_mm": 12.000000104308128,
+      "base_z_mm": 10.000000707805157,
+      "tip_z_mm": 22.000000812113285,
+      "usd_height_mm": 12.0
+    },
+    {
+      "name": "post_l6",
+      "height_mm": 12.000000104308128,
+      "base_z_mm": 10.000000707805157,
+      "tip_z_mm": 22.000000812113285,
+      "usd_height_mm": 12.0
+    },
+    {
+      "name": "post_r1",
+      "height_mm": 12.000000104308128,
+      "base_z_mm": 10.000000707805157,
+      "tip_z_mm": 22.000000812113285,
+      "usd_height_mm": 12.0
+    },
+    {
+      "name": "post_r2",
+      "height_mm": 12.000000104308128,
+      "base_z_mm": 10.000000707805157,
+      "tip_z_mm": 22.000000812113285,
+      "usd_height_mm": 12.0
+    },
+    {
+      "name": "post_r3",
+      "height_mm": 12.000000104308128,
+      "base_z_mm": 10.000000707805157,
+      "tip_z_mm": 22.000000812113285,
+      "usd_height_mm": 12.0
+    },
+    {
+      "name": "post_r4",
+      "height_mm": 12.000000104308128,
+      "base_z_mm": 10.000000707805157,
+      "tip_z_mm": 22.000000812113285,
+      "usd_height_mm": 12.0
+    },
+    {
+      "name": "post_r5",
+      "height_mm": 12.000000104308128,
+      "base_z_mm": 10.000000707805157,
+      "tip_z_mm": 22.000000812113285,
+      "usd_height_mm": 12.0
+    },
+    {
+      "name": "post_r6",
+      "height_mm": 12.000000104308128,
+      "base_z_mm": 10.000000707805157,
+      "tip_z_mm": 22.000000812113285,
+      "usd_height_mm": 12.0
+    }
+  ],
+  "guard_post_top_mm": 22.0,
+  "checkpoint13_files_verified": 55,
+  "physics_steps": 3
+}

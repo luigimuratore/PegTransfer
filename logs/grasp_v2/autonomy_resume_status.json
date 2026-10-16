@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-14T12:04:53.041713+00:00",
+  "updated_utc": "2026-10-16T08:02:58.931517+00:00",
   "full_task_complete": true,
   "reference_native_pickup": "milestones/checkpoint5-native-pickup-bc.json",
   "reference_assisted_full": "milestones/checkpoint13-three-posts-fast-assisted.json",
@@ -155,7 +155,7 @@
   },
   "full_task_complete_assisted_pilot": true,
   "native_full_task_certified": false,
-  "current_task": "V56 receiver-only BC on 12 verified completed V55 recoveries, then physical regression gates",
+  "current_task": "Plan real dVRK ROS1 monocular demonstration capture and visual IL; checkpoint13 frozen reference",
   "current_experiment": "logs/grasp_v2/bc_sac_recovery_retry_v5",
   "current_session": null,
   "validated_v48": "logs/grasp_v2/autonomy_receiver_bc_v48/receiver_bc/policy.pt",
@@ -168,8 +168,9 @@
   },
   "native_full_policy_verified": false,
   "next_required_checks": [
-    "Diagnose independent seed62002 episode8 L4\u2192R3 before widening randomization or reducing assistance.",
-    "Compare zero-residual BC on the same independent resets before attributing regression to SAC."
+    "Get ROS1 distro/topic inventory, camera calibration, PSM and jaw measurements/setpoints.",
+    "Collect and inspect one passive ROSbag pilot before building the converter.",
+    "Keep image-based vanilla and safety-tuned policies separate; task success secondary to safety."
   ],
   "previous_speed_experiment": {
     "path": "logs/grasp_v2/autonomy_transit_speed_v49",
@@ -191,7 +192,7 @@
   },
   "training_running": false,
   "evaluation_running": false,
-  "current_stage": "independent_gate_failed",
+  "current_stage": "awaiting_real_ros_topic_inventory",
   "next_strategy": "Keep checkpoint12 weights and physical constraints; compare clear motion speeds on matched three-pair seeds, confirm12 and record front video before promoting",
   "last_domain_result": "V54 baseline30/32 yaw5; one previous success lost; no wider levels tested",
   "last_completed_result": "V5: repair12/12; new BC+SAC training12000; confirmation12/12, independent seed11/12 (L4\u2192R3 episode8 timeout before stable lift). Front video1/1 complete42s. No promotion.",
